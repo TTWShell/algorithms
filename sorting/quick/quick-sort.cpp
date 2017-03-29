@@ -11,16 +11,14 @@ void print(int st_bf[], size_t size) {
 void quick_sort(int *st_bf, size_t size) {
     size_t j = 0; // 标记哨兵位置
     if (size > 1) {
-        int tag = st_bf[0]; // 设置哨兵
+        int tag = st_bf[0], temp; // 设置哨兵
 
         for (size_t i = 1; i < size; ++i) {
             if (st_bf[i] < tag) {
-                int temp = st_bf[i];
-                // 小于tag位置挪到tag前面,也就是tag和比tag大的整体后移
-                for (size_t k = i; k > j; --k){
-                    st_bf[k] = st_bf[k-1];
-                }
-                st_bf[j++] = temp; // 小元素移到哨兵前面
+                temp = st_bf[i];
+                st_bf[i] = st_bf[j+1]; // 互换哨兵后一个位置和当前小于哨兵值的数
+                st_bf[j+1] = tag; //  新的哨兵位置为原哨兵位置+1
+                st_bf[j++] = temp; // 小于哨兵的数移到原哨兵位置
             } // 大于tag不用处理
         }
     } // 空数组，无需处理
