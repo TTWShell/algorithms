@@ -18,23 +18,23 @@ import "fmt"
 
 func lengthOfLongestSubstring(s string) int {
 	var (
-		max_length int
-		total      = len(s)
+		max_length       int
+		i, j, cur, total = 0, 0, 0, len(s)
 	)
 
-	for i := 0; i < total; i++ {
+	for ; i < total; i++ {
 		subString := make(map[byte]int)
 		subString[s[i]] = i
-		for j := i + 1; j < total; j++ {
+		for j = i + 1; j < total; j++ {
 			if _, ok := subString[s[j]]; ok {
 				break
 			} else {
 				subString[s[j]] = j
 			}
 		}
-		subLen := len(subString)
-		if subLen > max_length {
-			max_length = subLen
+		cur = j - i
+		if cur > max_length {
+			max_length = cur
 		}
 	}
 	return max_length
