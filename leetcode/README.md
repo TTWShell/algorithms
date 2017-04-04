@@ -5,6 +5,7 @@
 | [1. Two Sum](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/twoSum.go ) | Easy |
 | [2. Add Two Numbers](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/addTwoNumbers.go ) | Medium |
 | [3. Longest Substring Without Repeating Characters](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/lengthOfLongestSubstring.go ) | Medium |
+| [4. Median of Two Sorted Arrays](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/findMedianSortedArrays.go) | Hard |
 | [7. Reverse Integer](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/reverse.go ) | Easy |
 | [9. Palindrome Number](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/isPalindrome.go ) | Easy |
 | [13. Roman to Integer](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/romanToInt.go ) | Easy |
