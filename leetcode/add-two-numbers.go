@@ -8,7 +8,7 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
 */
-package main
+package leetcode
 
 import "fmt"
 
@@ -49,10 +49,4 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 		current = temp
 	}
 	return result
-}
-
-func main() {
-	l1 := &ListNode{Val: 2, Next: &ListNode{Val: 4, Next: &ListNode{Val: 5}}}
-	l2 := &ListNode{Val: 5, Next: &ListNode{Val: 6, Next: &ListNode{Val: 4}}}
-	fmt.Println(addTwoNumbers(l1, l2))
 }

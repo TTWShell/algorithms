@@ -9,9 +9,7 @@ Given nums = [2, 7, 11, 15], target = 9,
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 */
-package main
-
-import "fmt"
+package leetcode
 
 func twoSum(nums []int, target int) []int {
 	length := len(nums)
@@ -24,12 +22,4 @@ func twoSum(nums []int, target int) []int {
 		m[nums[i]] = i
 	}
 	panic("no two sum solution")
-}
-
-func main() {
-	nums := []int{2, 7, 11, 15}
-	result := twoSum(nums, 9)
-	if result[0] != 0 || result[1] != 1 {
-		fmt.Println("error")
-	}
 }
