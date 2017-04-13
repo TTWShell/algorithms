@@ -11,10 +11,7 @@ Given "bbbbb", the answer is "b", with the length of 1.
 Given "pwwkew", the answer is "wke", with the length of 3. Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
 
 */
-
-package main
-
-import "fmt"
+package leetcode
 
 func lengthOfLongestSubstring(s string) int {
 	var (
@@ -35,12 +32,4 @@ func lengthOfLongestSubstring(s string) int {
 		subString[s[j]] = j + 1
 	}
 	return max
-}
-
-func main() {
-	str := []string{"a", "au", "abcabcbb", "bbbbb", "pwwkew"}
-	for _, s := range str {
-		fmt.Println(s)
-		fmt.Println(lengthOfLongestSubstring(s))
-	}
 }
