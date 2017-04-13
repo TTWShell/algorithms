@@ -10,13 +10,17 @@ The input is assumed to be a 32-bit signed integer. Your function should return 
 package leetcode
 
 func reverse(x int) int {
-	var result int64
-	for x != 0 {
-		result = result*int64(10) + int64(x%10)
+	sign, result := 1, 0
+	if x < 0 {
+		sign = -1
+		x = -x
+	}
+	for x > 0 {
+		result = result*10 + x%10
 		x /= 10
 	}
-	if result > 2147483647 || result < -2147483648 {
+	if result < 0 || result > 2147483647 {
 		return 0
 	}
-	return int(result)
+	return result * sign
 }
