@@ -26,5 +26,19 @@ Sunday 算法
     5. 需要 2n 次的字符比较；
 */
 func Naive(s, txt string) bool {
-	return true
+	lens, lentxt := len(s), len(txt)
+	if lentxt > lens {
+		return false
+	}
+	for i := 0; i < lens; i++ {
+		for j := 0; j <= lentxt; j++ {
+			if j == lentxt {
+				return true
+			}
+			if txt[j] != s[i+j] {
+				break
+			}
+		}
+	}
+	return false
 }
