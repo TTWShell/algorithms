@@ -30,7 +30,7 @@ func Naive(s, txt string) bool {
 	if lentxt > lens {
 		return false
 	}
-	for i := 0; i < lens; i++ {
+	for i := 0; i < lens-lentxt; i++ {
 		for j := 0; j <= lentxt; j++ {
 			if j == lentxt {
 				return true
