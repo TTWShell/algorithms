@@ -30,7 +30,29 @@ func Naive(s, txt string) bool {
 	if lentxt > lens {
 		return false
 	}
-	for i := 0; i < lens-lentxt; i++ {
+	for i := 0; i <= lens-lentxt; i++ {
+		for j := 0; j <= lentxt; j++ {
+			if j == lentxt {
+				return true
+			}
+			if txt[j] != s[i+j] {
+				break
+			}
+		}
+	}
+	return false
+}
+
+/*
+Knuth-Morris-Pratt 字符串匹配算法（即 KMP 算法）
+http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html
+*/
+func KnuthMorrisPratt(s, txt string) bool {
+	lens, lentxt := len(s), len(txt)
+	if lentxt > lens {
+		return false
+	}
+	for i := 0; i <= lens-lentxt; i++ {
 		for j := 0; j <= lentxt; j++ {
 			if j == lentxt {
 				return true
