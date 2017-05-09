@@ -4,10 +4,10 @@ import "testing"
 
 func Test_romanToInt(t *testing.T) {
 	nums := []string{"DCXXI"}
-	result := []int{621}
+	results := []int{621}
 	for index, num := range nums {
-		if romanToInt(num) != result[index] {
-			t.Log(num, romanToInt(num), result[index])
+		if r := romanToInt(num); r != results[index] {
+			t.Log(num, r, results[index])
 			t.Fail()
 		}
 	}
