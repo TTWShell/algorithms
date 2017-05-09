@@ -4,13 +4,13 @@ import "testing"
 
 func Test_longestCommonPrefix(t *testing.T) {
 	input := []string{"a", "b"}
-	if longestCommonPrefix(input) != "" {
-		t.Log(input, longestCommonPrefix(input), "")
+	if result := longestCommonPrefix(input); result != "" {
+		t.Log(input, result, "")
 		t.Fail()
 	}
 	input = []string{"ab", "a"}
-	if longestCommonPrefix(input) != "a" {
-		t.Log(input, longestCommonPrefix(input), "a")
+	if result := longestCommonPrefix(input); result != "a" {
+		t.Log(input, result, "a")
 		t.Fail()
 	}
 }
