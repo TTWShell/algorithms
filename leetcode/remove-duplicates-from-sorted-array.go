@@ -7,6 +7,7 @@ For example,
 Given input array nums = [1,1,2],
 
 Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively. It doesn't matter what you leave beyond the new length.
+注意：nums需要处理一下，也就是不重复的元素要在前面，重复的需要挪到后面
 */
 package leetcode
 
@@ -16,9 +17,9 @@ func removeDuplicates(nums []int) int {
 		return n
 	}
 	for i := 1; i < n; i++ {
-		if nums[i] != nums[end] {
-			end++
+		if nums[end] != nums[i] {
 			nums[end] = nums[i]
+			end++
 		}
 	}
 	return end + 1
