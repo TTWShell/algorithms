@@ -18,8 +18,8 @@ func removeDuplicates(nums []int) int {
 	}
 	for i := 1; i < n; i++ {
 		if nums[end] != nums[i] {
-			nums[end] = nums[i]
 			end++
+			nums[end] = nums[i]
 		}
 	}
 	return end + 1
