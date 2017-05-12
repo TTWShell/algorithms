@@ -8,4 +8,10 @@ func Test_maxSubArray(t *testing.T) {
 		t.Log(r)
 		t.Fail()
 	}
+
+	nums = []int{-2, -3, -1, -5}
+	if r := maxSubArray(nums); r != -1 {
+		t.Log(r)
+		t.Fail()
+	}
 }
