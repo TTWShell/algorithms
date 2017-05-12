@@ -18,8 +18,8 @@ func plusOne(digits []int) []int {
 			carry = 1
 			digits[i] = 0
 		} else {
-			carry = 0
 			digits[i] = cur
+			return digits
 		}
 	}
 
