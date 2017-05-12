@@ -9,19 +9,19 @@ More practice:
 */
 package leetcode
 
+import "fmt"
+
 func maxSubArray(nums []int) int {
-	max, m, len := nums[0], nums[0], len(nums)
+	max, len := nums[0], len(nums)
 
 	for i := 1; i < len; i++ {
+		fmt.Println(nums)
 		if nums[i-1]+nums[i] > nums[i] {
 			nums[i] += nums[i-1]
 		}
-		if nums[i] > m {
-			m = nums[i]
+		if nums[i] > max {
+			max = nums[i]
 		}
-	}
-	if max < m {
-		max = m
 	}
 	return max
 }
