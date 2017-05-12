@@ -14,4 +14,10 @@ func Test_maxSubArray(t *testing.T) {
 		t.Log(r)
 		t.Fail()
 	}
+
+	nums = []int{-1, 2}
+	if r := maxSubArray(nums); r != 2 {
+		t.Log(r)
+		t.Fail()
+	}
 }
