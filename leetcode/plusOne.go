@@ -1,0 +1,43 @@
+/* https://leetcode.com/problems/plus-one/#/description
+Given a non-negative integer represented as a non-empty array of digits, plus one to the integer.
+
+You may assume the integer do not contain any leading zero, except the number 0 itself.
+
+The digits are stored such that the most significant digit is at the head of the list.
+给定一个非负整数，表示为非空数组，然后执行+1运算。
+*/
+
+package leetcode
+
+func plusOne(digits []int) []int {
+	carry, length := 0, len(digits)
+
+	cur := digits[length-1] + 1
+	if cur == 10 {
+		carry = 1
+		digits[length-1] = 0
+	} else {
+		digits[length-1] = cur
+	}
+
+	for i := length - 2; i >= 0; i-- {
+		cur = digits[i] + carry
+		if cur == 10 {
+			carry = 1
+			digits[i] = 0
+		} else {
+			carry = 0
+			digits[i] = cur
+		}
+	}
+
+	if carry == 1 {
+		r := make([]int, length+1)
+		r[0] = 1
+		for i := 1; i < length+1; i++ {
+			r[i] = digits[i-1]
+		}
+		return r
+	}
+	return digits
+}
