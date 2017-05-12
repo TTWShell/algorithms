@@ -10,18 +10,10 @@ The digits are stored such that the most significant digit is at the head of the
 package leetcode
 
 func plusOne(digits []int) []int {
-	carry, length := 0, len(digits)
+	carry, length := 1, len(digits) // carry default = 1 for units + 1
 
-	cur := digits[length-1] + 1
-	if cur == 10 {
-		carry = 1
-		digits[length-1] = 0
-	} else {
-		digits[length-1] = cur
-	}
-
-	for i := length - 2; i >= 0; i-- {
-		cur = digits[i] + carry
+	for i := length - 1; i >= 0; i-- {
+		cur := digits[i] + carry
 		if cur == 10 {
 			carry = 1
 			digits[i] = 0
