@@ -6,7 +6,6 @@ a = "11"
 b = "1"
 Return "100".
 */
-
 package leetcode
 
 func addBinary(a string, b string) string {
@@ -14,9 +13,9 @@ func addBinary(a string, b string) string {
 	if m < n {
 		m, n = n, m
 		a, b = b, a
-		for i := m - n; i > 0; i-- {
-			b = "0" + b
-		}
+	}
+	for i := m - n; i > 0; i-- {
+		b = "0" + b
 	}
 
 	plus, r := 0, ""
