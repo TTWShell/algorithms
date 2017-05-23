@@ -21,6 +21,7 @@
 * [69. Sqrt(x)](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/mySqrt.go)
 * [70. Climbing Stairs](https://github.com/TTWShell/algorithms/blob/master/leetcode/dynamic-programming/climbStairs.go)
 * [83. Remove Duplicates from Sorted List](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/deleteDuplicates.go)
+* [88. Merge Sorted Array](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/merge.go)
 * [100. Same Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/isSameTree.go)
 * [101. Symmetric Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/isSymmetric.go)
 * [104. Maximum Depth of Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/maxDepth.go)
