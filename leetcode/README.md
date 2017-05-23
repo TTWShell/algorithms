@@ -1,31 +1,33 @@
 # leetcode 题目目录
 
-1. [1. Two Sum](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/twoSum.go)
-1. [2. Add Two Numbers](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/addTwoNumbers.go)
-1. [3. Longest Substring Without Repeating Characters](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/lengthOfLongestSubstring.go)
-1. [7. Reverse Integer](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/reverse.go)
-1. [9. Palindrome Number](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/isPalindrome.go)
-1. [13. Roman to Integer](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/romanToInt.go)
-1. [14. Longest Common Prefix](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/longestCommonPrefix.go)
-1. [20. Valid Parentheses](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/isValid.go)
-1. [21. Merge Two Sorted Lists](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/mergeTwoLists.go)
-1. [26. Remove Duplicates from Sorted Array](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/removeDuplicates.go)
-1. [27. Remove Element](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/removeElement.go)
-1. [28. Implement strStr()](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/strStr.go)
-1. [35. Search Insert Position](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/searchInsert.go)
-1. [38. Count and Say](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/countAndSay.go)
-1. [53. Maximum Subarray](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/maxSubArray.go)
-1. [58. Length of Last Word](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/lengthOfLastWord.go)
-1. [66. Plus One](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/plusOne.go)
-1. [67. Add Binary](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/addBinary.go)
-1. [69. Sqrt(x)](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/mySqrt.go)
-1. [70. Climbing Stairs](https://github.com/TTWShell/algorithms/blob/master/leetcode/dynamic-programming/climbStairs.go)
-1. [83. Remove Duplicates from Sorted List](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/deleteDuplicates.go)
-1. [88. Merge Sorted Array](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/merge.go)
-1. [100. Same Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/isSameTree.go)
-1. [101. Symmetric Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/isSymmetric.go)
-1. [104. Maximum Depth of Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/maxDepth.go)
-1. [107. Binary Tree Level Order Traversal II](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/levelOrderBottom.go)
-1. [108. Convert Sorted Array to Binary Search Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/sortedArrayToBST.go)
-1. [110. Balanced Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/isBalanced.go)
-1. [111. Minimum Depth of Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/minDepth.go)
+| #. Title | Difficulty |
+| --- | --- |
+| [1. Two Sum](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/twoSum.go ) | Easy |
+| [2. Add Two Numbers](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/addTwoNumbers.go ) | Medium |
+| [3. Longest Substring Without Repeating Characters](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/lengthOfLongestSubstring.go ) | Medium |
+| [7. Reverse Integer](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/reverse.go ) | Easy |
+| [9. Palindrome Number](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/isPalindrome.go ) | Easy |
+| [13. Roman to Integer](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/romanToInt.go ) | Easy |
+| [14. Longest Common Prefix](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/longestCommonPrefix.go ) | Easy |
+| [20. Valid Parentheses](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/isValid.go ) | Easy |
+| [21. Merge Two Sorted Lists](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/mergeTwoLists.go ) | Easy |
+| [26. Remove Duplicates from Sorted Array](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/removeDuplicates.go ) | Easy |
+| [27. Remove Element](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/removeElement.go ) | Easy |
+| [28. Implement strStr()](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/strStr.go ) | Easy |
+| [35. Search Insert Position](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/searchInsert.go ) | Easy |
+| [38. Count and Say](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/countAndSay.go ) | Easy |
+| [53. Maximum Subarray](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/maxSubArray.go ) | Easy |
+| [58. Length of Last Word](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/lengthOfLastWord.go ) | Easy |
+| [66. Plus One](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/plusOne.go ) | Easy |
+| [67. Add Binary](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/addBinary.go ) | Easy |
+| [69. Sqrt(x)](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/mySqrt.go ) | Easy |
+| [70. Climbing Stairs](https://github.com/TTWShell/algorithms/blob/master/leetcode/dynamic-programming/climbStairs.go ) | Easy |
+| [83. Remove Duplicates from Sorted List](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/deleteDuplicates.go ) | Easy |
+| [88. Merge Sorted Array](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/merge.go ) | Easy |
+| [100. Same Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/isSameTree.go ) | Easy |
+| [101. Symmetric Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/isSymmetric.go ) | Easy |
+| [104. Maximum Depth of Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/maxDepth.go ) | Easy |
+| [107. Binary Tree Level Order Traversal II](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/levelOrderBottom.go ) | Easy |
+| [108. Convert Sorted Array to Binary Search Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/sortedArrayToBST.go ) | Easy |
+| [110. Balanced Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/isBalanced.go ) | Easy |
+| [111. Minimum Depth of Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/minDepth.go ) | Easy |
