@@ -8,5 +8,4 @@ go:
  - 1.8
 
 script:
- - go test -v -cover leetcode/*.go
- - go test -v -cover string/**/*.go
+ - go test -v -cover ./...
