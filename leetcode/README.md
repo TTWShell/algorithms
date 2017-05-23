@@ -13,3 +13,4 @@
 * [27. Remove Element](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/removeElement.go)
 * [28. Implement strStr()](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/strStr.go)
 * [35. Search Insert Position](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/searchInsert.go)
+* [38. Count and Say](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/countAndSay.go)
