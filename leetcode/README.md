@@ -8,3 +8,4 @@
 * [13. Roman to Integer](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/romanToInt.go)
 * [14. Longest Common Prefix](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/longestCommonPrefix.go)
 * [20. Valid Parentheses](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/isValid.go)
+* [21. Merge Two Sorted Lists](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/mergeTwoLists.go)
