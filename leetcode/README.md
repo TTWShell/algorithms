@@ -19,3 +19,4 @@
 * [66. Plus One](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/plusOne.go)
 * [67. Add Binary](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/addBinary.go)
 * [69. Sqrt(x)](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/mySqrt.go)
+* [70. Climbing Stairs](https://github.com/TTWShell/algorithms/blob/master/leetcode/dynamic-programming/climbStairs.go)
