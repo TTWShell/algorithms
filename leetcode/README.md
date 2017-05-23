@@ -34,3 +34,4 @@
 | [112. Path Sum](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/hasPathSum.go) | Easy |
 | [118. Pascal's Triangle](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/generate.go) | Easy |
 | [119. Pascal's Triangle II](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/getRow.go) | Easy |
+| [121. Best Time to Buy and Sell Stock](https://github.com/TTWShell/algorithms/blob/master/leetcode/dynamic-programming/maxProfit.go) | Easy |
