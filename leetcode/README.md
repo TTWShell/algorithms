@@ -23,3 +23,4 @@
 * [83. Remove Duplicates from Sorted List](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/deleteDuplicates.go)
 * [100. Same Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/isSameTree.go)
 * [101. Symmetric Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/isSymmetric.go)
+* [104. Maximum Depth of Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/maxDepth.go)
