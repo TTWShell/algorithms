@@ -17,3 +17,4 @@
 * [53. Maximum Subarray](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/maxSubArray.go)
 * [58. Length of Last Word](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/lengthOfLastWord.go)
 * [66. Plus One](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/plusOne.go)
+* [67. Add Binary](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/addBinary.go)
