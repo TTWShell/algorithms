@@ -31,3 +31,4 @@
 | [108. Convert Sorted Array to Binary Search Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/sortedArrayToBST.go ) | Easy |
 | [110. Balanced Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/isBalanced.go ) | Easy |
 | [111. Minimum Depth of Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/minDepth.go ) | Easy |
+| [112. Path Sum](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/hasPathSum.go) | Easy |
