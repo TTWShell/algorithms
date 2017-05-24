@@ -39,3 +39,4 @@
 | [123. Best Time to Buy and Sell Stock III](https://github.com/TTWShell/algorithms/blob/master/leetcode/dynamic-programming/maxProfit3.go) | Hard |
 | [125. Valid Palindrome](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/isPalindrome.go) | Easy |
 | [136. Single Number](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/singleNumber.go) | Easy |
+| [155. Min Stack](https://github.com/TTWShell/algorithms/blob/master/leetcode/stack/MinStack.go) | Easy |
