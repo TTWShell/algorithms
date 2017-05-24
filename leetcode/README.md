@@ -40,3 +40,4 @@
 | [125. Valid Palindrome](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/isPalindrome.go) | Easy |
 | [136. Single Number](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/singleNumber.go) | Easy |
 | [155. Min Stack](https://github.com/TTWShell/algorithms/blob/master/leetcode/stack/MinStack.go) | Easy |
+| [167. Two Sum II - Input array is sorted](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/twoSum2.go) | Easy |
