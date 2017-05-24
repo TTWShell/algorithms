@@ -37,3 +37,4 @@
 | [121. Best Time to Buy and Sell Stock](https://github.com/TTWShell/algorithms/blob/master/leetcode/dynamic-programming/maxProfit.go) | Easy |
 | [122. Best Time to Buy and Sell Stock II](https://github.com/TTWShell/algorithms/blob/master/leetcode/dynamic-programming/maxProfit2.go) | Easy |
 | [123. Best Time to Buy and Sell Stock III](https://github.com/TTWShell/algorithms/blob/master/leetcode/dynamic-programming/maxProfit3.go) | Hard |
+| [125. Valid Palindrome](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/isPalindrome.go) | Easy |
