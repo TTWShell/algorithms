@@ -13,6 +13,12 @@ Input: [7, 6, 4, 3, 1]
 Output: 0
 
 In this case, no transaction is done, i.e. max profit = 0.
+
+题目意思就是：最多交易一次（买入、卖出为一次交易），找到最大利润。
+思路很简单：
+    1、找到i之前的最小值；
+    2、算下i的局部最优解；
+    3、max(局部最优)即为全局最优；
 */
 
 package leetcode
