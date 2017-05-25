@@ -44,3 +44,4 @@
 | [168. Excel Sheet Column Title](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/convertToTitle.go) | Easy |
 | [169. Majority Element](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/majorityElement.go) | Easy |
 | [171. Excel Sheet Column Number](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/titleToNumber.go) | Easy |
+| [172. Factorial Trailing Zeroes](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/trailingZeroes.go) | Easy |
