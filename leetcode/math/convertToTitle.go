@@ -15,5 +15,10 @@ For example:
 package leetcode
 
 func convertToTitle(n int) string {
-	return "A"
+	r := ""
+	for n > 0 {
+		r = string((n-1)%26+'A') + r
+		n = (n - 1) / 26
+	}
+	return r
 }
