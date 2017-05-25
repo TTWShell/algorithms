@@ -9,18 +9,15 @@ func Test_MinStack(t *testing.T) {
 	stack.Push(-3)
 
 	if r := stack.GetMin(); r != -3 {
-		t.Log("GetMin:", r)
-		t.Fail()
+		t.Error("GetMin:", r)
 	}
 
 	stack.Pop()
 	if r := stack.Top(); r != 0 {
-		t.Log("Top", r)
-		t.Fail()
+		t.Error("Top", r)
 	}
 
 	if r := stack.GetMin(); r != -2 {
-		t.Log("GetMin:", r)
-		t.Fail()
+		t.Error("GetMin:", r)
 	}
 }

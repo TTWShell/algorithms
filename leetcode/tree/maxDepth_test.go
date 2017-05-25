@@ -10,8 +10,7 @@ func Test_maxDepth(t *testing.T) {
 
 	for i, tree := range trees {
 		if r := maxDepth(tree); r != results[i] {
-			t.Log(tree, results[i])
-			t.Fail()
+			t.Error(tree, results[i])
 		}
 	}
 }

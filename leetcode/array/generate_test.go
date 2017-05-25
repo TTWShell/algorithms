@@ -9,8 +9,7 @@ func Test_generate(t *testing.T) {
 	for i := 0; i < len(r); i++ {
 		for j := 0; j < len(r[i]); j++ {
 			if r[i][j] != result[i][j] {
-				t.Log(r, result)
-				t.Fail()
+				t.Error(r, result)
 			}
 		}
 	}

@@ -7,8 +7,7 @@ func Test_lengthOfLastWord(t *testing.T) {
 	results := []int{0, 0, 1, 1, 5}
 	for i := 0; i < len(ss); i++ {
 		if r := lengthOfLastWord(ss[i]); r != results[i] {
-			t.Log(ss[i], results[i], r)
-			t.Fail()
+			t.Error(ss[i], results[i], r)
 		}
 	}
 }
