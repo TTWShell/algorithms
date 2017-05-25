@@ -16,20 +16,19 @@ For example:
 
 package leetcode
 
-import "math"
-
 func titleToNumber(s string) int {
-	chars := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	maps := map[byte]int{}
-	for i := 0; i < len(chars); i++ {
-		maps[chars[i]] = i + 1
+	r := 0
+	for i := 0; i < len(s); i++ {
+		num := int(s[i] - 'A' + 1)
+		r += num * pow(26, len(s)-i-1)
 	}
-	n := len(s)
-	var r int
-	for i := 0; i < n; i++ {
-		if num, ok := maps[s[i]]; ok {
-			r += num * int(math.Pow(float64(26), float64(n-1-i)))
-		}
+	return r
+}
+
+func pow(x, y int) int {
+	r := 1
+	for i := 0; i < y; i++ {
+		r *= x
 	}
 	return r
 }
