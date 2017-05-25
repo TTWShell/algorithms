@@ -1,0 +1,14 @@
+package leetcode
+
+import "testing"
+
+func Test_maxProfit4(t *testing.T) {
+	input := [][]int{[]int{7, 1, 5, 3, 6, 4}, []int{1, 2, 1, 2, 4, 2, 5, 3}}
+	result := []int{7, 6}
+
+	for i := 0; i < len(input); i++ {
+		if r := maxProfit4(2, input[i]); r != result[i] {
+			t.Error(input[i], r, "Expected:", result[i])
+		}
+	}
+}
