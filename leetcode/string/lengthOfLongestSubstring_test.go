@@ -7,8 +7,7 @@ func Test_lengthOfLongestSubstring(t *testing.T) {
 	result := []int{1, 2, 3, 1, 3}
 	for index, s := range str {
 		if lengthOfLongestSubstring(s) != result[index] {
-			t.Log(result)
-			t.Fail()
+			t.Error(result)
 		}
 	}
 }

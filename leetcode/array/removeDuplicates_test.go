@@ -8,8 +8,7 @@ func Test_removeDuplicates(t *testing.T) {
 	length := removeDuplicates(nums)
 	for i := 0; i < len(dealedNums); i++ {
 		if length != 6 || nums[i] != dealedNums[i] {
-			t.Log("return is:", length, nums[i], "!=", dealedNums[i])
-			t.Fail()
+			t.Error("return is:", length, nums[i], "!=", dealedNums[i])
 		}
 	}
 

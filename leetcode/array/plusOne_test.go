@@ -8,8 +8,7 @@ func Test_plusOne(t *testing.T) {
 	r := plusOne(digits)
 	for i := 0; i < len(r); i++ {
 		if r[i] != result[i] {
-			t.Log(result, r)
-			t.Fail()
+			t.Error(result, r)
 		}
 	}
 }

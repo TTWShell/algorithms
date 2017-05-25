@@ -8,8 +8,7 @@ func Test_getRow(t *testing.T) {
 		r := getRow(i)
 		for j := 0; j < len(r); j++ {
 			if r[j] != result[i][j] {
-				t.Log(i-1, result[i], r)
-				t.Fail()
+				t.Error(i-1, result[i], r)
 			}
 		}
 	}

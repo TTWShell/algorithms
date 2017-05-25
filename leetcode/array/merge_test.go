@@ -13,8 +13,7 @@ func Test_merge(t *testing.T) {
 
 	for i := 0; i < len(result); i++ {
 		if result[i] != nums1[i] {
-			t.Log(result, nums1)
-			t.Fail()
+			t.Error(result, nums1)
 		}
 	}
 }

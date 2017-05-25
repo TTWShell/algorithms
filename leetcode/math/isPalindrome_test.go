@@ -7,8 +7,7 @@ func Test_isPalindrome(t *testing.T) {
 	results := []bool{false, true, false, true}
 	for index, num := range nums {
 		if r := isPalindrome(num); r != results[index] {
-			t.Log(num, r, results[index])
-			t.Fail()
+			t.Error(num, r, results[index])
 		}
 	}
 }

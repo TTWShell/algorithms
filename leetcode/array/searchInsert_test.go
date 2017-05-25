@@ -8,8 +8,7 @@ func Test_searchInsert(t *testing.T) {
 	results := []int{2, 1, 4, 0}
 	for i := 0; i < len(targets); i++ {
 		if r := searchInsert(nums, targets[i]); r != results[i] {
-			t.Log(nums, targets[i], r)
-			t.Fail()
+			t.Error(nums, targets[i], r)
 		}
 	}
 }

@@ -9,8 +9,7 @@ func Test_levelOrderBottom(t *testing.T) {
 	for i, r := range levelOrderBottom(root) {
 		for j := 0; j < len(r); j++ {
 			if r[j] != result[i][j] {
-				t.Log(levelOrderBottom(root))
-				t.Fail()
+				t.Error(levelOrderBottom(root))
 			}
 		}
 	}
