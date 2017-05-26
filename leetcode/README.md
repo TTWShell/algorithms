@@ -53,3 +53,4 @@
 | [204. Count Primes](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/countPrimes.go) | Easy |
 | [205. Isomorphic Strings](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/isIsomorphic.go) | Easy |
 | [206. Reverse Linked List](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/reverseList.go) | Easy |
+| [217. Contains Duplicate](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/containsDuplicate.go) | Easy |
