@@ -9,5 +9,18 @@ Return: 1 --> 2 --> 3 --> 4 --> 5
 package leetcode
 
 func removeElements(head *ListNode, val int) *ListNode {
-	return &ListNode{}
+	var r, cur, temp *ListNode
+	for ; head != nil; head = head.Next {
+		if head.Val != val {
+			temp = &ListNode{Val: head.Val}
+			if r == nil {
+				r = temp
+				cur = r
+			} else {
+				cur.Next = temp
+				cur = temp
+			}
+		}
+	}
+	return r
 }
