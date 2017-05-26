@@ -22,6 +22,21 @@ Example: 19 is a happy number
 
 package leetcode
 
+// 数学解法：https://en.wikipedia.org/wiki/Happy_number
+func isHappy(n int) bool {
+	for n != 1 && n != 4 {
+		num := 0
+		for n > 0 {
+			mod := n % 10
+			num += mod * mod
+			n /= 10
+		}
+		n = num
+	}
+	return n == 1
+}
+
+/*
 func isHappy(n int) bool {
 	maps := make(map[int]int)
 	for n != 1 {
@@ -40,3 +55,4 @@ func isHappy(n int) bool {
 	}
 	return n == 1
 }
+*/
