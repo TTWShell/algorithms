@@ -17,3 +17,16 @@ func containsDuplicate(nums []int) bool {
 	}
 	return false
 }
+
+/*
+另外一种解法（时间和上面的一致，都是最高）
+func containsDuplicate(nums []int) bool {
+    sort.Ints(nums)
+    for index, value := range nums {
+        if index > 0 && value == nums[index-1] {
+            return true
+        }
+    }
+    return false
+}
+*/
