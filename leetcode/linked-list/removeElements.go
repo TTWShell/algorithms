@@ -15,11 +15,10 @@ func removeElements(head *ListNode, val int) *ListNode {
 			temp = &ListNode{Val: head.Val}
 			if r == nil {
 				r = temp
-				cur = r
 			} else {
 				cur.Next = temp
-				cur = temp
 			}
+			cur = temp
 		}
 	}
 	return r
