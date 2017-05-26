@@ -19,6 +19,30 @@ You may assume both s and t have the same length.
 package leetcode
 
 func isIsomorphic(s string, t string) bool {
+	if len(s) != len(t) {
+		return false
+	}
+
+	a, b := make([]byte, 256), make([]byte, 256)
+	rs, rt := []byte(s), []byte(t)
+
+	for i := range rs {
+		if v := a[int(rs[i])]; v == 0 {
+			a[int(rs[i])] = rt[i]
+		} else if v != rt[i] {
+			return false
+		}
+		if v := b[int(rt[i])]; v == 0 {
+			b[int(rt[i])] = rs[i]
+		} else if v != rs[i] {
+			return false
+		}
+	}
+	return true
+}
+
+/*
+func isIsomorphic(s string, t string) bool {
 	m, n := len(s), len(t)
 	if m != n {
 		return false
@@ -42,3 +66,4 @@ func isIsomorphic(s string, t string) bool {
 	}
 	return true
 }
+*/
