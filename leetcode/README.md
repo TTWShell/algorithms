@@ -51,3 +51,4 @@
 | [202. Happy Number](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/isHappy.go) | Easy |
 | [203. Remove Linked List Elements](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/removeElements.go) | Easy |
 | [204. Count Primes](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/countPrimes.go) | Easy |
+| [205. Isomorphic Strings](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/isIsomorphic.go) | Easy |
