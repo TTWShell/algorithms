@@ -50,3 +50,4 @@
 | [198. House Robber](https://github.com/TTWShell/algorithms/blob/master/leetcode/dynamic-programming/rob.go) | Easy |
 | [202. Happy Number](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/isHappy.go) | Easy |
 | [203. Remove Linked List Elements](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/removeElements.go) | Easy |
+| [204. Count Primes](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/countPrimes.go) | Easy |
