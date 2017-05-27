@@ -55,3 +55,4 @@
 | [206. Reverse Linked List](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/reverseList.go) | Easy |
 | [217. Contains Duplicate](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/containsDuplicate.go) | Easy |
 | [219. Contains Duplicate II](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/containsNearbyDuplicate.go) | Easy |
+| [225. Implement Stack using Queues](https://github.com/TTWShell/algorithms/blob/master/leetcode/stack/MyStack.go) | Easy |
