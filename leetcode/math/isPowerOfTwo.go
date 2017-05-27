@@ -5,5 +5,10 @@ Given an integer, write a function to determine if it is a power of two.
 package leetcode
 
 func isPowerOfTwo(n int) bool {
-	return true
+	c := 0
+	for n > 0 {
+		c += n & 1
+		n >>= 1
+	}
+	return c == 1
 }
