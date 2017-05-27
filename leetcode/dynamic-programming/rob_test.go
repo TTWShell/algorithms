@@ -8,7 +8,7 @@ func Test_rob(t *testing.T) {
 
 	for i := 0; i < len(input); i++ {
 		if r := rob(input[i]); r != result[i] {
-			t.Error(input[i], result[i], r)
+			t.Fatal(input[i], result[i], r)
 		}
 	}
 }

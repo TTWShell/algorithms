@@ -8,7 +8,7 @@ func Test_maxProfit4(t *testing.T) {
 
 	for i := 0; i < len(input); i++ {
 		if r := maxProfit4(2, input[i]); r != result[i] {
-			t.Error(input[i], r, "Expected:", result[i])
+			t.Fatal(input[i], r, "Expected:", result[i])
 		}
 	}
 }

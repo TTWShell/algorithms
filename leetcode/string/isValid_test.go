@@ -7,7 +7,7 @@ func Test_isValid(t *testing.T) {
 	results := []bool{false, false, true, true, false}
 	for i := 0; i < len(inputs); i++ {
 		if r := isValid(inputs[i]); r != results[i] {
-			t.Error(inputs[i], results[i], r)
+			t.Fatal(inputs[i], results[i], r)
 		}
 	}
 }

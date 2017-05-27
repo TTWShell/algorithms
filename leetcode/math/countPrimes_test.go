@@ -8,7 +8,7 @@ func Test_countPrimes(t *testing.T) {
 
 	for i := 0; i < len(nums); i++ {
 		if r := countPrimes(nums[i]); r != results[i] {
-			t.Error(nums[i], r)
+			t.Fatal(nums[i], r)
 		}
 	}
 }

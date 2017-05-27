@@ -8,7 +8,7 @@ func Test_containsDuplicate(t *testing.T) {
 
 	for i, nums := range input {
 		if r := containsDuplicate(nums); r != result[i] {
-			t.Error(nums, r)
+			t.Fatal(nums, r)
 		}
 	}
 }

@@ -8,7 +8,7 @@ func Test_isHappy(t *testing.T) {
 
 	for i := 0; i < len(nums); i++ {
 		if r := isHappy(nums[i]); r != result[i] {
-			t.Error(nums[i], result[i], r)
+			t.Fatal(nums[i], result[i], r)
 		}
 	}
 }

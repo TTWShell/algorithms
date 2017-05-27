@@ -8,7 +8,7 @@ func Test_removeElement(t *testing.T) {
 	length := removeElement(input, 3)
 	for i := 0; i < len(result); i++ {
 		if length != 8 || input[i] != result[i] {
-			t.Error(length, input[i], result[i])
+			t.Fatal(length, input[i], result[i])
 		}
 	}
 }

@@ -9,17 +9,17 @@ func Test_MyStack(t *testing.T) {
 	stack.Push(-3)
 
 	if r := stack.Empty(); r != false {
-		t.Error("Empty:", r)
+		t.Fatal("Empty:", r)
 	}
 
 	stack.Pop()
 	if r := stack.Top(); r != 0 {
-		t.Error("Top", r)
+		t.Fatal("Top", r)
 	}
 
 	stack.Pop()
 	stack.Pop()
 	if r := stack.Empty(); r != true {
-		t.Error("Empty:", r)
+		t.Fatal("Empty:", r)
 	}
 }
