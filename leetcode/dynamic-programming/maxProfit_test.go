@@ -8,7 +8,7 @@ func Test_maxProfit(t *testing.T) {
 
 	for i := 0; i < len(input); i++ {
 		if r := maxProfit(input[i]); r != result[i] {
-			t.Error(input[i], result[i])
+			t.Fatal(input[i], result[i])
 		}
 	}
 }

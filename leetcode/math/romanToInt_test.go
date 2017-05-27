@@ -7,7 +7,7 @@ func Test_romanToInt(t *testing.T) {
 	results := []int{621}
 	for index, num := range nums {
 		if r := romanToInt(num); r != results[index] {
-			t.Error(num, r, results[index])
+			t.Fatal(num, r, results[index])
 		}
 	}
 }

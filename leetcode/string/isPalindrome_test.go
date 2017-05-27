@@ -8,7 +8,7 @@ func Test_isPalindrome(t *testing.T) {
 
 	for i := 0; i < len(input); i++ {
 		if r := isPalindrome(input[i]); r != result[i] {
-			t.Error(input[i], r)
+			t.Fatal(input[i], r)
 		}
 	}
 }

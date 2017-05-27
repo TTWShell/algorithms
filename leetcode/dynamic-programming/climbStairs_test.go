@@ -7,7 +7,7 @@ func Test_climbStairs(t *testing.T) {
 	results := []int{0, 0, 1, 2, 3, 5}
 	for i := 0; i < len(nums); i++ {
 		if result := climbStairs(nums[i]); result != results[i] {
-			t.Error(nums[i], results[i], result)
+			t.Fatal(nums[i], results[i], result)
 		}
 	}
 }

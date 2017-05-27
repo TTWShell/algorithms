@@ -8,7 +8,7 @@ func Test_strStr(t *testing.T) {
 	results := []int{-1, 0, 1, 4}
 	for i := 0; i < len(haystacks); i++ {
 		if r := strStr(haystacks[i], needles[i]); r != results[i] {
-			t.Error(haystacks[i], needles[i], results[i], "output is:", r)
+			t.Fatal(haystacks[i], needles[i], results[i], "output is:", r)
 		}
 	}
 }

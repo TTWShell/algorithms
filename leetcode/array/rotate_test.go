@@ -9,7 +9,7 @@ func Test_rotate(t *testing.T) {
 	rotate(nums, 3)
 	for i := 0; i < len(nums); i++ {
 		if nums[i] != result[i] {
-			t.Error(nums, result)
+			t.Fatal(nums, result)
 		}
 	}
 }

@@ -9,7 +9,7 @@ func Test_hasPathSum(t *testing.T) {
 
 	for i := 0; i < len(sums); i++ {
 		if r := hasPathSum(root, sums[i]); r != results[i] {
-			t.Error(sums[i], r)
+			t.Fatal(sums[i], r)
 		}
 	}
 }
