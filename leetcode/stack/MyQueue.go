@@ -26,6 +26,7 @@ func MyQueueConstructor() MyQueue {
 
 /** Push element x to the back of queue. */
 func (this *MyQueue) Push(x int) {
+	// 可以考虑两个 []int 提高push性能，代价是pop／peek 性能降低
 	this.q = append([]int{x}, this.q...)
 }
 
