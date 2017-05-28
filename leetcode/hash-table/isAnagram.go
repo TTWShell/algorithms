@@ -21,7 +21,7 @@ func isAnagram(s string, t string) bool {
 	record := make([]int, 26)
 	count := len(s)
 	for _, v := range s {
-		record[v-'a']++
+		record[v-'a']++ // -'a' 后变为0-25的数字
 	}
 	for _, v := range t {
 		if record[v-'a'] >= 1 {
