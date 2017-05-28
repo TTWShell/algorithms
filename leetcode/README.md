@@ -63,3 +63,4 @@
 | [242. Valid Anagram](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/isAnagram.go) | Easy |
 | [257. Binary Tree Paths](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/binaryTreePaths.go) | Easy |
 | [258. Add Digits](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/addDigits.go) | Easy |
+| [263. Ugly Number](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/isUgly.go) | Easy |
