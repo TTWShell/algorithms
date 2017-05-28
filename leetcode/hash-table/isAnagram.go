@@ -15,21 +15,19 @@ What if the inputs contain unicode characters? How would you adapt your solution
 package leetcode
 
 func isAnagram(s string, t string) bool {
-	m, n := len(s), len(t)
-	if m != n {
+	if len(s) != len(t) {
 		return false
 	}
-
-	maps := make(map[byte]int)
-	for i := range s {
-		maps[s[i]]++
-		maps[t[i]]--
+	record := make([]int, 26)
+	count := len(s)
+	for _, v := range s {
+		record[v-'a']++
 	}
-
-	for _, v := range maps {
-		if v != 0 {
-			return false
+	for _, v := range t {
+		if record[v-'a'] >= 1 {
+			count--
 		}
+		record[v-'a']--
 	}
-	return true
+	return count == 0
 }
