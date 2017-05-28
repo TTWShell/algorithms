@@ -15,6 +15,24 @@ All root-to-leaf paths are:
 
 package leetcode
 
+import "strconv"
+
 func binaryTreePaths(root *TreeNode) []string {
-	return []string{"", ""}
+	r := []string{}
+	if root != nil {
+		if root.Left != nil {
+			for _, s := range binaryTreePaths(root.Left) {
+				r = append(r, strconv.Itoa(root.Val)+"->"+s)
+			}
+		}
+		if root.Right != nil {
+			for _, s := range binaryTreePaths(root.Right) {
+				r = append(r, strconv.Itoa(root.Val)+"->"+s)
+			}
+		}
+		if root.Left == nil && root.Right == nil {
+			r = append(r, strconv.Itoa(root.Val))
+		}
+	}
+	return r
 }
