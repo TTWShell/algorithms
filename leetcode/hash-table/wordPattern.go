@@ -14,6 +14,32 @@ You may assume pattern contains only lowercase letters, and str contains lowerca
 
 package leetcode
 
+import "strings"
+
 func wordPattern(pattern string, str string) bool {
-	return false
+	words := strings.Split(str, " ")
+	if len(pattern) != len(words) {
+		return false
+	}
+
+	maps := make(map[rune]string)
+	for i, p := range pattern {
+		if v, ok := maps[p]; !ok {
+			maps[p] = words[i]
+		} else {
+			if v != words[i] {
+				return false
+			}
+		}
+	}
+
+	wmap := make(map[string]int)
+	for _, v := range maps {
+		if _, ok := wmap[v]; !ok {
+			wmap[v] = 1
+		} else {
+			return false
+		}
+	}
+	return true
 }
