@@ -66,3 +66,4 @@
 | [263. Ugly Number](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/isUgly.go) | Easy |
 | [268. Missing Number](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/missingNumber.go) | Easy |
 | [283. Move Zeroes](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/moveZeroes.go) | Easy |
+| [290. Word Pattern](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/wordPattern.go) | Easy |
