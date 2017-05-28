@@ -22,24 +22,20 @@ func wordPattern(pattern string, str string) bool {
 		return false
 	}
 
-	maps := make(map[rune]string)
+	pmap := make(map[rune]string)
+	smap := make(map[string]rune)
 	for i, p := range pattern {
-		if v, ok := maps[p]; !ok {
-			maps[p] = words[i]
-		} else {
-			if v != words[i] {
-				return false
-			}
+		if v, ok := pmap[p]; !ok {
+			pmap[p] = words[i]
+		} else if v != words[i] {
+			return false
 		}
-	}
-
-	wmap := make(map[string]int)
-	for _, v := range maps {
-		if _, ok := wmap[v]; !ok {
-			wmap[v] = 1
-		} else {
+		if v, ok := smap[words[i]]; !ok {
+			smap[words[i]] = p
+		} else if v != p {
 			return false
 		}
 	}
+
 	return true
 }
