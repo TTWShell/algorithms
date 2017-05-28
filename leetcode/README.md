@@ -60,3 +60,4 @@
 | [231. Power of Two](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/isPowerOfTwo.go) | Easy |
 | [232. Implement Queue using Stacks](https://github.com/TTWShell/algorithms/blob/master/leetcode/stack/MyQueue.go) | Easy |
 | [234. Palindrome Linked List](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/isPalindrome.go) | Easy |
+| [242. Valid Anagram](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/isAnagram.go) | Easy |
