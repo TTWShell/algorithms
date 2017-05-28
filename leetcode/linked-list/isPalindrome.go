@@ -28,5 +28,23 @@ h                      s
 package leetcode
 
 func isPalindrome(head *ListNode) bool {
+	slow, fast := head, head
+	for fast != nil && fast.Next != nil {
+		slow, fast = slow.Next, fast.Next.Next
+	}
+
+	// odd nodes: let right half smaller
+	if fast != nil {
+		slow = slow.Next
+	}
+
+	slow, fast = reverseList(slow), head
+
+	for slow != nil {
+		if slow.Val != fast.Val {
+			return false
+		}
+		slow, fast = slow.Next, fast.Next
+	}
 	return true
 }
