@@ -11,5 +11,10 @@ Your algorithm should run in linear runtime complexity. Could you implement it u
 package leetcode
 
 func missingNumber(nums []int) int {
-	return 0
+	// 注意题目中说的是find the one that is missing from the array 也就是只会缺一个数字
+	t := len(nums) * (len(nums) + 1) / 2
+	for i := 0; i < len(nums); i++ {
+		t -= nums[i]
+	}
+	return t
 }
