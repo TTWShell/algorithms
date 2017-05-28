@@ -11,5 +11,16 @@ Note:
 package leetcode
 
 func moveZeroes(nums []int) {
+	cur, n := 0, len(nums)
 
+	for i := 0; i < n; i++ {
+		if nums[i] != 0 {
+			nums[cur] = nums[i]
+			cur++
+		}
+	}
+
+	for ; cur < n; cur++ {
+		nums[cur] = 0
+	}
 }
