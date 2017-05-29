@@ -9,5 +9,5 @@ For example, if there are 4 stones in the heap, then you will never win the game
 package leetcode
 
 func canWinNim(n int) bool {
-	return false
+	return n%4 != 0
 }
