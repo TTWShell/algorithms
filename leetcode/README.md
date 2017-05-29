@@ -74,3 +74,4 @@
 | [344. Reverse String](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/reverseString.go) | Easy |
 | [345. Reverse Vowels of a String](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/reverseVowels.go) | Easy |
 | [349. Intersection of Two Arrays](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/intersection.go) | Easy |
+| [350. Intersection of Two Arrays II](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/intersect.go) | Easy |
