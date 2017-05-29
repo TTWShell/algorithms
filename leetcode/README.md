@@ -73,3 +73,4 @@
 | [342. Power of Four](https://github.com/TTWShell/algorithms/blob/master/leetcode/bit-manipulation/isPowerOfFour.go) | Easy |
 | [344. Reverse String](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/reverseString.go) | Easy |
 | [345. Reverse Vowels of a String](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/reverseVowels.go) | Easy |
+| [349. Intersection of Two Arrays](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/intersection.go) | Easy |
