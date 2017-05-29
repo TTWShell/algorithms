@@ -29,21 +29,16 @@ func Constructor(nums []int) NumArray {
 }
 
 func (this *NumArray) SumRange(i int, j int) int {
-	if i > j || i > len(this.sums)-1 {
+	if i > j || i < 0 || i > len(this.sums)-1 || j > len(this.sums)-1 {
 		panic("i cannot > j or i index outof range")
 	}
 
-	var m, n int
-	if i <= 0 {
+	var m int
+	if i == 0 {
 		m = 0
 	} else {
 		m = this.sums[i-1]
 	}
-	if j > len(this.sums)-1 {
-		n = this.sums[len(this.sums)-1]
-	} else {
-		n = this.sums[j]
-	}
 
-	return n - m
+	return this.sums[j] - m
 }
