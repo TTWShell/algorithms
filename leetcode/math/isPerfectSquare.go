@@ -10,10 +10,24 @@ Example 1:
 Example 2:
     Input: 14
     Returns: False
+
+1 = 1
+4 = 1 + 3
+9 = 1 + 3 + 5
+16 = 1 + 3 + 5 + 7
+25 = 1 + 3 + 5 + 7 + 9
+36 = 1 + 3 + 5 + 7 + 9 + 11
+....
+1+3+...+(2n-1) = (2n-1 + 1)n/2 = n*n
 */
 
 package leetcode
 
 func isPerfectSquare(num int) bool {
-	return true
+	i := 1
+	for num > 0 {
+		num -= i
+		i += 2
+	}
+	return num == 0
 }
