@@ -12,5 +12,24 @@ The result can be in any order.
 package leetcode
 
 func intersection(nums1 []int, nums2 []int) []int {
-	return nums1
+	maps, r := make(map[int]int, len(nums1)+len(nums2)), []int{}
+
+	for i := range nums1 {
+		if _, ok := maps[nums1[i]]; !ok {
+			maps[nums1[i]] = 1
+		}
+	}
+	for i := range nums2 {
+		if v, ok := maps[nums2[i]]; ok {
+			maps[nums2[i]] = v + 1
+		}
+	}
+
+	for k, v := range maps {
+		if v > 1 {
+			r = append(r, k)
+		}
+	}
+
+	return r
 }
