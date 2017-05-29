@@ -76,3 +76,4 @@
 | [349. Intersection of Two Arrays](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/intersection.go) | Easy |
 | [350. Intersection of Two Arrays II](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/intersect.go) | Easy |
 | [367. Valid Perfect Square](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/isPerfectSquare.go) | Easy |
+| [371. Sum of Two Integers](https://github.com/TTWShell/algorithms/blob/master/leetcode/bit-manipulation/getSum.go) | Easy |
