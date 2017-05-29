@@ -68,3 +68,4 @@
 | [283. Move Zeroes](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/moveZeroes.go) | Easy |
 | [290. Word Pattern](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/wordPattern.go) | Easy |
 | [292. Nim Game](https://github.com/TTWShell/algorithms/blob/master/leetcode/brainteaser/canWinNim.go) | Easy |
+| [303. Range Sum Query - Immutable](https://github.com/TTWShell/algorithms/blob/master/leetcode/dynamic-programming/NumArray.go) | Easy |
