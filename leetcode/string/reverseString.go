@@ -8,5 +8,11 @@ Given s = "hello", return "olleh".
 package leetcode
 
 func reverseString(s string) string {
-	return s
+	r := []rune(s)
+
+	n := len(r)
+	for i := 0; i < n/2; i++ {
+		r[i], r[n-1-i] = r[n-1-i], r[i]
+	}
+	return string(r)
 }
