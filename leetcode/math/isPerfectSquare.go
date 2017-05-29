@@ -19,6 +19,9 @@ Example 2:
 36 = 1 + 3 + 5 + 7 + 9 + 11
 ....
 1+3+...+(2n-1) = (2n-1 + 1)n/2 = n*n
+
+https://discuss.leetcode.com/topic/49339/o-1-time-c-solution-inspired-by-q_rsqrt
+https://en.wikipedia.org/wiki/Fast_inverse_square_root
 */
 
 package leetcode
