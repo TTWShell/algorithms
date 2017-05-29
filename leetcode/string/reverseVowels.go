@@ -22,8 +22,7 @@ func isVowels(r rune) bool {
 
 func reverseVowels(s string) string {
 	r := []rune(s)
-	i, j := 0, len(r)-1
-	for i < j {
+	for i, j := 0, len(r)-1; i < j; i, j = i+1, j-1 {
 		for i < j && !isVowels(r[i]) {
 			i++
 		}
@@ -31,8 +30,6 @@ func reverseVowels(s string) string {
 			j--
 		}
 		r[i], r[j] = r[j], r[i]
-		i++
-		j--
 	}
 	return string(r)
 }
