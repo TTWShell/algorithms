@@ -3,7 +3,7 @@ package leetcode
 import "testing"
 
 func Test_reverseString(t *testing.T) {
-	if r := reverseString("hello 中国"); r != "国中 olleh" {
+	if r := reverseString("hello china中国"); r != "国中anihc olleh" {
 		t.Fatal("hello-->", r)
 	}
 }
