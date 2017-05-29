@@ -13,6 +13,7 @@ func Test_intersect(t *testing.T) {
 	for i := range nums1 {
 		r := intersect(nums1[i], nums2[i])
 		sort.Slice(r[:], func(i, j int) bool { return r[i] < r[j] })
+
 		for j := range result[i] {
 			if r[j] != result[i][j] {
 				t.Fatal(r, result[i])

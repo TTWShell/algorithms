@@ -25,30 +25,20 @@ func intersect(nums1 []int, nums2 []int) []int {
 		temp := nums1
 		nums1, nums2 = nums2, temp
 	}
-	map1, map2, r := make(map[int]int, m), make(map[int]int, n), make([]int, m)
-
-	for i := range nums1 {
-		map1[nums1[i]] += 1
-	}
+	maps, r, c := make(map[int]int, m), make([]int, m), 0
 
 	for i := range nums2 {
-		map2[nums2[i]] += 1
+		if _, ok := maps[nums2[i]]; !ok {
+			maps[nums2[i]] = 1
+		} else {
+			maps[nums2[i]] += 1
+		}
 	}
-
-	c := 0
-	for k, v1 := range map1 {
-		if v2, ok := map2[k]; ok {
-			v := 0
-			if v1 > v2 {
-				v = v2
-			} else {
-				v = v1
-			}
-
-			for ; v > 0; v-- {
-				r[c] = k
-				c++
-			}
+	for i := range nums1 {
+		if v, ok := maps[nums1[i]]; ok && v > 0 {
+			r[c] = nums1[i]
+			c++
+			maps[nums1[i]]--
 		}
 	}
 	return r[:c]
