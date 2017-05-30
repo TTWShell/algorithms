@@ -21,6 +21,37 @@ Note:
 
 package leetcode
 
+import "fmt"
+
 func readBinaryWatch(num int) []string {
-	return []string{}
+	H := [][]int{
+		{0},
+		{1, 2, 4, 8},
+		{3, 5, 9, 6, 10},
+		{7, 11},
+	}
+	S := [][]int{
+		{0},
+		{1, 2, 4, 8, 16, 32},
+		{3, 5, 9, 17, 33, 6, 10, 18, 34, 12, 20, 36, 24, 40, 48},
+		{7, 11, 19, 35, 14, 22, 38, 13, 28, 44, 26, 56, 49, 50, 42, 21, 25, 37, 41, 52},
+		{15, 23, 39, 30, 46, 29, 57, 58, 27, 53, 45, 43, 51, 54},
+		{31, 47, 55, 59},
+	}
+
+	r := []string{}
+
+	for i := 0; i <= num; i++ {
+		hour, second := 0, 0
+		for h := 0; i < 4 && h < len(H[i]); h++ {
+			hour = H[i][h]
+			for s := 0; num-i < 6 && s < len(S[num-i]); s++ {
+				second = S[num-i][s]
+				r = append(r, fmt.Sprintf("%d:%02d", hour, second))
+			}
+		}
+
+	}
+
+	return r
 }
