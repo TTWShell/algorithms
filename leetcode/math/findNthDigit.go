@@ -29,8 +29,6 @@ The 11th digit of the sequence 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ... is a 0, wh
 
 package leetcode
 
-import "strconv"
-
 func findNthDigit(n int) int {
 	// 找出第n个digit所在的数
 	temp, digit := 0, 1
@@ -42,20 +40,19 @@ func findNthDigit(n int) int {
 	num := powForfindNthDigit(10, digit-1) - 1 + (n-temp)/digit // 待修正
 
 	// 找到第n个digit在num中的index
+	// 如果index=0，则表示目标digit在num的最后位置，否则在对应的index位置，所以实际index ＝index －1
 	index := (n - temp) % digit
 	if index != 0 {
 		num += 1
+	} else {
+		index = digit
 	}
 
-	// 如果index=0，则表示目标digit在num的最后位置，否则在对应的index位置，所以实际index ＝index －1
-	str_num := strconv.Itoa(num)
-	var r int
-	if index == 0 {
-		r, _ = strconv.Atoi(string(str_num[len(str_num)-1]))
-	} else {
-		r, _ = strconv.Atoi(string(str_num[index-1]))
+	// 找到目标digit，按下标取之
+	for i := index; i < digit; i++ {
+		num /= 10
 	}
-	return r
+	return num % 10
 }
 
 func powForfindNthDigit(x, y int) int {
