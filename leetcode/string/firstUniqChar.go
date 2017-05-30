@@ -15,5 +15,15 @@ Note: You may assume the string contain only lowercase letters.
 package leetcode
 
 func firstUniqChar(s string) int {
+	maps := make([]int, 26)
+	for _, r := range s {
+		maps[r-'a'] += 1
+	}
+
+	for i, r := range s {
+		if maps[r-'a'] == 1 {
+			return i
+		}
+	}
 	return -1
 }
