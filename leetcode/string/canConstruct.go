@@ -16,14 +16,14 @@ Note:
 package leetcode
 
 func canConstruct(ransomNote string, magazine string) bool {
-	maps := make(map[rune]int)
+	maps := make([]int, 26)
 	for _, r := range magazine {
-		maps[r] += 1
+		maps[r-'a'] += 1
 	}
 
 	for _, r := range ransomNote {
-		if v, ok := maps[r]; ok && v > 0 {
-			maps[r] -= 1
+		if v := maps[r-'a']; v > 0 {
+			maps[r-'a'] -= 1
 		} else {
 			return false
 		}
