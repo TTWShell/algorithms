@@ -21,10 +21,47 @@ Example 2:
 
 Explanation:
 The 11th digit of the sequence 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ... is a 0, which is part of the number 10.
+1-9			9
+10-99		90 * 2
+100-999		900 * 3
+1000-9999	9000 * 4
 */
 
 package leetcode
 
+import "strconv"
+
 func findNthDigit(n int) int {
-	return -1
+	// 找出第n个digit所在的数
+	temp, digit := 0, 1
+	for ; temp < n; digit++ {
+		temp += 9 * powForfindNthDigit(10, digit-1) * digit
+	}
+	digit -= 1
+	temp -= 9 * powForfindNthDigit(10, digit-1) * digit
+	num := powForfindNthDigit(10, digit-1) - 1 + (n-temp)/digit // 待修正
+
+	// 找到第n个digit在num中的index
+	index := (n - temp) % digit
+	if index != 0 {
+		num += 1
+	}
+
+	// 如果index=0，则表示目标digit在num的最后位置，否则在对应的index位置，所以实际index ＝index －1
+	str_num := strconv.Itoa(num)
+	var r int
+	if index == 0 {
+		r, _ = strconv.Atoi(string(str_num[len(str_num)-1]))
+	} else {
+		r, _ = strconv.Atoi(string(str_num[index-1]))
+	}
+	return r
+}
+
+func powForfindNthDigit(x, y int) int {
+	r := 1
+	for i := 0; i < y; i++ {
+		r *= x
+	}
+	return r
 }
