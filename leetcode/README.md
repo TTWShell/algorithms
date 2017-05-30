@@ -80,3 +80,4 @@
 | [383. Ransom Note](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/canConstruct.go) | Easy |
 | [387. First Unique Character in a String](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/firstUniqChar.go) | Easy |
 | [400. Nth Digit](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/findNthDigit.go) | Easy |
+| [401. Binary Watch](https://github.com/TTWShell/algorithms/blob/master/leetcode/bit-manipulation/readBinaryWatch.go) | Easy |
