@@ -78,3 +78,4 @@
 | [367. Valid Perfect Square](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/isPerfectSquare.go) | Easy |
 | [371. Sum of Two Integers](https://github.com/TTWShell/algorithms/blob/master/leetcode/bit-manipulation/getSum.go) | Easy |
 | [383. Ransom Note](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/canConstruct.go) | Easy |
+| [387. First Unique Character in a String](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/firstUniqChar.go) | Easy |
