@@ -35,6 +35,31 @@ Example 2:
 
 package leetcode
 
+func absForcanCross(a int) int {
+	if a < 0 {
+		return -a
+	}
+	return a
+}
+
 func canCross(stones []int) bool {
+	return helpCanCross(stones, 0, 0)
+}
+
+func helpCanCross(stones []int, index, k int) bool {
+	if index == len(stones)-1 {
+		return true
+	}
+
+	for i := index + 1; i < len(stones); i++ {
+		curk := stones[i] - stones[index]
+		if absForcanCross(curk-k) <= 1 {
+			if helpCanCross(stones, i, curk) {
+				return true
+			}
+		} else {
+			break
+		}
+	}
 	return false
 }
