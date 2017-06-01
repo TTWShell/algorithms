@@ -15,5 +15,16 @@ There are two left leaves in the binary tree, with values 9 and 15 respectively.
 package leetcode
 
 func sumOfLeftLeaves(root *TreeNode) int {
-	return -1
+	if root == nil {
+		return 0
+	}
+	sum := 0
+	if root.Left != nil {
+		if root.Left.Left != nil || root.Left.Right != nil {
+			sum += sumOfLeftLeaves(root.Left)
+		} else {
+			sum += root.Left.Val
+		}
+	}
+	return sum + sumOfLeftLeaves(root.Right)
 }
