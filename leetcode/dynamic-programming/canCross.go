@@ -35,6 +35,8 @@ Example 2:
 
 package leetcode
 
+var canCrossMap map[int]int
+
 func absForcanCross(a int) int {
 	if a < 0 {
 		return -a
@@ -43,23 +45,28 @@ func absForcanCross(a int) int {
 }
 
 func canCross(stones []int) bool {
+	canCrossMap = make(map[int]int, len(stones))
 	return helpCanCross(stones, 0, 0)
 }
 
 func helpCanCross(stones []int, index, k int) bool {
-	if index == len(stones)-1 {
-		return true
+	// Check is repeat path or not. Very very important!
+	if _, ok := canCrossMap[index*1000+k]; ok {
+		return false
+	} else {
+		canCrossMap[index*1000+k] = k
 	}
 
 	for i := index + 1; i < len(stones); i++ {
 		curk := stones[i] - stones[index]
-		if absForcanCross(curk-k) <= 1 {
+		diff := curk - k
+		if diff > 1 {
+			break
+		} else if absForcanCross(diff) <= 1 {
 			if helpCanCross(stones, i, curk) {
 				return true
 			}
-		} else {
-			break
 		}
 	}
-	return false
+	return index == len(stones)-1
 }
