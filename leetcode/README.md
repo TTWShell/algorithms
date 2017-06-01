@@ -82,3 +82,4 @@
 | [400. Nth Digit](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/findNthDigit.go) | Easy |
 | [401. Binary Watch](https://github.com/TTWShell/algorithms/blob/master/leetcode/bit-manipulation/readBinaryWatch.go) | Easy |
 | [403. Frog Jump](https://github.com/TTWShell/algorithms/blob/master/leetcode/dynamic-programming/canCross.go) | Hard |
+| [404. Sum of Left Leaves](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/sumOfLeftLeaves.go) | Easy |
