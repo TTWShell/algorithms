@@ -83,3 +83,4 @@
 | [401. Binary Watch](https://github.com/TTWShell/algorithms/blob/master/leetcode/bit-manipulation/readBinaryWatch.go) | Easy |
 | [403. Frog Jump](https://github.com/TTWShell/algorithms/blob/master/leetcode/dynamic-programming/canCross.go) | Hard |
 | [404. Sum of Left Leaves](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/sumOfLeftLeaves.go) | Easy |
+| [405. Convert a Number to Hexadecimal](https://github.com/TTWShell/algorithms/blob/master/leetcode/bit-manipulation/toHex.go) | Easy |
