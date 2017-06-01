@@ -51,10 +51,11 @@ func canCross(stones []int) bool {
 
 func helpCanCross(stones []int, index, k int) bool {
 	// Check is repeat path or not. Very very important!
-	if _, ok := canCrossMap[index*1000+k]; ok {
+	key := index*2000 + k // The number of stones is ≥ 2 and is < 1,100, so can works
+	if _, ok := canCrossMap[key]; ok {
 		return false
 	} else {
-		canCrossMap[index*1000+k] = k
+		canCrossMap[key] = k
 	}
 
 	for i := index + 1; i < len(stones); i++ {
