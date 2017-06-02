@@ -20,9 +20,13 @@ Explanation:
 package leetcode
 
 func longestPalindrome(s string) int {
-	maps := make(map[rune]int, len(s))
+	maps := make([]int, 26*2)
 	for _, r := range s {
-		maps[r]++
+		if r >= 'A' && r <= 'Z' {
+			maps[r-'A']++
+		} else {
+			maps[r-'a'+26]++
+		}
 	}
 
 	count := 0
