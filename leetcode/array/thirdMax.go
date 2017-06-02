@@ -29,19 +29,19 @@ const MaxInt = int(MaxUint >> 1)
 const MinInt = -MaxInt - 1
 
 func thirdMax(nums []int) int {
-	max, second, third := nums[0], MinInt, MinInt
-	c := 1
-	for i := 1; i < len(nums); i++ {
-		if nums[i] == max || nums[i] == second || nums[i] <= third {
+	max, second, third := MinInt, MinInt, MinInt
+	c := 0
+	for _, num := range nums {
+		if num == max || num == second || num <= third {
 			continue
 		}
-		if nums[i] > max {
+		if num > max {
 			tempAgoMax, tempAgoSecond := max, second
-			max, second, third = nums[i], tempAgoMax, tempAgoSecond
-		} else if nums[i] > second {
-			second, third = nums[i], second
-		} else if nums[i] > third {
-			third = nums[i]
+			max, second, third = num, tempAgoMax, tempAgoSecond
+		} else if num > second {
+			second, third = num, second
+		} else if num > third {
+			third = num
 		}
 		c++
 	}
