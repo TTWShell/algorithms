@@ -11,6 +11,8 @@ You must not use any built-in BigInteger library or convert the inputs to intege
 
 package leetcode
 
+import "bytes"
+
 func addStrings(num1 string, num2 string) string {
 	m, n := len(num1), len(num2)
 	if m < n {
@@ -20,11 +22,14 @@ func addStrings(num1 string, num2 string) string {
 		m, n = n, t
 	}
 
+	var leadingZero bytes.Buffer
 	for i := 0; i < m-n; i++ {
-		num2 = "0" + num2
+		leadingZero.WriteString("0")
 	}
+	leadingZero.WriteString(num2)
+	num2 = leadingZero.String()
 
-	temp := make([]rune, m)
+	temp := make([]rune, m, m)
 	carry := 0
 	for i := m - 1; i >= 0; i-- {
 		sum := carry + int(num1[i]-'0') + int(num2[i]-'0')
