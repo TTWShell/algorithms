@@ -85,3 +85,4 @@
 | [404. Sum of Left Leaves](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/sumOfLeftLeaves.go) | Easy |
 | [405. Convert a Number to Hexadecimal](https://github.com/TTWShell/algorithms/blob/master/leetcode/bit-manipulation/toHex.go) | Easy |
 | [409. Longest Palindrome](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/longestPalindrome.go) | Easy |
+| [412. Fizz Buzz](https://github.com/TTWShell/algorithms/blob/master/leetcode/others/fizzBuzz.go) | Easy |
