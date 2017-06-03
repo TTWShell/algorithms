@@ -29,5 +29,20 @@ Return 3. The paths that sum to 8 are:
 package leetcode
 
 func pathSum(root *TreeNode, sum int) int {
-	return 0
+	if root == nil {
+		return 0
+	}
+	return helpPathSum(root, sum) + pathSum(root.Left, sum) + pathSum(root.Right, sum)
+}
+
+func helpPathSum(root *TreeNode, sum int) int {
+	if root == nil {
+		return 0
+	}
+	sum -= root.Val
+	r := 0
+	if sum == 0 {
+		r++
+	}
+	return r + helpPathSum(root.Left, sum) + helpPathSum(root.Right, sum)
 }
