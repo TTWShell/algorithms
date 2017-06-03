@@ -88,3 +88,4 @@
 | [412. Fizz Buzz](https://github.com/TTWShell/algorithms/blob/master/leetcode/others/fizzBuzz.go) | Easy |
 | [414. Third Maximum Number](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/thirdMax.go) | Easy |
 | [415. Add Strings](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/addStrings.go) | Easy |
+| [434. Number of Segments in a String](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/countSegments.go) | Easy |
