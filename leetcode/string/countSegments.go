@@ -12,5 +12,16 @@ Example:
 package leetcode
 
 func countSegments(s string) int {
-	return -1
+	count, char := 0, 0
+	for _, r := range s {
+		if r != rune(' ') {
+			if char == 0 {
+				count++
+			}
+			char++
+		} else {
+			char = 0
+		}
+	}
+	return count
 }
