@@ -30,5 +30,25 @@ Explanation:
 package leetcode
 
 func findAnagrams(s string, p string) []int {
-	return []int{}
+	mp := make([]int, 26)
+	for _, r := range p {
+		mp[r-'a']++
+	}
+
+	r := []int{}
+	for i := 0; i < len(s)-len(p)+1; i++ {
+		temp := make([]int, 26)
+		j := i
+		for ; j < i+len(p); j++ {
+			t := s[j] - 'a'
+			temp[t]++
+			if mp[t] == 0 || mp[t] < temp[t] {
+				break
+			}
+		}
+		if j == i+len(p) {
+			r = append(r, i)
+		}
+	}
+	return r
 }
