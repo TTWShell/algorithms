@@ -30,6 +30,51 @@ Explanation:
 package leetcode
 
 func findAnagrams(s string, p string) []int {
+	// https://discuss.leetcode.com/topic/64434/shortest-concise-java-o-n-sliding-window-solution
+	r := []int{}
+	if len(s) == 0 || len(p) == 0 {
+		return r
+	}
+	// record each character in p to hash
+	mp := make([]int, 26)
+	for _, r := range p {
+		mp[r-'a']++
+	}
+
+	// two points, initialize count to p's length
+	left, right, count := 0, 0, len(p)
+	for right < len(s) {
+		// move right everytime, if the character exists in p's hash, decrease the count
+		// current hash value >= 1 means the character is existing in p
+		if mp[s[right]-'a'] >= 1 {
+			count--
+		}
+		mp[s[right]-'a']--
+		right++
+
+		// when the count is down to 0, means we found the right anagram
+		// then add window's left to result list
+		if count == 0 {
+			r = append(r, left)
+		}
+
+		// if we find the window's size equals to p, then we have to move left (narrow the window) to find the new match window
+		// ++ to reset the hash because we kicked out the left
+		// only increase the count if the character is in p
+		// the count >= 0 indicate it was original in the hash, cuz it won't go below 0
+		if right-left == len(p) {
+			if mp[s[left]-'a'] >= 0 {
+				count++
+			}
+			mp[s[left]-'a']++
+			left++
+		}
+	}
+	return r
+}
+
+/* 400ms
+func findAnagrams(s string, p string) []int {
 	mp := make([]int, 26)
 	for _, r := range p {
 		mp[r-'a']++
@@ -56,3 +101,4 @@ func findAnagrams(s string, p string) []int {
 	}
 	return r
 }
+*/
