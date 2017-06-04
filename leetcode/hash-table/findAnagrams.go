@@ -42,7 +42,11 @@ func findAnagrams(s string, p string) []int {
 		for ; j < i+len(p); j++ {
 			t := s[j] - 'a'
 			temp[t]++
-			if mp[t] == 0 || mp[t] < temp[t] {
+			if mp[t] == 0 {
+				i = j
+				break
+			}
+			if mp[t] < temp[t] {
 				break
 			}
 		}
