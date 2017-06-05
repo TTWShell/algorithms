@@ -27,13 +27,10 @@ func repeatedSubstringPattern(s string) bool {
 	}
 
 	subLen := 1
-	for i := subLen; i < len(s); {
+	for i := subLen; i < len(s) && subLen <= len(s)/2; {
 		if len(s)%subLen != 0 {
 			subLen += 1
 			i = subLen
-			if subLen > len(s)/2 {
-				return false
-			}
 			continue
 		}
 
@@ -44,8 +41,9 @@ func repeatedSubstringPattern(s string) bool {
 			i = subLen
 		}
 	}
-	if subLen > len(s)/2 {
-		return false
+
+	if subLen <= len(s)/2 {
+		return true
 	}
-	return true
+	return false
 }
