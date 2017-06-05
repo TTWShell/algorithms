@@ -97,3 +97,4 @@
 | [453. Minimum Moves to Equal Array Elements](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/minMoves.go) | Easy |
 | [455. Assign Cookies](https://github.com/TTWShell/algorithms/blob/master/leetcode/greedy/findContentChildren.go) | Easy |
 | [459. Repeated Substring Pattern](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/repeatedSubstringPattern.go) | Easy |
+| [461. Hamming Distance](https://github.com/TTWShell/algorithms/blob/master/leetcode/bit-manipulation/hammingDistance.go) | Easy |
