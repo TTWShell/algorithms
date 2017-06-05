@@ -35,8 +35,8 @@ package leetcode
 import "sort"
 
 func findContentChildren(g []int, s []int) int {
-	sort.Slice(g[:], func(i, j int) bool { return g[i] < g[j] })
-	sort.Slice(s[:], func(i, j int) bool { return s[i] < s[j] })
+	sort.Ints(g)
+	sort.Ints(s)
 	pg, ps := 0, 0
 	for pg < len(g) && ps < len(s) {
 		if g[pg] <= s[ps] {
