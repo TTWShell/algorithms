@@ -23,6 +23,17 @@ Example:
 package leetcode
 
 func hammingDistance(x int, y int) int {
+	res := x ^ y
+	cnt := 0
+	for res > 0 {
+		res &= res - 1
+		cnt++
+	}
+	return cnt
+}
+
+/*
+func hammingDistance(x int, y int) int {
 	xl, yl := make([]int, 32, 32), make([]int, 32, 32)
 	for i := 0; x > 0 || y > 0; i++ {
 		xl[i], yl[i] = x%2, y%2
@@ -37,3 +48,4 @@ func hammingDistance(x int, y int) int {
 	}
 	return r
 }
+*/
