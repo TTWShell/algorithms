@@ -18,6 +18,25 @@ Explanation:
 package leetcode
 
 func minMoves(nums []int) int {
+	// 给n-1个数字加1，效果等同于给那个未被选中的数字减1 ----> 所有数字都减小到最小值
+	// Find the minimum
+	min := nums[0]
+	for i := 1; i < len(nums); i++ {
+		if nums[i] < min {
+			min = nums[i]
+		}
+	}
+
+	// Sum the diff with min
+	var moves int
+	for _, num := range nums {
+		moves += num - min
+	}
+	return moves
+}
+
+/*
+func minMoves(nums []int) int {
 	// https://leetcode.com/problems/minimum-moves-to-equal-array-elements/#/solutions
 	//  sum + m * (n - 1) = x * n  m为加1的次数，x为最终值
 	//  x = minNum + m
@@ -31,3 +50,4 @@ func minMoves(nums []int) int {
 	}
 	return sum - min*len(nums)
 }
+*/
