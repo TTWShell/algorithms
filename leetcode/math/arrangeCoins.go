@@ -31,5 +31,14 @@ Example 2:
 package leetcode
 
 func arrangeCoins(n int) int {
-	return 0
+	start, mid, end := 0, 0, n
+	for start <= end {
+		mid = start + (end-start)/2
+		if mid*(mid+1) <= 2*n {
+			start = mid + 1
+		} else {
+			end = mid - 1
+		}
+	}
+	return start - 1
 }
