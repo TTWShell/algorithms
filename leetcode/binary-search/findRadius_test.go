@@ -10,4 +10,7 @@ func Test_findRadius(t *testing.T) {
 		t.Fatal(r)
 	}
 
+	if r := findRadius([]int{1, 5}, []int{10}); r != 9 {
+		t.Fatal(r)
+	}
 }
