@@ -16,5 +16,22 @@ Note:
 package leetcode
 
 func findMaxConsecutiveOnes(nums []int) int {
-	return 0
+	max := func(a, b int) int {
+		if a > b {
+			return a
+		}
+		return b
+	}
+
+	r, cur := 0, 0
+	for _, num := range nums {
+		if num == 1 {
+			cur++
+		} else {
+			r = max(r, cur)
+			cur = 0
+		}
+	}
+	r = max(r, cur)
+	return r
 }
