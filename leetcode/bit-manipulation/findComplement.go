@@ -18,6 +18,16 @@ Example 2:
 package leetcode
 
 func findComplement(num int) int {
+	var mask int64 = 1
+	for v := num; v > 0; v = v >> 1 {
+		mask = mask << 1
+	}
+	num = ^num & int(mask-1)
+	return num
+}
+
+/*
+func findComplement(num int) int {
 	bits := make([]int, 32, 32)
 	for i := 31; num > 0; i-- {
 		bits[i] = num % 2
@@ -43,3 +53,4 @@ func findComplement(num int) int {
 	}
 	return r
 }
+*/
