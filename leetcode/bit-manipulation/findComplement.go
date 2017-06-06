@@ -18,5 +18,28 @@ Example 2:
 package leetcode
 
 func findComplement(num int) int {
-	return -1
+	bits := make([]int, 32, 32)
+	for i := 31; num > 0; i-- {
+		bits[i] = num % 2
+		num = num >> 1
+	}
+
+	pow := func(x, y int) int {
+		r := 1
+		for i := 1; i < y; i++ {
+			r *= x
+		}
+		return r
+	}
+
+	tag, r := false, 0
+	for i := 0; i < 32; i++ {
+		if tag == false && bits[i] == 1 {
+			tag = true
+		}
+		if tag == true && bits[i] == 0 {
+			r += pow(2, 32-i)
+		}
+	}
+	return r
 }
