@@ -29,6 +29,36 @@ import "sort"
 func findRadius(houses []int, heaters []int) int {
 	sort.Ints(heaters)
 
+	abs := func(a int) int {
+		if a < 0 {
+			return -a
+		}
+		return a
+	}
+	findHeater := func(heaters []int, house int) int {
+		// 找到house左右两边的heater，永远返回左边
+		start, end := 0, len(heaters)-1
+
+		if house <= heaters[start] {
+			return start
+		} else if house >= heaters[end] {
+			return end
+		}
+
+		for start <= end {
+			mid := start + (end-start)/2
+			switch {
+			case house < heaters[mid]:
+				end = mid - 1
+			case house > heaters[mid]:
+				start = mid + 1
+			case house == heaters[mid]:
+				return mid
+			}
+		}
+		return start - 1
+	}
+
 	maxDist := 0
 	for _, house := range houses {
 		index := findHeater(heaters, house)
@@ -43,35 +73,4 @@ func findRadius(houses []int, heaters []int) int {
 		}
 	}
 	return maxDist
-}
-
-func findHeater(heaters []int, house int) int {
-	// 找到house左右两边的heater，永远返回左边
-	start, end := 0, len(heaters)-1
-
-	if house <= heaters[start] {
-		return start
-	} else if house >= heaters[end] {
-		return end
-	}
-
-	for start <= end {
-		mid := start + (end-start)/2
-		switch {
-		case house < heaters[mid]:
-			end = mid - 1
-		case house > heaters[mid]:
-			start = mid + 1
-		case house == heaters[mid]:
-			return mid
-		}
-	}
-	return start - 1
-}
-
-func abs(a int) int {
-	if a < 0 {
-		return -a
-	}
-	return a
 }
