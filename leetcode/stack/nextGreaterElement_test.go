@@ -12,4 +12,9 @@ func Test_nextGreaterElement(t *testing.T) {
 	if len(r) != 2 || r[0] != 3 || r[1] != -1 {
 		t.Fatal(r)
 	}
+
+	r = nextGreaterElement([]int{2, 4}, []int{1, 4, 2, 3})
+	if len(r) != 2 || r[0] != 3 || r[1] != -1 {
+		t.Fatal(r)
+	}
 }
