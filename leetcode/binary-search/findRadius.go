@@ -24,6 +24,54 @@ Example 2:
 
 package leetcode
 
+import "sort"
+
 func findRadius(houses []int, heaters []int) int {
-	return -1
+	sort.Ints(heaters)
+
+	maxDist := 0
+	for _, house := range houses {
+		index := findHeater(heaters, house)
+		curDist := abs(heaters[index] - house)
+		if index+1 < len(heaters) {
+			if temp := abs(heaters[index+1] - house); temp < curDist {
+				curDist = temp
+			}
+		}
+		if curDist > maxDist {
+			maxDist = curDist
+		}
+	}
+	return maxDist
+}
+
+func findHeater(heaters []int, house int) int {
+	// 找到house左右两边的heater，永远返回左边
+	start, end := 0, len(heaters)-1
+
+	if house <= heaters[start] {
+		return start
+	} else if house >= heaters[end] {
+		return end
+	}
+
+	for start <= end {
+		mid := start + (end-start)/2
+		switch {
+		case house < heaters[mid]:
+			end = mid - 1
+		case house > heaters[mid]:
+			start = mid + 1
+		case house == heaters[mid]:
+			return mid
+		}
+	}
+	return start - 1
+}
+
+func abs(a int) int {
+	if a < 0 {
+		return -a
+	}
+	return a
 }
