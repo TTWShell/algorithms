@@ -101,3 +101,4 @@
 | [463. Island Perimeter](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/islandPerimeter.go) | Easy |
 | [475. Heaters](https://github.com/TTWShell/algorithms/blob/master/leetcode/binary-search/findRadius.go) | Easy |
 | [476. Number Complement](https://github.com/TTWShell/algorithms/blob/master/leetcode/bit-manipulation/findComplement.go) | Easy |
+| [485. Max Consecutive Ones](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/findMaxConsecutiveOnes.go) | Easy |
