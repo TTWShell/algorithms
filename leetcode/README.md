@@ -104,3 +104,4 @@
 | [485. Max Consecutive Ones](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/findMaxConsecutiveOnes.go) | Easy |
 | [492. Construct the Rectangle](https://github.com/TTWShell/algorithms/blob/master/leetcode/design/constructRectangle.go) | Easy |
 | [496. Next Greater Element I](https://github.com/TTWShell/algorithms/blob/master/leetcode/others/nextGreaterElement.go) | Easy |
+| [500. Keyboard Row](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/findWords.go) | Easy |
