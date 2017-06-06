@@ -102,3 +102,4 @@
 | [475. Heaters](https://github.com/TTWShell/algorithms/blob/master/leetcode/binary-search/findRadius.go) | Easy |
 | [476. Number Complement](https://github.com/TTWShell/algorithms/blob/master/leetcode/bit-manipulation/findComplement.go) | Easy |
 | [485. Max Consecutive Ones](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/findMaxConsecutiveOnes.go) | Easy |
+| [492. Construct the Rectangle](https://github.com/TTWShell/algorithms/blob/master/leetcode/design/constructRectangle.go) | Easy |
