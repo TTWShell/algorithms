@@ -27,5 +27,23 @@ Note:
 package leetcode
 
 func nextGreaterElement(findNums []int, nums []int) []int {
-	return []int{}
+	maps := make(map[int]int, len(nums))
+	for i, num := range nums {
+		maps[num] = i
+	}
+
+	r := make([]int, len(findNums), len(findNums))
+	for i := 0; i < len(findNums); i++ {
+		index := maps[findNums[i]]
+		for ; index < len(nums); index++ {
+			if nums[index] > findNums[i] {
+				r[i] = nums[index]
+				break
+			}
+		}
+		if index == len(nums) {
+			r[i] = -1
+		}
+	}
+	return r
 }
