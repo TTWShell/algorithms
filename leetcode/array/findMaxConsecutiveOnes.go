@@ -32,6 +32,5 @@ func findMaxConsecutiveOnes(nums []int) int {
 			cur = 0
 		}
 	}
-	r = max(r, cur)
-	return r
+	return max(r, cur)
 }
