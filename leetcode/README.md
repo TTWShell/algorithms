@@ -103,3 +103,4 @@
 | [476. Number Complement](https://github.com/TTWShell/algorithms/blob/master/leetcode/bit-manipulation/findComplement.go) | Easy |
 | [485. Max Consecutive Ones](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/findMaxConsecutiveOnes.go) | Easy |
 | [492. Construct the Rectangle](https://github.com/TTWShell/algorithms/blob/master/leetcode/design/constructRectangle.go) | Easy |
+| [496. Next Greater Element I](https://github.com/TTWShell/algorithms/blob/master/leetcode/others/nextGreaterElement.go) | Easy |
