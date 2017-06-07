@@ -106,3 +106,4 @@
 | [496. Next Greater Element I](https://github.com/TTWShell/algorithms/blob/master/leetcode/others/nextGreaterElement.go) | Easy |
 | [500. Keyboard Row](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/findWords.go) | Easy |
 | [501. Find Mode in Binary Search Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/findMode.go) | Easy |
+| [504. Base 7](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/convertToBase7.go) | Easy |
