@@ -30,19 +30,17 @@ func findRelativeRanks(nums []int) []string {
 	sort.Ints(nums)
 
 	r := make([]string, n, n)
-	for i := n - 1; i > n-4 && i >= 0; i-- {
+	for i, num := range nums {
 		switch i {
 		case n - 1:
-			r[maps[nums[i]]] = "Gold Medal"
+			r[maps[num]] = "Gold Medal"
 		case n - 2:
-			r[maps[nums[i]]] = "Silver Medal"
+			r[maps[num]] = "Silver Medal"
 		case n - 3:
-			r[maps[nums[i]]] = "Bronze Medal"
+			r[maps[num]] = "Bronze Medal"
+		default:
+			r[maps[num]] = strconv.Itoa(n - i)
 		}
 	}
-	for i := 0; i < len(r)-3; i++ {
-		r[maps[nums[i]]] = strconv.Itoa(n - i)
-	}
-
 	return r
 }
