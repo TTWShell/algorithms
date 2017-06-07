@@ -12,24 +12,38 @@ Note: The input will be in range of [-1e7, 1e7].
 
 package leetcode
 
-import "strconv"
+import (
+	"strconv"
+	"strings"
+)
 
 func convertToBase7(num int) string {
 	if num == 0 {
 		return "0"
 	}
+
+	reverse := func(chars []string) {
+		for i := 0; i < len(chars)/2; i++ {
+			j := len(chars) - i - 1
+			chars[i], chars[j] = chars[j], chars[i]
+		}
+	}
+
 	isNegative := false
 	if num < 0 {
-		isNegative = true
-		num = -num
+		isNegative, num = true, -num
 	}
-	r := ""
+
+	var symbols []string
 	for num > 0 {
-		r = strconv.Itoa(num%7) + r
+		symbols = append(symbols, strconv.Itoa(num%7))
 		num /= 7
 	}
 	if isNegative == true {
-		return "-" + r
+		symbols = append(symbols, "-")
 	}
-	return r
+
+	reverse(symbols)
+
+	return strings.Join(symbols, "")
 }
