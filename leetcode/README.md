@@ -110,3 +110,4 @@
 | [506. Relative Ranks](https://github.com/TTWShell/algorithms/blob/master/leetcode/others/findRelativeRanks.go) | Easy |
 | [507. Perfect Number](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/checkPerfectNumber.go) | Easy |
 | [520. Detect Capital](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/detectCapitalUse.go) | Easy |
+| [521. Longest Uncommon Subsequence I](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/findLUSlength.go) | Easy |
