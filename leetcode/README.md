@@ -108,4 +108,5 @@
 | [501. Find Mode in Binary Search Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/findMode.go) | Easy |
 | [504. Base 7](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/convertToBase7.go) | Easy |
 | [506. Relative Ranks](https://github.com/TTWShell/algorithms/blob/master/leetcode/others/findRelativeRanks.go) | Easy |
-| [507. Perfect Number](https://github.com/TTWShell/algorithms/blob/master/leetcode/others/findRelativeRanks.go) | Easy |
+| [507. Perfect Number](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/checkPerfectNumber.go) | Easy |
+| [520. Detect Capital](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/detectCapitalUse.go) | Easy |
