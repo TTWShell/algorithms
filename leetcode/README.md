@@ -117,3 +117,4 @@
 | [543. Diameter of Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/diameterOfBinaryTree.go) | Easy |
 | [551. Student Attendance Record I](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/checkRecord.go) | Easy |
 | [557. Reverse Words in a String III](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/reverseWords.go) | Easy |
+| [561. Array Partition I](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/arrayPairSum.go) | Easy |
