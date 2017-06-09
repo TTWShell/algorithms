@@ -112,3 +112,4 @@
 | [520. Detect Capital](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/detectCapitalUse.go) | Easy |
 | [521. Longest Uncommon Subsequence I](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/findLUSlength.go) | Easy |
 | [530. Minimum Absolute Difference in BST](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/getMinimumDifference.go) | Easy |
+| [532. K-diff Pairs in an Array](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/findPairs.go) | Easy |
