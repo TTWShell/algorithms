@@ -115,3 +115,4 @@
 | [532. K-diff Pairs in an Array](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/findPairs.go) | Easy |
 | [541. Reverse String II](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/reverseStr.go) | Easy |
 | [543. Diameter of Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/diameterOfBinaryTree.go) | Easy |
+| [551. Student Attendance Record I](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/checkRecord.go) | Easy |
