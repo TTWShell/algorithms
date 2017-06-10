@@ -121,3 +121,4 @@
 | [563. Binary Tree Tilt](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/findTilt.go) | Easy |
 | [566. Reshape the Matrix](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/matrixReshape.go) | Easy |
 | [572. Subtree of Another Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/isSubtree.go) | Easy |
+| [575. Distribute Candies](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/distributeCandies.go) | Easy |
