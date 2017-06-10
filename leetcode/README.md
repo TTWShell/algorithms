@@ -124,3 +124,4 @@
 | [575. Distribute Candies](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/distributeCandies.go) | Easy |
 | [581. Shortest Unsorted Continuous Subarray](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/findUnsortedSubarray.go) | Easy |
 | [594. Longest Harmonious Subsequence](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/findLHS.go) | Easy |
+| [598. Range Addition II](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/maxCount.go) | Easy |
