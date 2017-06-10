@@ -16,6 +16,7 @@ Note:
 
 package leetcode
 
+/*
 import "sort"
 
 func findUnsortedSubarray(nums []int) int {
@@ -32,4 +33,25 @@ func findUnsortedSubarray(nums []int) int {
 		j--
 	}
 	return j + 1 - i
+}
+*/
+
+func findUnsortedSubarray(nums []int) int {
+	n, left, right := len(nums), -1, -2
+	max, min := nums[0], nums[n-1]
+
+	for i := 1; i < n; i++ {
+		if nums[i] >= max {
+			max = nums[i]
+		} else {
+			right = i
+		}
+		if end := n - 1 - i; nums[end] <= min {
+			min = nums[end]
+		} else {
+			left = end
+		}
+	}
+
+	return right - left + 1
 }

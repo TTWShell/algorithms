@@ -7,4 +7,9 @@ func Test_findUnsortedSubarray(t *testing.T) {
 	if r := findUnsortedSubarray(nums); r != 5 {
 		t.Fatal(nums, r)
 	}
+
+	nums = []int{1, 2, 3, 4}
+	if r := findUnsortedSubarray(nums); r != 0 {
+		t.Fatal(nums, r)
+	}
 }
