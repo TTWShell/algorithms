@@ -127,3 +127,4 @@
 | [598. Range Addition II](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/maxCount.go) | Easy |
 | [599. Minimum Index Sum of Two Lists](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/findRestaurant.go) | Easy |
 | [605. Can Place Flowers](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/canPlaceFlowers.go) | Easy |
+| [606. Construct String from Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/tree2str.go) | Easy |
