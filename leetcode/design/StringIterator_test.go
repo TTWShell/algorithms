@@ -3,6 +3,11 @@ package leetcode
 import "testing"
 
 func Test_StringIterator(t *testing.T) {
+	it := Constructor("L1e2t1C1o1d1e1")
+	for it.HasNext() {
+		t.Log(string(it.Next()))
+	}
+
 	iterator := Constructor("L1e2")
 	if next := iterator.Next(); next != 'L' {
 		t.Fatal(string(next))

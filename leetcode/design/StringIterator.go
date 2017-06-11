@@ -31,37 +31,55 @@ package leetcode
 import "strconv"
 
 type StringIterator struct {
-	all []byte
+	String    string
+	nextIndex int
+	count     int
+	curLetter byte
+	curTotal  int
+	hasNext   bool
 }
 
 func Constructor(compressedString string) StringIterator {
-	var all []byte
-	for i := 0; i < len(compressedString); {
-		if letter := compressedString[i]; letter-'A' > 0 {
-			j := i + 1
-			for j < len(compressedString) && compressedString[j]-'0' < 10 {
-				j++
-			}
-			repeat, _ := strconv.Atoi(string(compressedString[i+1 : j]))
-			for c := 0; c < repeat; c++ {
-				all = append(all, letter)
-			}
-			i = j
-		}
+	iterator := StringIterator{String: compressedString}
+	if len(compressedString) > 0 {
+		iterator.hasNext = true
 	}
-	iterator := StringIterator{all: all}
 	return iterator
 }
 
 func (this *StringIterator) Next() byte {
-	if len(this.all) > 0 {
-		r := this.all[0]
-		this.all = this.all[1:]
-		return r
+	if this.hasNext == false {
+		return ' '
 	}
-	return ' '
+
+	this.count++
+	r := this.curLetter
+
+	if this.count >= this.curTotal &&
+		this.nextIndex >= len(this.String)-1 {
+		this.hasNext = false
+	}
+
+	// 第一次取或者需要取下一个字母
+	if this.count > this.curTotal {
+		for i := this.nextIndex; i < len(this.String); {
+			letter := this.String[i]
+			j := i + 1
+			for j < len(this.String) && this.String[j]-'0' < 10 {
+				j++
+			}
+			this.curTotal, _ = strconv.Atoi(string(this.String[i+1 : j]))
+			this.curLetter = letter
+			this.nextIndex = j
+			this.hasNext = true
+			r = letter
+			this.count = 1
+			break
+		}
+	}
+	return r
 }
 
 func (this *StringIterator) HasNext() bool {
-	return len(this.all) > 0
+	return this.hasNext
 }
