@@ -33,7 +33,7 @@ import "strconv"
 type StringIterator struct {
 	String    string
 	nextIndex int
-	count     int
+	curCount  int
 	curLetter byte
 	curTotal  int
 	hasNext   bool
@@ -52,29 +52,24 @@ func (this *StringIterator) Next() byte {
 		return ' '
 	}
 
-	this.count++
+	this.curCount++
 	r := this.curLetter
 
-	if this.count >= this.curTotal &&
+	if this.curCount >= this.curTotal &&
 		this.nextIndex >= len(this.String)-1 {
 		this.hasNext = false
 	}
 
 	// 第一次取或者需要取下一个字母
-	if this.count > this.curTotal {
+	if this.curCount > this.curTotal {
 		for i := this.nextIndex; i < len(this.String); {
-			letter := this.String[i]
-			j := i + 1
+			letter, j := this.String[i], i+1
 			for j < len(this.String) && this.String[j]-'0' < 10 {
 				j++
 			}
 			this.curTotal, _ = strconv.Atoi(string(this.String[i+1 : j]))
-			this.curLetter = letter
-			this.nextIndex = j
-			this.hasNext = true
-			r = letter
-			this.count = 1
-			break
+			this.curCount, this.curLetter, this.nextIndex, this.hasNext = 1, letter, j, true
+			return letter
 		}
 	}
 	return r
