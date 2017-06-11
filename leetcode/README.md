@@ -129,3 +129,4 @@
 | [604. Design Compressed String Iterator](https://github.com/TTWShell/algorithms/blob/master/leetcode/design/StringIterator.go) | Easy |
 | [605. Can Place Flowers](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/canPlaceFlowers.go) | Easy |
 | [606. Construct String from Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/tree2str.go) | Easy |
+| [617. Merge Two Binary Trees](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/mergeTrees.go) | Easy |
