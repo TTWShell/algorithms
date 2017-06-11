@@ -34,6 +34,42 @@ Example 2:
 
 package leetcode
 
+import (
+	"bytes"
+	"strconv"
+)
+
+func tree2str(t *TreeNode) string {
+	buffer := new(bytes.Buffer)
+
+	var helper func(node *TreeNode)
+	helper = func(node *TreeNode) {
+		if node == nil {
+			return
+		}
+
+		buffer.WriteString(strconv.Itoa(node.Val))
+		if node.Left == nil && node.Right == nil {
+			return
+		}
+
+		buffer.WriteByte('(')
+		helper(node.Left)
+		buffer.WriteByte(')')
+
+		if node.Right != nil {
+			buffer.WriteByte('(')
+			helper(node.Right)
+			buffer.WriteByte(')')
+		}
+	}
+
+	helper(t)
+
+	return buffer.String()
+}
+
+/*
 import "fmt"
 
 func tree2str(t *TreeNode) string {
@@ -58,3 +94,4 @@ func tree2str(t *TreeNode) string {
 
 	return fmt.Sprintf("%d%s%s", t.Val, left, right)
 }
+*/
