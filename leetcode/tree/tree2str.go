@@ -82,14 +82,10 @@ func tree2str(t *TreeNode) string {
 	}
 
 	left, right := "", ""
-	if t.Left != nil {
-		left = fmt.Sprintf("(%s)", tree2str(t.Left))
-	}
+	left = fmt.Sprintf("(%s)", tree2str(t.Left))
+
 	if t.Right != nil {
 		right = fmt.Sprintf("(%s)", tree2str(t.Right))
-		if left == "" {
-			left = "()"
-		}
 	}
 
 	return fmt.Sprintf("%d%s%s", t.Val, left, right)
