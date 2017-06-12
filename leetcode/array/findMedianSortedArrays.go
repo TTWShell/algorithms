@@ -23,6 +23,8 @@ import "math"
 
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	// https://discuss.leetcode.com/topic/16797/very-concise-o-log-min-m-n-iterative-solution-with-detailed-explanation
+	// 设置虚拟位，L=(mid−1)/2，R=mid/2，mid<=[0,2∗Length]
+	// 对较短的数组举行二分查找即可
 	n1, n2 := len(nums1), len(nums2)
 	if n1 < n2 {
 		// Make sure nums2 is the shorter one.
