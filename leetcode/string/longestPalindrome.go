@@ -15,11 +15,12 @@ package leetcode
 
 func longestPalindrome(s string) string {
 	rStartIndex, longLen := 0, 1
-	for index := 0; len(s)-index >= longLen/2; index++ {
+	for index := 0; len(s)-index >= longLen/2; {
 		frontIndex, endIndex := index, index
 		for endIndex < len(s)-1 && s[endIndex] == s[endIndex+1] {
 			endIndex++
 		}
+		index = endIndex + 1
 		for frontIndex > 0 && endIndex < len(s)-1 && s[frontIndex-1] == s[endIndex+1] {
 			frontIndex--
 			endIndex++
