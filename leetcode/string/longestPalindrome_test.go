@@ -3,8 +3,8 @@ package leetcode
 import "testing"
 
 func Test_longestPalindrome(t *testing.T) {
-	input := []string{"babad", "cbbd"}
-	output := []string{"bab", "bb"}
+	input := []string{"a", "bb", "babad", "cbbd"}
+	output := []string{"a", "bb", "bab", "bb"}
 
 	for i := range input {
 		if r := longestPalindrome(input[i]); r != output[i] {
