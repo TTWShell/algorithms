@@ -11,6 +11,7 @@
 | [7. Reverse Integer](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/reverse.go ) | Easy |
 | [8. String to Integer (atoi)](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/myAtoi.go) | Medium |
 | [9. Palindrome Number](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/isPalindrome.go ) | Easy |
+| [10. Regular Expression Matching](https://github.com/TTWShell/algorithms/blob/master/leetcode/dynamic-programming/isMatch.go) | Hard |
 | [13. Roman to Integer](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/romanToInt.go ) | Easy |
 | [14. Longest Common Prefix](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/longestCommonPrefix.go ) | Easy |
 | [20. Valid Parentheses](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/isValid.go ) | Easy |
