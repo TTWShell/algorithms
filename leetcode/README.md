@@ -7,8 +7,9 @@
 | [3. Longest Substring Without Repeating Characters](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/lengthOfLongestSubstring.go ) | Medium |
 | [4. Median of Two Sorted Arrays](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/findMedianSortedArrays.go) | Hard |
 | [5. Longest Palindromic Substring](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/longestPalindrome.go) | Medium |
-| [6. ZigZag Conversion](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/convert.go) | Easy |
+| [6. ZigZag Conversion](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/convert.go) | Medium |
 | [7. Reverse Integer](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/reverse.go ) | Easy |
+| [8. String to Integer (atoi)](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/myAtoi.go) | Medium |
 | [9. Palindrome Number](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/isPalindrome.go ) | Easy |
 | [13. Roman to Integer](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/romanToInt.go ) | Easy |
 | [14. Longest Common Prefix](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/longestCommonPrefix.go ) | Easy |
