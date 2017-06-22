@@ -12,7 +12,7 @@ func Test_intersect(t *testing.T) {
 
 	for i := range nums1 {
 		r := intersect(nums1[i], nums2[i])
-		sort.Slice(r[:], func(i, j int) bool { return r[i] < r[j] })
+		sort.Ints(r)
 
 		for j := range result[i] {
 			if r[j] != result[i][j] {
@@ -23,6 +23,6 @@ func Test_intersect(t *testing.T) {
 
 	// test for sort
 	unsorted := []int{2, 1, 3, 5, 4}
-	sort.Slice(unsorted[:], func(i, j int) bool { return unsorted[i] < unsorted[j] })
+	sort.Ints(unsorted)
 	// t.Log(unsorted)
 }
