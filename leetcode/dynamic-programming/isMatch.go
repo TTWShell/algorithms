@@ -22,5 +22,27 @@ Implement regular expression matching with support for '.' and '*'.
 package leetcode
 
 func isMatch(s string, p string) bool {
-	return false
+	// 递归实现
+	lens, lenp := len(s), len(p)
+	if lenp == 0 {
+		return lens == 0
+	}
+
+	if lenp <= 1 || (lenp > 1 && p[1] != '*') {
+		return lens != 0 && (p[0] == s[0] || p[0] == '.') && isMatch(s[1:], p[1:])
+	}
+
+	slice := 2
+	if len(p) < 2 {
+		slice = 1
+	}
+
+	for len(s) != 0 && (p[0] == s[0] || p[0] == '.') {
+		if isMatch(s, p[slice:]) {
+			return true
+		}
+		s = s[1:]
+	}
+
+	return isMatch(s, p[slice:])
 }
