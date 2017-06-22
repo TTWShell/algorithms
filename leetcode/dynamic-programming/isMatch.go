@@ -29,20 +29,25 @@ func isMatch(s string, p string) bool {
 	}
 
 	if lenp <= 1 || (lenp > 1 && p[1] != '*') {
+		// 如果下一个p不为*: 则检查当前s与p是否匹配，匹配的话继续处理isMatch(s[1:], p[1:])
 		return lens != 0 && (p[0] == s[0] || p[0] == '.') && isMatch(s[1:], p[1:])
 	}
 
+	// panic: runtime error: slice bounds out of range
 	slice := 2
 	if len(p) < 2 {
 		slice = 1
 	}
 
+	// 下一个p为*，则循环处理s
 	for len(s) != 0 && (p[0] == s[0] || p[0] == '.') {
 		if isMatch(s, p[slice:]) {
+			// 当前s与下二个p也都匹配，isMatch(s, p[2:])
 			return true
 		}
 		s = s[1:]
 	}
 
+	// isMatch(s, p[2:])
 	return isMatch(s, p[slice:])
 }
