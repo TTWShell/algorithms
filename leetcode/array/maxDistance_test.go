@@ -9,4 +9,9 @@ func Test_maxDistance(t *testing.T) {
 	if r := maxDistance(input); r != output {
 		t.Fatal(r)
 	}
+
+	input = [][]int{{1, 4}, {0, 5}}
+	if r := maxDistance(input); r != 4 {
+		t.Fatal(r)
+	}
 }

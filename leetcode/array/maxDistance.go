@@ -20,6 +20,48 @@ Note:
 
 package leetcode
 
+import "math"
+
 func maxDistance(arrays [][]int) int {
-	return -1
+	var (
+		minaValue, minaIndex = math.MaxInt32, 0
+		minbValue            = math.MaxInt32
+		maxaValue            = math.MinInt32
+		maxbValue, maxbIndex = math.MinInt32, 0
+	)
+
+	for i, array := range arrays {
+		curMin, curMax := array[0], array[len(array)-1]
+		if curMin < minaValue {
+			minbValue = minaValue
+			minaValue, minaIndex = curMin, i
+
+		} else if curMin < minbValue {
+			minbValue = curMin
+		}
+		if curMax > maxbValue {
+			maxaValue = maxbValue
+			maxbValue, maxbIndex = curMax, i
+		} else if curMax > maxaValue {
+			maxaValue = curMax
+		}
+	}
+
+	abs := func(a int) int {
+		if a < 0 {
+			return -a
+		}
+		return a
+	}
+	max := func(a, b int) int {
+		if a > b {
+			return a
+		}
+		return b
+	}
+
+	if minaIndex != maxbIndex {
+		return abs(maxbValue - minaValue)
+	}
+	return max(abs(maxbValue-minbValue), abs(maxaValue-minaValue))
 }
