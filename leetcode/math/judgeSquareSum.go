@@ -14,5 +14,33 @@ Example 2:
 package leetcode
 
 func judgeSquareSum(c int) bool {
+	binarySearch := func(c int) int {
+		var (
+			mid        int
+			start, end = 0, c/2 + 1
+		)
+		for start <= end {
+			mid = start + (end-start)/2
+			if temp := mid * mid; temp == c {
+				break
+			} else if temp > c {
+				end = mid - 1
+			} else {
+				start = mid + 1
+			}
+		}
+		return mid
+	}
+
+	left, right := 0, binarySearch(c)
+	for left <= right {
+		if temp := left*left + right*right; temp == c {
+			return true
+		} else if temp > c {
+			right--
+		} else {
+			left++
+		}
+	}
 	return false
 }
