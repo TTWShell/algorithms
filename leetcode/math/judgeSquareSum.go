@@ -14,6 +14,26 @@ Example 2:
 package leetcode
 
 func judgeSquareSum(c int) bool {
+	// https://en.wikipedia.org/wiki/Fermat%27s_theorem_on_sums_of_two_squares
+	// https://www.zhihu.com/question/40263900
+	// 自然数n可以表为两个平方数之和等价于n的每个形如p=4m+3的素因子的次数为偶数
+	for i := 2; i*i <= c; i++ {
+		if c%i == 0 {
+			count := 0
+			for c%i == 0 {
+				count++
+				c /= i
+			}
+			if i%4 == 3 && count%2 != 0 {
+				return false
+			}
+		}
+	}
+	return c%4 != 3
+}
+
+/*
+func judgeSquareSum(c int) bool {
 	binarySearch := func(c int) int {
 		var (
 			mid        int
@@ -44,3 +64,4 @@ func judgeSquareSum(c int) bool {
 	}
 	return false
 }
+*/
