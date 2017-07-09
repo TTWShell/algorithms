@@ -16,6 +16,7 @@
 | [12. Integer to Roman](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/intToRoman.go) | Medium |
 | [13. Roman to Integer](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/romanToInt.go ) | Easy |
 | [14. Longest Common Prefix](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/longestCommonPrefix.go ) | Easy |
+| [15. 3Sum](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/threeSum.go) | Medium |
 | [20. Valid Parentheses](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/isValid.go ) | Easy |
 | [21. Merge Two Sorted Lists](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/mergeTwoLists.go ) | Easy |
 | [26. Remove Duplicates from Sorted Array](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/removeDuplicates.go ) | Easy |
