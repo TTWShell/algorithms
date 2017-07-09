@@ -14,6 +14,32 @@ A solution set is:
 
 package leetcode
 
+import "sort"
+import "fmt"
+
 func threeSum(nums []int) [][]int {
-	return [][]int{}
+	sort.Ints(nums)
+
+	maps := make(map[string]int)
+	result := [][]int{}
+	for i := 1; i < len(nums)-1; i++ {
+		left, right := 0, len(nums)-1
+		for left < i && i < right {
+			if temp := nums[left] + nums[i] + nums[right]; temp == 0 {
+				tempr := []int{nums[left], nums[i], nums[right]}
+				key := fmt.Sprintln(tempr)
+				if _, ok := maps[key]; !ok {
+					result = append(result, tempr)
+					maps[key] = 1
+				}
+				right--
+				left++
+			} else if temp > 0 {
+				right--
+			} else {
+				left++
+			}
+		}
+	}
+	return result
 }
