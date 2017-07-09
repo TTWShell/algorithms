@@ -142,3 +142,4 @@
 | [624. Maximum Distance in Arrays](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/maxDistance.go) | Easy |
 | [628. Maximum Product of Three Numbers](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/maximumProduct.go) | Easy |
 | [633. Sum of Square Numbers](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/judgeSquareSum.go) | Easy |
+| [637. Average of Levels in Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/averageOfLevels.go) | Easy |
