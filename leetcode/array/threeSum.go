@@ -22,9 +22,10 @@ func threeSum(nums []int) [][]int {
 
 	maps := make(map[string]int)
 	result := [][]int{}
+
 	for i := 1; i < len(nums)-1; i++ {
-		left, right := 0, len(nums)-1
-		for left < i && i < right {
+		left, right := i-1, i+1
+		for 0 <= left && right < len(nums) {
 			if temp := nums[left] + nums[i] + nums[right]; temp == 0 {
 				tempr := []int{nums[left], nums[i], nums[right]}
 				key := fmt.Sprintln(tempr)
@@ -32,14 +33,21 @@ func threeSum(nums []int) [][]int {
 					result = append(result, tempr)
 					maps[key] = 1
 				}
-				right--
-				left++
-			} else if temp > 0 {
-				right--
+				for left > 0 && nums[left] == nums[left-1] {
+					left-- // skip same result
+				}
+				for right < len(nums)-1 && nums[right] == nums[right+1] {
+					right++ // skip same result
+				}
+				right++
+				left--
+			} else if temp < 0 {
+				right++
 			} else {
-				left++
+				left--
 			}
 		}
 	}
+
 	return result
 }
