@@ -15,36 +15,32 @@ A solution set is:
 package leetcode
 
 import "sort"
-import "fmt"
 
 func threeSum(nums []int) [][]int {
 	sort.Ints(nums)
 
-	maps := make(map[string]int)
 	result := [][]int{}
-
-	for i := 1; i < len(nums)-1; i++ {
-		left, right := i-1, i+1
-		for 0 <= left && right < len(nums) {
-			if temp := nums[left] + nums[i] + nums[right]; temp == 0 {
-				tempr := []int{nums[left], nums[i], nums[right]}
-				key := fmt.Sprintln(tempr)
-				if _, ok := maps[key]; !ok {
-					result = append(result, tempr)
-					maps[key] = 1
+	for i := 0; i+2 < len(nums); i++ {
+		if i > 0 && nums[i] == nums[i-1] { // skip same result
+			continue
+		}
+		j, k := i+1, len(nums)-1
+		target := -nums[i]
+		for j < k {
+			if temp := nums[j] + nums[k]; temp == target {
+				result = append(result, []int{nums[i], nums[j], nums[k]})
+				j++
+				k--
+				for j < k && nums[j] == nums[j-1] {
+					j++ // skip same result
 				}
-				for left > 0 && nums[left] == nums[left-1] {
-					left-- // skip same result
+				for j < k && nums[k] == nums[k+1] {
+					k-- // skip same result
 				}
-				for right < len(nums)-1 && nums[right] == nums[right+1] {
-					right++ // skip same result
-				}
-				right++
-				left--
-			} else if temp < 0 {
-				right++
+			} else if temp > target {
+				k--
 			} else {
-				left--
+				j++
 			}
 		}
 	}

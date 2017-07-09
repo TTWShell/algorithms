@@ -28,7 +28,7 @@ func Test_threeSum(t *testing.T) {
 	}
 
 	input = []int{3, 0, -2, -1, 1, 2}
-	output = [][]int{{-2, -1, 3}, {-1, 0, 1}, {-2, 0, 2}}
+	output = [][]int{{-2, -1, 3}, {-2, 0, 2}, {-1, 0, 1}}
 	r = threeSum(input)
 	for i, row := range output {
 		for j := range row {
