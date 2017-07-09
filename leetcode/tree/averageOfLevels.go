@@ -18,5 +18,30 @@ The range of node's value is in the range of 32-bit signed integer.
 package leetcode
 
 func averageOfLevels(root *TreeNode) []float64 {
-	return []float64{}
+	maps := make(map[int][]int)
+
+	var helper func(root *TreeNode, level int)
+	helper = func(root *TreeNode, level int) {
+		if root == nil {
+			return
+		}
+		maps[level] = append(maps[level], root.Val)
+		helper(root.Left, level+1)
+		helper(root.Right, level+1)
+	}
+	helper(root, 0)
+
+	average := func(nums []int) float64 {
+		sum := 0
+		for i := range nums {
+			sum += nums[i]
+		}
+		return float64(sum) / float64(len(nums))
+	}
+
+	res := make([]float64, len(maps), len(maps))
+	for k, v := range maps {
+		res[k] = average(v)
+	}
+	return res
 }
