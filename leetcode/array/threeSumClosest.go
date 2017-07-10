@@ -9,6 +9,38 @@ Return the sum of the three integers. You may assume that each input would have 
 
 package leetcode
 
+import "sort"
+
 func threeSumClosest(nums []int, target int) int {
-	return -1
+	sort.Ints(nums)
+
+	abs := func(a int) int {
+		if a < 0 {
+			return -a
+		}
+		return a
+	}
+
+	sum := nums[0] + nums[1] + nums[2]
+	for i := 0; i+2 < len(nums); i++ {
+		if i > 0 && nums[i] == nums[i-1] { // skip same result
+			continue
+		}
+
+		for j, k := i+1, len(nums)-1; j < k; {
+			temp := nums[j] + nums[k] + nums[i]
+			if temp == target {
+				return target
+			} else if temp > target {
+				k--
+			} else {
+				j++
+			}
+			if abs(temp-target) < abs(sum-target) {
+				sum = temp
+			}
+		}
+	}
+
+	return sum
 }
