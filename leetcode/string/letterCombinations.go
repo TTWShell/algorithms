@@ -15,5 +15,23 @@ Note:
 package leetcode
 
 func letterCombinations(digits string) []string {
-	return []string{}
+	maps := []string{"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"}
+
+	res := []string{}
+	for i, digit := range digits {
+		if i == 0 {
+			for _, letter := range maps[digit-'0'] {
+				res = append(res, string(letter))
+			}
+		} else {
+			temp := []string{}
+			for _, agoLetter := range res {
+				for _, letter := range maps[digit-'0'] {
+					temp = append(temp, agoLetter+string(letter))
+				}
+			}
+			res = temp
+		}
+	}
+	return res
 }
