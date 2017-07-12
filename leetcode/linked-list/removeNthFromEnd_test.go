@@ -12,4 +12,9 @@ func Test_removeNthFromEnd(t *testing.T) {
 	if r := removeNthFromEnd(head, 1); r != nil {
 		t.Fatal(r)
 	}
+
+	head = &ListNode{Val: 1, Next: &ListNode{Val: 2}}
+	if r := removeNthFromEnd(head, 2); r.String() != "2 <nil>" {
+		t.Fatal(r)
+	}
 }

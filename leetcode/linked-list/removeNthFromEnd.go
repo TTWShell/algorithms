@@ -30,13 +30,16 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	}
 
 	var res, cur *ListNode
+	if total-n == 0 {
+		return head.Next
+	}
+
 	for i := 0; i < total-n; i++ {
 		temp := &ListNode{Val: head.Val}
 		if res == nil {
 			res = temp
 		} else {
 			cur.Next = temp
-
 		}
 		cur, head = temp, head.Next
 	}
