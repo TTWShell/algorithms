@@ -5,9 +5,9 @@ import "testing"
 func Test_fourSum(t *testing.T) {
 	input := []int{1, 0, -1, 0, -2, 2}
 	output := [][]int{
-		{-1, 0, 0, 1},
 		{-2, -1, 1, 2},
 		{-2, 0, 0, 2},
+		{-1, 0, 0, 1},
 	}
 
 	r := fourSum(input, 0)
