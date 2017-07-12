@@ -34,8 +34,7 @@ func KSum(nums []int, target, K int, result []int, results *[][]int) {
 		left, right := 0, len(nums)-1
 		for left < right {
 			if temp := nums[left] + nums[right]; temp == target {
-				result = append(result, nums[left], nums[right])
-				*results = append(*results, result)
+				*results = append(*results, append(result, nums[left], nums[right]))
 				left++
 				right--
 				for left < right && nums[left] == nums[left-1] {
