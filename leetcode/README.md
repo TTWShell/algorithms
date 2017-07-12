@@ -19,6 +19,7 @@
 | [15. 3Sum](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/threeSum.go) | Medium |
 | [16. 3Sum Closest](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/threeSumClosest.go) | Medium |
 | [17. Letter Combinations of a Phone Number](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/letterCombinations.go) | Medium |
+| [18. 4Sum](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/fourSum.go) | Medium |
 | [20. Valid Parentheses](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/isValid.go ) | Easy |
 | [21. Merge Two Sorted Lists](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/mergeTwoLists.go ) | Easy |
 | [26. Remove Duplicates from Sorted Array](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/removeDuplicates.go ) | Easy |
