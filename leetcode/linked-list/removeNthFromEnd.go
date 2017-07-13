@@ -15,6 +15,26 @@ Note:
 package leetcode
 
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
+	res := &ListNode{}
+	slow, fast := res, head
+	slow.Next = head
+
+	// Move fast in front so that the gap between slow and fast becomes n
+	for i := 1; i <= n; i++ {
+		fast = fast.Next
+	}
+	// Move fast to the end, maintaining the gap
+	for fast != nil {
+		slow = slow.Next
+		fast = fast.Next
+	}
+	// Skip the desired node
+	slow.Next = slow.Next.Next
+	return res.Next
+}
+
+/*
+func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	i, total := 0, 0
 	slow, fast := head, head
 
@@ -51,3 +71,4 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	}
 	return res
 }
+*/
