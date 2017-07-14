@@ -30,6 +30,7 @@
 | [26. Remove Duplicates from Sorted Array](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/removeDuplicates.go ) | Easy |
 | [27. Remove Element](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/removeElement.go ) | Easy |
 | [28. Implement strStr()](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/strStr.go ) | Easy |
+| [29. Divide Two Integers](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/divide.go) | Medium |
 | [35. Search Insert Position](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/searchInsert.go ) | Easy |
 | [38. Count and Say](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/countAndSay.go ) | Easy |
 | [53. Maximum Subarray](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/maxSubArray.go ) | Easy |
