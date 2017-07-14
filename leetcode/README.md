@@ -26,6 +26,7 @@
 | [22. Generate Parentheses](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/generateParenthesis.go) | Medium |
 | [23. Merge k Sorted Lists](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/mergeKLists.go) | Hard |
 | [24. Swap Nodes in Pairs](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/swapPairs.go) | Medium |
+| [25. Reverse Nodes in k-Group](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/reverseKGroup.go) | Hard |
 | [26. Remove Duplicates from Sorted Array](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/removeDuplicates.go ) | Easy |
 | [27. Remove Element](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/removeElement.go ) | Easy |
 | [28. Implement strStr()](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/strStr.go ) | Easy |

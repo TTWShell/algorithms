@@ -16,7 +16,7 @@ func swapPairs(head *ListNode) *ListNode {
 
 	var res, cur, temp *ListNode
 
-	for ; head != nil && head.Next != nil; head = head.Next {
+	for ; head != nil && head.Next != nil; head = head.Next.Next {
 		temp = &ListNode{Val: head.Next.Val, Next: &ListNode{Val: head.Val}}
 		if res == nil {
 			res = temp
@@ -24,7 +24,6 @@ func swapPairs(head *ListNode) *ListNode {
 			cur.Next = temp
 		}
 		cur = temp.Next
-		head = head.Next
 	}
 
 	if head != nil {
