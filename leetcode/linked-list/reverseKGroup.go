@@ -27,18 +27,18 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 		cur, root = res, head
 	)
 
-	for {
-		i, nextCur := 1, &ListNode{Val: root.Val}
-		head = root
-		for ; i < k && root != nil && root.Next != nil; i++ {
+	for root != nil {
+		i, nextCur, head := 1, &ListNode{Val: root.Val}, root
+		root = root.Next
+		for ; i < k && root != nil; i++ {
 			if i == 1 {
-				root = root.Next
 				temp = &ListNode{Val: root.Val, Next: nextCur}
 			} else {
 				temp = &ListNode{Val: root.Val, Next: temp}
 			}
 			root = root.Next
 		}
+
 		if i == k {
 			if res == nil {
 				res = temp
@@ -53,6 +53,5 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 			break
 		}
 	}
-
 	return res
 }
