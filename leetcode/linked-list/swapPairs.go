@@ -10,5 +10,25 @@ Your algorithm should use only constant space. You may not modify the values in 
 package leetcode
 
 func swapPairs(head *ListNode) *ListNode {
-	return head
+	if head == nil || head.Next == nil {
+		return head
+	}
+
+	var res, cur, temp *ListNode
+
+	for ; head != nil && head.Next != nil; head = head.Next {
+		temp = &ListNode{Val: head.Next.Val, Next: &ListNode{Val: head.Val}}
+		if res == nil {
+			res = temp
+		} else {
+			cur.Next = temp
+		}
+		cur = temp.Next
+		head = head.Next
+	}
+
+	if head != nil {
+		cur.Next = head
+	}
+	return res
 }
