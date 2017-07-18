@@ -24,19 +24,24 @@ func findSubstring(s string, words []string) []int {
 	}
 
 	lens, lenws, lenw := len(s), len(words), len(words[0])
-	for i := 0; i <= lens-lenws*lenw; i++ {
-		tmpMaps := make(map[string]int)
-		count := 0
-		for j := 0; j < lenws; j++ {
-			tmp := s[i+j*lenw : i+j*lenw+lenw]
-			tmpMaps[tmp]++
-			if v, ok := wMaps[tmp]; !ok || v < tmpMaps[tmp] {
-				break
+	for slide := 0; slide < lenw; slide++ {
+		for i := slide; i <= lens-lenws*lenw; i += lenw {
+			tmpMaps := make(map[string]int)
+			count := 0
+			for j := 0; j < lenws; j++ {
+				tmp := s[i+j*lenw : i+(j+1)*lenw]
+				tmpMaps[tmp]++
+				if v, ok := wMaps[tmp]; ok && v < tmpMaps[tmp] {
+					break
+				} else if !ok {
+					i += lenw * count
+					break
+				}
+				count++
 			}
-			count++
-		}
-		if count == lenws {
-			res = append(res, i)
+			if count == lenws {
+				res = append(res, i)
+			}
 		}
 	}
 
