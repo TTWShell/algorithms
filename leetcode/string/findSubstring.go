@@ -18,29 +18,43 @@ func findSubstring(s string, words []string) []int {
 		return res
 	}
 
-	wMaps := make(map[string]int, len(words))
-	for _, word := range words {
-		wMaps[word]++
+	initwMaps := func(wMaps map[string]int, words []string) {
+		for _, word := range words {
+			wMaps[word] = 0
+		}
+		for _, word := range words {
+			wMaps[word]++
+		}
 	}
 
+	wMaps := make(map[string]int, len(words))
 	lens, lenws, lenw := len(s), len(words), len(words[0])
+
 	for slide := 0; slide < lenw; slide++ {
-		for i := slide; i <= lens-lenws*lenw; i += lenw {
-			tmpMaps := make(map[string]int)
-			count := 0
-			for j := 0; j < lenws; j++ {
-				tmp := s[i+j*lenw : i+(j+1)*lenw]
-				tmpMaps[tmp]++
-				if v, ok := wMaps[tmp]; ok && v < tmpMaps[tmp] {
-					break
-				} else if !ok {
-					i += lenw * count
-					break
-				}
+		initwMaps(wMaps, words)
+		i, count := 0, 0
+		for i <= lens-slide-lenws*lenw {
+			tmp := s[i+slide+count*lenw : i+slide+(count+1)*lenw]
+			if num, ok := wMaps[tmp]; ok && num != 0 {
+				wMaps[tmp]--
 				count++
-			}
-			if count == lenws {
-				res = append(res, i)
+				if count == lenws {
+					res = append(res, i+slide)
+					wMaps[s[i+slide:i+slide+lenw]]++
+					count--
+					i += lenw
+				}
+			} else if ok {
+				wMaps[s[i+slide:i+slide+lenw]]++
+				count--
+				i += lenw
+
+			} else {
+				if count != 0 {
+					initwMaps(wMaps, words)
+				}
+				i += lenw * (count + 1)
+				count = 0
 			}
 		}
 	}
