@@ -154,3 +154,4 @@
 | [633. Sum of Square Numbers](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/judgeSquareSum.go) | Easy |
 | [637. Average of Levels in Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/averageOfLevels.go) | Easy |
 | [643. Maximum Average Subarray I](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/findMaxAverage.go) | Easy |
+| [644. Maximum Average Subarray II](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/findMaxAverage2.go) | Hard |
