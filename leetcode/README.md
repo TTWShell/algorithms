@@ -35,6 +35,7 @@
 | [31. Next Permutation](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/nextPermutation.go) | Medium |
 | [32. Longest Valid Parentheses](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/longestValidParentheses.go) | Hard |
 | [33. Search in Rotated Sorted Array](https://github.com/TTWShell/algorithms/blob/master/leetcode/binary-search/search.go) | Medium |
+| [34. Search for a Range](https://github.com/TTWShell/algorithms/blob/master/leetcode/binary-search/searchRange.go) | Medium |
 | [35. Search Insert Position](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/searchInsert.go ) | Easy |
 | [38. Count and Say](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/countAndSay.go ) | Easy |
 | [53. Maximum Subarray](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/maxSubArray.go ) | Easy |

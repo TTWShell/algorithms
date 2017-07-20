@@ -11,12 +11,9 @@ You may assume no duplicate exists in the array.
 package leetcode
 
 func search(nums []int, target int) int {
-	var (
-		lenn        = len(nums)
-		left, right = 0, lenn - 1
-	)
+	left, right := 0, len(nums)
 
-	for right >= left {
+	for left != right {
 		mid := left + (right-left)/2
 		if nums[mid] == target {
 			return mid
