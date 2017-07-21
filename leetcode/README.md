@@ -37,6 +37,7 @@
 | [33. Search in Rotated Sorted Array](https://github.com/TTWShell/algorithms/blob/master/leetcode/binary-search/search.go) | Medium |
 | [34. Search for a Range](https://github.com/TTWShell/algorithms/blob/master/leetcode/binary-search/searchRange.go) | Medium |
 | [35. Search Insert Position](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/searchInsert.go ) | Easy |
+| [36. Valid Sudoku](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/isValidSudoku.go) | Medium |
 | [38. Count and Say](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/countAndSay.go ) | Easy |
 | [53. Maximum Subarray](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/maxSubArray.go ) | Easy |
 | [58. Length of Last Word](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/lengthOfLastWord.go ) | Easy |
