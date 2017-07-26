@@ -162,3 +162,4 @@
 | [644. Maximum Average Subarray II](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/findMaxAverage2.go) | Hard |
 | [645. Set Mismatch](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/findErrorNums.go) | Easy |
 | [646. Maximum Length of Pair Chain](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/findLongestChain.go) | Medium |
+| [647. Palindromic Substrings](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/countSubstrings.go) | Medium |
