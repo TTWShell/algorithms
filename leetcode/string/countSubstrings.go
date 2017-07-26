@@ -18,5 +18,24 @@ Note:
 package leetcode
 
 func countSubstrings(s string) int {
-	return 3
+	isPalindromic := func(s string) bool {
+		for i, j := 0, len(s)-1; i <= j; {
+			if s[i] != s[len(s)-1-i] {
+				return false
+			}
+			i++
+			j--
+		}
+		return true
+	}
+
+	res := len(s)
+	for step := 2; step <= len(s); step++ {
+		for start := 0; start <= len(s)-step; start++ {
+			if isPalindromic(s[start : start+step]) {
+				res++
+			}
+		}
+	}
+	return res
 }
