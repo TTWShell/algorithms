@@ -79,3 +79,24 @@ func replaceWords(dict []string, sentence string) string {
 	}
 	return strings.Join(words, " ")
 }
+
+/*
+func replaceWords(dict []string, sentence string) string {
+	replace := func(root string, words []string) []string {
+		if len(root) == 0 {
+			return words
+		}
+		for i := range words {
+			if strings.HasPrefix(words[i], root) {
+				words[i] = root
+			}
+		}
+		return words
+	}
+	words := strings.Split(sentence, " ")
+	for _, root := range dict {
+		words = replace(root, words)
+	}
+	return strings.Join(words, " ")
+}
+*/
