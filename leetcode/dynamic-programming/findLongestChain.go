@@ -15,6 +15,35 @@ Note:
 
 package leetcode
 
+import (
+	"math"
+	"sort"
+)
+
+type SortPair [][]int
+
+func (s SortPair) Len() int {
+	return len(s)
+}
+
+func (s SortPair) Less(i, j int) bool {
+	return s[i][1] < s[j][1]
+}
+
+func (s SortPair) Swap(i, j int) {
+	s[i], s[j] = s[j], s[i]
+}
+
 func findLongestChain(pairs [][]int) int {
-	return -1
+	// sort.Slice(pairs, func(i, j int) bool { return pairs[i][1] < pairs[j][1] })
+	sort.Sort(SortPair(pairs))
+
+	last, res := []int{math.MinInt32, math.MinInt32}, 0
+	for _, p := range pairs {
+		if p[0] > last[1] {
+			res++
+			last = p
+		}
+	}
+	return res
 }
