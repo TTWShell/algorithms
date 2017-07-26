@@ -163,3 +163,4 @@
 | [645. Set Mismatch](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/findErrorNums.go) | Easy |
 | [646. Maximum Length of Pair Chain](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/findLongestChain.go) | Medium |
 | [647. Palindromic Substrings](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/countSubstrings.go) | Medium |
+| [648. Replace Words](https://github.com/TTWShell/algorithms/blob/master/leetcode/trie/replaceWords.go) | Medium |
