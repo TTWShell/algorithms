@@ -18,6 +18,30 @@ Note:
 package leetcode
 
 func countSubstrings(s string) int {
+	countMiddle := func(runes []rune, left, right int) int {
+		count := 0
+		for left >= 0 && right < len(runes) && runes[left] == runes[right] {
+			count += 1
+			left, right = left-1, right+1
+		}
+		return count
+	}
+
+	runes := []rune(s)
+	if len(runes) == 0 {
+		return 0
+	}
+
+	count := 0
+	for i := 0; i < len(runes); i++ {
+		count += countMiddle(runes, i, i)
+		count += countMiddle(runes, i, i+1)
+	}
+	return count
+}
+
+/*
+func countSubstrings(s string) int {
 	isPalindromic := func(s string) bool {
 		for i, j := 0, len(s)-1; i <= j; {
 			if s[i] != s[len(s)-1-i] {
@@ -39,3 +63,4 @@ func countSubstrings(s string) int {
 	}
 	return res
 }
+*/
