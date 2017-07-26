@@ -21,6 +21,55 @@ Note:
 
 package leetcode
 
+import "strings"
+
+type Trie struct {
+	IsRoot bool
+	Next   map[rune]*Trie
+}
+
+func TrieConstructor(dict []string) Trie {
+	trie := &Trie{IsRoot: false, Next: map[rune]*Trie{}}
+	for _, word := range dict {
+		var cur, tmp *Trie
+		for i, c := range word {
+			tmp = &Trie{IsRoot: false, Next: map[rune]*Trie{}}
+			if i == 0 {
+				trie.Next[c] = tmp
+			} else {
+				cur.Next[c] = tmp
+			}
+			cur = tmp
+		}
+		cur.IsRoot = true
+
+	}
+	return *trie
+}
+
 func replaceWords(dict []string, sentence string) string {
-	return sentence
+	if len(sentence) == 0 {
+		return sentence
+	}
+
+	trie := TrieConstructor(dict)
+	words := strings.Split(sentence, " ")
+
+	for i, word := range words {
+		cur, root := &trie, make([]string, len(word), len(word))
+
+		for _, c := range word {
+			root = append(root, string(c))
+			if next, ok := cur.Next[c]; ok {
+				if next.IsRoot {
+					words[i] = strings.Join(root, "")
+					break
+				}
+			} else {
+				break
+			}
+			cur = cur.Next[c]
+		}
+	}
+	return strings.Join(words, " ")
 }
