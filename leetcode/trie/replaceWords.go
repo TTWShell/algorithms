@@ -25,24 +25,32 @@ import "strings"
 
 type Trie struct {
 	IsRoot bool
+	Root   string
 	Next   map[rune]*Trie
 }
 
 func TrieConstructor(dict []string) Trie {
 	trie := &Trie{IsRoot: false, Next: map[rune]*Trie{}}
 	for _, word := range dict {
-		var cur, tmp *Trie
+		var (
+			cur, end = trie, len(word)
+			tmp      *Trie
+		)
 		for i, c := range word {
-			tmp = &Trie{IsRoot: false, Next: map[rune]*Trie{}}
-			if i == 0 {
-				trie.Next[c] = tmp
+			if next, ok := cur.Next[c]; ok {
+				if cur = next; cur.IsRoot {
+					// only need shortest
+					end = i + 1
+					break
+				}
 			} else {
+				tmp = &Trie{IsRoot: false, Next: map[rune]*Trie{}}
 				cur.Next[c] = tmp
+				cur = tmp
 			}
-			cur = tmp
 		}
+		cur.Root = word[0:end]
 		cur.IsRoot = true
-
 	}
 	return *trie
 }
@@ -56,13 +64,11 @@ func replaceWords(dict []string, sentence string) string {
 	words := strings.Split(sentence, " ")
 
 	for i, word := range words {
-		cur, root := &trie, make([]string, len(word), len(word))
-
+		cur := &trie
 		for _, c := range word {
-			root = append(root, string(c))
 			if next, ok := cur.Next[c]; ok {
 				if next.IsRoot {
-					words[i] = strings.Join(root, "")
+					words[i] = next.Root
 					break
 				}
 			} else {
