@@ -20,6 +20,37 @@ Note:
 
 package leetcode
 
-func canFinish(numCourses int, prerequisites [][]int) bool {
-	return false
+func canFinish(numCourses int, prereqs [][]int) bool {
+	graph := make([][]int, numCourses)
+	for i := 0; i < len(prereqs); i++ {
+		graph[prereqs[i][1]] = append(graph[prereqs[i][1]], prereqs[i][0])
+	}
+
+	visited := make([]int, numCourses)
+	for course := range graph {
+		if !canFinishHelper(course, graph, visited) {
+			return false
+		}
+	}
+	return true
+}
+
+func canFinishHelper(course int, graph [][]int, visited []int) bool {
+	const (
+		partial  = 1
+		complete = 2
+	)
+	if visited[course] == partial {
+		return false
+	} else if visited[course] == complete {
+		return true
+	}
+	visited[course] = partial
+	for _, dependentCourse := range graph[course] {
+		if !canFinishHelper(dependentCourse, graph, visited) {
+			return false
+		}
+	}
+	visited[course] = complete
+	return true
 }
