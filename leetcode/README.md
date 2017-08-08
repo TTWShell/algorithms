@@ -76,6 +76,7 @@
 | [204. Count Primes](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/countPrimes.go) | Easy |
 | [205. Isomorphic Strings](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/isIsomorphic.go) | Easy |
 | [206. Reverse Linked List](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/reverseList.go) | Easy |
+| [207. Course Schedule](https://github.com/TTWShell/algorithms/blob/master/leetcode/graph/canFinish.go) | Medium |
 | [217. Contains Duplicate](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/containsDuplicate.go) | Easy |
 | [219. Contains Duplicate II](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/containsNearbyDuplicate.go) | Easy |
 | [225. Implement Stack using Queues](https://github.com/TTWShell/algorithms/blob/master/leetcode/stack/MyStack.go) | Easy |
