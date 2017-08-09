@@ -20,6 +20,60 @@ Example 2:
 
 package leetcode
 
+import (
+	"sort"
+	"strings"
+)
+
 func findItinerary(tickets [][]string) []string {
-	return tickets[0]
+	notIn := func(list []int, target int) bool {
+		for _, num := range list {
+			if num == target {
+				return false
+			}
+		}
+		return true
+	}
+
+	type ticketIndex map[string]int
+	graph := make(map[string]ticketIndex, len(tickets))
+	for index, ticket := range tickets {
+		if _, ok := graph[ticket[0]]; !ok {
+			graph[ticket[0]] = make(ticketIndex)
+		}
+		graph[ticket[0]][ticket[1]] = index
+	}
+
+	var helper func(graph map[string]ticketIndex, used []int, now string) [][]string
+	helper = func(graph map[string]ticketIndex, used []int, now string) [][]string {
+		if len(used) == len(tickets) {
+			return [][]string{{now}}
+		}
+		res := [][]string{}
+		for to, index := range graph[now] {
+			if !notIn(used, index) {
+				continue
+			}
+			result := helper(graph, append(used, index), to)
+			if len(result) != 0 {
+				for _, sub := range result {
+					res = append(res, append([]string{now}, sub...))
+				}
+			}
+		}
+		return res
+	}
+
+	allRes := helper(graph, []int{}, "JFK")
+	tmp := make([]string, len(allRes), len(allRes))
+	for i := range allRes {
+		tmp[i] = strings.Join(allRes[i], "")
+	}
+	sort.Strings(tmp)
+
+	res := make([]string, len(tickets)+1, len(tickets)+1)
+	for i := 0; i < len(tmp[0]); i += 3 {
+		res[i/3] = string(tmp[0][i : i+3])
+	}
+	return res
 }
