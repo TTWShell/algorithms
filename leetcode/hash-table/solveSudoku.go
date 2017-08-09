@@ -16,47 +16,48 @@ http://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Sudoku-by-L2G-20050714_
 
 package leetcode
 
+type Board [][]byte
+
+func (board Board) isValid(row, col int, c byte) bool {
+	i, j := row/3*3, col/3*3
+	for k := 0; k < 9; k++ {
+		if board[row][k] == c {
+			return false
+		}
+		if board[k][col] == c {
+			return false
+		}
+		if board[i+k%3][j+k/3] == c {
+			return false
+		}
+	}
+	return true
+}
+
+func (board Board) Solve() bool {
+	for row := range board {
+		for col := range board[row] {
+			if board[row][col] != '.' {
+				continue
+			}
+			for _, num := range []byte("123456789") {
+				if !board.isValid(row, col, num) {
+					continue
+				}
+				board[row][col] = num
+				if board.Solve() {
+					return true
+				} else {
+					board[row][col] = '.'
+				}
+			}
+			return false
+		}
+	}
+	return true
+}
+
 func solveSudoku(board [][]byte) {
-	isValidSudoku := func(board [][]byte) bool {
-		var rowMask, colMask, areaMask [9][9]bool
-		for r := range board {
-			for c := range board[r] {
-				if board[r][c] != '.' {
-					digit := board[r][c] - '0' - 1
-					area := 3*(r/3) + c/3
-					if rowMask[r][digit] || colMask[c][digit] || areaMask[area][digit] {
-						return false
-					}
-					rowMask[r][digit], colMask[c][digit], areaMask[area][digit] = true, true, true
-				}
-			}
-		}
-		return true
-	}
-
-	var helper func(board [][]byte) bool
-	helper = func(board [][]byte) bool {
-		for row := range board {
-			for col := range board[row] {
-				if board[row][col] == '.' {
-					for _, num := range []byte("123456789") {
-						board[row][col] = num
-						if !isValidSudoku(board) {
-							board[row][col] = '.'
-						} else {
-							if helper(board) {
-								return true
-							} else {
-								board[row][col] = '.'
-							}
-						}
-					}
-					return false
-				}
-			}
-		}
-		return true
-	}
-
-	helper(board)
+	newBoard := Board(board)
+	newBoard.Solve()
 }
