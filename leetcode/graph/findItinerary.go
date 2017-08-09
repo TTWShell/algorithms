@@ -35,13 +35,13 @@ func findItinerary(tickets [][]string) []string {
 		return true
 	}
 
-	type ticketIndex map[string]int
+	type ticketIndex map[string][]int
 	graph := make(map[string]ticketIndex, len(tickets))
 	for index, ticket := range tickets {
 		if _, ok := graph[ticket[0]]; !ok {
 			graph[ticket[0]] = make(ticketIndex)
 		}
-		graph[ticket[0]][ticket[1]] = index
+		graph[ticket[0]][ticket[1]] = append(graph[ticket[0]][ticket[1]], index)
 	}
 
 	var helper func(graph map[string]ticketIndex, used []int, now string) [][]string
@@ -50,14 +50,16 @@ func findItinerary(tickets [][]string) []string {
 			return [][]string{{now}}
 		}
 		res := [][]string{}
-		for to, index := range graph[now] {
-			if !notIn(used, index) {
-				continue
-			}
-			result := helper(graph, append(used, index), to)
-			if len(result) != 0 {
-				for _, sub := range result {
-					res = append(res, append([]string{now}, sub...))
+		for to, indexs := range graph[now] {
+			for _, index := range indexs {
+				if !notIn(used, index) {
+					continue
+				}
+				result := helper(graph, append(used, index), to)
+				if len(result) != 0 {
+					for _, sub := range result {
+						res = append(res, append([]string{now}, sub...))
+					}
 				}
 			}
 		}
@@ -65,6 +67,12 @@ func findItinerary(tickets [][]string) []string {
 	}
 
 	allRes := helper(graph, []int{}, "JFK")
+	if len(allRes) == 0 {
+		return []string{}
+	}
+	if len(allRes) == 1 {
+		return allRes[0]
+	}
 	tmp := make([]string, len(allRes), len(allRes))
 	for i := range allRes {
 		tmp[i] = strings.Join(allRes[i], "")

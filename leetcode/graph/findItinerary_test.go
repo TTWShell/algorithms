@@ -6,7 +6,12 @@ import (
 )
 
 func Test_findItinerary(t *testing.T) {
-	tickets := [][]string{{"MUC", "LHR"}, {"JFK", "MUC"}, {"SFO", "SJC"}, {"LHR", "SFO"}}
+	tickets := [][]string{{"EZE", "AXA"}, {"TIA", "ANU"}, {"ANU", "JFK"}, {"JFK", "ANU"}, {"ANU", "EZE"}, {"TIA", "ANU"}, {"AXA", "TIA"}, {"TIA", "JFK"}, {"ANU", "TIA"}, {"JFK", "TIA"}}
+	if r := findItinerary(tickets); !reflect.DeepEqual(r, []string{"JFK", "ANU", "EZE", "AXA", "TIA", "ANU", "JFK", "TIA", "ANU", "TIA", "JFK"}) {
+		t.Fatal(r)
+	}
+
+	tickets = [][]string{{"MUC", "LHR"}, {"JFK", "MUC"}, {"SFO", "SJC"}, {"LHR", "SFO"}}
 	if r := findItinerary(tickets); !reflect.DeepEqual(r, []string{"JFK", "MUC", "LHR", "SFO", "SJC"}) {
 		t.Fatal(r)
 	}
