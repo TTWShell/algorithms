@@ -20,10 +20,7 @@ Example 2:
 
 package leetcode
 
-import (
-	"sort"
-	"strings"
-)
+import "sort"
 
 func findItinerary(tickets [][]string) []string {
 	notIn := func(list []int, target int) bool {
@@ -44,44 +41,31 @@ func findItinerary(tickets [][]string) []string {
 		graph[ticket[0]][ticket[1]] = append(graph[ticket[0]][ticket[1]], index)
 	}
 
-	var helper func(graph map[string]ticketIndex, used []int, now string) [][]string
-	helper = func(graph map[string]ticketIndex, used []int, now string) [][]string {
+	var helper func(used []int, now string) (res []string)
+	helper = func(used []int, now string) (res []string) {
 		if len(used) == len(tickets) {
-			return [][]string{{now}}
+			return []string{now}
 		}
-		res := [][]string{}
-		for to, indexs := range graph[now] {
-			for _, index := range indexs {
+
+		keys := []string{}
+		for to, _ := range graph[now] {
+			keys = append(keys, to)
+		}
+		sort.Strings(keys)
+
+		for _, to := range keys {
+			for _, index := range graph[now][to] {
 				if !notIn(used, index) {
 					continue
 				}
-				result := helper(graph, append(used, index), to)
+				result := helper(append(used, index), to)
 				if len(result) != 0 {
-					for _, sub := range result {
-						res = append(res, append([]string{now}, sub...))
-					}
+					return append(append(res, now), result...)
 				}
 			}
 		}
 		return res
 	}
 
-	allRes := helper(graph, []int{}, "JFK")
-	if len(allRes) == 0 {
-		return []string{}
-	}
-	if len(allRes) == 1 {
-		return allRes[0]
-	}
-	tmp := make([]string, len(allRes), len(allRes))
-	for i := range allRes {
-		tmp[i] = strings.Join(allRes[i], "")
-	}
-	sort.Strings(tmp)
-
-	res := make([]string, len(tickets)+1, len(tickets)+1)
-	for i := 0; i < len(tmp[0]); i += 3 {
-		res[i/3] = string(tmp[0][i : i+3])
-	}
-	return res
+	return helper([]int{}, "JFK")
 }
