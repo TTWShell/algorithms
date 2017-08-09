@@ -110,3 +110,29 @@
         如果w未被访问，则：
         * 访问w；
         * 将w添加到队列中。
+
+## 最短路径算法（Shortest Path Algorithm）
+
+寻找一个有向图中从一个起始顶点start到一个目的顶点destination之间一条最短路径。显示从start到destination的一条最短路径上的所有顶点。如果从start无法到达destination，则给出一条提示信息。
+
+1. 访问start，并将其标签置为0；
+2. 初始化distance为0；
+3. 初始化一个队列为仅包含start；
+4. 当destination还未被访问并且队列非空时，做以下工作：
+    1. 从队列删除一个顶点v；
+    2. 如果v的标签大于distance，将distance增1；
+    3. 对于邻接于v的每一个顶点w：
+
+        如果w还未被访问，则：
+        * 访问w，并将其标签置为distance＋1；
+        * 将w添加到队列中。
+5. 如果destination还未被访问，则：
+
+    显示 “从起始顶点无法到达目的顶点”
+
+    否则，如下查找最短路径中的顶点p[0], ..., p[distance]:
+
+    1. 初始化p[distance]为destination；
+    2. 对于从distance-1～0的每一个值k：
+
+        找到邻接于p[k+1]并且标签为k的一个顶点p[k]。
