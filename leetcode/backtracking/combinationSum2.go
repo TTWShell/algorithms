@@ -19,6 +19,27 @@ A solution set is:
 
 package leetcode
 
+import "sort"
+
 func combinationSum2(candidates []int, target int) [][]int {
-	return [][]int{}
+	res := [][]int{}
+	sort.Ints(candidates)
+	for i := len(candidates) - 1; i >= 0; i-- {
+		if now := candidates[i]; now > target {
+			continue
+		} else if now == target {
+			res = append(res, []int{now})
+		} else {
+			results := combinationSum2(candidates[0:i], target-now)
+			if len(results) != 0 {
+				for _, result := range results {
+					res = append(res, append(result, now))
+				}
+			}
+		}
+		for i-1 >= 0 && candidates[i] == candidates[i-1] {
+			i--
+		}
+	}
+	return res
 }
