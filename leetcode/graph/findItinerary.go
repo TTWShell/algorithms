@@ -23,49 +23,37 @@ package leetcode
 import "sort"
 
 func findItinerary(tickets [][]string) []string {
-	notIn := func(list []int, target int) bool {
-		for _, num := range list {
-			if num == target {
-				return false
-			}
+	graph := make(map[string][]string, len(tickets))
+	for _, ticket := range tickets {
+		from, to := ticket[0], ticket[1]
+		if _, ok := graph[from]; !ok {
+			graph[from] = []string{}
 		}
-		return true
+		graph[from] = append(graph[from], to)
+	}
+	for _, ticket := range tickets {
+		sort.Strings(graph[ticket[0]])
 	}
 
-	type ticketIndex map[string][]int
-	graph := make(map[string]ticketIndex, len(tickets))
-	for index, ticket := range tickets {
-		if _, ok := graph[ticket[0]]; !ok {
-			graph[ticket[0]] = make(ticketIndex)
-		}
-		graph[ticket[0]][ticket[1]] = append(graph[ticket[0]][ticket[1]], index)
-	}
-
-	var helper func(used []int, now string) (res []string)
-	helper = func(used []int, now string) (res []string) {
-		if len(used) == len(tickets) {
+	var helper func(now string, n int) (res []string)
+	helper = func(now string, n int) (res []string) {
+		if n == 0 {
 			return []string{now}
 		}
 
-		keys := []string{}
-		for to, _ := range graph[now] {
-			keys = append(keys, to)
-		}
-		sort.Strings(keys)
-
-		for _, to := range keys {
-			for _, index := range graph[now][to] {
-				if !notIn(used, index) {
-					continue
-				}
-				result := helper(append(used, index), to)
-				if len(result) != 0 {
-					return append(append(res, now), result...)
-				}
+		for i, to := range graph[now] {
+			if to == "" {
+				continue
 			}
+			graph[now][i] = ""
+			result := helper(to, n-1)
+			if len(result) != 0 {
+				return append(append(res, now), result...)
+			}
+			graph[now][i] = to
 		}
 		return res
 	}
 
-	return helper([]int{}, "JFK")
+	return helper("JFK", len(tickets))
 }
