@@ -41,6 +41,7 @@
 | [37. Sudoku Solver](https://github.com/TTWShell/algorithms/blob/master/leetcode/backtracking/solveSudoku.go) | Hard |
 | [38. Count and Say](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/countAndSay.go ) | Easy |
 | [39. Combination Sum](https://github.com/TTWShell/algorithms/blob/master/leetcode/backtracking/combinationSum.go) | Medium |
+| [40. Combination Sum II](https://github.com/TTWShell/algorithms/blob/master/leetcode/backtracking/combinationSum2.go) | Medium |
 | [53. Maximum Subarray](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/maxSubArray.go ) | Easy |
 | [58. Length of Last Word](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/lengthOfLastWord.go ) | Easy |
 | [66. Plus One](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/plusOne.go ) | Easy |
