@@ -15,3 +15,11 @@ func DFSPreOrder(root *TreeNode) {
 		DFSPreOrder(root.Right)
 	}
 }
+
+func DFSInOrder(root *TreeNode) {
+	if root != nil {
+		DFSInOrder(root.Left)
+		log.Printf("%d ", root.Val)
+		DFSInOrder(root.Right)
+	}
+}
