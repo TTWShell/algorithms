@@ -54,3 +54,9 @@ func Test_DFSPostOrder(t *testing.T) {
 		t.Fatal(r)
 	}
 }
+
+func Test_BFS(t *testing.T) {
+	if r := ReOutput(BFS, root); r != "3 9 20 8 15 7" {
+		t.Fatal(r)
+	}
+}

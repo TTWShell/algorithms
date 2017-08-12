@@ -31,3 +31,20 @@ func DFSPostOrder(root *TreeNode) {
 		log.Printf("%d ", root.Val)
 	}
 }
+
+func BFS(root *TreeNode) {
+	stack := []*TreeNode{root}
+	for len(stack) != 0 {
+		tmp := []*TreeNode{}
+		for _, node := range stack {
+			log.Printf("%d ", node.Val)
+			if node.Left != nil {
+				tmp = append(tmp, node.Left)
+			}
+			if node.Right != nil {
+				tmp = append(tmp, node.Right)
+			}
+		}
+		stack = tmp
+	}
+}
