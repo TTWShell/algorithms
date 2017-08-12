@@ -48,3 +48,9 @@ func Test_DFSInOrder(t *testing.T) {
 		t.Fatal(r)
 	}
 }
+
+func Test_DFSPostOrder(t *testing.T) {
+	if r := ReOutput(DFSPostOrder, root); r != "8 9 15 7 20 3" {
+		t.Fatal(r)
+	}
+}

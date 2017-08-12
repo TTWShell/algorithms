@@ -23,3 +23,11 @@ func DFSInOrder(root *TreeNode) {
 		DFSInOrder(root.Right)
 	}
 }
+
+func DFSPostOrder(root *TreeNode) {
+	if root != nil {
+		DFSPostOrder(root.Left)
+		DFSPostOrder(root.Right)
+		log.Printf("%d ", root.Val)
+	}
+}
