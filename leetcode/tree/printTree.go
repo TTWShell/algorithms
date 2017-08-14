@@ -54,6 +54,67 @@ Note: The height of binary tree is in the range of [1, 10].
 
 package leetcode
 
+import (
+	"math"
+	"strconv"
+)
+
 func printTree(root *TreeNode) [][]string {
-	return [][]string{}
+	depth := printTreeHelperDepth(root)
+	curDepth := 0
+
+	// init res
+	res := make([][]string, depth)
+	length := int(math.Pow(2.0, float64(depth))) - 1
+	for i := range res {
+		res[i] = make([]string, length, length)
+	}
+
+	stack := []*TreeNode{root}
+	for len(stack) != 0 {
+		tmp := []*TreeNode{}
+		padLen := int(math.Pow(2.0, float64(depth-curDepth-1))) - 1
+		index := 0
+		for _, node := range stack {
+			for j := 0; j < padLen; j++ {
+				index++
+			}
+
+			if node != nil {
+				res[curDepth][index] = strconv.Itoa(node.Val)
+			}
+			index++
+			if curDepth != 0 {
+				index++
+			}
+
+			for j := 0; j < padLen; j++ {
+				index++
+			}
+
+			if curDepth < depth-1 {
+				if node != nil {
+					tmp = append(tmp, node.Left, node.Right)
+				} else {
+					tmp = append(tmp, nil, nil)
+				}
+			}
+		}
+		stack = tmp
+		curDepth++
+	}
+
+	return res
+}
+
+func printTreeHelperDepth(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	leftDepth := printTreeHelperDepth(root.Left)
+	rightDepth := printTreeHelperDepth(root.Right)
+	if leftDepth > rightDepth {
+		return 1 + leftDepth
+	}
+	return 1 + rightDepth
 }
