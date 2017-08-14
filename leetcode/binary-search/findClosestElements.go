@@ -19,5 +19,53 @@ Note:
 package leetcode
 
 func findClosestElements(arr []int, k int, x int) []int {
-	return arr
+	binarySearch := func(arr []int, target int) int {
+		// return -1: less min; -2: more max; 0~len(arr)-1: index if exist else first num's index(num < target)
+		if target < arr[0] {
+			return -1
+		}
+		if target > arr[len(arr)-1] {
+			return -2
+		}
+
+		start, end, mid := 0, len(arr)-1, 0
+		for start <= end {
+			mid = start + (end-start)/2
+			if arr[mid] == target {
+				return mid
+			} else if arr[mid] < target {
+				start = mid + 1
+			} else {
+				end = mid - 1
+			}
+		}
+		return mid
+	}
+
+	index := binarySearch(arr, x)
+
+	if index == -1 || index == 0 {
+		return arr[0:k]
+	}
+	if index == -2 {
+		return arr[len(arr)-k:]
+	}
+
+	start, end := 0, len(arr)-1
+	if index-k > start {
+		start = index - k
+	}
+	if index+k < end {
+		end = index + k
+	}
+
+	for end-start >= k {
+		if x-arr[start] <= arr[end]-x {
+			end--
+		} else if x-arr[start] > arr[end]-x {
+			start++
+		}
+	}
+
+	return arr[start : end+1]
 }
