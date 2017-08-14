@@ -24,5 +24,19 @@ Note:
 package leetcode
 
 func constructMaximumBinaryTree(nums []int) *TreeNode {
-	return &TreeNode{}
+	if len(nums) == 0 {
+		return nil
+	}
+
+	max, maxIndex := nums[0], 0
+	for i, num := range nums {
+		if num > max {
+			max, maxIndex = num, i
+		}
+	}
+
+	node := &TreeNode{Val: max}
+	node.Left = constructMaximumBinaryTree(nums[:maxIndex])
+	node.Right = constructMaximumBinaryTree(nums[maxIndex+1:])
+	return node
 }

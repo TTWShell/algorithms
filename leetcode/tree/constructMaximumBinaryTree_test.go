@@ -18,7 +18,7 @@ func Test_constructMaximumBinaryTree(t *testing.T) {
 			Left: &TreeNode{Val: 0},
 		},
 	}
-	if r := constructMaximumBinaryTree(nums); r != output {
+	if r := constructMaximumBinaryTree(nums); r.String() != output.String() {
 		t.Fatal(r)
 	}
 }
