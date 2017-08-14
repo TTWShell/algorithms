@@ -172,3 +172,4 @@
 | [648. Replace Words](https://github.com/TTWShell/algorithms/blob/master/leetcode/trie/replaceWords.go) | Medium |
 | [653. Two Sum IV - Input is a BST](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/findTarget.go) | Easy |
 | [654. Maximum Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/constructMaximumBinaryTree.go) | Medium |
+| [655. Print Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/printTree.go) | Medium |
