@@ -13,5 +13,6 @@ Data structures and algorithms in go. LeetCode solutions in go.
 
 ## Data structures
 
+* [栈（Stack）](https://github.com/TTWShell/algorithms/blob/master/stack)
 * [树（Tree）](https://github.com/TTWShell/algorithms/blob/master/tree)
 * [图（Graph）](https://github.com/TTWShell/algorithms/blob/master/graph)
