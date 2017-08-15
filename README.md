@@ -4,11 +4,11 @@
 
 ![kill the dragon](http://img08.deviantart.net/98ef/i/2012/197/8/a/kill_the_dragon_by_ragnz-d57gxnl.jpg)
 
-Data structures and algorithms in go. LeetCode solutions in go.
+Data structures and algorithms in go.
 
 ## Online Judge
 
-1. [Leetcode已解决题目目录](https://github.com/TTWShell/algorithms/blob/master/leetcode/README.md)
+1. [Leetcode solutions in go](https://github.com/TTWShell/algorithms/blob/master/leetcode/README.md)
 
 
 ## Data structures
@@ -27,3 +27,7 @@ Data structures and algorithms in go. LeetCode solutions in go.
 * [希尔排序（Shell Sort）](https://github.com/TTWShell/algorithms/blob/master/sorting/shell)
 * [选择排序（Selection Sort）](https://github.com/TTWShell/algorithms/blob/master/sorting/selection)
 * [基数排序（Radix Sort）](https://github.com/TTWShell/algorithms/blob/master/sorting/radix)
+
+## Searching algorithms
+
+* [二分搜索算法（Binary Search）](https://github.com/TTWShell/algorithms/blob/master/search/binary-search)
