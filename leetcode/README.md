@@ -43,6 +43,7 @@
 | [39. Combination Sum](https://github.com/TTWShell/algorithms/blob/master/leetcode/backtracking/combinationSum.go) | Medium |
 | [40. Combination Sum II](https://github.com/TTWShell/algorithms/blob/master/leetcode/backtracking/combinationSum2.go) | Medium |
 | [41. First Missing Positive](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/firstMissingPositive.go) | Hard |
+| [50. Pow(x, n)](https://github.com/TTWShell/algorithms/blob/master/leetcode/binary-search/myPow.go) | Medium |
 | [53. Maximum Subarray](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/maxSubArray.go ) | Easy |
 | [58. Length of Last Word](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/lengthOfLastWord.go ) | Easy |
 | [66. Plus One](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/plusOne.go ) | Easy |
