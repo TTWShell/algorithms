@@ -5,3 +5,5 @@
 ![栈](https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Data_stack.svg/400px-Data_stack.svg.png)
 
 由于堆叠数据结构只允许在一端进行操作，因而按照后进先出（LIFO, Last In First Out）的原理运作。
+
+[stack的golang实现](https://github.com/TTWShell/algorithms/blob/master/stack/stack.go)
