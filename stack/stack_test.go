@@ -5,7 +5,7 @@ import "testing"
 func Test_Stack(t *testing.T) {
 	stack := Constructor()
 
-	if !stack.isEmpty() || stack.len != 0 || stack.Len() != 0 {
+	if !stack.IsEmpty() || stack.len != 0 || stack.Len() != 0 {
 		t.Error()
 	}
 
@@ -21,7 +21,7 @@ func Test_Stack(t *testing.T) {
 		t.Fatal(stack)
 	}
 
-	if r := stack.isEmpty(); r != false {
+	if r := stack.IsEmpty(); r != false {
 		t.Fatal("Empty:", r)
 	}
 
@@ -32,7 +32,7 @@ func Test_Stack(t *testing.T) {
 
 	stack.Pop()
 	stack.Pop()
-	if r := stack.isEmpty(); r != true {
+	if r := stack.IsEmpty(); r != true {
 		t.Fatal("Empty:", r)
 	}
 }
