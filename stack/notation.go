@@ -32,6 +32,49 @@ func isBracket(s string) bool {
 	return false
 }
 
+func IN2PN(infix []string) (polish []string) {
+	s1, s2 := Constructor(), Constructor()
+
+	for i := len(infix) - 1; i >= 0; i-- {
+		s := infix[i]
+		if isNum(s) {
+			s2.Push(s)
+		} else if isOperator(s) {
+			if s1.IsEmpty() || s1.Top().(string) == ")" ||
+				priority[s] <= priority[s1.Top().(string)] {
+				s1.Push(s)
+			} else {
+				s2.Push(s1.Pop())
+				i++
+			}
+		} else if isBracket(s) {
+			if s == ")" {
+				s1.Push(s)
+			} else {
+				for !s1.IsEmpty() && s1.Top().(string) != ")" {
+					s2.Push(s1.Pop())
+				}
+				if s1.Top().(string) == ")" {
+					s1.Pop()
+				}
+			}
+		} else {
+			panic(fmt.Sprintf("error input: %s", s))
+		}
+	}
+
+	for !s1.IsEmpty() {
+		s2.Push(s1.Pop())
+	}
+
+	res, index := make([]string, s2.Len(), s2.Len()), 0
+	for !s2.IsEmpty() {
+		res[index] = s2.Pop().(string)
+		index++
+	}
+	return res
+}
+
 func IN2RPN(infix []string) (reversePolish []string) {
 	s1, s2 := Constructor(), Constructor()
 

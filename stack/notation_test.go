@@ -28,3 +28,17 @@ func Test_IN2RPN(t *testing.T) {
 		t.Fatal(r)
 	}
 }
+
+func Test_IN2PN(t *testing.T) {
+	infix := "4.99 * 1.06 + 5.99 + 6.99 * 1.06"
+	polish := "+ + * 4.99 1.06 5.99 * 6.99 1.06"
+
+	if r := IN2PN(strings.Split(infix, " ")); strings.Join(r, " ") != polish {
+		t.Fatal(r)
+	}
+
+	infix = "( ( 4.99 * 1.06 ) + 5.99 ) + ( 6.99 * 1.06 )"
+	if r := IN2PN(strings.Split(infix, " ")); strings.Join(r, " ") != polish {
+		t.Fatal(r)
+	}
+}
