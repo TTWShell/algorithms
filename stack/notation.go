@@ -83,15 +83,12 @@ func IN2RPN(infix []string) (reversePolish []string) {
 		if isNum(s) {
 			s2.Push(s)
 		} else if isOperator(s) {
-			if s1.IsEmpty() {
+			if s1.IsEmpty() || s1.Top().(string) == "(" ||
+				priority[s] < priority[s1.Top().(string)] {
 				s1.Push(s)
 			} else {
-				if top, _ := s1.Top().(string); top == "(" || priority[s] < priority[top] {
-					s1.Push(s)
-				} else {
-					s2.Push(s1.Pop())
-					i--
-				}
+				s2.Push(s1.Pop())
+				i--
 			}
 		} else if isBracket(s) {
 			if s == "(" {
@@ -115,8 +112,7 @@ func IN2RPN(infix []string) (reversePolish []string) {
 
 	res, index := make([]string, s2.Len(), s2.Len()), s2.Len()-1
 	for !s2.IsEmpty() {
-		top, _ := s2.Pop().(string)
-		res[index] = top
+		res[index] = s2.Pop().(string)
 		index--
 	}
 	return res
