@@ -4,3 +4,5 @@
 队列的操作方式和堆栈类似，唯一的区别在于队列只允许新数据在后端进行添加。
 
 ![queue](https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Data_Queue.svg/300px-Data_Queue.svg.png)
+
+[Queue的golang实现](https://github.com/TTWShell/algorithms/blob/master/queue/queue.go)
