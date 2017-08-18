@@ -18,6 +18,7 @@ Data structures and algorithms in go.
 * [树（Tree）](https://github.com/TTWShell/algorithms/blob/master/tree)
 * [图（Graph）](https://github.com/TTWShell/algorithms/blob/master/graph)
 * [堆（Heap）](https://github.com/TTWShell/algorithms/blob/master/heap)
+* [优先队列（Priority Queue）](https://github.com/TTWShell/algorithms/blob/master/priority-queue)
 
 ## Algorithms
 
