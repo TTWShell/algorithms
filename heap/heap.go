@@ -59,6 +59,16 @@ func (h *Heap) Extract() (e Element) {
 	return
 }
 
+func (h *Heap) Peek() (e Element) {
+	h.Lock()
+	defer h.Unlock()
+
+	if h.len == 0 {
+		panic("Empty heap, cannot Peek.")
+	}
+	return h.heap[0]
+}
+
 func (h *Heap) precolateUp() {
 	// 上滤，新元素在堆中上滤直到找出正确位置
 	needUp, parent := h.len-1, (h.len-1)>>1

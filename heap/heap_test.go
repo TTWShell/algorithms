@@ -65,3 +65,21 @@ func Test_ExtractPanic(t *testing.T) {
 	}()
 	h.Extract()
 }
+
+func Test_Peek(t *testing.T) {
+	h := MinHeapConstructor()
+	h.Insert(Int(100))
+
+	if h.Peek().(Int) != Int(100) {
+		t.Fatal(h.Peek().(Int))
+	}
+
+	h.Extract()
+
+	defer func() {
+		if r := recover(); r != "Empty heap, cannot Peek." {
+			t.Fatal("Expected panic but err is:", r)
+		}
+	}()
+	h.Peek()
+}
