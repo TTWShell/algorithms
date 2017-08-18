@@ -21,7 +21,7 @@ func MaxHeapConstructor() *Heap {
 	return &Heap{heap: make([]Element, 0), isMin: false}
 }
 
-func (h *Heap) isEmpty() bool {
+func (h *Heap) IsEmpty() bool {
 	h.Lock()
 	defer h.Unlock()
 

@@ -10,12 +10,12 @@ func (i Int) LessThan(e Element) bool {
 
 func Test_Init(t *testing.T) {
 	h := MinHeapConstructor()
-	if h.len != 0 || h.Len() != 0 || len(h.heap) != 0 || h.isMin != true {
+	if h.len != 0 || h.Len() != 0 || len(h.heap) != 0 || h.isMin != true || !h.IsEmpty() {
 		t.Fatal(h, "init MinHeap failed.")
 	}
 
 	h = MaxHeapConstructor()
-	if h.len != 0 || h.Len() != 0 || len(h.heap) != 0 || h.isMin != false {
+	if h.len != 0 || h.Len() != 0 || len(h.heap) != 0 || h.isMin != false || !h.IsEmpty() {
 		t.Fatal(h, "init MaxHeap failed.")
 	}
 }
