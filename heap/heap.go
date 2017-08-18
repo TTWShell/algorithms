@@ -31,6 +31,7 @@ func (h *Heap) IsEmpty() bool {
 func (h *Heap) Len() int {
 	h.Lock()
 	defer h.Unlock()
+
 	return h.len
 }
 
@@ -41,8 +42,6 @@ func (h *Heap) Insert(e Element) {
 	h.heap = append(h.heap, e)
 	h.len++
 	h.precolateUp()
-
-	return
 }
 
 func (h *Heap) Extract() (e Element) {
@@ -83,7 +82,6 @@ func (h *Heap) precolateDown() {
 		}
 
 		h.heap[needDown], h.heap[child] = h.heap[child], h.heap[needDown]
-
 		needDown, child = child, needDown<<1+1
 	}
 }

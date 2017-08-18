@@ -22,7 +22,6 @@ func Test_Init(t *testing.T) {
 
 func Test_MinHeap(t *testing.T) {
 	h := MinHeapConstructor()
-
 	for _, num := range []Int{100, 90, 80, 5, 3, 1, 10, 20, 30, 8, 70} {
 		h.Insert(num)
 	}
@@ -31,6 +30,7 @@ func Test_MinHeap(t *testing.T) {
 	for h.Len() > 0 {
 		res = append(res, h.Extract().(Int))
 	}
+
 	for i := 0; i < len(res)-1; i++ {
 		if res[i] > res[i+1] {
 			t.Fatal(res)
@@ -40,7 +40,6 @@ func Test_MinHeap(t *testing.T) {
 
 func Test_MaxHeap(t *testing.T) {
 	h := MaxHeapConstructor()
-
 	for _, num := range []Int{100, 90, 80, 5, 3, 1, 10, 20, 30, 8, 70} {
 		h.Insert(num)
 	}
@@ -64,6 +63,5 @@ func Test_ExtractPanic(t *testing.T) {
 			t.Fatal("Expected panic but err is:", r)
 		}
 	}()
-
 	h.Extract()
 }
