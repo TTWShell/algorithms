@@ -41,7 +41,7 @@ func (h *Heap) Insert(e Element) {
 
 	h.heap = append(h.heap, e)
 	h.len++
-	h.precolateUp()
+	h.PrecolateUp(h.len - 1)
 }
 
 func (h *Heap) Extract() (e Element) {
@@ -55,22 +55,32 @@ func (h *Heap) Extract() (e Element) {
 	e, h.heap[0] = h.heap[0], h.heap[h.len-1]
 	h.heap = h.heap[:h.len-1]
 	h.len--
-	h.precolateDown()
+	h.PrecolateDown(0)
 	return
 }
 
-func (h *Heap) precolateUp() {
+func (h *Heap) Peek() (e Element) {
+	h.Lock()
+	defer h.Unlock()
+
+	if h.len == 0 {
+		panic("Empty heap, cannot Peek.")
+	}
+	return h.heap[0]
+}
+
+func (h *Heap) PrecolateUp(index int) {
 	// 上滤，新元素在堆中上滤直到找出正确位置
-	needUp, parent := h.len-1, (h.len-1)>>1
+	needUp, parent := index, index>>1
 	for needUp > 0 && h.less(h.heap[needUp], h.heap[parent]) {
 		h.heap[parent], h.heap[needUp] = h.heap[needUp], h.heap[parent]
 		needUp, parent = parent, parent>>1
 	}
 }
 
-func (h *Heap) precolateDown() {
-	// 下滤，从根开始处理空穴
-	needDown, child := 0, 1
+func (h *Heap) PrecolateDown(index int) {
+	// 下滤
+	needDown, child := index, index<<1+1
 	for needDown < h.len && child < h.len {
 		// find min(leftChild, rightChild)
 		if child+1 < h.len && h.less(h.heap[child+1], h.heap[child]) {
