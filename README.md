@@ -17,8 +17,11 @@ Data structures and algorithms in go.
 * [队列（Queue）](https://github.com/TTWShell/algorithms/blob/master/queue)
 * [树（Tree）](https://github.com/TTWShell/algorithms/blob/master/tree)
 * [图（Graph）](https://github.com/TTWShell/algorithms/blob/master/graph)
+* [堆（Heap）](https://github.com/TTWShell/algorithms/blob/master/heap)
 
-## Sorting algorithms
+## Algorithms
+
+### Sorting algorithms
 
 * [冒泡排序（Bubble Sort）](https://github.com/TTWShell/algorithms/blob/master/sorting/bubble)
 * [堆排序（Heap Sort）](https://github.com/TTWShell/algorithms/blob/master/sorting/heap)
@@ -29,6 +32,6 @@ Data structures and algorithms in go.
 * [选择排序（Selection Sort）](https://github.com/TTWShell/algorithms/blob/master/sorting/selection)
 * [基数排序（Radix Sort）](https://github.com/TTWShell/algorithms/blob/master/sorting/radix)
 
-## Searching algorithms
+### Searching algorithms
 
 * [二分搜索算法（Binary Search）](https://github.com/TTWShell/algorithms/blob/master/search/binary-search)
