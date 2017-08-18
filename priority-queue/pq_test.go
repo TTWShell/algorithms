@@ -43,6 +43,16 @@ func Test_MaxPriorityQueue(t *testing.T) {
 	}
 }
 
+func Test_ExtractPanic(t *testing.T) {
+	pq := MinPQConstructor()
+	defer func() {
+		if r := recover(); r != "Empty pq, cannot Extract." {
+			t.Fatal("Expected panic but err is:", r)
+		}
+	}()
+	pq.Extract()
+}
+
 func Test_Peek(t *testing.T) {
 	h := MaxPQConstructor()
 	el := NewElement(100, 5)
@@ -55,7 +65,7 @@ func Test_Peek(t *testing.T) {
 	h.Extract()
 
 	defer func() {
-		if r := recover(); r != "Empty heap, cannot Peek." {
+		if r := recover(); r != "Empty pq, cannot Peek." {
 			t.Fatal("Expected panic but err is:", r)
 		}
 	}()
