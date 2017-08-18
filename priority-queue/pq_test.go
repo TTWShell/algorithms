@@ -42,3 +42,22 @@ func Test_MaxPriorityQueue(t *testing.T) {
 		}
 	}
 }
+
+func Test_Peek(t *testing.T) {
+	h := MaxPQConstructor()
+	el := NewElement(100, 5)
+	h.Insert(*el)
+
+	if h.Peek() != *el {
+		t.Fatal(h.Peek())
+	}
+
+	h.Extract()
+
+	defer func() {
+		if r := recover(); r != "Empty heap, cannot Peek." {
+			t.Fatal("Expected panic but err is:", r)
+		}
+	}()
+	h.Peek()
+}

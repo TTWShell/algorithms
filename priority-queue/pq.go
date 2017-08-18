@@ -43,3 +43,7 @@ func (pq *PQ) Insert(el Element) {
 func (pq *PQ) Extract() (el Element) {
 	return pq.data.Extract().(Element)
 }
+
+func (pq *PQ) Peek() (el Element) {
+	return pq.data.Peek().(Element)
+}
