@@ -56,3 +56,14 @@ func Test_MaxHeap(t *testing.T) {
 		}
 	}
 }
+
+func Test_ExtractPanic(t *testing.T) {
+	h := MinHeapConstructor()
+	defer func() {
+		if r := recover(); r != "Empty heap, cannot Extract." {
+			t.Fatal("Expected panic but err is:", r)
+		}
+	}()
+
+	h.Extract()
+}
