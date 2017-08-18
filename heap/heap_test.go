@@ -84,12 +84,12 @@ func Test_Peek(t *testing.T) {
 	h.Peek()
 }
 
-func Test_Precolate(t *testing.T) {
+func Test_precolate(t *testing.T) {
 	h := MinHeapConstructor()
 	for i, num := range []Int{100, 90, 80, 5, 3, 1, 10, 20, 30, 8, 70} {
 		h.Insert(num)
-		h.PrecolateUp(i)
-		h.PrecolateDown(h.Len() - 1 - i)
+		h.precolateUp(i)
+		h.precolateDown(h.Len() - 1 - i)
 	}
 
 	res := make([]Int, 0)
