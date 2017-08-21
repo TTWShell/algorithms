@@ -1,7 +1,7 @@
 package heapsort
 
 import (
-	"github.com/ttwshell/algorithms/heap"
+	"github.com/TTWShell/algorithms/heap"
 )
 
 type Int int

@@ -6,6 +6,7 @@ jobs:
     working_directory: /go/src/github.com/TTWShell/algorithms
     steps:
       - checkout
+      - run: go get github.com/TTWShell/algorithms/heap
       - run:
           name: Run unit tests
           command: |
@@ -19,6 +20,7 @@ jobs:
     working_directory: /go/src/github.com/TTWShell/algorithms
     steps:
       - checkout
+      - run: go get github.com/TTWShell/algorithms/heap
       - run:
           name: Run unit tests
           command: |
@@ -31,6 +33,7 @@ jobs:
     working_directory: /go/src/github.com/TTWShell/algorithms
     steps:
       - checkout
+      - run: go get github.com/TTWShell/algorithms/heap
       - run:
           name: Run unit tests
           command: |
