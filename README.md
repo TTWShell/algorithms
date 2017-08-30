@@ -14,11 +14,20 @@ Data structures and algorithms in go.
 ## Data structures
 
 * [栈（Stack）](https://github.com/TTWShell/algorithms/blob/master/stack)
+    * [栈的实现](https://github.com/TTWShell/algorithms/blob/master/stack/stack.go)
+    * [平衡符号](https://github.com/TTWShell/algorithms/blob/master/stack/balanceSymbol.go)
+    * [中缀表达式转换为前缀表达式](https://github.com/TTWShell/algorithms/blob/master/stack/notation.go)
+    * [中缀表达式转换为后缀表达式](https://github.com/TTWShell/algorithms/blob/master/stack/notation.go)
 * [队列（Queue）](https://github.com/TTWShell/algorithms/blob/master/queue)
+    * [队列实现](https://github.com/TTWShell/algorithms/blob/master/queue/queue.go)
 * [树（Tree）](https://github.com/TTWShell/algorithms/blob/master/tree)
+    * [DFS](https://github.com/TTWShell/algorithms/blob/master/tree/tree.go)
+    * [BFS](https://github.com/TTWShell/algorithms/blob/master/tree/tree.go)
 * [图（Graph）](https://github.com/TTWShell/algorithms/blob/master/graph)
 * [堆（Heap）](https://github.com/TTWShell/algorithms/blob/master/heap)
+    * [堆的实现](https://github.com/TTWShell/algorithms/blob/master/heap/heap.go)
 * [优先队列（Priority Queue）](https://github.com/TTWShell/algorithms/blob/master/priority-queue)
+    * [基于堆的实现](https://github.com/TTWShell/algorithms/blob/master/priority-queue/pq.go)
 * [散列表（Hash Table）](https://github.com/TTWShell/algorithms/blob/master/hash-table)
 
 
