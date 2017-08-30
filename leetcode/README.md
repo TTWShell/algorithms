@@ -45,6 +45,7 @@
 | [41. First Missing Positive](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/firstMissingPositive.go) | Hard |
 | [42. Trapping Rain Water](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/trap.go) | Hard |
 | [43. Multiply Strings](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/multiply.go) | Medium |
+| [44. Wildcard Matching](https://github.com/TTWShell/algorithms/blob/master/leetcode/dynamic-programming/isMatch2.go) | Hard |
 | [50. Pow(x, n)](https://github.com/TTWShell/algorithms/blob/master/leetcode/binary-search/myPow.go) | Medium |
 | [53. Maximum Subarray](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/maxSubArray.go ) | Easy |
 | [58. Length of Last Word](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/lengthOfLastWord.go ) | Easy |
