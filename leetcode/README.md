@@ -179,4 +179,5 @@
 | [657. Judge Route Circle](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/judgeCircle.go) | Easy |
 | [658. Find K Closest Elements](https://github.com/TTWShell/algorithms/blob/master/leetcode/binary-search/findClosestElements.go) | Medium |
 | [661. Image Smoother](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/imageSmoother.go) | Easy |
+| [662. Maximum Width of Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/widthOfBinaryTree.go) | Medium |
 | [665. Non-decreasing Array](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/checkPossibility.go) | Easy |
