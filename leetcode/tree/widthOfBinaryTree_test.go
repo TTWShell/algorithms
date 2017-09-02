@@ -26,4 +26,12 @@ func Test_widthOfBinaryTree(t *testing.T) {
 	if r := widthOfBinaryTree(root); r != 8 {
 		t.Fatal(r)
 	}
+
+	if r := widthOfBinaryTree(nil); r != 0 {
+		t.Fatal(r)
+	}
+
+	if r := widthOfBinaryTree(&TreeNode{Val: 1}); r != 1 {
+		t.Fatal(r)
+	}
 }

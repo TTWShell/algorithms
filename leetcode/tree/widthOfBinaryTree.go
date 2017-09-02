@@ -58,5 +58,28 @@ func widthOfBinaryTree(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
-	return 1
+	stack, maxWidth, hasNode := []*TreeNode{root}, 0, true
+
+	for hasNode {
+		tmp, left, right := []*TreeNode{}, -1, 0
+		hasNode = false
+		for i, node := range stack {
+			if node == nil {
+				tmp = append(tmp, nil, nil)
+				continue
+			}
+			if left == -1 {
+				left = i
+				hasNode = true
+			}
+			right = i
+			tmp = append(tmp, node.Left, node.Right)
+		}
+
+		if width := right - left + 1; hasNode && width > maxWidth {
+			maxWidth = width
+		}
+		stack = tmp
+	}
+	return maxWidth
 }
