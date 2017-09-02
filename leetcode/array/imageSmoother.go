@@ -22,32 +22,21 @@ Note:
 package leetcode
 
 func imageSmoother(M [][]int) [][]int {
-	colLen := len(M)
-	rowLen := len(M[0])
+	colLen, rowLen := len(M), len(M[0])
+
 	res := make([][]int, colLen)
-	for i := range res {
-		res[i] = make([]int, rowLen, rowLen)
-	}
-
-	min := func(a, b int) int {
-		if a < b {
-			return a
-		}
-		return b
-	}
-
-	max := func(a, b int) int {
-		if a < b {
-			return b
-		}
-		return a
-	}
-
-	for row := range M {
-		for col := range M[row] {
+	for row := range res {
+		res[row] = make([]int, rowLen, rowLen)
+		for col := range res[row] {
 			sum, count := 0, 0
-			for i := max(0, row-1); i < min(colLen, row+2); i++ {
-				for j := max(0, col-1); j < min(rowLen, col+2); j++ {
+			for i := row - 1; i < row+2; i++ {
+				if i < 0 || i >= colLen {
+					continue
+				}
+				for j := col - 1; j < col+2; j++ {
+					if j < 0 || j >= rowLen {
+						continue
+					}
 					sum += M[i][j]
 					count++
 				}
