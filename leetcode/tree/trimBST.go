@@ -39,5 +39,16 @@ Example 2:
 package leetcode
 
 func trimBST(root *TreeNode, L int, R int) *TreeNode {
+	// https://zh.wikipedia.org/wiki/%E4%BA%8C%E5%85%83%E6%90%9C%E5%B0%8B%E6%A8%B9
+	if root == nil {
+		return nil
+	}
+	if root.Val < L {
+		return trimBST(root.Right, L, R)
+	}
+	if root.Val > R {
+		return trimBST(root.Left, L, R)
+	}
+	root.Left, root.Right = trimBST(root.Left, L, R), trimBST(root.Right, L, R)
 	return root
 }
