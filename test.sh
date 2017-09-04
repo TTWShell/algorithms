@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 FILE_PATH="/tmp/algorithms-coverage.out"
 
