@@ -1,11 +1,18 @@
 package tree
 
-import "log"
+import (
+	"fmt"
+	"log"
+)
 
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
 	Right *TreeNode
+}
+
+func (t *TreeNode) String() string {
+	return fmt.Sprintf("<%s %d %s>", t.Left, t.Val, t.Right)
 }
 
 // 前序遍历

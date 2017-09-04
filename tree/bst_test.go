@@ -2,6 +2,9 @@ package tree
 
 import (
 	"reflect"
+	"sort"
+	"strconv"
+	"strings"
 	"testing"
 )
 
@@ -46,5 +49,40 @@ func TestSearch(t *testing.T) {
 
 	if r := bst.Search(143414); r {
 		t.Fatal(r, "143414 should be not exist")
+	}
+}
+
+func TestDelete(t *testing.T) {
+	bst := NewBST()
+	if r := bst.Delete(1); r {
+		t.Fatal(r, "empty tree should return false")
+	}
+
+	assert := func(bst *BST, el int) {
+		bst.Delete(el)
+		r := ReOutput(DFSInOrder, bst.root)
+		origin, sorted := []int{}, []int{}
+		for _, strNum := range strings.Split(r, " ") {
+			num, _ := strconv.Atoi(strNum)
+			origin = append(origin, num)
+			sorted = append(sorted, num)
+		}
+		sort.Ints(sorted)
+		if !reflect.DeepEqual(origin, sorted) {
+			t.Fatal(r, sorted)
+		}
+	}
+
+	els := []int{3, 2, 15, 18, 23, 5, 7, 26, 21, 1, 4, 100, 77, 87}
+	for _, el := range els {
+		bst.Insert(el)
+	}
+	for _, el := range els {
+		assert(bst, el)
+		bst.Insert(el)
+	}
+	for i := len(els) - 1; i >= 0; i-- {
+		assert(bst, els[i])
+		bst.Insert(els[i])
 	}
 }
