@@ -27,6 +27,29 @@ Example 2:
 
 package leetcode
 
+import "math"
+
 func findSecondMinimumValue(root *TreeNode) int {
-	return 0
+	res := []int{math.MaxInt32, math.MaxInt32}
+
+	var inOrder func(root *TreeNode)
+	inOrder = func(root *TreeNode) {
+		if root != nil {
+			inOrder(root.Left)
+			if root.Val < res[0] {
+				res[1], res[0] = res[0], root.Val
+			} else if root.Val != res[0] && root.Val < res[1] {
+				res[1] = root.Val
+			} else if root.Val > res[1] {
+				return
+			}
+			inOrder(root.Right)
+		}
+	}
+
+	inOrder(root)
+	if res[1] == math.MaxInt32 {
+		return -1
+	}
+	return res[1]
 }
