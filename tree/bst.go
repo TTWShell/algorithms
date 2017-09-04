@@ -1,5 +1,7 @@
 package tree
 
+import "sync"
+
 /*
 二叉查找树（Binary Search Tree）是指一棵空树或者具有下列性质的二叉树：
 	1. 若任意节点的左子树不空，则左子树上所有节点的值均小于它的根节点的值；
@@ -8,6 +10,7 @@ package tree
 	4. 没有键值相等的节点。
 */
 type BST struct {
+	sync.Mutex
 	root *TreeNode
 }
 
@@ -37,6 +40,9 @@ func insertBST(root *TreeNode, el int) bool {
 
 // 在二叉搜索树插入节点
 func (b *BST) Insert(el int) bool {
+	b.Lock()
+	defer b.Unlock()
+
 	if b.root == nil {
 		b.root = &TreeNode{Val: el}
 		return true
@@ -58,6 +64,9 @@ func searchBST(root *TreeNode, el int) bool {
 
 // 在二叉搜索树查找一个节点
 func (b *BST) Search(el int) bool {
+	b.Lock()
+	defer b.Unlock()
+
 	if b.root == nil {
 		return false
 	}
@@ -114,6 +123,9 @@ func deleteBST(node, parent *TreeNode, isLeft bool, el int) bool {
 
 // 在二叉查找树删除结点
 func (b *BST) Delete(el int) bool {
+	b.Lock()
+	defer b.Unlock()
+
 	if b.root == nil {
 		return false
 	}
