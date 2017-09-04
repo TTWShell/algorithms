@@ -83,8 +83,8 @@ func deleteBST(node, parent *TreeNode, isLeft bool, el int) bool {
 		}
 
 		var tmpRes *TreeNode
-		// 该节点为叶子节点，直接删除
 		if node.Left == nil && node.Right == nil {
+			// 该节点为叶子节点，直接删除
 			tmpRes = nil
 		} else if node.Left == nil {
 			// 左子树空只需重接它的右子树

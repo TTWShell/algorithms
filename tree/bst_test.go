@@ -85,4 +85,8 @@ func TestDelete(t *testing.T) {
 		assert(bst, els[i])
 		bst.Insert(els[i])
 	}
+
+	if r := bst.Delete(134144); r {
+		t.Fatal(r, "not exist el")
+	}
 }
