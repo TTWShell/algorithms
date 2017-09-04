@@ -37,25 +37,31 @@ func ReOutput(f func(root *TreeNode), root *TreeNode) string {
 	return strings.TrimSpace(strings.Join(strings.Split(buf.String(), "\n"), ""))
 }
 
-func Test_DFSPreOrder(t *testing.T) {
+func TestString(t *testing.T) {
+	if root.String() != "<<<<nil> 8 <nil>> 9 <nil>> 3 <<<nil> 15 <nil>> 20 <<nil> 7 <nil>>>>" {
+		t.Fatal(root.String())
+	}
+}
+
+func TestDFSPreOrder(t *testing.T) {
 	if r := ReOutput(DFSPreOrder, root); r != "3 9 8 20 15 7" {
 		t.Fatal(r)
 	}
 }
 
-func Test_DFSInOrder(t *testing.T) {
+func TestDFSInOrder(t *testing.T) {
 	if r := ReOutput(DFSInOrder, root); r != "8 9 3 15 20 7" {
 		t.Fatal(r)
 	}
 }
 
-func Test_DFSPostOrder(t *testing.T) {
+func TestDFSPostOrder(t *testing.T) {
 	if r := ReOutput(DFSPostOrder, root); r != "8 9 15 7 20 3" {
 		t.Fatal(r)
 	}
 }
 
-func Test_BFS(t *testing.T) {
+func TestBFS(t *testing.T) {
 	if r := ReOutput(BFS, root); r != "3 9 20 8 15 7" {
 		t.Fatal(r)
 	}
