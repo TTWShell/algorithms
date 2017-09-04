@@ -1,6 +1,9 @@
 package tree
 
-import "log"
+import (
+	"fmt"
+	"log"
+)
 
 type TreeNode struct {
 	Val   int
@@ -8,6 +11,11 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+func (t *TreeNode) String() string {
+	return fmt.Sprintf("<%s %d %s>", t.Left, t.Val, t.Right)
+}
+
+// 前序遍历
 func DFSPreOrder(root *TreeNode) {
 	if root != nil {
 		log.Printf("%d ", root.Val)
@@ -16,6 +24,7 @@ func DFSPreOrder(root *TreeNode) {
 	}
 }
 
+// 中序遍历
 func DFSInOrder(root *TreeNode) {
 	if root != nil {
 		DFSInOrder(root.Left)
@@ -24,6 +33,7 @@ func DFSInOrder(root *TreeNode) {
 	}
 }
 
+// 后序遍历
 func DFSPostOrder(root *TreeNode) {
 	if root != nil {
 		DFSPostOrder(root.Left)
@@ -32,6 +42,7 @@ func DFSPostOrder(root *TreeNode) {
 	}
 }
 
+// 广度优先遍历
 func BFS(root *TreeNode) {
 	stack := []*TreeNode{root}
 	for len(stack) != 0 {
