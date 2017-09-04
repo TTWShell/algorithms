@@ -43,3 +43,23 @@ func (b *BST) Insert(el int) bool {
 	}
 	return insert(b.root, el)
 }
+
+func search(root *TreeNode, el int) bool {
+	if root == nil {
+		return false
+	}
+	if root.Val == el {
+		return true
+	} else if root.Val > el {
+		return search(root.Left, el)
+	}
+	return search(root.Right, el)
+}
+
+// 在二叉搜索树查找一个节点
+func (b *BST) Search(el int) bool {
+	if b.root == nil {
+		return false
+	}
+	return search(b.root, el)
+}
