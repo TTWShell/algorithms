@@ -16,20 +16,20 @@ func NewBST() *BST {
 	return &BST{}
 }
 
-func insert(root *TreeNode, el int) bool {
+func insertBST(root *TreeNode, el int) bool {
 	if root.Val == el {
 		return false
 	} else if root.Val > el {
 		if root.Left == nil {
 			root.Left = &TreeNode{Val: el}
 		} else {
-			return insert(root.Left, el)
+			return insertBST(root.Left, el)
 		}
 	} else {
 		if root.Right == nil {
 			root.Right = &TreeNode{Val: el}
 		} else {
-			return insert(root.Right, el)
+			return insertBST(root.Right, el)
 		}
 	}
 	return true
@@ -41,19 +41,19 @@ func (b *BST) Insert(el int) bool {
 		b.root = &TreeNode{Val: el}
 		return true
 	}
-	return insert(b.root, el)
+	return insertBST(b.root, el)
 }
 
-func search(root *TreeNode, el int) bool {
+func searchBST(root *TreeNode, el int) bool {
 	if root == nil {
 		return false
 	}
 	if root.Val == el {
 		return true
 	} else if root.Val > el {
-		return search(root.Left, el)
+		return searchBST(root.Left, el)
 	}
-	return search(root.Right, el)
+	return searchBST(root.Right, el)
 }
 
 // 在二叉搜索树查找一个节点
@@ -61,7 +61,7 @@ func (b *BST) Search(el int) bool {
 	if b.root == nil {
 		return false
 	}
-	return search(b.root, el)
+	return searchBST(b.root, el)
 }
 
 func deleteBST(node, parent *TreeNode, isLeft bool, el int) bool {
@@ -93,6 +93,7 @@ func deleteBST(node, parent *TreeNode, isLeft bool, el int) bool {
 			// 右子树空则只需重接它的左子树
 			tmpRes = node.Left
 		}
+
 		if isLeft {
 			parent.Left = tmpRes
 		} else {
