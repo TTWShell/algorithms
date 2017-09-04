@@ -182,3 +182,4 @@
 | [662. Maximum Width of Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/widthOfBinaryTree.go) | Medium |
 | [665. Non-decreasing Array](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/checkPossibility.go) | Easy |
 | [669. Trim a Binary Search Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/trimBST.go) | Easy |
+| [671. Second Minimum Node In a Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/findSecondMinimumValue.go) | Easy |
