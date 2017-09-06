@@ -34,3 +34,22 @@ func TestAVLInsert(t *testing.T) {
 		assert.Equal(avl.root.String(), expectedTree[len(expectedTree)-1])
 	}
 }
+
+func TestAVLSearch(t *testing.T) {
+	assert := assert.New(t)
+	avl := NewAVL()
+	assert.False(avl.Search(0), 0, avl.root)
+
+	els := []int{130, 20, 150, 190, 230, 50, 30, 170, 180, 185, 187, 10, 5}
+	for _, el := range els {
+		avl.Insert(el)
+	}
+
+	for _, el := range els {
+		assert.True(avl.Search(el), avl.root.String())
+	}
+
+	for _, el := range []int{0, 100000} {
+		assert.False(avl.Search(el), avl.root.String())
+	}
+}

@@ -137,3 +137,25 @@ func (avl *AVL) Insert(el int) bool {
 	}
 	return false
 }
+
+func searchAVL(root *avlNode, el int) bool {
+	if root == nil {
+		return false
+	}
+	if root.Val == el {
+		return true
+	} else if root.Val > el {
+		return searchAVL(root.Left, el)
+	}
+	return searchAVL(root.Right, el)
+}
+
+func (avl *AVL) Search(el int) bool {
+	avl.Lock()
+	defer avl.Unlock()
+
+	if avl.root == nil {
+		return false
+	}
+	return searchAVL(avl.root, el)
+}
