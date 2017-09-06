@@ -7,6 +7,7 @@ jobs:
     steps:
       - checkout
       - run: go get github.com/TTWShell/algorithms/heap
+      - run: go get github.com/stretchr/testify/assert
       - run:
           name: Run unit tests
           command: |
@@ -21,6 +22,7 @@ jobs:
     steps:
       - checkout
       - run: go get github.com/TTWShell/algorithms/heap
+      - run: go get github.com/stretchr/testify/assert
       - run:
           name: Run unit tests
           command: |
@@ -34,6 +36,7 @@ jobs:
     steps:
       - checkout
       - run: go get github.com/TTWShell/algorithms/heap
+      - run: go get github.com/stretchr/testify/assert
       - run:
           name: Run unit tests
           command: |
