@@ -88,10 +88,11 @@ func insertAVL(root *avlNode, el int) (res bool, node *avlNode) {
 		if root.Left == nil {
 			root.Left = &avlNode{Val: el}
 		} else {
-			res, root.Left = insertAVL(root.Left, el)
+			res, node = insertAVL(root.Left, el)
 			if !res {
 				return false, nil
 			}
+			root.Left = node
 			if height(root.Left)-height(root.Right) == 2 {
 				root = rightRotate(root) // 左左
 			} else {
@@ -102,10 +103,11 @@ func insertAVL(root *avlNode, el int) (res bool, node *avlNode) {
 		if root.Right == nil {
 			root.Right = &avlNode{Val: el}
 		} else {
-			res, root.Right = insertAVL(root.Right, el)
+			res, node = insertAVL(root.Right, el)
 			if !res {
 				return false, nil
 			}
+			root.Right = node
 			if height(root.Right)-height(root.Left) == 2 {
 				if el > root.Right.Val {
 					root = leftRotate(root) // 右右

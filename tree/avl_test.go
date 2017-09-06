@@ -20,7 +20,12 @@ func TestAVLInsert(t *testing.T) {
 		"<<<<nil> 2-0 <nil>> 3-1 <nil>> 5-3 <<<nil> 7-0 <nil>> 15-2 <<nil> 18-1 <<nil> 23-0 <nil>>>>>",
 	}
 	for i, el := range els {
-		assert.True(avl.Insert(el), avl.root)
+		assert.True(avl.Insert(el), avl.root.String())
 		assert.Equal(avl.root.String(), expectedTree[i])
+	}
+
+	for _, el := range els {
+		assert.False(avl.Insert(el), el, avl.root.String())
+		assert.Equal(avl.root.String(), expectedTree[len(expectedTree)-1])
 	}
 }
