@@ -81,35 +81,36 @@ func rightLeftRotate(root *avlNode) *avlNode {
 }
 
 func insertAVL(root *avlNode, el int) (res bool, node *avlNode) {
-	if root.Val == el {
+	switch {
+	case root.Val == el:
 		return false, nil
-	} else if root.Val > el {
+	case root.Val > el:
 		if root.Left == nil {
 			root.Left = &avlNode{Val: el}
 		} else {
-			if res, root.Left = insertAVL(root.Left, el); !res {
+			res, root.Left = insertAVL(root.Left, el)
+			if !res {
 				return false, nil
+			}
+			if height(root.Left)-height(root.Right) == 2 {
+				root = rightRotate(root) // 左左
 			} else {
-				if height(root.Left)-height(root.Right) == 2 {
-					root = rightRotate(root) // 左左
-				} else {
-					root = leftRigthRotate(root) // 左右
-				}
+				root = leftRigthRotate(root) // 左右
 			}
 		}
-	} else {
+	default:
 		if root.Right == nil {
 			root.Right = &avlNode{Val: el}
 		} else {
-			if res, root.Right = insertAVL(root.Right, el); !res {
+			res, root.Right = insertAVL(root.Right, el)
+			if !res {
 				return false, nil
-			} else {
-				if height(root.Right)-height(root.Left) == 2 {
-					if el > root.Right.Val {
-						root = leftRotate(root) // 右右
-					} else {
-						root = rightLeftRotate(root) // 右左
-					}
+			}
+			if height(root.Right)-height(root.Left) == 2 {
+				if el > root.Right.Val {
+					root = leftRotate(root) // 右右
+				} else {
+					root = rightLeftRotate(root) // 右左
 				}
 			}
 		}
