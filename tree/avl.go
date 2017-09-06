@@ -40,7 +40,7 @@ func height(root *avlNode) int {
 	if root != nil {
 		return root.Height
 	}
-	return 0
+	return -1
 }
 
 // https://upload.wikimedia.org/wikipedia/commons/c/c7/Tree_Rebalancing.png
@@ -94,9 +94,11 @@ func insertAVL(root *avlNode, el int) (res bool, node *avlNode) {
 			}
 			root.Left = node
 			if height(root.Left)-height(root.Right) == 2 {
-				root = rightRotate(root) // 左左
-			} else {
-				root = leftRigthRotate(root) // 左右
+				if el < root.Left.Val {
+					root = rightRotate(root) // 左左
+				} else {
+					root = leftRigthRotate(root) // 左右
+				}
 			}
 		}
 	default:
