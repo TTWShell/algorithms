@@ -1,19 +1,19 @@
 package search
 
-import "testing"
+import (
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
 
 func Test_BinarySearch(t *testing.T) {
-	sorted := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	assert := assert.New(t)
+	sorted := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 15}
 	for index, target := range sorted {
-		if result := BinarySearch(sorted, target); index != result {
-			t.Fatalf("error: target is number `%d`, index is %d, result is `%d`.\n", target, index, result)
-		}
+		assert.Equal(BinarySearch(sorted, target), index)
 	}
 
-	if r := BinarySearch(sorted, 10); r != -1 {
-		t.Fatal("error when search target not in sortedData")
-	}
-	if r := BinarySearch(sorted, 0); r != -1 {
-		t.Fatal("error when search target not in sortedData")
-	}
+	assert.Equal(BinarySearch(sorted, 10), -1)
+
+	assert.Equal(BinarySearch(sorted, 16), -1)
+	assert.Equal(BinarySearch(sorted, 0), -1)
 }
