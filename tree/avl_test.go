@@ -108,15 +108,25 @@ func TestAVLDelete(t *testing.T) {
 
 	avl.root = nil
 	for el := 1; el < 30; el++ {
-		avl.Insert(el)
+		avl.Insert(el * 10)
 	}
-	assert.True(avl.Delete(27))
-	assert.True(avl.Delete(26)) // for test swap right
+	assert.True(avl.Delete(270))
+	assert.True(avl.Delete(260)) // for test swap right
 
-	assert.True(avl.Delete(21))
-	assert.True(avl.Delete(19))
-	assert.True(avl.Delete(23))
-	assert.True(avl.Delete(20)) // for test swap left
+	assert.True(avl.Delete(210))
+	assert.True(avl.Delete(190))
+	assert.True(avl.Delete(230))
+	assert.True(avl.Delete(200)) // for test swap left
+
+	avl.root = nil
+	for el := 1; el < 30; el++ {
+		avl.Insert(el * 10)
+	}
+	assert.True(avl.Delete(210))
+	assert.True(avl.Delete(230))
+	assert.True(avl.Delete(220)) // for test leftRigthRotate(root)
+
+	assert.True(avl.Delete(250)) // for test rightLeftRotate(root)
 
 	for _, el := range []int{0, 100000} {
 		assert.False(avl.Delete(el))
