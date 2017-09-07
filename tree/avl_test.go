@@ -65,6 +65,43 @@ func TestAVLSearch(t *testing.T) {
 	}
 }
 
+func Test_minLeaf_maxLeaf(t *testing.T) {
+	assert := assert.New(t)
+	root := &avlNode{Val: 1}
+	assert.Equal(minLeaf(root), root)
+	assert.Equal(maxLeaf(root), root)
+
+	root = &avlNode{
+		Left: &avlNode{
+			// Left:   &avlNode{Val: 1, Height: 0},
+			Val:    4,
+			Height: 2,
+			Right: &avlNode{
+				Left:   &avlNode{Val: 5, Height: 0},
+				Val:    6,
+				Height: 1,
+				Right:  &avlNode{Val: 7, Height: 0},
+			},
+		},
+		Val:    8,
+		Height: 3,
+		Right: &avlNode{
+			Left: &avlNode{
+				Left:   &avlNode{Val: 10, Height: 0},
+				Val:    13,
+				Height: 1,
+				Right:  &avlNode{Val: 15, Height: 0},
+			},
+			Val:    25,
+			Height: 2,
+			// Right:  &avlNode{Val: 30, Height: 0},
+		},
+	}
+	assert.Equal(root.String(), "<<<nil> 4-2 <<<nil> 5-0 <nil>> 6-1 <<nil> 7-0 <nil>>>> 8-3 <<<<nil> 10-0 <nil>> 13-1 <<nil> 15-0 <nil>>> 25-2 <nil>>>")
+	assert.Equal(minLeaf(root), &avlNode{Val: 5})
+	assert.Equal(maxLeaf(root), &avlNode{Val: 15})
+}
+
 func TestAVLDelete(t *testing.T) {
 	assert := assert.New(t)
 	avl := NewAVL()
