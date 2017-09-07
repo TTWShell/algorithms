@@ -24,6 +24,7 @@ Data structures and algorithms in go.
     * [DFS－深度优先搜素](https://github.com/TTWShell/algorithms/blob/master/tree/tree.go)
     * [BFS－广度优先搜索](https://github.com/TTWShell/algorithms/blob/master/tree/tree.go)
     * [BST－二叉搜索树](https://github.com/TTWShell/algorithms/blob/master/tree/bst.go)
+    * [AVL－高度平衡树](https://github.com/TTWShell/algorithms/blob/master/tree/avl.go)
 * [图（Graph）](https://github.com/TTWShell/algorithms/blob/master/graph)
 * [堆（Heap）](https://github.com/TTWShell/algorithms/blob/master/heap)
     * [堆的实现](https://github.com/TTWShell/algorithms/blob/master/heap/heap.go)
