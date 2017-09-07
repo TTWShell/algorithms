@@ -160,6 +160,36 @@ func (avl *AVL) Search(el int) bool {
 	return searchAVL(avl.root, el)
 }
 
+// 找到最小的叶子节点
+func minLeaf(root *avlNode) (leaf *avlNode) {
+	leaf = root
+	for leaf.Left != nil || leaf.Right != nil {
+		if leaf.Left != nil {
+			leaf = leaf.Left
+		} else if leaf.Right.Left != nil {
+			leaf = leaf.Right
+		} else {
+			break
+		}
+	}
+	return
+}
+
+// 找到最大的叶子节点
+func maxLeaf(root *avlNode) (leaf *avlNode) {
+	leaf = root
+	for leaf.Left != nil || leaf.Right != nil {
+		if leaf.Right != nil {
+			leaf = leaf.Right
+		} else if leaf.Left.Right != nil {
+			leaf = leaf.Left
+		} else {
+			break
+		}
+	}
+	return
+}
+
 func deleteAVL(root *avlNode, el int) (res bool, node *avlNode) {
 	if root == nil {
 		return false, root
@@ -175,27 +205,10 @@ func deleteAVL(root *avlNode, el int) (res bool, node *avlNode) {
 		if height(root.Left) > height(root.Right) {
 			leaf = root.Left
 			// find max in Left
-			for leaf.Left != nil || leaf.Right != nil {
-				if leaf.Right != nil {
-					leaf = leaf.Right
-				} else if leaf.Left.Right != nil {
-					leaf = leaf.Left
-				} else {
-					break
-				}
-			}
+			leaf = maxLeaf(root.Left)
 		} else {
-			leaf = root.Right
 			// find min in Right
-			for leaf.Left != nil || leaf.Right != nil {
-				if leaf.Left != nil {
-					leaf = leaf.Left
-				} else if leaf.Right.Left != nil {
-					leaf = leaf.Right
-				} else {
-					break
-				}
-			}
+			leaf = minLeaf(root.Right)
 		}
 		el = leaf.Val
 	}
