@@ -159,3 +159,94 @@ func (avl *AVL) Search(el int) bool {
 	}
 	return searchAVL(avl.root, el)
 }
+
+func deleteAVL(root *avlNode, el int) (res bool, node *avlNode) {
+	if root == nil {
+		return false, root
+	}
+
+	var isSwap bool
+	if root.Val == el {
+		if root.Left == nil && root.Right == nil {
+			return true, nil
+		}
+		var leaf *avlNode
+		isSwap = true
+		if root.Left != nil {
+			leaf = root.Left
+			// find max in Left
+			for leaf.Left != nil || leaf.Right != nil {
+				if leaf.Right != nil {
+					leaf = leaf.Right
+				} else if leaf.Left.Right != nil {
+					leaf = leaf.Left
+				} else {
+					break
+				}
+			}
+		} else {
+			leaf = root.Right
+			// find min in Right
+			for leaf.Left != nil || leaf.Right != nil {
+				if leaf.Left != nil {
+					leaf = leaf.Left
+				} else if leaf.Right.Left != nil {
+					leaf = leaf.Right
+				} else {
+					break
+				}
+			}
+		}
+		el = leaf.Val
+	}
+	switch {
+	case root.Val > el:
+		if isSwap {
+			root.Val = el
+		}
+		res, node = deleteAVL(root.Left, el)
+		if !res {
+			return false, root
+		}
+		root.Left = node
+		if height(root.Right)-height(root.Left) == 2 {
+			if height(root.Right.Left) < height(root.Right.Right) {
+				root = leftRotate(root) // 右右
+			} else {
+				root = rightLeftRotate(root) // 右左
+			}
+		}
+	case root.Val < el:
+		if isSwap {
+			root.Val = el
+		}
+		res, node = deleteAVL(root.Right, el)
+		if !res {
+			return false, root
+		}
+		root.Right = node
+		if height(root.Left)-height(root.Right) == 2 {
+			if height(root.Left.Left) > height(root.Left.Right) {
+				root = rightRotate(root) // 左左
+			} else {
+				root = leftRigthRotate(root) // 左右
+			}
+		}
+	}
+	root.Height = max(height(root.Left), height(root.Right)) + 1
+	return true, root
+}
+
+func (avl *AVL) Delete(el int) bool {
+	avl.Lock()
+	defer avl.Unlock()
+
+	if avl.root == nil {
+		return false
+	}
+	res, root := deleteAVL(avl.root, el)
+	if res {
+		avl.root = root
+	}
+	return res
+}
