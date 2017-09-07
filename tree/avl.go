@@ -172,7 +172,7 @@ func deleteAVL(root *avlNode, el int) (res bool, node *avlNode) {
 		}
 		var leaf *avlNode
 		isSwap = true
-		if root.Left != nil {
+		if height(root.Left) > height(root.Right) {
 			leaf = root.Left
 			// find max in Left
 			for leaf.Left != nil || leaf.Right != nil {
