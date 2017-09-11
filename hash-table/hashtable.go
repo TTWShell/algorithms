@@ -9,6 +9,8 @@ import (
 const (
 	A       = 0.6180339887 // A = (sqrt(t) -1)/2，来自算法导论第三版
 	MinSize = 10
+	// Maximum average load of a bucket that triggers growth.
+	loadFactor = 6.5
 )
 
 type KeyError struct {
@@ -27,6 +29,7 @@ type item struct {
 type HashTable struct {
 	items []*item
 	size  int
+	count int
 	sync.Mutex
 }
 
@@ -96,6 +99,7 @@ func (ht *HashTable) Put(key, value interface{}) {
 		tmp := ht.linearProbing(hash, i)
 		if res := ht.items[tmp]; res == nil {
 			ht.items[tmp] = &item{key: key, value: value}
+			ht.count++
 			return
 		} else if res.key == key {
 			// update
@@ -135,6 +139,7 @@ func (ht *HashTable) Pop(key interface{}) (value interface{}, err error) {
 		} else if ht.items[tmp].key == key {
 			value = ht.items[tmp].value
 			ht.items[tmp] = nil
+			ht.count--
 			return value, nil
 		}
 	}

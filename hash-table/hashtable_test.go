@@ -38,18 +38,22 @@ func TestPut(t *testing.T) {
 	assert.True(ht.items[ht.hash(1)] != nil)
 	assert.True(ht.items[ht.hash(1)].key == 1)
 	assert.True(ht.items[ht.hash(1)].value == 2)
+	assert.Equal(ht.count, 1)
 
 	// test update exist key
 	ht.Put(1, 235423423)
+	assert.Equal(ht.count, 1)
 	assert.True(ht.items[ht.hash(1)].value == 235423423)
 
 	// test conflict management
 	assert.Equal(ht.hash(1), ht.hash(14))
 	ht.Put(14, 12233)
+	assert.Equal(ht.count, 2)
 	assert.True(ht.items[ht.hash(1)].key == 1)
 	assert.True(ht.items[ht.hash(1)+1].key == 14, "Because use linearProbing")
 
 	defer func() {
+		assert.Equal(ht.count, MinSize)
 		assert.Equal(recover(), "hash table overflow")
 	}()
 	for i := 0; i < 11; i++ {
@@ -76,10 +80,13 @@ func TestPop(t *testing.T) {
 	ht := NewHT(MinSize)
 
 	ht.Put(1, 2)
+	assert.Equal(ht.count, 1)
 	value, err := ht.Pop(1)
 	assert.True(value == 2)
+	assert.Equal(ht.count, 0)
 
 	value, err = ht.Pop(1)
+	assert.Equal(ht.count, 0)
 	assert.True(err.Error() == "key no exists")
 }
 
