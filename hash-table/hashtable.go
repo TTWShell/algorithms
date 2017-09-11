@@ -52,6 +52,8 @@ func (ht *HashTable) hash(key interface{}) int {
 			hash = int32(k[i]) + int32(hash<<5-hash)
 		}
 		tmp = int(math.Abs(float64(hash)))
+	default:
+		panic("Only support int、string type key")
 	}
 
 	// 乘法散列法，来自算法导论第三版

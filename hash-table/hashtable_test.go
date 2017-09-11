@@ -97,4 +97,9 @@ func TestMix(t *testing.T) {
 
 	value, err = ht.Pop("1")
 	assert.True(err.Error() == "key no exists")
+
+	defer func() {
+		assert.Equal(recover(), "Only support int、string type key")
+	}()
+	ht.Put('a', []int{1, 2, 3})
 }
