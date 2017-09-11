@@ -3,6 +3,7 @@ package hashtable
 import (
 	"fmt"
 	"github.com/stretchr/testify/assert"
+	"reflect"
 	"testing"
 )
 
@@ -79,5 +80,21 @@ func TestPop(t *testing.T) {
 	assert.True(value == 2)
 
 	value, err = ht.Pop(1)
+	assert.True(err.Error() == "key no exists")
+}
+
+func TestMix(t *testing.T) {
+	assert := assert.New(t)
+	ht := NewHT(MinSize)
+	ht.Put(1, 22313231)
+	ht.Put("a", []int{1, 2, 3})
+
+	value, err := ht.Get(1)
+	assert.True(value == 22313231)
+
+	value, err = ht.Pop("a")
+	assert.True(reflect.DeepEqual(value, []int{1, 2, 3}))
+
+	value, err = ht.Pop("1")
 	assert.True(err.Error() == "key no exists")
 }
