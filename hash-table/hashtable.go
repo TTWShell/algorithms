@@ -80,8 +80,14 @@ func (ht *HashTable) Put(key, value interface{}) {
 
 func (ht *HashTable) Get(key interface{}) (value interface{}, err error) {
 	hash := ht.hash(key)
-	if ht.items[hash] != nil && ht.items[hash].key == key {
-		return ht.items[hash].value, nil
+	for i := 0; i < ht.size; i++ {
+		tmp := ht.linearProbing(hash, i)
+		// 如果找不到则必定不存在，否则，逐个比较key
+		if ht.items[tmp] == nil {
+			break
+		} else if ht.items[tmp].key == key {
+			return ht.items[tmp].value, nil
+		}
 	}
 	return nil, &KeyError{"key no exists"}
 }
