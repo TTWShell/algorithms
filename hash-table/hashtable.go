@@ -66,6 +66,27 @@ func (ht *HashTable) linearProbing(hash, i int) int {
 	return (hash + i) % ht.size
 }
 
+func (ht *HashTable) rehash() {
+	oldSize, newSize := ht.size, ht.size<<1
+	if newSize > oldSize {
+		ht.size = newSize
+		newItems := make([]*item, newSize, newSize)
+		for _, item := range ht.items {
+			if item == nil {
+				continue
+			}
+			hash := ht.hash(item.key)
+			for i := 0; i < oldSize; i++ {
+				tmp := ht.linearProbing(hash, i)
+				if res := newItems[tmp]; res == nil {
+					newItems[tmp] = item
+				}
+			}
+		}
+		ht.items = newItems
+	}
+}
+
 func (ht *HashTable) Put(key, value interface{}) {
 	ht.Lock()
 	defer ht.Unlock()

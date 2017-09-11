@@ -103,3 +103,21 @@ func TestMix(t *testing.T) {
 	}()
 	ht.Put('a', []int{1, 2, 3})
 }
+
+func Test_rehash(t *testing.T) {
+	assert := assert.New(t)
+	ht := NewHT(MinSize)
+
+	ht.Put(1, 22313231)
+	ht.Put("abc", []int{1, 2, 3})
+
+	ht.rehash()
+	assert.Equal(ht.size, MinSize*2)
+	assert.Equal(len(ht.items), MinSize*2)
+
+	value, _ := ht.Get(1)
+	assert.True(value == 22313231)
+
+	value, _ = ht.Get("abc")
+	assert.True(reflect.DeepEqual(value, []int{1, 2, 3}))
+}
