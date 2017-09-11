@@ -10,7 +10,7 @@ const (
 	A       = 0.6180339887 // A = (sqrt(t) -1)/2，来自算法导论第三版
 	MinSize = 10
 	// Maximum average load of a bucket that triggers growth.
-	loadFactor = 6.5
+	loadFactor = 0.65
 )
 
 type KeyError struct {
@@ -79,10 +79,11 @@ func (ht *HashTable) rehash() {
 				continue
 			}
 			hash := ht.hash(item.key)
-			for i := 0; i < oldSize; i++ {
+			for i := 0; i < newSize; i++ {
 				tmp := ht.linearProbing(hash, i)
 				if res := newItems[tmp]; res == nil {
 					newItems[tmp] = item
+					break
 				}
 			}
 		}
@@ -93,6 +94,10 @@ func (ht *HashTable) rehash() {
 func (ht *HashTable) Put(key, value interface{}) {
 	ht.Lock()
 	defer ht.Unlock()
+
+	if float64(ht.count) >= float64(ht.size)*loadFactor {
+		ht.rehash()
+	}
 
 	hash := ht.hash(key)
 	for i := 0; i < ht.size; i++ {

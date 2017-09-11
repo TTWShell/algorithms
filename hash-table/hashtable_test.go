@@ -52,13 +52,29 @@ func TestPut(t *testing.T) {
 	assert.True(ht.items[ht.hash(1)].key == 1)
 	assert.True(ht.items[ht.hash(1)+1].key == 14, "Because use linearProbing")
 
-	defer func() {
-		assert.Equal(ht.count, MinSize)
-		assert.Equal(recover(), "hash table overflow")
-	}()
 	for i := 0; i < 11; i++ {
 		ht.Put(i, i)
+		value, _ := ht.Get(i)
+		assert.Equal(value, i)
 	}
+	assert.Equal(ht.count, 11+2-1)
+	assert.Equal(ht.size, MinSize*2)
+
+	for i := 0; i < 11; i++ {
+		ht.Put(string(i), i*10)
+		value, _ := ht.Get(string(i))
+		assert.Equal(value, i*10)
+	}
+	assert.Equal(ht.size, MinSize*4)
+
+	count := 0
+	for _, item := range ht.items {
+		if item != nil {
+			count++
+		}
+	}
+	assert.Equal(count, 11+2-1+11)
+
 }
 
 func TestGet(t *testing.T) {
@@ -121,6 +137,14 @@ func Test_rehash(t *testing.T) {
 	ht.rehash()
 	assert.Equal(ht.size, MinSize*2)
 	assert.Equal(len(ht.items), MinSize*2)
+
+	count := 0
+	for _, item := range ht.items {
+		if item != nil {
+			count++
+		}
+	}
+	assert.Equal(count, 2)
 
 	value, _ := ht.Get(1)
 	assert.True(value == 22313231)
