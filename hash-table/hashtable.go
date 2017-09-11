@@ -7,7 +7,8 @@ import (
 )
 
 const (
-	A       = 0.6180339887 // A = (sqrt(t) -1)/2，来自算法导论第三版
+	// A = (sqrt(5) -1)/2，来自算法导论第三版
+	A       = 0.6180339887
 	MinSize = 10
 	// Maximum average load of a bucket that triggers growth.
 	loadFactor = 0.65
