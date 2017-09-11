@@ -64,9 +64,18 @@ func (ht *HashTable) linearProbing(hash, i int) int {
 
 func (ht *HashTable) Put(key, value interface{}) {
 	hash := ht.hash(key)
-	if ht.items[hash] == nil {
-		ht.items[hash] = &item{key: key, value: value}
+	for i := 0; i < ht.size; i++ {
+		tmp := ht.linearProbing(hash, i)
+		if res := ht.items[tmp]; res == nil {
+			ht.items[tmp] = &item{key: key, value: value}
+			return
+		} else if res.key == key {
+			// update
+			res.value = value
+			return
+		}
 	}
+	panic("hash table overflow")
 }
 
 func (ht *HashTable) Get(key interface{}) (value interface{}, err error) {

@@ -37,6 +37,23 @@ func TestPut(t *testing.T) {
 	assert.True(ht.items[ht.hash(1)] != nil)
 	assert.True(ht.items[ht.hash(1)].key == 1)
 	assert.True(ht.items[ht.hash(1)].value == 2)
+
+	// test update exist key
+	ht.Put(1, 235423423)
+	assert.True(ht.items[ht.hash(1)].value == 235423423)
+
+	// test conflict management
+	assert.Equal(ht.hash(1), ht.hash(14))
+	ht.Put(14, 12233)
+	assert.True(ht.items[ht.hash(1)].key == 1)
+	assert.True(ht.items[ht.hash(1)+1].key == 14, "Because use linearProbing")
+
+	defer func() {
+		assert.Equal(recover(), "hash table overflow")
+	}()
+	for i := 0; i < 11; i++ {
+		ht.Put(i, i)
+	}
 }
 
 func TestGet(t *testing.T) {
