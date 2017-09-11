@@ -10,18 +10,27 @@ const (
 	MinSize = 10
 )
 
+type KeyError struct {
+	s string
+}
+
+func (e *KeyError) Error() string {
+	return e.s
+}
+
 type item struct {
 	key   interface{}
 	value interface{}
 }
 
 type HashTable struct {
-	size int
+	items []*item
+	size  int
 }
 
 func NewHT(size int) *HashTable {
-	if size > MinSize {
-		return &HashTable{size: size}
+	if size >= MinSize {
+		return &HashTable{size: size, items: make([]*item, size, size)}
 	}
 	panic(fmt.Sprintf("size must > %d", MinSize))
 }
@@ -47,4 +56,23 @@ func (ht *HashTable) hash(key interface{}) int {
 	multip := float64(tmp) * A
 	decimalPart := multip - float64(int(multip))
 	return int(math.Floor(float64(ht.size) * decimalPart))
+}
+
+func (ht *HashTable) linearProbing(hash, i int) int {
+	return (hash + i) % ht.size
+}
+
+func (ht *HashTable) Put(key, value interface{}) {
+	hash := ht.hash(key)
+	if ht.items[hash] == nil {
+		ht.items[hash] = &item{key: key, value: value}
+	}
+}
+
+func (ht *HashTable) Get(key interface{}) (value interface{}, err error) {
+	hash := ht.hash(key)
+	if ht.items[hash] != nil && ht.items[hash].key == key {
+		return ht.items[hash].value, nil
+	}
+	return nil, &KeyError{"key no exists"}
 }
