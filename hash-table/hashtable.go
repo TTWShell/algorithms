@@ -3,6 +3,7 @@ package hashtable
 import (
 	"fmt"
 	"math"
+	"sync"
 )
 
 const (
@@ -26,6 +27,7 @@ type item struct {
 type HashTable struct {
 	items []*item
 	size  int
+	sync.Mutex
 }
 
 func NewHT(size int) *HashTable {
@@ -63,6 +65,9 @@ func (ht *HashTable) linearProbing(hash, i int) int {
 }
 
 func (ht *HashTable) Put(key, value interface{}) {
+	ht.Lock()
+	defer ht.Unlock()
+
 	hash := ht.hash(key)
 	for i := 0; i < ht.size; i++ {
 		tmp := ht.linearProbing(hash, i)
@@ -79,6 +84,9 @@ func (ht *HashTable) Put(key, value interface{}) {
 }
 
 func (ht *HashTable) Get(key interface{}) (value interface{}, err error) {
+	ht.Lock()
+	defer ht.Unlock()
+
 	hash := ht.hash(key)
 	for i := 0; i < ht.size; i++ {
 		tmp := ht.linearProbing(hash, i)
@@ -93,6 +101,9 @@ func (ht *HashTable) Get(key interface{}) (value interface{}, err error) {
 }
 
 func (ht *HashTable) Pop(key interface{}) (value interface{}, err error) {
+	ht.Lock()
+	defer ht.Unlock()
+
 	hash := ht.hash(key)
 	for i := 0; i < ht.size; i++ {
 		tmp := ht.linearProbing(hash, i)
