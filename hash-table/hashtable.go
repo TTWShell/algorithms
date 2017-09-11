@@ -91,3 +91,18 @@ func (ht *HashTable) Get(key interface{}) (value interface{}, err error) {
 	}
 	return nil, &KeyError{"key no exists"}
 }
+
+func (ht *HashTable) Pop(key interface{}) (value interface{}, err error) {
+	hash := ht.hash(key)
+	for i := 0; i < ht.size; i++ {
+		tmp := ht.linearProbing(hash, i)
+		if ht.items[tmp] == nil {
+			break
+		} else if ht.items[tmp].key == key {
+			value = ht.items[tmp].value
+			ht.items[tmp] = nil
+			return value, nil
+		}
+	}
+	return nil, &KeyError{"key no exists"}
+}

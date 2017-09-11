@@ -69,3 +69,15 @@ func TestGet(t *testing.T) {
 	value, err = ht.Get(14)
 	assert.True(err.Error() == "key no exists")
 }
+
+func TestPop(t *testing.T) {
+	assert := assert.New(t)
+	ht := NewHT(MinSize)
+
+	ht.Put(1, 2)
+	value, err := ht.Pop(1)
+	assert.True(value == 2)
+
+	value, err = ht.Pop(1)
+	assert.True(err.Error() == "key no exists")
+}
