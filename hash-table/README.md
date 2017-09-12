@@ -44,3 +44,5 @@
 hash{i} = (hash(key)+d{i}) mod m, i = 1,2,...k(k<=m-1)，其中hash(key)为散列函数，m为散列表长，d{i}为增量序列，i为已发生冲突的次数。
 
 ![](https://user-images.githubusercontent.com/8017604/29861868-5d27a04e-8d9d-11e7-8ed3-9c3e51bb6991.png)
+
+[查看动态图](http://student.zjzk.cn/course_ware/data_structure/web/flashhtml/kaifang.htm)
