@@ -11,7 +11,7 @@ const (
 	A       = 0.6180339887
 	MinSize = 10
 	// Maximum average load of a bucket that triggers growth.
-	loadFactor = 0.65
+	LoadFactor = 0.65
 )
 
 type KeyError struct {
@@ -27,6 +27,7 @@ type item struct {
 	value interface{}
 }
 
+// 散列函数使用乘法散列法，冲突处理使用开放定址法（线性探测）的哈希表实现。
 type HashTable struct {
 	items []*item
 	size  int
@@ -66,6 +67,7 @@ func (ht *HashTable) hash(key interface{}) int {
 	return int(math.Floor(float64(ht.size) * decimalPart))
 }
 
+// 线性探测
 func (ht *HashTable) linearProbing(hash, i int) int {
 	return (hash + i) % ht.size
 }
@@ -92,11 +94,12 @@ func (ht *HashTable) rehash() {
 	}
 }
 
+// Update if key is exists else create. Auto rehash(oldSize * 2).
 func (ht *HashTable) Put(key, value interface{}) {
 	ht.Lock()
 	defer ht.Unlock()
 
-	if float64(ht.count) >= float64(ht.size)*loadFactor {
+	if float64(ht.count) >= float64(ht.size)*LoadFactor {
 		ht.rehash()
 	}
 
@@ -116,6 +119,7 @@ func (ht *HashTable) Put(key, value interface{}) {
 	panic("hash table overflow")
 }
 
+// Return (value, error). If key not exists, return KeyError.
 func (ht *HashTable) Get(key interface{}) (value interface{}, err error) {
 	ht.Lock()
 	defer ht.Unlock()
@@ -133,6 +137,7 @@ func (ht *HashTable) Get(key interface{}) (value interface{}, err error) {
 	return nil, &KeyError{"key no exists"}
 }
 
+// Return (value, error). If key not exists, return KeyError.
 func (ht *HashTable) Pop(key interface{}) (value interface{}, err error) {
 	ht.Lock()
 	defer ht.Unlock()
