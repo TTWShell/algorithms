@@ -184,3 +184,4 @@
 | [669. Trim a Binary Search Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/trimBST.go) | Easy |
 | [670. Maximum Swap](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/maximumSwap.go) | Medium |
 | [671. Second Minimum Node In a Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/findSecondMinimumValue.go) | Easy |
+| [674. Longest Continuous Increasing Subsequence](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/findLengthOfLCIS.go) | Easy |
