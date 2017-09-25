@@ -19,7 +19,7 @@ func (e Element) LessThan(hel Element) bool {
 }
 
 type PQ struct {
-	sync.Mutex
+	sync.RWMutex
 	heap  []Element
 	len   int
 	isMin bool
@@ -34,8 +34,8 @@ func MaxPQConstructor() (pq *PQ) {
 }
 
 func (pq *PQ) Len() int {
-	pq.Lock()
-	defer pq.Unlock()
+	pq.RLock()
+	defer pq.RUnlock()
 
 	return pq.len
 }
@@ -65,8 +65,8 @@ func (pq *PQ) Extract() (el Element) {
 }
 
 func (pq *PQ) Peek() (el Element) {
-	pq.Lock()
-	defer pq.Unlock()
+	pq.RLock()
+	defer pq.RUnlock()
 
 	if pq.len == 0 {
 		panic("Empty pq, cannot Peek.")
