@@ -10,6 +10,5 @@ func Test_canCross(t *testing.T) {
 		if r := canCross(input[i]); r != result[i] {
 			t.Fatal(input[i], r)
 		}
-		t.Log("OK......")
 	}
 }
