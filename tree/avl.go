@@ -20,7 +20,7 @@ AVL(Adelson-Velskii & Landis)树是带有平衡条件的二叉查找树(BST)，�
 查找、插入和删除在平均和最坏情况下的时间复杂度都是O(log(n))。
 */
 type AVL struct {
-	sync.Mutex
+	sync.RWMutex
 	root *avlNode
 }
 
@@ -151,8 +151,8 @@ func searchAVL(root *avlNode, el int) bool {
 }
 
 func (avl *AVL) Search(el int) bool {
-	avl.Lock()
-	defer avl.Unlock()
+	avl.RLock()
+	defer avl.RUnlock()
 
 	if avl.root == nil {
 		return false
