@@ -32,7 +32,7 @@ type HashTable struct {
 	items []*item
 	size  int
 	count int
-	sync.Mutex
+	sync.RWMutex
 }
 
 func NewHT(size int) *HashTable {
@@ -121,8 +121,8 @@ func (ht *HashTable) Put(key, value interface{}) {
 
 // Return (value, error). If key not exists, return KeyError.
 func (ht *HashTable) Get(key interface{}) (value interface{}, err error) {
-	ht.Lock()
-	defer ht.Unlock()
+	ht.RLock()
+	defer ht.RUnlock()
 
 	hash := ht.hash(key)
 	for i := 0; i < ht.size; i++ {
