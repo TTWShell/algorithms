@@ -22,5 +22,25 @@ Some examples:
 package leetcode
 
 func isMatch2(s string, p string) bool {
-	return false
+	si, pi, match, stari := 0, 0, 0, -1
+	for si < len(s) {
+		if pi < len(p) && (p[pi] == '?' || s[si] == p[pi]) {
+			si++
+			pi++
+		} else if pi < len(p) && p[pi] == '*' {
+			stari = pi
+			match = si
+			pi++
+		} else if stari != -1 {
+			pi = stari + 1
+			match++
+			si = match
+		} else {
+			return false
+		}
+	}
+	for pi < len(p) && p[pi] == '*' {
+		pi++
+	}
+	return pi == len(p)
 }
