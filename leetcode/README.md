@@ -187,3 +187,4 @@
 | [671. Second Minimum Node In a Binary Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/findSecondMinimumValue.go) | Easy |
 | [674. Longest Continuous Increasing Subsequence](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/findLengthOfLCIS.go) | Easy |
 | [680. Valid Palindrome II](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/validPalindrome.go) | Easy |
+| [682. Baseball Game](https://github.com/TTWShell/algorithms/blob/master/leetcode/stack/calPoints.go) | Easy |

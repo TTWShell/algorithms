@@ -10,7 +10,7 @@ import "sync"
 	4. 没有键值相等的节点。
 */
 type BST struct {
-	sync.Mutex
+	sync.RWMutex
 	root *TreeNode
 }
 
@@ -64,8 +64,8 @@ func searchBST(root *TreeNode, el int) bool {
 
 // 在二叉搜索树查找一个节点
 func (b *BST) Search(el int) bool {
-	b.Lock()
-	defer b.Unlock()
+	b.RLock()
+	defer b.RUnlock()
 
 	if b.root == nil {
 		return false

@@ -5,36 +5,35 @@ import "sync"
 type Queue struct {
 	queue []interface{}
 	len   int
-	lock  *sync.Mutex
+	sync.RWMutex
 }
 
 func Constructor() *Queue {
 	queue := &Queue{}
 	queue.queue = make([]interface{}, 0)
 	queue.len = 0
-	queue.lock = new(sync.Mutex)
 
 	return queue
 }
 
 func (q *Queue) Len() int {
-	q.lock.Lock()
-	defer q.lock.Unlock()
+	q.RLock()
+	defer q.RUnlock()
 
 	return q.len
 }
 
 func (q *Queue) IsEmpty() bool {
-	q.lock.Lock()
-	defer q.lock.Unlock()
+	q.RLock()
+	defer q.RUnlock()
 
 	return q.len == 0
 }
 
 func (q *Queue) DeQueue() (element interface{}) {
 	// 删除队头元素并返回
-	q.lock.Lock()
-	defer q.lock.Unlock()
+	q.Lock()
+	defer q.Unlock()
 
 	if q.len <= 0 {
 		panic("Queue is empty, cannot DeQueue.")
@@ -47,8 +46,8 @@ func (q *Queue) DeQueue() (element interface{}) {
 
 func (q *Queue) EnQueue(element interface{}) {
 	// 插入元素到队尾
-	q.lock.Lock()
-	defer q.lock.Unlock()
+	q.Lock()
+	defer q.Unlock()
 
 	q.queue = append(q.queue, element)
 	q.len++
@@ -56,8 +55,8 @@ func (q *Queue) EnQueue(element interface{}) {
 
 func (q *Queue) Peek() interface{} {
 	// 获取队头元素
-	q.lock.Lock()
-	defer q.lock.Unlock()
+	q.RLock()
+	defer q.RUnlock()
 
 	if q.len <= 0 {
 		panic("Queue is empty, cannot DeQueue.")

@@ -7,7 +7,7 @@ type Element interface {
 }
 
 type Heap struct {
-	sync.Mutex
+	sync.RWMutex
 	heap  []Element
 	len   int
 	isMin bool
@@ -22,15 +22,15 @@ func MaxHeapConstructor() *Heap {
 }
 
 func (h *Heap) IsEmpty() bool {
-	h.Lock()
-	defer h.Unlock()
+	h.RLock()
+	defer h.RUnlock()
 
 	return len(h.heap) == 0
 }
 
 func (h *Heap) Len() int {
-	h.Lock()
-	defer h.Unlock()
+	h.RLock()
+	defer h.RUnlock()
 
 	return h.len
 }
@@ -60,8 +60,8 @@ func (h *Heap) Extract() (e Element) {
 }
 
 func (h *Heap) Peek() (e Element) {
-	h.Lock()
-	defer h.Unlock()
+	h.RLock()
+	defer h.RUnlock()
 
 	if h.len == 0 {
 		panic("Empty heap, cannot Peek.")
