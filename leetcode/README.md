@@ -57,6 +57,7 @@
 | [56. Merge Intervals](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/merge2.go) | Medium |
 | [58. Length of Last Word](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/lengthOfLastWord.go ) | Easy |
 | [59. Spiral Matrix II](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/generateMatrix.go) | Medium |
+| [60. Permutation Sequence](https://github.com/TTWShell/algorithms/blob/master/leetcode/backtracking/getPermutation.go) | Medium |
 | [66. Plus One](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/plusOne.go ) | Easy |
 | [67. Add Binary](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/addBinary.go ) | Easy |
 | [69. Sqrt(x)](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/mySqrt.go ) | Easy |
