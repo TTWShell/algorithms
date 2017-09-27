@@ -52,6 +52,7 @@
 | [49. Group Anagrams](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/groupAnagrams.go) | Medium |
 | [50. Pow(x, n)](https://github.com/TTWShell/algorithms/blob/master/leetcode/binary-search/myPow.go) | Medium |
 | [53. Maximum Subarray](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/maxSubArray.go ) | Easy |
+| [54. Spiral Matrix](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/spiralOrder.go) | Medium |
 | [58. Length of Last Word](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/lengthOfLastWord.go ) | Easy |
 | [66. Plus One](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/plusOne.go ) | Easy |
 | [67. Add Binary](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/addBinary.go ) | Easy |
