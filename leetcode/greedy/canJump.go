@@ -14,6 +14,23 @@ A = [3,2,1,0,4], return false.
 package leetcode
 
 func canJump(nums []int) bool {
+	n := len(nums)
+	if n <= 1 {
+		return true
+	}
+
+	index, minIndex := n-1, n-1
+	for index >= 0 {
+		if newIndex := nums[index] + index; newIndex >= minIndex {
+			minIndex = index
+		}
+		index--
+	}
+	return minIndex == 0
+}
+
+/*
+func canJump(nums []int) bool {
 	dp := make([]bool, len(nums), len(nums))
 	if nums[0] > 0 || len(nums) == 1 {
 		dp[0] = true
@@ -27,3 +44,4 @@ func canJump(nums []int) bool {
 	}
 	return dp[len(nums)-1]
 }
+*/
