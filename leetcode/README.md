@@ -49,6 +49,7 @@
 | [46. Permutations](https://github.com/TTWShell/algorithms/blob/master/leetcode/backtracking/permute.go) | Medium |
 | [47. Permutations II](https://github.com/TTWShell/algorithms/blob/master/leetcode/backtracking/permuteUnique.go) | Medium |
 | [48. Rotate Image](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/rotate2.go) | Medium |
+| [49. Group Anagrams](https://github.com/TTWShell/algorithms/blob/master/leetcode/hash-table/groupAnagrams.go) | Medium |
 | [50. Pow(x, n)](https://github.com/TTWShell/algorithms/blob/master/leetcode/binary-search/myPow.go) | Medium |
 | [53. Maximum Subarray](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/maxSubArray.go ) | Easy |
 | [58. Length of Last Word](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/lengthOfLastWord.go ) | Easy |
