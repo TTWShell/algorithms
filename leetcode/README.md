@@ -66,6 +66,7 @@
 | [67. Add Binary](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/addBinary.go ) | Easy |
 | [69. Sqrt(x)](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/mySqrt.go ) | Easy |
 | [70. Climbing Stairs](https://github.com/TTWShell/algorithms/blob/master/leetcode/dynamic-programming/climbStairs.go ) | Easy |
+| [71. Simplify Path](https://github.com/TTWShell/algorithms/blob/master/leetcode/stack/simplifyPath.go) | Medium |
 | [83. Remove Duplicates from Sorted List](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/deleteDuplicates.go ) | Easy |
 | [88. Merge Sorted Array](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/merge.go ) | Easy |
 | [100. Same Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/isSameTree.go ) | Easy |
