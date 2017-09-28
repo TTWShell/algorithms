@@ -61,6 +61,7 @@
 | [61. Rotate List](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/rotateRight.go) | Medium |
 | [62. Unique Paths](https://github.com/TTWShell/algorithms/blob/master/leetcode/dynamic-programming/uniquePaths.go) | Medium |
 | [63. Unique Paths II](https://github.com/TTWShell/algorithms/blob/master/leetcode/dynamic-programming/uniquePathsWithObstacles.go) | Medium |
+| [64. Minimum Path Sum](https://github.com/TTWShell/algorithms/blob/master/leetcode/dynamic-programming/minPathSum.go) | Medium |
 | [66. Plus One](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/plusOne.go ) | Easy |
 | [67. Add Binary](https://github.com/TTWShell/algorithms/blob/master/leetcode/string/addBinary.go ) | Easy |
 | [69. Sqrt(x)](https://github.com/TTWShell/algorithms/blob/master/leetcode/math/mySqrt.go ) | Easy |
