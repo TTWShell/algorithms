@@ -35,27 +35,16 @@ func searchMatrix(matrix [][]int, target int) bool {
 			}
 		}
 	default:
+		n := len(matrix[0]) - 1
 		start, end := 0, m-1
 		for start <= end {
 			mid := start + (end-start)/2
-			if matrix[mid][0] == target {
-				return true
-			} else if matrix[mid][0] > target {
-				if mid-start <= 1 {
-					if target < matrix[mid][0] {
-						return searchMatrix([][]int{matrix[start]}, target)
-					}
-					return searchMatrix([][]int{matrix[mid]}, target)
-				}
-				end = mid
+			if target < matrix[mid][0] {
+				end = mid - 1
+			} else if matrix[mid][n] < target {
+				start = mid + 1
 			} else {
-				if end-mid <= 1 {
-					if target < matrix[end][0] {
-						return searchMatrix([][]int{matrix[mid]}, target)
-					}
-					return searchMatrix([][]int{matrix[end]}, target)
-				}
-				start = mid
+				return searchMatrix([][]int{matrix[mid]}, target)
 			}
 		}
 	}
