@@ -71,6 +71,7 @@
 | [74. Search a 2D Matrix](https://github.com/TTWShell/algorithms/blob/master/leetcode/binary-search/searchMatrix.go) | Medium |
 | [75. Sort Colors](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/sortColors.go) | Medium |
 | [77. Combinations](https://github.com/TTWShell/algorithms/blob/master/leetcode/backtracking/combine.go) | Medium |
+| [78. Subsets](](https://github.com/TTWShell/algorithms/blob/master/leetcode/backtracking/subsets.go) | Medium |
 | [83. Remove Duplicates from Sorted List](https://github.com/TTWShell/algorithms/blob/master/leetcode/linked-list/deleteDuplicates.go ) | Easy |
 | [88. Merge Sorted Array](https://github.com/TTWShell/algorithms/blob/master/leetcode/array/merge.go ) | Easy |
 | [100. Same Tree](https://github.com/TTWShell/algorithms/blob/master/leetcode/tree/isSameTree.go ) | Easy |
