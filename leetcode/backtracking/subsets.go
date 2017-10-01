@@ -24,13 +24,13 @@ func subsets(nums []int) [][]int {
 	var helper func(nums []int, k int) [][]int
 	helper = func(nums []int, k int) [][]int {
 		var res [][]int
-		if k == 1 {
+		switch k {
+		case 1:
 			res = make([][]int, len(nums), len(nums))
 			for i, num := range nums {
 				res[i] = []int{num}
 			}
-		} else {
-			res = [][]int{}
+		default:
 			for i := 0; i < len(nums)-k+1; i++ {
 				for _, sub := range helper(nums[i+1:], k-1) {
 					res = append(res, append([]int{nums[i]}, sub...))
@@ -42,8 +42,7 @@ func subsets(nums []int) [][]int {
 
 	res := [][]int{{}}
 	for k := 1; k <= len(nums); k++ {
-		kSub := helper(nums, k)
-		res = append(res, kSub...)
+		res = append(res, helper(nums, k)...)
 	}
 	return res
 }
