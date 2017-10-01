@@ -15,26 +15,33 @@ The array may contain duplicates.
 package leetcode
 
 func search2(nums []int, target int) bool {
+	if len(nums) == 0 {
+		return false
+	}
+
 	start, end := 0, len(nums)-1
 	for start <= end {
 		mid := start + (end-start)/2
 		switch {
 		case nums[mid] == target:
 			return true
-		case nums[start] < nums[mid]:
-			if nums[start] < target && target < nums[mid] {
-				end = mid
+		case nums[start] < nums[mid]: // left rotate
+			if nums[start] <= target && target < nums[mid] {
+				end = mid - 1
 			} else {
 				start = mid + 1
 			}
-		case nums[start] == nums[mid]:
-			return search2(nums[0:mid], target) || search2(nums[mid+1:], target)
+		case nums[mid] < nums[end]: // right rotate
+			if nums[mid] < target && target <= nums[end] {
+				start = mid + 1
+			} else {
+				end = mid - 1
+			}
 		default:
-			if nums[mid] <= target && target <= nums[end] {
-				start = mid + 1
-			} else {
-				end = mid
+			if len(nums) > 1 {
+				return search2(nums[:mid], target) || search2(nums[mid+1:], target)
 			}
+			return nums[0] == target
 		}
 	}
 	return false
