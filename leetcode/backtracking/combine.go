@@ -23,16 +23,19 @@ func combine(n int, k int) [][]int {
 
 	var helper func(start, end, k int) [][]int
 	helper = func(start, end, k int) [][]int {
-		res := [][]int{}
-		if k == 1 {
+		var res [][]int
+		switch k {
+		case 1:
+			res = make([][]int, end-start+1)
+			idx := 0
 			for i := start; i <= end; i++ {
-				res = append(res, []int{i})
+				res[idx] = []int{i}
+				idx++
 			}
-		} else {
+		default:
 			for i := start; i <= start+(end-start+1)-k; i++ {
-				tmp := []int{i}
 				for _, sub := range helper(i+1, end, k-1) {
-					res = append(res, append(tmp, sub...))
+					res = append(res, append([]int{i}, sub...))
 				}
 			}
 		}
