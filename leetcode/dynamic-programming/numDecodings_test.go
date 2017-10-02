@@ -18,4 +18,5 @@ func Test_numDecodings(t *testing.T) {
 	assert.Equal(0, numDecodings("100"))
 	assert.Equal(1, numDecodings("110"))
 	assert.Equal(5, numDecodings("1212"))
+	assert.Equal(0, numDecodings("111a"))
 }

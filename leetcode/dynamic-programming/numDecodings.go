@@ -26,13 +26,14 @@ func numDecodings(s string) int {
 	dp0, dp1, cur := 1, 1, 0
 
 	for i := 1; i < len(s); i++ {
-		if '0' <= s[i] && s[i] <= '9' {
-			if s[i] > '0' {
-				cur += dp1
-			}
-			if preLetter := s[i-1]; preLetter == '1' || (preLetter == '2' && s[i] <= '6') {
-				cur += dp0
-			}
+		if s[i] < '0' || s[i] > '9' {
+			return 0
+		}
+		if s[i] > '0' {
+			cur += dp1
+		}
+		if preLetter := s[i-1]; preLetter == '1' || (preLetter == '2' && s[i] <= '6') {
+			cur += dp0
 		}
 		dp0, dp1, cur = dp1, cur, 0
 	}
