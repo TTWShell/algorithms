@@ -19,7 +19,7 @@ For now, the judge is able to judge based on one instance of gray code sequence.
 
 package leetcode
 
-import "fmt"
+import "math"
 
 // https://zh.wikipedia.org/wiki/%E6%A0%BC%E9%9B%B7%E7%A0%81
 func grayCode(n int) []int {
@@ -27,39 +27,13 @@ func grayCode(n int) []int {
 		return []int{0}
 	}
 
-	pow := func(x, n int) int {
-		var helper func(x, n int) int
-		helper = func(x, n int) int {
-			if n == 0 {
-				return 1
-			}
-			if n%2 == 1 {
-				return helper(x*x, n/2) * x
-			} else {
-				return helper(x*x, n/2)
-			}
-		}
-		if n < 0 {
-			return 1 / helper(x, -n)
-		}
-		return helper(x, n)
-	}
-
-	codes, index := make([][]int, pow(2, n)), 2
-	codes[0], codes[1] = []int{0}, []int{1}
+	codes, tmp := make([]int, int(math.Pow(2.0, float64(n)))), 2
+	codes[0], codes[1] = 0, 1
 	for i := 2; i <= n; i++ {
-		for idx, j := pow(2, i-1), index-1; j >= 0; idx, j = idx+1, j-1 {
-			tmp := []int{1}
-			if i-len(codes[j]) > len(tmp) {
-				tmp = append(tmp, 0)
-			}
-			codes[idx] = append(tmp, codes[j]...)
-			index++
+		for idx, j := tmp, tmp-1; j >= 0; idx, j = idx+1, j-1 {
+			codes[idx] = tmp + codes[j]
 		}
+		tmp *= 2
 	}
-
-	for _, sub := range codes {
-		fmt.Println(n, ">>>", sub)
-	}
-	return []int{}
+	return codes
 }
