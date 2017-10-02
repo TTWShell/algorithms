@@ -9,6 +9,22 @@ Given 1->1->1->2->3, return 2->3.
 package leetcode
 
 func deleteDuplicates2(head *ListNode) *ListNode {
+	fakeHead := &ListNode{0, head}
+	for cur := fakeHead; cur != nil; cur = cur.Next {
+		for cur.Next != nil && cur.Next.Next != nil && cur.Next.Val == cur.Next.Next.Val {
+			duplicateVal := cur.Next.Val
+			// ignore duplicateVal
+			for cur.Next != nil && cur.Next.Val == duplicateVal {
+				// find no-repeat Next.Val
+				cur.Next = cur.Next.Next
+			}
+		}
+	}
+	return fakeHead.Next
+}
+
+/*
+func deleteDuplicates2(head *ListNode) *ListNode {
 	var res, resCur *ListNode
 	cur, curCount := head, 1
 	for cur != nil {
@@ -28,3 +44,4 @@ func deleteDuplicates2(head *ListNode) *ListNode {
 	}
 	return res
 }
+*/
