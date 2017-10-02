@@ -11,17 +11,17 @@ return 1->2->2->4->3->5.
 package leetcode
 
 func partition(head *ListNode, x int) *ListNode {
-	ltHead, gtHead := &ListNode{Val: 0}, &ListNode{Val: 0}
-	ltCur, gtCur := ltHead, gtHead
+	ltHead, gteHead := &ListNode{Val: 0}, &ListNode{Val: 0}
+	ltCur, gteCur := ltHead, gteHead
 
 	for cur := head; cur != nil; cur = cur.Next {
 		tmp := &ListNode{Val: cur.Val}
 		if cur.Val < x {
 			ltCur.Next, ltCur = tmp, tmp
 		} else {
-			gtCur.Next, gtCur = tmp, tmp
+			gteCur.Next, gteCur = tmp, tmp
 		}
 	}
-	ltCur.Next = gtHead.Next
+	ltCur.Next = gteHead.Next
 	return ltHead.Next
 }
