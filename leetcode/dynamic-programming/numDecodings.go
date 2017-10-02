@@ -16,6 +16,31 @@ The number of ways decoding "12" is 2.
 package leetcode
 
 func numDecodings(s string) int {
+	if len(s) == 0 {
+		return 0
+	}
+
+	if s[0] < '1' || s[0] > '9' {
+		return 0
+	}
+	dp0, dp1, cur := 1, 1, 0
+
+	for i := 1; i < len(s); i++ {
+		if '0' <= s[i] && s[i] <= '9' {
+			if s[i] > '0' {
+				cur += dp1
+			}
+			if preLetter := s[i-1]; preLetter == '1' || (preLetter == '2' && s[i] <= '6') {
+				cur += dp0
+			}
+		}
+		dp0, dp1, cur = dp1, cur, 0
+	}
+	return dp1
+}
+
+/* also 0ms
+func numDecodings(s string) int {
 	length := len(s)
 	if length == 0 {
 		return 0
@@ -40,3 +65,4 @@ func numDecodings(s string) int {
 	}
 	return dp[0]
 }
+*/
