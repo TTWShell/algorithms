@@ -8,45 +8,45 @@ Data structures and algorithms in go.
 
 ## Online Judge
 
-1. [Leetcode solutions in go](https://github.com/TTWShell/algorithms/blob/master/leetcode/README.md)
+1. [Leetcode solutions in go](leetcode)
 
 
 ## Data structures
 
-* [栈（Stack）](https://github.com/TTWShell/algorithms/blob/master/stack)
-    * [实现](https://github.com/TTWShell/algorithms/blob/master/stack/stack.go)
-    * [平衡符号](https://github.com/TTWShell/algorithms/blob/master/stack/balanceSymbol.go)
-    * [中缀表达式转换为前缀表达式](https://github.com/TTWShell/algorithms/blob/master/stack/notation.go)
-    * [中缀表达式转换为后缀表达式](https://github.com/TTWShell/algorithms/blob/master/stack/notation.go)
-* [队列（Queue）](https://github.com/TTWShell/algorithms/blob/master/queue)
-    * [实现](https://github.com/TTWShell/algorithms/blob/master/queue/queue.go)
-* [树（Tree）](https://github.com/TTWShell/algorithms/blob/master/tree)
-    * [DFS－深度优先搜素](https://github.com/TTWShell/algorithms/blob/master/tree/tree.go)
-    * [BFS－广度优先搜索](https://github.com/TTWShell/algorithms/blob/master/tree/tree.go)
-    * [BST－二叉搜索树](https://github.com/TTWShell/algorithms/blob/master/tree/bst.go)
-    * [AVL－高度平衡树](https://github.com/TTWShell/algorithms/blob/master/tree/avl.go)
-* [图（Graph）](https://github.com/TTWShell/algorithms/blob/master/graph)
-* [堆（Heap）](https://github.com/TTWShell/algorithms/blob/master/heap)
-    * [实现](https://github.com/TTWShell/algorithms/blob/master/heap/heap.go)
-* [优先队列（Priority Queue）](https://github.com/TTWShell/algorithms/blob/master/priority-queue)
-    * [基于堆的实现](https://github.com/TTWShell/algorithms/blob/master/priority-queue/pq.go)
-* [散列表（Hash Table）](https://github.com/TTWShell/algorithms/blob/master/hash-table)
-    * [实现](https://github.com/TTWShell/algorithms/blob/master/hash-table/hashtable.go)
+* [栈（Stack）](stack)
+    * [实现](stack/stack.go)
+    * [平衡符号](stack/balanceSymbol.go)
+    * [中缀表达式转换为前缀表达式](stack/notation.go)
+    * [中缀表达式转换为后缀表达式](stack/notation.go)
+* [队列（Queue）](queue)
+    * [实现](queue/queue.go)
+* [树（Tree）](tree)
+    * [DFS－深度优先搜素](tree/tree.go)
+    * [BFS－广度优先搜索](tree/tree.go)
+    * [BST－二叉搜索树](tree/bst.go)
+    * [AVL－高度平衡树](tree/avl.go)
+* [图（Graph）](graph)
+* [堆（Heap）](heap)
+    * [实现](heap/heap.go)
+* [优先队列（Priority Queue）](priority-queue)
+    * [基于堆的实现](priority-queue/pq.go)
+* [散列表（Hash Table）](hash-table)
+    * [实现](hash-table/hashtable.go)
 
 
 ## Algorithms
 
 ### Sorting algorithms
 
-* [冒泡排序（Bubble Sort）](https://github.com/TTWShell/algorithms/blob/master/sorting/bubble)
-* [堆排序（Heap Sort）](https://github.com/TTWShell/algorithms/blob/master/sorting/heap)
-* [快速排序（Quick Sort）](https://github.com/TTWShell/algorithms/blob/master/sorting/quick)
-* [归并排序（Merge Sort）](https://github.com/TTWShell/algorithms/blob/master/sorting/merge)
-* [插入排序（Insertion Sort）](https://github.com/TTWShell/algorithms/blob/master/sorting/insertion)
-* [希尔排序（Shell Sort）](https://github.com/TTWShell/algorithms/blob/master/sorting/shell)
-* [选择排序（Selection Sort）](https://github.com/TTWShell/algorithms/blob/master/sorting/selection)
-* [基数排序（Radix Sort）](https://github.com/TTWShell/algorithms/blob/master/sorting/radix)
+* [冒泡排序（Bubble Sort）](sorting/bubble)
+* [堆排序（Heap Sort）](sorting/heap)
+* [快速排序（Quick Sort）](sorting/quick)
+* [归并排序（Merge Sort）](sorting/merge)
+* [插入排序（Insertion Sort）](sorting/insertion)
+* [希尔排序（Shell Sort）](sorting/shell)
+* [选择排序（Selection Sort）](sorting/selection)
+* [基数排序（Radix Sort）](sorting/radix)
 
 ### Searching algorithms
 
-* [二分搜索算法（Binary Search）](https://github.com/TTWShell/algorithms/blob/master/search/binary-search)
+* [二分搜索算法（Binary Search）](search/binary-search)
