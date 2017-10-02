@@ -77,6 +77,7 @@
 | 81 | [Search in Rotated Sorted Array II](binary-search/search2.go) | [Medium][] |
 | 82 | [Remove Duplicates from Sorted List II](linked-list/deleteDuplicates2.go) | [Medium][] |
 | 83 | [Remove Duplicates from Sorted List](linked-list/deleteDuplicates.go) | [Easy][] |
+| 86 | [Partition List](linked-list/partition.go) | [Medium][] |
 | 88 | [Merge Sorted Array](array/merge.go) | [Easy][] |
 | 100 | [Same Tree](tree/isSameTree.go) | [Easy][] |
 | 101 | [Symmetric Tree](tree/isSymmetric.go) | [Easy][] |
