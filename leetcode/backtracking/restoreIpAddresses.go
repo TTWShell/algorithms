@@ -22,22 +22,24 @@ func restoreIpAddresses(s string) []string {
 			return res
 		}
 
-		if part == 1 {
+		validate := func(s string) bool {
 			if len(s) > 1 && s[0] == '0' {
-				return res
+				return false
 			}
-			num, _ := strconv.Atoi(s)
-			if num <= 255 {
+			if num, _ := strconv.Atoi(s); num > 255 {
+				return false
+			}
+			return true
+		}
+
+		if part == 1 {
+			if validate(s) {
 				res = append(res, []string{s})
 			}
 		} else {
 			for i := 1; i <= 3 && i <= len(s); i++ {
 				strNum := s[:i]
-				if len(strNum) > 1 && strNum[0] == '0' {
-					return res
-				}
-				num, _ := strconv.Atoi(strNum)
-				if num > 255 {
+				if !validate(strNum) {
 					continue
 				}
 				for _, sub := range helper(s[i:], part-1) {
