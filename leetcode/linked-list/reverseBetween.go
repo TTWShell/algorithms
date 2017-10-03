@@ -14,5 +14,30 @@ Given m, n satisfy the following condition:
 package leetcode
 
 func reverseBetween(head *ListNode, m int, n int) *ListNode {
-	return head
+	if m == n {
+		return head
+	}
+
+	// fake front、middle、back head
+	frontHead, midHead, backHead := &ListNode{Val: 0}, &ListNode{Val: 0}, &ListNode{Val: 0}
+	idx := 1
+	// tail of front、middle、back list
+	frontTail, midTail, backTail := frontHead, midHead, backHead
+
+	for cur := head; cur != nil; cur, idx = cur.Next, idx+1 {
+		tmp := &ListNode{Val: cur.Val}
+		switch {
+		case idx < m:
+			frontTail.Next, frontTail = tmp, tmp
+		case m == idx:
+			midTail, midHead.Next = tmp, tmp
+		case m < idx && idx <= n:
+			tmp.Next, midHead.Next = midHead.Next, tmp
+		default:
+			backTail.Next, backTail = tmp, tmp
+		}
+	}
+	frontTail.Next = midHead.Next
+	midTail.Next = backHead.Next
+	return frontHead.Next
 }
