@@ -16,6 +16,18 @@ Note: Recursive solution is trivial, could you do it iteratively?
 package leetcode
 
 func inorderTraversal(root *TreeNode) []int {
+	if root == nil {
+		return []int{}
+	}
+
+	left := inorderTraversal(root.Left)
+	right := inorderTraversal(root.Right)
+
+	return append(append(left, root.Val), right...)
+}
+
+/* 0ms
+func inorderTraversal(root *TreeNode) []int {
 	res := []int{}
 
 	var inorder func(root *TreeNode, res *[]int)
@@ -30,3 +42,4 @@ func inorderTraversal(root *TreeNode) []int {
 	inorder(root, &res)
 	return res
 }
+*/
