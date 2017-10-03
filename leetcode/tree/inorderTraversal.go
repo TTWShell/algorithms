@@ -15,6 +15,26 @@ Note: Recursive solution is trivial, could you do it iteratively?
 
 package leetcode
 
+import "github.com/TTWShell/algorithms/stack" // need copy stack.go when run in leetcode online
+
+func inorderTraversal(root *TreeNode) []int {
+	res := []int{}
+	s := stack.Constructor()
+
+	for root != nil || !s.IsEmpty() {
+		for root != nil {
+			s.Push(root)
+			root = root.Left
+		}
+		root = s.Pop().(*TreeNode)
+		res = append(res, root.Val)
+		root = root.Right
+	}
+
+	return res
+}
+
+/* 0ms
 func inorderTraversal(root *TreeNode) []int {
 	if root == nil {
 		return []int{}
@@ -25,6 +45,7 @@ func inorderTraversal(root *TreeNode) []int {
 
 	return append(append(left, root.Val), right...)
 }
+*/
 
 /* 0ms
 func inorderTraversal(root *TreeNode) []int {
