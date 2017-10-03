@@ -1,5 +1,6 @@
 #! /usr/local/bin/python
 import argparse
+import os
 
 import requests
 
@@ -38,20 +39,36 @@ class LeetCode:
             self.LOGIN_URI, data=data, headers=self.HEADERS)
         if resp.status_code != 200:
             print("Login failed.", resp.status_code)
+            os._exit(1)
 
-    def analysis(self):
-        pass
+    def all(self):
+        url = 'https://leetcode.com/api/progress/all/'
+        resp = self.session.get(url)
+        if resp.status_code != 200:
+            print("request failed:", resp.status_code)
+            os._exit(1)
+        data = resp.json()
+        print('{unsolved} Todo | {solvedTotal}/{questionTotal} Solved'
+              ' | {attempted} Attempted'.format(**data))
+        print('Easy {Easy} Medium {Medium} Hard {Hard}'.format(
+            **data['solvedPerDifficulty']))
+
+    def analysis(self, allstatistics):
+        if allstatistics:
+            self.all()
 
 
 parser = argparse.ArgumentParser(
     description='Analysis leetcode problems progress.')
 parser.add_argument('-u', '--username', type=str, required=True,
-                    help='password')
+                    help='Username for login.')
 parser.add_argument('-p', '--password', type=str, required=True,
-                    help='password')
+                    help='Password to use when connecting to leetcode.')
+parser.add_argument('-a', '--allstatistics', action='store_true',
+                    help='Show all statistical information.')
 
 
 if __name__ == '__main__':
     args = parser.parse_args()
     leetcode = LeetCode(username=args.username, password=args.password)
-    leetcode.analysis()
+    leetcode.analysis(allstatistics=args.allstatistics)
