@@ -77,6 +77,8 @@ class LeetCode:
             pairs = filter(lambda x: x['difficulty']['level'] == level, pairs)
 
         pp.pprint(pairs[0])
+        print('https://leetcode.com/problems/{}/description/'.format(
+            pairs[0]['stat']['question__title_slug']))
 
     def analysis(self, allstatistics, query):
         if allstatistics:
