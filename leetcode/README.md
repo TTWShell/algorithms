@@ -85,6 +85,7 @@
 | 92 | [Reverse Linked List II](linked-list/reverseBetween.go) | [Medium][] |
 | 93 | [Restore IP Addresses](backtracking/restoreIpAddresses.go) | [Medium][] |
 | 94 | [Binary Tree Inorder Traversal](tree/inorderTraversal.go) | [Medium][] |
+| 96 | [Unique Binary Search Trees](dynamic-programming/numTrees.go) | [Medium][] |
 | 100 | [Same Tree](tree/isSameTree.go) | [Easy][] |
 | 101 | [Symmetric Tree](tree/isSymmetric.go) | [Easy][] |
 | 104 | [Maximum Depth of Binary Tree](tree/maxDepth.go) | [Easy][] |
