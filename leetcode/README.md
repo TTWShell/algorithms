@@ -87,6 +87,7 @@
 | 94 | [Binary Tree Inorder Traversal](tree/inorderTraversal.go) | [Medium][] |
 | 95 | [Unique Binary Search Trees II](dynamic-programming/generateTrees.go) | [Medium][] |
 | 96 | [Unique Binary Search Trees](dynamic-programming/numTrees.go) | [Medium][] |
+| 98 | [Validate Binary Search Tree](tree/isValidBST.go) | [Medium][] |
 | 100 | [Same Tree](tree/isSameTree.go) | [Easy][] |
 | 101 | [Symmetric Tree](tree/isSymmetric.go) | [Easy][] |
 | 104 | [Maximum Depth of Binary Tree](tree/maxDepth.go) | [Easy][] |
