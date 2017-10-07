@@ -90,6 +90,7 @@
 | 98 | [Validate Binary Search Tree](tree/isValidBST.go) | [Medium][] |
 | 100 | [Same Tree](tree/isSameTree.go) | [Easy][] |
 | 101 | [Symmetric Tree](tree/isSymmetric.go) | [Easy][] |
+| 102 | [Binary Tree Level Order Traversal](tree/levelOrder.go) | [Medium][] |
 | 104 | [Maximum Depth of Binary Tree](tree/maxDepth.go) | [Easy][] |
 | 107 | [Binary Tree Level Order Traversal II](tree/levelOrderBottom.go) | [Easy][] |
 | 108 | [Convert Sorted Array to Binary Search Tree](tree/sortedArrayToBST.go) | [Easy][] |
