@@ -14,4 +14,6 @@ func Test_levelOrder(t *testing.T) {
 		{9, 20},
 		{15, 7},
 	}, levelOrder(root))
+
+	assert.Equal([][]int{}, levelOrder(nil))
 }
