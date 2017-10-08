@@ -94,6 +94,7 @@
 | 103 | [Binary Tree Zigzag Level Order Traversal](tree/zigzagLevelOrder.go) | [Medium][] |
 | 104 | [Maximum Depth of Binary Tree](tree/maxDepth.go) | [Easy][] |
 | 105 | [Construct Binary Tree from Preorder and Inorder Traversal](tree/buildTree.go) | [Medium][] |
+| 106 | [Construct Binary Tree from Inorder and Postorder Traversal](tree/buildTree2.go) | [Medium][] |
 | 107 | [Binary Tree Level Order Traversal II](tree/levelOrderBottom.go) | [Easy][] |
 | 108 | [Convert Sorted Array to Binary Search Tree](tree/sortedArrayToBST.go) | [Easy][] |
 | 110 | [Balanced Binary Tree](tree/isBalanced.go) | [Easy][] |
