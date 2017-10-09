@@ -105,6 +105,7 @@
 | 114 | [Flatten Binary Tree to Linked List](tree/flatten.go) | [Medium][] |
 | 118 | [Pascal's Triangle](array/generate.go) | [Easy][] |
 | 119 | [Pascal's Triangle II](array/getRow.go) | [Easy][] |
+| 120 | [Triangle](dynamic-programming/minimumTotal.go) | [Medium][] |
 | 121 | [Best Time to Buy and Sell Stock](dynamic-programming/maxProfit.go) | [Easy][] |
 | 122 | [Best Time to Buy and Sell Stock II](dynamic-programming/maxProfit2.go) | [Easy][] |
 | 123 | [Best Time to Buy and Sell Stock III](dynamic-programming/maxProfit3.go) | [Hard][] |
