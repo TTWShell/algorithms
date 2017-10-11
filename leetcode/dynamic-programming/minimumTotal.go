@@ -29,11 +29,13 @@ func minimumTotal(triangle [][]int) int {
 		return b
 	}
 
+	dp := make([]int, length)
+	copy(dp, triangle[length-1])
+
 	for i := length - 2; i >= 0; i-- {
-		prevRow, curRow := triangle[i+1], triangle[i]
-		for j := 0; j < len(curRow); j++ {
-			curRow[j] = min(prevRow[j], prevRow[j+1]) + curRow[j]
+		for j := 0; j <= i; j++ {
+			dp[j] = min(dp[j], dp[j+1]) + triangle[i][j]
 		}
 	}
-	return triangle[0][0]
+	return dp[0]
 }
