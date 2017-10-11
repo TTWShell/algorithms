@@ -15,4 +15,6 @@ func Test_minimumTotal(t *testing.T) {
 		{4, 1, 8, 3},
 	}
 	assert.Equal(11, minimumTotal(triangle))
+
+	assert.Equal(0, minimumTotal([][]int{}))
 }

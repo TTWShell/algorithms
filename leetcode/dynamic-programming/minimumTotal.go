@@ -17,5 +17,23 @@ Bonus point if you are able to do this using only O(n) extra space, where n is t
 package leetcode
 
 func minimumTotal(triangle [][]int) int {
-	return -1
+	length := len(triangle)
+	if len(triangle) == 0 {
+		return 0
+	}
+
+	min := func(a, b int) int {
+		if a < b {
+			return a
+		}
+		return b
+	}
+
+	for i := length - 2; i >= 0; i-- {
+		prevRow, curRow := triangle[i+1], triangle[i]
+		for j := 0; j < len(curRow); j++ {
+			curRow[j] = min(prevRow[j], prevRow[j+1]) + curRow[j]
+		}
+	}
+	return triangle[0][0]
 }
