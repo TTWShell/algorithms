@@ -120,14 +120,14 @@ class LeetCode:
                 continue
 
             problem = Prombem(*problem)
+            if status is not None and problem.status == 'None':
+                print('Latest AC problem: {}. {}'.format(
+                    problem.id, problem.title))
+
             go = problem.go
             if go != 1 and (today - datetime.datetime.strptime(
-                    problem.updated_at, '%Y-%m-%d %H:%M:%S')).days >= 7:
-                if status is not None and problem.status == 'None':
-                    print('Latest AC problem: {}. {}'.format(
-                        problem.id, problem.title))
-
-                if 'Go' in self.support_languages_by_tilte_slug(title_slug):
+                    problem.updated_at, '%Y-%m-%d %H:%M:%S')).days >= 7 and \
+                    'Go' in self.support_languages_by_tilte_slug(title_slug):
                     go = 1
 
             cur.execute(update_sql.format(
