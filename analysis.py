@@ -56,14 +56,14 @@ class LeetCode:
             print("Login failed.", resp.status_code)
             os._exit(1)
 
-    def all(self):
+    def profile(self):
         """
         profile data
         """
         url = 'https://leetcode.com/api/progress/all/'
         resp = self.session.get(url)
         if resp.status_code != 200:
-            print("request failed:", resp.status_code)
+            print("request profile failed:", resp.status_code)
             os._exit(1)
         data = resp.json()
         print('{unsolved} Todo | {solvedTotal}/{questionTotal} Solved'
@@ -71,7 +71,7 @@ class LeetCode:
         print('Easy {Easy} Medium {Medium} Hard {Hard}'.format(
             **data['solvedPerDifficulty']))
 
-    def _get_support_languages_by_tilte_slug(self, tilte_slug):
+    def support_languages_by_tilte_slug(self, tilte_slug):
         url = 'https://leetcode.com/problems/{}/description/'.format(
             tilte_slug)
         text = self.session.get(url).text
@@ -99,10 +99,10 @@ class LeetCode:
             title_slug = p['stat']['question__title_slug']
             status = p['status']
 
-            instance = cur.execute(retrieve_sql.format(
+            problem = cur.execute(retrieve_sql.format(
                 table_name=table_name, pk=problem_id)).fetchone()
-            if instance is None:
-                go = 1 if 'Go' in self._get_support_languages_by_tilte_slug(
+            if problem is None:
+                go = 1 if 'Go' in self.support_languages_by_tilte_slug(
                     title_slug) else 0
                 values = {
                     'id': problem_id,
@@ -115,8 +115,11 @@ class LeetCode:
                 cur.execute(insert_sql.format(table_name=table_name, **values))
                 conn.commit()
                 continue
-            if status is None:
-                problem = Prombem(*instance)
+
+            problem = Prombem(*problem)
+            if status is not None and problem.status == 'None':
+                print('Latest AC problem: {}. {}'.format(
+                    problem.id, problem.title))
                 go = problem.go
                 if go != 1 and \
                         'Go' in self._get_support_languages_by_tilte_slug(
@@ -128,7 +131,9 @@ class LeetCode:
                 conn.commit()
 
     def get_unsolved_problem(self):
-        # get a problem by difficulty filter
+        """
+        Get a problem by difficulty filter.
+        """
         self.sync_all_problems()
         all_sql = 'SELECT * FROM `{table_name}` ORDER BY id'.format(
             table_name=table_name)
@@ -143,9 +148,9 @@ class LeetCode:
         print('https://leetcode.com/problems/{}/description/'.format(
             pairs[0]['title_slug']))
 
-    def analysis(self, allstatistics, query):
-        if allstatistics:
-            self.all()
+    def analysis(self, profile, query):
+        if profile:
+            self.profile()
         if query:
             self.get_unsolved_problem()
 
@@ -160,8 +165,8 @@ parser.add_argument('-d', '--difficulty', type=int,
                     choices=(1, 2, 3),
                     help='Difficulty of problems.')
 
-parser.add_argument('-a', '--allstatistics', action='store_true',
-                    help='Show all statistical information.')
+parser.add_argument('-P', '--profile', action='store_true',
+                    help='Show profile, all statistical information.')
 parser.add_argument('-query', '--query', action='store_true',
                     help='Query one unsolved problem order by id.')
 
@@ -170,4 +175,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     leetcode = LeetCode(username=args.username, password=args.password,
                         difficulty=args.difficulty)
-    leetcode.analysis(allstatistics=args.allstatistics, query=args.query)
+    leetcode.analysis(profile=args.profile, query=args.query)
