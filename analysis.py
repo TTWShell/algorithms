@@ -138,19 +138,24 @@ class LeetCode:
                 continue
 
             problem = Prombem(*problem)
+            need_update = False
             if status is not None and problem.status == 'None':
                 print('Latest AC problem: {}. {}'.format(
                     problem.id, problem.title))
+                need_update = True
 
             go = problem.go
             if go != 1 and (today - datetime.datetime.strptime(
-                    problem.updated_at, '%Y-%m-%d %H:%M:%S')).days >= 7 and \
-                    'Go' in self.support_languages_by_tilte_slug(title_slug):
+                    problem.updated_at, '%Y-%m-%d %H:%M:%S')).days >= 7:
+                need_update = True
+                if 'Go' in self.support_languages_by_tilte_slug(title_slug):
                     go = 1
 
-            cur.execute(update_sql.format(
-                table_name=table_name, go=go, pk=problem_id, status=status))
-            conn.commit()
+            if need_update:
+                cur.execute(update_sql.format(
+                    table_name=table_name, go=go, pk=problem_id,
+                    status=status))
+                conn.commit()
 
     def get_unsolved_problem(self):
         """
