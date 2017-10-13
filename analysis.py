@@ -1,5 +1,6 @@
 #! /usr/local/bin/python
 import argparse
+import datetime
 import os
 import pprint
 import sqlite3
@@ -83,6 +84,7 @@ class LeetCode:
     def sync_all_problems(self):
         url = 'https://leetcode.com/api/problems/algorithms/'
         data = self.session.get(url).json()
+        today = datetime.datetime.now()
 
         retrieve_sql = 'SELECT * FROM `{table_name}` WHERE id={pk}'
         insert_sql = 'INSERT INTO `{table_name}` (id, title, title_slug, difficulty, status, go) VALUES ({id}, "{title}", "{title_slug}", {difficulty}, "{status}", {go})'  # NOQA E501
@@ -94,6 +96,7 @@ class LeetCode:
         if self.difficulty:
             pairs = filter(
                 lambda x: x['difficulty']['level'] == self.difficulty, pairs)
+
         for p in tqdm(pairs):
             problem_id = p['stat']['question_id']
             title_slug = p['stat']['question__title_slug']
@@ -117,18 +120,19 @@ class LeetCode:
                 continue
 
             problem = Prombem(*problem)
-            if status is not None and problem.status == 'None':
-                print('Latest AC problem: {}. {}'.format(
-                    problem.id, problem.title))
-                go = problem.go
-                if go != 1 and \
-                        'Go' in self._get_support_languages_by_tilte_slug(
-                            title_slug):
+            go = problem.go
+            if go != 1 and (today - datetime.datetime.strptime(
+                    problem.date, '%Y-%m-%d')).days >= 7:
+                if status is not None and problem.status == 'None':
+                    print('Latest AC problem: {}. {}'.format(
+                        problem.id, problem.title))
+
+                if 'Go' in self.support_languages_by_tilte_slug(title_slug):
                     go = 1
-                cur.execute(update_sql.format(
-                    table_name=table_name, go=go, pk=problem_id,
-                    status=status))
-                conn.commit()
+
+            cur.execute(update_sql.format(
+                table_name=table_name, go=go, pk=problem_id, status=status))
+            conn.commit()
 
     def get_unsolved_problem(self):
         """
