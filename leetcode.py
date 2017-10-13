@@ -191,7 +191,7 @@ parser.add_argument('-p', '--password', type=str, required=True,
                     help='Password to use when connecting to leetcode.')
 parser.add_argument('-d', '--difficulty', type=int,
                     choices=(1, 2, 3),
-                    help='Difficulty of problems.')
+                    help='Difficulty of problems. 1-3: easy --> hard')
 
 parser.add_argument('-P', '--profile', action='store_true',
                     help='Show profile, all statistical information.')
