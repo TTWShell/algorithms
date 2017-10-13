@@ -13,10 +13,28 @@ pp = pprint.PrettyPrinter()
 conn = sqlite3.connect("leetcode.db")
 cur = conn.cursor()
 table_name = 'problem'
-cur.execute("CREATE TABLE IF NOT EXISTS `{}` "
-            "(id integer(5) NOT NULL PRIMARY KEY, "
-            "title varchar(128), title_slug varchar(128), difficulty tinyint(1), status varchar(16) DEFAULT NULL,  go tinyint(1), "  # NOQA E501
-            "updated_at DATETIME DEFAULT (strftime('%Y-%m-%d %H:%M:%S', 'now', 'localtime')))".format(table_name))  # NOQA E501
+cur.execute("""
+CREATE TABLE IF NOT EXISTS `{table_name}` (
+    id integer(5) NOT NULL PRIMARY KEY,
+    title varchar(128),
+    title_slug varchar(128),
+    difficulty tinyint(1),
+    status varchar(16) DEFAULT NULL,
+    go tinyint(1),
+    updated_at DATETIME DEFAULT (
+        strftime('%Y-%m-%d %H:%M:%S', 'now', 'localtime'))
+    )""".format(table_name=table_name))
+cur.execute("""
+CREATE TRIGGER IF NOT EXISTS [UpdateLastTime]
+    AFTER
+    UPDATE
+    ON `{table_name}`
+    FOR EACH ROW
+    WHEN NEW.updated_at <= OLD.updated_at
+BEGIN
+    update `{table_name}` set updated_at=strftime(
+    '%Y-%m-%d %H:%M:%S', 'now', 'localtime') where id=OLD.id;
+END""".format(table_name=table_name))
 Prombem = namedtuple('Problem', ['id', 'title', 'title_slug', 'difficulty', 'status', 'go', 'updated_at'])  # NOQA E501
 
 
@@ -149,6 +167,7 @@ class LeetCode:
                     problem.difficulty == self.difficulty):
                 pairs.append(problem._asdict())
         pp.pprint(pairs[0])
+        print('UnSolved:', len(pairs))
         print('https://leetcode.com/problems/{}/description/'.format(
             pairs[0]['title_slug']))
 
