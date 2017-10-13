@@ -16,8 +16,8 @@ table_name = 'problem'
 cur.execute("CREATE TABLE IF NOT EXISTS `{}` "
             "(id integer(5) NOT NULL PRIMARY KEY, "
             "title varchar(128), title_slug varchar(128), difficulty tinyint(1), status varchar(16) DEFAULT NULL,  go tinyint(1), "  # NOQA E501
-            "updated_at date DEFAULT (strftime('%Y-%m-%d', 'now', 'localtime')))".format(table_name))  # NOQA E501
-Prombem = namedtuple('Problem', ['id', 'title', 'title_slug', 'difficulty', 'status', 'go', 'date'])  # NOQA E501
+            "updated_at DATETIME DEFAULT (strftime('%Y-%m-%d %H:%M:%S', 'now', 'localtime')))".format(table_name))  # NOQA E501
+Prombem = namedtuple('Problem', ['id', 'title', 'title_slug', 'difficulty', 'status', 'go', 'updated_at'])  # NOQA E501
 
 
 class LeetCode:
@@ -122,7 +122,7 @@ class LeetCode:
             problem = Prombem(*problem)
             go = problem.go
             if go != 1 and (today - datetime.datetime.strptime(
-                    problem.date, '%Y-%m-%d')).days >= 7:
+                    problem.updated_at, '%Y-%m-%d %H:%M:%S')).days >= 7:
                 if status is not None and problem.status == 'None':
                     print('Latest AC problem: {}. {}'.format(
                         problem.id, problem.title))
