@@ -167,6 +167,7 @@ class LeetCode:
                     problem.difficulty == self.difficulty):
                 pairs.append(problem._asdict())
         pp.pprint(pairs[0])
+        print('UnSolved:', len(pairs))
         print('https://leetcode.com/problems/{}/description/'.format(
             pairs[0]['title_slug']))
 
