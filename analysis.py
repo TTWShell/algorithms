@@ -2,10 +2,21 @@
 import argparse
 import os
 import pprint
+import sqlite3
+from collections import namedtuple
 
 import requests
+from tqdm import tqdm
 
 pp = pprint.PrettyPrinter()
+conn = sqlite3.connect("leetcode.db")
+cur = conn.cursor()
+table_name = 'problem'
+cur.execute("CREATE TABLE IF NOT EXISTS `{}` "
+            "(id integer(5) NOT NULL PRIMARY KEY, "
+            "title varchar(128), title_slug varchar(128), difficulty tinyint(1), status varchar(16) DEFAULT NULL,  go tinyint(1), "  # NOQA E501
+            "updated_at date DEFAULT (strftime('%Y-%m-%d', 'now', 'localtime')))".format(table_name))  # NOQA E501
+Prombem = namedtuple('Problem', ['id', 'title', 'title_slug', 'difficulty', 'status', 'go', 'date'])  # NOQA E501
 
 
 class LeetCode:
@@ -46,6 +57,9 @@ class LeetCode:
             os._exit(1)
 
     def all(self):
+        """
+        profile data
+        """
         url = 'https://leetcode.com/api/progress/all/'
         resp = self.session.get(url)
         if resp.status_code != 200:
@@ -57,28 +71,77 @@ class LeetCode:
         print('Easy {Easy} Medium {Medium} Hard {Hard}'.format(
             **data['solvedPerDifficulty']))
 
-    def get_unsolved_problem(self):
-        # get a problem by difficulty filter
-        level_maps = {
-            "easy": 1,
-            "medium": 2,
-            "hard": 3,
-        }
+    def _get_support_languages_by_tilte_slug(self, tilte_slug):
+        url = 'https://leetcode.com/problems/{}/description/'.format(
+            tilte_slug)
+        text = self.session.get(url).text
+        codeDefinition = text.split('codeDefinition: ')[1].split(
+            'enableTestMode:')[0].strip().strip(',')
+        return ([i.split("'")[-2]
+                for i in codeDefinition.split(',') if "'text'" in i])
 
-        url = 'https://leetcode.com/api/problems/all/'
+    def sync_all_problems(self):
+        url = 'https://leetcode.com/api/problems/algorithms/'
         data = self.session.get(url).json()
+
+        retrieve_sql = 'SELECT * FROM `{table_name}` WHERE id={pk}'
+        insert_sql = 'INSERT INTO `{table_name}` (id, title, title_slug, difficulty, status, go) VALUES ({id}, "{title}", "{title_slug}", {difficulty}, "{status}", {go})'  # NOQA E501
+        update_sql = 'UPDATE `{table_name}` SET go={go}, status="{status}" WHERE id={pk}'  # NOQA E501
 
         pairs = sorted(data['stat_status_pairs'],
                        key=lambda x: x['stat']['question_id'])
         pairs = filter(lambda x: x['paid_only'] is False, pairs)
-        pairs = filter(lambda x: x['status'] is None, pairs)
         if self.difficulty:
-            level = level_maps[self.difficulty]
-            pairs = filter(lambda x: x['difficulty']['level'] == level, pairs)
+            pairs = filter(
+                lambda x: x['difficulty']['level'] == self.difficulty, pairs)
+        for p in tqdm(pairs):
+            problem_id = p['stat']['question_id']
+            title_slug = p['stat']['question__title_slug']
+            status = p['status']
 
+            instance = cur.execute(retrieve_sql.format(
+                table_name=table_name, pk=problem_id)).fetchone()
+            if instance is None:
+                go = 1 if 'Go' in self._get_support_languages_by_tilte_slug(
+                    title_slug) else 0
+                values = {
+                    'id': problem_id,
+                    'title': p['stat']['question__title'],
+                    'title_slug': title_slug,
+                    'difficulty': p['difficulty']['level'],
+                    'status': status,
+                    'go': go,
+                }
+                cur.execute(insert_sql.format(table_name=table_name, **values))
+                conn.commit()
+                continue
+            if status is None:
+                problem = Prombem(*instance)
+                go = problem.go
+                if go != 1 and \
+                        'Go' in self._get_support_languages_by_tilte_slug(
+                            title_slug):
+                    go = 1
+                cur.execute(update_sql.format(
+                    table_name=table_name, go=go, pk=problem_id,
+                    status=status))
+                conn.commit()
+
+    def get_unsolved_problem(self):
+        # get a problem by difficulty filter
+        self.sync_all_problems()
+        all_sql = 'SELECT * FROM `{table_name}` ORDER BY id'.format(
+            table_name=table_name)
+        pairs = []
+        for p in cur.execute(all_sql).fetchall():
+            problem = Prombem(*p)
+            if problem.status != 'ac' and problem.go and (
+                    self.difficulty is None or
+                    problem.difficulty == self.difficulty):
+                pairs.append(problem._asdict())
         pp.pprint(pairs[0])
         print('https://leetcode.com/problems/{}/description/'.format(
-            pairs[0]['stat']['question__title_slug']))
+            pairs[0]['title_slug']))
 
     def analysis(self, allstatistics, query):
         if allstatistics:
@@ -93,8 +156,8 @@ parser.add_argument('-u', '--username', type=str, required=True,
                     help='Username for login.')
 parser.add_argument('-p', '--password', type=str, required=True,
                     help='Password to use when connecting to leetcode.')
-parser.add_argument('-d', '--difficulty', type=str,
-                    choices=('easy', 'medium', 'hard'),
+parser.add_argument('-d', '--difficulty', type=int,
+                    choices=(1, 2, 3),
                     help='Difficulty of problems.')
 
 parser.add_argument('-a', '--allstatistics', action='store_true',
