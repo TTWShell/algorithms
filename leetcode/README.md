@@ -189,6 +189,7 @@
 | 521 | [Longest Uncommon Subsequence I](string/findLUSlength.go) | [Easy][] |
 | 530 | [Minimum Absolute Difference in BST](tree/getMinimumDifference.go) | [Easy][] |
 | 532 | [K-diff Pairs in an Array](array/findPairs.go) | [Easy][] |
+| 538 | [Convert BST to Greater Tree](tree/convertBST.go) | [Easy][] |
 | 541 | [Reverse String II](string/reverseStr.go) | [Easy][] |
 | 543 | [Diameter of Binary Tree](tree/diameterOfBinaryTree.go) | [Easy][] |
 | 551 | [Student Attendance Record I](string/checkRecord.go) | [Easy][] |
