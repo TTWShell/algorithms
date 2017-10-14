@@ -231,6 +231,7 @@
 | 674 | [Longest Continuous Increasing Subsequence](array/findLengthOfLCIS.go) | [Easy][] |
 | 680 | [Valid Palindrome II](string/validPalindrome.go) | [Easy][] |
 | 682 | [Baseball Game](stack/calPoints.go) | [Easy][] |
+| 686 | [Repeated String Match](string/repeatedStringMatch.go) | [Easy][] |
 
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
