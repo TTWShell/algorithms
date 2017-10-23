@@ -139,9 +139,9 @@ class LeetCode:
 
             problem = Prombem(*problem)
             need_update = False
-            if status is not None and problem.status == 'None':
-                print('Latest AC problem: {}. {}'.format(
-                    problem.id, problem.title))
+            if status is not None and problem.status != status:
+                print('Latest {} problem: {}. {}'.format(
+                    status, problem.id, problem.title))
                 need_update = True
 
             go = problem.go
