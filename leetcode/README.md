@@ -234,6 +234,7 @@
 | 686 | [Repeated String Match](string/repeatedStringMatch.go) | [Easy][] |
 | 687 | [Longest Univalue Path](tree/longestUnivaluePath.go) | [Easy][] |
 | 693 | [Binary Number with Alternating Bits](bit-manipulation/hasAlternatingBits.go) | [Easy][] |
+| 695 | [Max Area of Island](array/maxAreaOfIsland.go) | [Easy][] |
 
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
