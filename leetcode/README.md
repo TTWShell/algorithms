@@ -235,10 +235,9 @@
 | 687 | [Longest Univalue Path](tree/longestUnivaluePath.go) | [Easy][] |
 | 693 | [Binary Number with Alternating Bits](bit-manipulation/hasAlternatingBits.go) | [Easy][] |
 | 695 | [Max Area of Island](array/maxAreaOfIsland.go) | [Easy][] |
+| 696 | [Count Binary Substrings](string/countBinarySubstrings.go) | [Easy][] |
 
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
-
 [Medium]: https://leetcode.com/problemset/algorithms/?difficulty=Medium&status=Todo
-
 [Hard]: https://leetcode.com/problemset/algorithms/?difficulty=Hard&status=Todo
