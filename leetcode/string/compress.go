@@ -46,17 +46,12 @@ package leetcode
 import "strconv"
 
 func compress(chars []byte) int {
-	length := len(chars)
-	if length < 2 {
-		return length
-	}
-
 	end, count := 0, 1
-	for i := 1; i <= length; i++ {
-		if i < length && chars[i] == chars[i-1] {
+	for i, char := range chars {
+		if i+1 < len(chars) && char == chars[i+1] {
 			count++
 		} else {
-			chars[end], end = chars[i-1], end+1
+			chars[end], end = char, end+1
 			if count > 1 {
 				for _, num := range strconv.Itoa(count) {
 					chars[end], end = byte(num), end+1
