@@ -51,10 +51,11 @@ class LeetCode:
         'Content-Type': 'application/x-www-form-urlencoded',
     }
 
-    def __init__(self, username, password, difficulty):
+    def __init__(self, username, password, difficulty, index):
         self.username = username
         self.password = password
         self.difficulty = difficulty
+        self.index = index
         self.session = requests.Session()
         self.login()
 
@@ -171,10 +172,11 @@ class LeetCode:
                     self.difficulty is None or
                     problem.difficulty == self.difficulty):
                 pairs.append(problem._asdict())
-        pp.pprint(pairs[0])
+        index = self.index % len(pairs)
+        pp.pprint(pairs[index])
         print('UnSolved:', len(pairs))
         print('https://leetcode.com/problems/{}/description/'.format(
-            pairs[0]['title_slug']))
+            pairs[index]['title_slug']))
 
     def analysis(self, profile, query):
         if profile:
@@ -192,6 +194,8 @@ parser.add_argument('-p', '--password', type=str, required=True,
 parser.add_argument('-d', '--difficulty', type=int,
                     choices=(1, 2, 3),
                     help='Difficulty of problems. 1-3: easy --> hard')
+parser.add_argument('-i', '--index', type=int, default=0,
+                    help='Choose an unsolved problem, default is first.')
 
 parser.add_argument('-P', '--profile', action='store_true',
                     help='Show profile, all statistical information.')
@@ -202,5 +206,5 @@ parser.add_argument('-query', '--query', action='store_true',
 if __name__ == '__main__':
     args = parser.parse_args()
     leetcode = LeetCode(username=args.username, password=args.password,
-                        difficulty=args.difficulty)
+                        difficulty=args.difficulty, index=args.index)
     leetcode.analysis(profile=args.profile, query=args.query)

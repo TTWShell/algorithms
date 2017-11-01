@@ -167,6 +167,7 @@
 | 437 | [Path Sum III](tree/pathSum.go) | [Easy][] |
 | 438 | [Find All Anagrams in a String](hash-table/findAnagrams.go) | [Easy][] |
 | 441 | [Arranging Coins](math/arrangeCoins.go) | [Easy][] |
+| 443 | [String Compression](string/compress.go) | [Easy][] |
 | 447 | [Number of Boomerangs](hash-table/numberOfBoomerangs.go) | [Easy][] |
 | 448 | [Find All Numbers Disappeared in an Array](array/findDisappearedNumbers.go) | [Easy][] |
 | 453 | [Minimum Moves to Equal Array Elements](math/minMoves.go) | [Easy][] |
