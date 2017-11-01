@@ -2,14 +2,12 @@
 import argparse
 import datetime
 import os
-import pprint
 import sqlite3
 from collections import namedtuple
 
 import requests
 from tqdm import tqdm
 
-pp = pprint.PrettyPrinter()
 conn = sqlite3.connect("leetcode.db")
 cur = conn.cursor()
 table_name = 'problem'
@@ -172,11 +170,13 @@ class LeetCode:
                     self.difficulty is None or
                     problem.difficulty == self.difficulty):
                 pairs.append(problem._asdict())
-        index = self.index % len(pairs)
-        pp.pprint(pairs[index])
+
         print('UnSolved:', len(pairs))
-        print('https://leetcode.com/problems/{}/description/'.format(
-            pairs[index]['title_slug']))
+        if pairs:
+            index = self.index % len(pairs)
+            print(pairs[index])
+            print('https://leetcode.com/problems/{}/description/'.format(
+                  pairs[index]['title_slug']))
 
     def analysis(self, profile, query):
         if profile:
