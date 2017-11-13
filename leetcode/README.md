@@ -240,6 +240,7 @@
 | 696 | [Count Binary Substrings](string/countBinarySubstrings.go) | [Easy][] |
 | 697 | [Degree of an Array](array/findShortestSubArray.go) | [Easy][] |
 | 717 | [1-bit and 2-bit Characters](array/isOneBitCharacter.go) | [Easy][] |
+| 720 | [Longest Word in Dictionary](hash-table/longestWord.go) | [Easy][] |
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
 [Medium]: https://leetcode.com/problemset/algorithms/?difficulty=Medium&status=Todo
