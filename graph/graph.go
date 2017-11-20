@@ -25,14 +25,17 @@ type Graph struct {
 	nodes map[*Node]bool
 	// Edge connects two Nodes in a graph, float32 is weight of edge.
 	edges map[*Node]map[*Node]float32
+	// save Directed type to-->from relation.
+	reversedEdges map[*Node]map[*Node]float32
 }
 
 // New creates and returns an empty graph.
 func New(kind int) *Graph {
 	return &Graph{
-		kind:  kind,
-		nodes: make(map[*Node]bool),
-		edges: make(map[*Node]map[*Node]float32),
+		kind:          kind,
+		nodes:         make(map[*Node]bool),
+		edges:         make(map[*Node]map[*Node]float32),
+		reversedEdges: make(map[*Node]map[*Node]float32),
 	}
 }
 
@@ -47,6 +50,33 @@ func (g *Graph) MakeNode(value interface{}) *Node {
 		g.edges[newNode] = make(map[*Node]float32)
 	}
 	return newNode
+}
+
+// RemoveNode removes a node from the graph and all edges connected to it.
+func (g *Graph) RemoveNode(node *Node) {
+	g.Lock()
+	defer g.Unlock()
+
+	if node == nil {
+		return
+	}
+	if _, ok := g.nodes[node]; !ok {
+		return
+	}
+
+	if g.kind == Undirected {
+		for to := range g.edges[node] {
+			delete(g.edges[to], node)
+		}
+	} else {
+		for to := range g.reversedEdges[node] {
+			delete(g.edges[to], node)
+		}
+		delete(g.reversedEdges, node)
+	}
+	delete(g.edges, node)
+
+	delete(g.nodes, node)
 }
 
 // MakeEdge creates an edge in the graph with a corresponding weight.
@@ -65,6 +95,12 @@ func (g *Graph) MakeEdge(from, to *Node, weight float32) error {
 	g.edges[from][to] = weight
 	if g.kind == Undirected {
 		g.edges[to][from] = weight
+	} else {
+		if _, ok := g.reversedEdges[to]; !ok {
+			g.reversedEdges[to] = make(map[*Node]float32)
+		}
+		g.reversedEdges[to][from] = weight
 	}
+
 	return nil
 }
