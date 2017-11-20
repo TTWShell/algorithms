@@ -1,6 +1,9 @@
 package graph
 
-import "sync"
+import (
+	"errors"
+	"sync"
+)
 
 // GraphType values.
 const (
@@ -44,4 +47,21 @@ func (g *Graph) MakeNode(value interface{}) *Node {
 		g.edges[newNode] = make(map[*Node]float32)
 	}
 	return newNode
+}
+
+// MakeEdge creates  an edge in the graph with a corresponding weight.
+// It returns an error if either of the nodes do not belong in the graph.
+func (g *Graph) MakeEdge(from, to *Node, weight float32) error {
+	g.Lock()
+	defer g.Unlock()
+
+	if _, ok := g.nodes[from]; !ok {
+		return errors.New("`from` node does not belong to this graph")
+	}
+	if _, ok := g.nodes[to]; !ok {
+		return errors.New("`to` node does not belong to this graph")
+	}
+
+	g.edges[from][to] = weight
+	return nil
 }
