@@ -125,3 +125,15 @@ func (g *Graph) RemoveEdge(from, to *Node) error {
 	}
 	return nil
 }
+
+// Neighbors returns a slice of nodes that are reachable from the given node in a graph.
+func (g *Graph) Neighbors(node *Node) []*Node {
+	g.RLock()
+	defer g.RUnlock()
+
+	neighbors := make([]*Node, 0, len(g.edges[node]))
+	for nNode := range g.edges[node] {
+		neighbors = append(neighbors, nNode)
+	}
+	return neighbors
+}

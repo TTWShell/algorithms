@@ -138,3 +138,33 @@ func TestRemoveEdge(t *testing.T) {
 	assert.NotContains(g.edges[node3], node4)
 	assert.NotContains(g.reversedEdges[node4], node3)
 }
+
+func TestNeighbors(t *testing.T) {
+	assert := assert.New(t)
+
+	g := New(Undirected)
+	node1, node2, node3, node4 := g.MakeNode(1), g.MakeNode(2), g.MakeNode(3), g.MakeNode(4)
+
+	assert.Nil(g.MakeEdge(node1, node2, 12))
+	assert.Nil(g.MakeEdge(node1, node3, 13))
+	assert.Nil(g.MakeEdge(node2, node3, 23))
+	assert.Nil(g.MakeEdge(node3, node4, 34))
+
+	neighbors := g.Neighbors(node3)
+	assert.Len(neighbors, 3)
+	for _, neighbor := range neighbors {
+		switch neighbor.Value {
+		case 1:
+			assert.True(neighbor == node1)
+		case 2:
+			assert.True(neighbor == node2)
+		case 4:
+			assert.True(neighbor == node4)
+		default:
+			t.Fatal("neighbor error:", neighbor)
+		}
+	}
+	assert.Len(g.Neighbors(node1), 2)
+	assert.Len(g.Neighbors(node2), 2)
+	assert.Len(g.Neighbors(node4), 1)
+}
