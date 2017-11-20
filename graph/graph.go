@@ -104,3 +104,24 @@ func (g *Graph) MakeEdge(from, to *Node, weight float32) error {
 
 	return nil
 }
+
+// RemoveEdge removes edges starting at the from node and ending at the to node.
+func (g *Graph) RemoveEdge(from, to *Node) error {
+	g.Lock()
+	defer g.Unlock()
+
+	if _, ok := g.nodes[from]; !ok {
+		return errors.New("`from` node does not belong to this graph")
+	}
+	if _, ok := g.nodes[to]; !ok {
+		return errors.New("`to` node does not belong to this graph")
+	}
+
+	delete(g.edges[from], to)
+	if g.kind == Undirected {
+		delete(g.edges[to], from)
+	} else {
+		delete(g.reversedEdges[to], from)
+	}
+	return nil
+}

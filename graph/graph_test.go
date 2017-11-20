@@ -95,3 +95,46 @@ func TestRemoveNode(t *testing.T) {
 	assert.Contains(g.reversedEdges, node2)
 	assert.NotContains(g.reversedEdges, node3)
 }
+
+func TestRemoveEdge(t *testing.T) {
+	assert := assert.New(t)
+
+	g := New(Undirected)
+	node1, node2, node3, node4 := g.MakeNode(1), g.MakeNode(2), g.MakeNode(3), g.MakeNode(4)
+
+	assert.Nil(g.MakeEdge(node1, node2, 12))
+	assert.Nil(g.MakeEdge(node1, node3, 13))
+	assert.Nil(g.MakeEdge(node2, node3, 23))
+	assert.Nil(g.MakeEdge(node3, node4, 34))
+	assert.Empty(g.reversedEdges)
+
+	assert.Len(g.edges[node3], 3)
+	assert.Nil(g.RemoveEdge(node4, node3))
+	assert.Len(g.edges[node3], 2)
+
+	g.RemoveNode(node4)
+	assert.Error(g.RemoveEdge(node3, node4))
+	assert.Error(g.RemoveEdge(node4, node3))
+
+	g = New(Directed)
+	node1, node2, node3, node4 = g.MakeNode(1), g.MakeNode(2), g.MakeNode(3), g.MakeNode(4)
+
+	assert.Nil(g.MakeEdge(node1, node2, 12))
+	assert.Nil(g.MakeEdge(node1, node3, 13))
+	assert.Nil(g.MakeEdge(node2, node3, 23))
+	assert.Nil(g.MakeEdge(node3, node4, 34))
+	assert.Len(g.reversedEdges, 3)
+	assert.Len(g.edges, 4)
+	assert.Empty(g.edges[node4])
+
+	assert.Nil(g.RemoveEdge(node4, node3))
+	assert.Len(g.reversedEdges, 3)
+	assert.Contains(g.edges[node3], node4)
+	assert.Contains(g.reversedEdges[node4], node3)
+	assert.Len(g.edges, 4)
+
+	assert.Nil(g.RemoveEdge(node3, node4))
+	assert.Len(g.edges, 4)
+	assert.NotContains(g.edges[node3], node4)
+	assert.NotContains(g.reversedEdges[node4], node3)
+}
