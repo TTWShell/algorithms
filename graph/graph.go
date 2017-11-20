@@ -19,7 +19,7 @@ type Node struct {
 // Graph .
 type Graph struct {
 	sync.RWMutex
-	// Auto set type of graph.
+	// type of graph.
 	kind int
 	// Bool is used for graph traversal.
 	nodes map[*Node]bool
@@ -28,9 +28,9 @@ type Graph struct {
 }
 
 // New creates and returns an empty graph.
-func New() *Graph {
+func New(kind int) *Graph {
 	return &Graph{
-		kind:  Undirected,
+		kind:  kind,
 		nodes: make(map[*Node]bool),
 		edges: make(map[*Node]map[*Node]float32),
 	}
@@ -49,7 +49,7 @@ func (g *Graph) MakeNode(value interface{}) *Node {
 	return newNode
 }
 
-// MakeEdge creates  an edge in the graph with a corresponding weight.
+// MakeEdge creates an edge in the graph with a corresponding weight.
 // It returns an error if either of the nodes do not belong in the graph.
 func (g *Graph) MakeEdge(from, to *Node, weight float32) error {
 	g.Lock()
@@ -63,5 +63,8 @@ func (g *Graph) MakeEdge(from, to *Node, weight float32) error {
 	}
 
 	g.edges[from][to] = weight
+	if g.kind == Undirected {
+		g.edges[to][from] = weight
+	}
 	return nil
 }
