@@ -28,6 +28,7 @@ Data structures and algorithms in go.
     - [ ] [Red–black tree－红黑树](tree/rbt.go)
 * [图（Graph）](graph)
     - [x] [实现](graph/graph.go)
+    - [x] [BFS](graph/bfs.go)
 * [堆（Heap）](heap)
     - [x] [实现](heap/heap.go)
 * [优先队列（Priority Queue）](priority-queue)
