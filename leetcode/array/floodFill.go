@@ -43,12 +43,13 @@ func floodFill(image [][]int, sr int, sc int, newColor int) [][]int {
 		if x < len(image)-1 && image[x+1][y] == oldColor {
 			helper(x+1, y)
 		}
-
-		if y < len(image)-1 && image[x][y+1] == oldColor {
+		if y < len(image[0])-1 && image[x][y+1] == oldColor {
 			helper(x, y+1)
 		}
 	}
 
-	helper(sr, sc)
+	if oldColor != newColor {
+		helper(sr, sc)
+	}
 	return image
 }
