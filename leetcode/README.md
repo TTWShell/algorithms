@@ -244,6 +244,7 @@
 | 724 | [Find Pivot Index](array/pivotIndex.go) | [Easy][] |
 | 728 | [Self Dividing Numbers](math/selfDividingNumbers.go) | [Easy][] |
 | 733 | [Flood Fill](array/floodFill.go) | [Easy][] |
+| 734 | [Sentence Similarity](hash-table/areSentencesSimilar.go) | [Easy][] |
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
 [Medium]: https://leetcode.com/problemset/algorithms/?difficulty=Medium&status=Todo
