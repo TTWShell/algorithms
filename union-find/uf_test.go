@@ -129,3 +129,18 @@ func TestConnected(t *testing.T) {
 	assert.False(uf.Connected(2, 3))
 	assert.False(uf.Connected(2, 4))
 }
+
+func TestCount(t *testing.T) {
+	assert := assert.New(t)
+
+	uf := New()
+	assert.Equal(uf.Count(), 0)
+	uf.Union(1, 2)
+	assert.Equal(uf.Count(), 1)
+	uf.Union(3, 4)
+	assert.Equal(uf.Count(), 2)
+	uf.Union(1, 4)
+	assert.Equal(uf.Count(), 1)
+	uf.Union(2, 3)
+	assert.Equal(uf.Count(), 1)
+}
