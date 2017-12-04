@@ -105,3 +105,13 @@ func TestUnion(t *testing.T) {
 	assert.Len(node10.childs, 1)
 	assert.NotContains(node10.childs, node12)
 }
+
+func TestFind(t *testing.T) {
+	assert := assert.New(t)
+	uf := New()
+
+	uf.Union(1, 2)
+	assert.Equal(uf.Find(1), 1)
+	assert.Equal(uf.Find(2), 1)
+	assert.Nil(uf.Find(3))
+}
