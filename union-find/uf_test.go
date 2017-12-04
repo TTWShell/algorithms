@@ -108,10 +108,24 @@ func TestUnion(t *testing.T) {
 
 func TestFind(t *testing.T) {
 	assert := assert.New(t)
-	uf := New()
 
+	uf := New()
 	uf.Union(1, 2)
 	assert.Equal(uf.Find(1), 1)
 	assert.Equal(uf.Find(2), 1)
 	assert.Nil(uf.Find(3))
+}
+
+func TestConnected(t *testing.T) {
+	assert := assert.New(t)
+
+	uf := New()
+	uf.Union(1, 2)
+	uf.Union(3, 4)
+	assert.True(uf.Connected(1, 2))
+	assert.True(uf.Connected(3, 4))
+	assert.False(uf.Connected(1, 3))
+	assert.False(uf.Connected(1, 4))
+	assert.False(uf.Connected(2, 3))
+	assert.False(uf.Connected(2, 4))
 }
