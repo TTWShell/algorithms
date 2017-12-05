@@ -39,9 +39,7 @@ func areSentencesSimilarTwo(words1 []string, words2 []string, pairs [][]string) 
 
 	uf := unionfind.New()
 	for _, pair := range pairs {
-		if pair[0] != pair[1] {
-			uf.Union(pair[0], pair[1])
-		}
+		uf.Union(pair[0], pair[1])
 	}
 
 	for i, word := range words1 {
