@@ -56,48 +56,32 @@ func (uf *UF) Count() int {
 
 // transposition: node --> root & set ancestor.
 func (uf *UF) transposition(node, newAnc *ufNode) {
-	// first find parent node.
-	var anc, parent *ufNode
-	var cIdx int
-	anc = node.ancestor
+	ago, cur, anc := node, node, node.ancestor
 	queue := []*ufNode{anc}
+
 	for len(queue) != 0 {
 		nextQueue := []*ufNode{}
 		for _, p := range queue {
-			for i, c := range p.childs {
-				if parent == nil && c == node {
-					parent = p
-					cIdx = i
-				}
-			}
 			p.ancestor = newAnc
 			nextQueue = append(nextQueue, p.childs...)
 		}
 		queue = nextQueue
 	}
 
-	if parent != nil {
-		parent.childs = append(append([]*ufNode{}, parent.childs[0:cIdx]...), parent.childs[cIdx+1:]...)
-		node.childs = append(node.childs, parent)
-
-		ago, cur, parent := node, parent, parent.parent
-		cur.parent = node
-		for cur != anc {
-			idx := -1
-			for i, n := range parent.childs {
-				if n == cur {
-					idx = i
-					break
-				}
+	for cur != anc {
+		cIdx, parent := -1, cur.parent
+		for i, n := range parent.childs {
+			if n == cur {
+				cIdx = i
+				break
 			}
-			parent.childs = append(append([]*ufNode{}, parent.childs[0:idx]...), parent.childs[idx+1:]...)
-			cur.childs = append(cur.childs, parent)
-
-			ago, cur, parent = cur, parent, parent.parent
-			cur.parent = ago
 		}
-		cur.parent = ago
+		parent.childs = append(append([]*ufNode{}, parent.childs[0:cIdx]...), parent.childs[cIdx+1:]...)
+		cur.childs = append(cur.childs, parent)
+		ago, cur.parent, cur = cur, ago, parent
 	}
+
+	cur.parent = ago
 }
 
 // assume qNode merge to pNode.
