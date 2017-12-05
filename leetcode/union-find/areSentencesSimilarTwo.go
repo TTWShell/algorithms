@@ -21,7 +21,7 @@ Note:
 
 package leetcode
 
-import "../../union-find" // "github.com/TTWShell/algorithms/union-find"
+import "github.com/TTWShell/algorithms/union-find"
 
 func areSentencesSimilarTwo(words1 []string, words2 []string, pairs [][]string) bool {
 	if len(words1) != len(words2) {

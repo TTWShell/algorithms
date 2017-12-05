@@ -8,6 +8,7 @@ jobs:
       - checkout
       - run: go get github.com/TTWShell/algorithms/heap
       - run: go get github.com/TTWShell/algorithms/stack
+      - run: go get github.com/TTWShell/algorithms/union-find
       - run: go get github.com/stretchr/testify/assert
       - run:
           name: Run unit tests
@@ -24,6 +25,7 @@ jobs:
       - checkout
       - run: go get github.com/TTWShell/algorithms/heap
       - run: go get github.com/TTWShell/algorithms/stack
+      - run: go get github.com/TTWShell/algorithms/union-find
       - run: go get github.com/stretchr/testify/assert
       - run:
           name: Run unit tests
@@ -39,6 +41,7 @@ jobs:
       - checkout
       - run: go get github.com/TTWShell/algorithms/heap
       - run: go get github.com/TTWShell/algorithms/stack
+      - run: go get github.com/TTWShell/algorithms/union-find
       - run: go get github.com/stretchr/testify/assert
       - run:
           name: Run unit tests
