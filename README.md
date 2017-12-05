@@ -35,6 +35,8 @@ Data structures and algorithms in go.
     - [x] [基于堆的实现](priority-queue/pq.go)
 * [散列表（Hash Table）](hash-table)
     - [x] [实现](hash-table/hashtable.go)
+* [并查集（Union-Find）](union-find)
+    - [x] [实现](union-find/uf.go)
 
 
 ## Algorithms
