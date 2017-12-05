@@ -3,9 +3,9 @@ package unionfind
 import "sync"
 
 type ufNode struct {
-	value    interface{}
-	ancestor *ufNode
-	childs   []*ufNode
+	value            interface{}
+	ancestor, parent *ufNode
+	childs           []*ufNode
 }
 
 // UF : Union-Find.
@@ -56,45 +56,58 @@ func (uf *UF) Count() int {
 
 // transposition: node --> root & set ancestor.
 func (uf *UF) transposition(node, newAnc *ufNode) {
-	// first find parent node.
-	var parent *ufNode
-	var cIdx int
-	if node == node.ancestor {
-		parent = nil
-	}
-	queue := []*ufNode{node.ancestor}
+	ago, cur, anc := node, node, node.ancestor
+	queue := []*ufNode{anc}
+
 	for len(queue) != 0 {
 		nextQueue := []*ufNode{}
 		for _, p := range queue {
-			for i, c := range p.childs {
-				if c == node {
-					parent = p
-					cIdx = i
-				}
-			}
 			p.ancestor = newAnc
 			nextQueue = append(nextQueue, p.childs...)
 		}
 		queue = nextQueue
 	}
 
-	if parent != nil {
+	for cur != anc {
+		cIdx, parent := -1, cur.parent
+		for i, n := range parent.childs {
+			if n == cur {
+				cIdx = i
+				break
+			}
+		}
 		parent.childs = append(append([]*ufNode{}, parent.childs[0:cIdx]...), parent.childs[cIdx+1:]...)
-		node.childs = append(node.childs, parent)
+		cur.childs = append(cur.childs, parent)
+		ago, cur.parent, cur = cur, ago, parent
 	}
+
+	cur.parent = ago
 }
 
 // assume qNode merge to pNode.
 func (uf *UF) union(pNode, qNode *ufNode) {
 	pAnc, qAnc := pNode.ancestor, qNode.ancestor
-	uf.ufSets[pAnc] += uf.ufSets[qNode.ancestor]
+	uf.ufSets[pAnc] += uf.ufSets[qAnc]
+	delete(uf.ufSets, qAnc)
 
 	// transposition qNode tree.
 	uf.transposition(qNode, pAnc)
 
 	// conenct pNode and qNode.
 	pNode.childs = append(pNode.childs, qNode)
-	delete(uf.ufSets, qAnc)
+	qNode.parent = pNode
+}
+
+func (uf *UF) getOrCreateNode(value interface{}) *ufNode {
+	node, ok := uf.nodes[value]
+	if !ok {
+		node = &ufNode{value: value, childs: make([]*ufNode, 0)}
+		node.ancestor = node
+		node.parent = node
+		uf.nodes[value] = node
+		uf.ufSets[node] = 1
+	}
+	return node
 }
 
 // Union : add a connection for p and q.
@@ -106,24 +119,12 @@ func (uf *UF) Union(p, q interface{}) {
 	uf.Lock()
 	defer uf.Unlock()
 
-	var pNode, qNode *ufNode
-	if node, ok := uf.nodes[p]; !ok {
-		pNode = &ufNode{value: p, childs: make([]*ufNode, 0)}
-		pNode.ancestor = pNode
-		uf.nodes[p] = pNode
-		uf.ufSets[pNode] = 1
-	} else {
-		pNode = node
-	}
-	if node, ok := uf.nodes[q]; !ok {
-		qNode = &ufNode{value: q, childs: make([]*ufNode, 0)}
-		qNode.ancestor = qNode
-		uf.nodes[q] = qNode
-		uf.ufSets[qNode] = 1
-	} else {
-		qNode = node
+	if p == q {
+		uf.getOrCreateNode(p)
+		return
 	}
 
+	pNode, qNode := uf.getOrCreateNode(p), uf.getOrCreateNode(q)
 	countP, _ := uf.ufSets[pNode.ancestor]
 	countQ, _ := uf.ufSets[qNode.ancestor]
 	if countP >= countQ {
