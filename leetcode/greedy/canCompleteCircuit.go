@@ -12,26 +12,16 @@ The solution is guaranteed to be unique.
 package leetcode
 
 func canCompleteCircuit(gas []int, cost []int) int {
+	start, total, tank := 0, 0, 0
 	for i := 0; i < len(gas); i++ {
-		tank, j := 0, i
-		for ; j < len(gas); j++ {
-			tank += gas[j] - cost[j]
-			if tank < 0 {
-				break
-			}
-		}
-		if j != len(gas) {
-			continue
-		}
-		for j := 0; j < i; j++ {
-			tank += gas[j] - cost[j]
-			if tank < 0 {
-				break
-			}
-		}
-		if tank >= 0 {
-			return i
+		tank += gas[i] - cost[i]
+		if tank < 0 {
+			start, total, tank = i+1, total+tank, 0
 		}
 	}
-	return -1
+	total += tank
+	if total < 0 {
+		return -1
+	}
+	return start
 }
