@@ -117,6 +117,7 @@
 | 134 | [Gas Station](greedy/canCompleteCircuit.go) | [Medium][] |
 | 136 | [Single Number](bit-manipulation/singleNumber.go) | [Easy][] |
 | 137 | [Single Number II](bit-manipulation/singleNumber2.go) | [Medium][] |
+| 139 | [Word Break](dynamic-programming/wordBreak.go) | [Medium][] |
 | 155 | [Min Stack](stack/MinStack.go) | [Easy][] |
 | 167 | [Two Sum II - Input array is sorted](array/twoSum2.go) | [Easy][] |
 | 168 | [Excel Sheet Column Title](math/convertToTitle.go) | [Easy][] |
