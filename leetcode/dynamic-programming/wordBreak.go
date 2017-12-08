@@ -16,19 +16,24 @@ package leetcode
 func wordBreak(s string, wordDict []string) bool {
 	maps := make(map[string]bool, len(wordDict))
 	for _, word := range wordDict {
-		maps[word] = false
+		maps[word] = true
 	}
 
 	var helper func(s string) bool
 	helper = func(s string) bool {
-		if _, ok := maps[s]; ok {
-			return true
+		if res, ok := maps[s]; ok {
+			return res
 		}
+
 		for i := 1; i < len(s); i++ {
-			if helper(s[0:i]) && helper(s[i:]) {
-				return true
+			if res, ok := maps[s[:i]]; ok && res {
+				if word := s[i:]; helper(word) {
+					maps[word] = true
+					return true
+				}
 			}
 		}
+		maps[s] = false
 		return false
 	}
 
