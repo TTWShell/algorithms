@@ -16,7 +16,10 @@ import (
    /	 /  \
   8    15    7
 */
-var root *TreeNode
+var (
+	root             *TreeNode
+	ExceptedResOfPre = []int{3, 9, 8, 20, 15, 7}
+)
 
 func init() {
 	root = &TreeNode{
