@@ -16,6 +16,25 @@ Note: Recursive solution is trivial, could you do it iteratively?
 package leetcode
 
 func preorderTraversal(root *TreeNode) []int {
+	res := []int{}
+	stack := []*TreeNode{}
+
+	for root != nil || len(stack) != 0 {
+		for root != nil {
+			stack = append(stack, root)
+			res = append(res, root.Val)
+			root = root.Left
+		}
+
+		top := stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
+		root = top.Right
+	}
+	return res
+}
+
+/*
+func preorderTraversal(root *TreeNode) []int {
 	if root == nil {
 		return []int{}
 	}
@@ -24,3 +43,4 @@ func preorderTraversal(root *TreeNode) []int {
 	res = append(res, preorderTraversal(root.Right)...)
 	return res
 }
+*/
