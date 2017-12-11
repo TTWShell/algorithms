@@ -19,6 +19,7 @@ import (
 var (
 	root             *TreeNode
 	ExceptedResOfPre = []int{3, 9, 8, 20, 15, 7}
+	ExceptedResOfIn  = []int{8, 9, 3, 15, 20, 7}
 )
 
 func init() {
