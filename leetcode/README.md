@@ -120,6 +120,7 @@
 | 139 | [Word Break](dynamic-programming/wordBreak.go) | [Medium][] |
 | 143 | [Reorder List](linked-list/reorderList.go) | [Medium][] |
 | 144 | [Binary Tree Preorder Traversal](tree/preorderTraversal.go) | [Medium][] |
+| 145 | [Binary Tree Postorder Traversal](tree/postorderTraversal.go) | [Hard][] |
 | 155 | [Min Stack](stack/MinStack.go) | [Easy][] |
 | 167 | [Two Sum II - Input array is sorted](array/twoSum2.go) | [Easy][] |
 | 168 | [Excel Sheet Column Title](math/convertToTitle.go) | [Easy][] |
