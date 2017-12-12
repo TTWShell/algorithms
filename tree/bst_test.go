@@ -1,14 +1,14 @@
 package tree
 
 import (
+	"github.com/stretchr/testify/assert"
 	"reflect"
 	"sort"
-	"strconv"
-	"strings"
 	"testing"
 )
 
 func TestInsert(t *testing.T) {
+	assert := assert.New(t)
 	bst := NewBST()
 	if r := bst.Insert(1); !r || !reflect.DeepEqual(bst.root, &TreeNode{Val: 1}) {
 		t.Fatal(bst.root, r)
@@ -25,9 +25,7 @@ func TestInsert(t *testing.T) {
 		t.Fatal(bst.root, r)
 	}
 
-	if r := ReOutput(DFSInOrder, bst.root); r != "1 2 3 5 7 15 18 23" {
-		t.Fatal("inorder check failed", r)
-	}
+	assert.Equal([]int{1, 2, 3, 5, 7, 15, 18, 23}, InOrderRecursion(bst.root))
 }
 
 func TestSearch(t *testing.T) {
@@ -60,10 +58,9 @@ func TestDelete(t *testing.T) {
 
 	assert := func(bst *BST, el int) {
 		bst.Delete(el)
-		r := ReOutput(DFSInOrder, bst.root)
+		r := InOrderRecursion(bst.root)
 		origin, sorted := []int{}, []int{}
-		for _, strNum := range strings.Split(r, " ") {
-			num, _ := strconv.Atoi(strNum)
+		for _, num := range r {
 			origin = append(origin, num)
 			sorted = append(sorted, num)
 		}
