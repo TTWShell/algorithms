@@ -15,33 +15,6 @@ func (t *TreeNode) String() string {
 	return fmt.Sprintf("<%s %d %s>", t.Left, t.Val, t.Right)
 }
 
-// 前序遍历
-func DFSPreOrder(root *TreeNode) {
-	if root != nil {
-		log.Printf("%d ", root.Val)
-		DFSPreOrder(root.Left)
-		DFSPreOrder(root.Right)
-	}
-}
-
-// 中序遍历
-func DFSInOrder(root *TreeNode) {
-	if root != nil {
-		DFSInOrder(root.Left)
-		log.Printf("%d ", root.Val)
-		DFSInOrder(root.Right)
-	}
-}
-
-// 后序遍历
-func DFSPostOrder(root *TreeNode) {
-	if root != nil {
-		DFSPostOrder(root.Left)
-		DFSPostOrder(root.Right)
-		log.Printf("%d ", root.Val)
-	}
-}
-
 // 广度优先遍历
 func BFS(root *TreeNode) {
 	stack := []*TreeNode{root}

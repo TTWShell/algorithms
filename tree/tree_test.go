@@ -16,7 +16,12 @@ import (
    /	 /  \
   8    15    7
 */
-var root *TreeNode
+var (
+	root              *TreeNode
+	ExceptedResOfPre  = []int{3, 9, 8, 20, 15, 7}
+	ExceptedResOfIn   = []int{8, 9, 3, 15, 20, 7}
+	ExceptedResOfPost = []int{8, 9, 15, 7, 20, 3}
+)
 
 func init() {
 	root = &TreeNode{
@@ -40,24 +45,6 @@ func ReOutput(f func(root *TreeNode), root *TreeNode) string {
 func TestString(t *testing.T) {
 	if root.String() != "<<<<nil> 8 <nil>> 9 <nil>> 3 <<<nil> 15 <nil>> 20 <<nil> 7 <nil>>>>" {
 		t.Fatal(root.String())
-	}
-}
-
-func TestDFSPreOrder(t *testing.T) {
-	if r := ReOutput(DFSPreOrder, root); r != "3 9 8 20 15 7" {
-		t.Fatal(r)
-	}
-}
-
-func TestDFSInOrder(t *testing.T) {
-	if r := ReOutput(DFSInOrder, root); r != "8 9 3 15 20 7" {
-		t.Fatal(r)
-	}
-}
-
-func TestDFSPostOrder(t *testing.T) {
-	if r := ReOutput(DFSPostOrder, root); r != "8 9 15 7 20 3" {
-		t.Fatal(r)
 	}
 }
 
