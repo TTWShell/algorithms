@@ -21,7 +21,10 @@ Data structures and algorithms in go.
 * [队列（Queue）](queue)
     - [x] [实现](queue/queue.go)
 * [树（Tree）](tree)
-    - [x] [DFS－深度优先搜素](tree/tree.go)
+    - [x] DFS－深度优先搜素
+        - [x] [PreOrder](tree/preorder.go)
+        - [x] [InOrder](tree/inorder.go)
+        - [x] [PostOrder](tree/postorder.go)
     - [x] [BFS－广度优先搜索](tree/tree.go)
     - [x] [BST－二叉搜索树](tree/bst.go)
     - [x] [AVL－高度平衡树](tree/avl.go)
