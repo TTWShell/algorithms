@@ -16,6 +16,24 @@ func PostOrderRecursion(root *TreeNode) []int {
 // PostOrderStack : 后序遍历的非递归实现。
 func PostOrderStack(root *TreeNode) []int {
 	res := []int{}
+	stack := []*TreeNode{}
+
+	for root != nil || len(stack) != 0 {
+		for root != nil {
+			stack = append(stack, root)
+			res = append([]int{root.Val}, res...)
+			root = root.Right
+		}
+		top := stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
+		root = top.Left
+	}
+	return res
+}
+
+/*
+func PostOrderStack(root *TreeNode) []int {
+	res := []int{}
 	stack := []*TreeNode{root}
 	var prev, cur *TreeNode
 
@@ -38,3 +56,4 @@ func PostOrderStack(root *TreeNode) []int {
 	}
 	return res
 }
+*/
