@@ -125,6 +125,7 @@
 | 148 | [Sort List](linked-list/sortList.go) | [Medium][] |
 | 150 | [Evaluate Reverse Polish Notation](stack/evalRPN.go) | [Medium][] |
 | 152 | [Maximum Product Subarray](dynamic-programming/maxProduct.go) | [Medium][] |
+| 153 | [Find Minimum in Rotated Sorted Array](binary-search/findMin.go) | [Medium][] |
 | 155 | [Min Stack](stack/MinStack.go) | [Easy][] |
 | 167 | [Two Sum II - Input array is sorted](array/twoSum2.go) | [Easy][] |
 | 168 | [Excel Sheet Column Title](math/convertToTitle.go) | [Easy][] |
