@@ -29,28 +29,32 @@ Note:
 
 package leetcode
 
+import "strings"
+
 func licenseKeyFormatting(S string, K int) string {
-	length := len(S)
-	tmp := []byte{}
+	s := strings.Replace(S, "-", "", -1)
+	s = strings.ToUpper(s)
+	if len(s) == 0 {
+		return ""
+	}
 
-	for i, cnt := length-1, 0; i >= 0; i-- {
-		character := S[i]
-		if character == '-' {
-			continue
-		} else if 'a' <= character && character <= 'z' {
-			character = character - 32
-		}
-		cnt++
-		if cnt == K {
-			cnt = 0
-			tmp = append([]byte{'-', character}, tmp...)
+	length := len(s) + len(s)/K
+	if len(s)%K == 0 {
+		length--
+	}
+	res := make([]byte, length, length)
+
+	for i, idx := len(s), length; i > 0; i -= K {
+		if i-K >= 0 {
+			copy(res[idx-K:idx], s[i-K:i])
 		} else {
-			tmp = append([]byte{character}, tmp...)
+			copy(res[0:idx], s[0:i])
+		}
+		idx -= K
+		if idx > 0 {
+			idx--
+			res[idx] = '-'
 		}
 	}
-
-	if len(tmp) > 0 && tmp[0] == '-' {
-		return string(tmp[1:])
-	}
-	return string(tmp)
+	return string(res)
 }
