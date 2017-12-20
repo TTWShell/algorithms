@@ -193,6 +193,7 @@
 | 475 | [Heaters](binary-search/findRadius.go) | [Easy][] |
 | 476 | [Number Complement](bit-manipulation/findComplement.go) | [Easy][] |
 | 479 | [Largest Palindrome Product](others/largestPalindrome.go) | [Easy][] |
+| 482 | [License Key Formatting](string/licenseKeyFormatting.go) | [Easy][] |
 | 485 | [Max Consecutive Ones](array/findMaxConsecutiveOnes.go) | [Easy][] |
 | 492 | [Construct the Rectangle](design/constructRectangle.go) | [Easy][] |
 | 496 | [Next Greater Element I](others/nextGreaterElement.go) | [Easy][] |
