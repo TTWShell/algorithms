@@ -4,6 +4,7 @@ import datetime
 import os
 import sqlite3
 from collections import namedtuple
+import json
 
 import requests
 from tqdm import tqdm
@@ -90,13 +91,41 @@ class LeetCode:
             **data['solvedPerDifficulty']))
 
     def support_languages_by_tilte_slug(self, tilte_slug):
-        url = 'https://leetcode.com/problems/{}/description/'.format(
+        desc_url = 'https://leetcode.com/problems/{}/description/'.format(
             tilte_slug)
-        text = self.session.get(url).text
-        codeDefinition = text.split('codeDefinition: ')[1].split(
-            'enableTestMode:')[0].strip().strip(',')
-        return ([i.split("'")[-2]
-                for i in codeDefinition.split(',') if "'text'" in i])
+        resp = self.session.get(desc_url)
+        csrftoken = resp.cookies['csrftoken']
+
+        url = 'https://leetcode.com/graphql'
+        headers = {
+            'Accept': '*/*',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+            'Connection': 'keep-alive',
+            'Referer': desc_url,
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:56.0) Gecko/20100101 Firefox/56.0', # NOQA E501
+            'Content-Type': 'application/json',
+            'x-csrftoken': csrftoken
+        }
+        payload = {
+            "query": '\n'.join([
+                'query getQuestionDetail($titleSlug: String!) {',
+                '  isCurrentUserAuthenticated',
+                '  question(titleSlug: $titleSlug) {',
+                '    codeDefinition',
+                '  }',
+                '}',
+            ]),
+            "variables": {
+                "titleSlug": tilte_slug,
+            },
+            "operationName": "getQuestionDetail"
+        }
+        resp = self.session.post(url, json=payload, headers=headers)
+        if resp.status_code != 200:
+            print("query codeDefinition failed.", resp.status_code)
+        code_definition = resp.json()['data']['question']['codeDefinition']
+        return [code['text'] for code in json.loads(code_definition)]
 
     def sync_all_problems(self):
         url = 'https://leetcode.com/api/problems/algorithms/'
