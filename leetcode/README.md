@@ -262,6 +262,7 @@
 | 734 | [Sentence Similarity](hash-table/areSentencesSimilar.go) | [Easy][] |
 | 737 | [Sentence Similarity II](union-find/areSentencesSimilarTwo.go) | [Medium][] |
 | 744 | [Find Smallest Letter Greater Than Target](binary-search/nextGreatestLetter.go) | [Easy][] |
+| 746 | [Min Cost Climbing Stairs](dynamic-programming/minCostClimbingStairs.go) | [Easy][] |
 
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
