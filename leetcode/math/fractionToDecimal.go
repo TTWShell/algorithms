@@ -31,10 +31,11 @@ func fractionToDecimal(numerator int, denominator int) string {
 
 	integer, fractional := numerator/denominator, numerator%denominator
 	res = append(res, strconv.Itoa(integer))
-	if fractional != 0 {
-		res = append(res, ".")
+	if fractional == 0 {
+		return strings.Join(res, "")
 	}
 
+	res = append(res, ".")
 	idx := len(res)
 	maps := map[int]int{fractional: idx}
 	idx++
