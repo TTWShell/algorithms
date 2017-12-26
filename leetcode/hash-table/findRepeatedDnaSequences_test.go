@@ -10,4 +10,5 @@ func Test_findRepeatedDnaSequences(t *testing.T) {
 
 	assert.Equal([]string{"AAAAACCCCC", "CCCCCAAAAA"}, findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"))
 	assert.Equal([]string{"AAAAAAAAAA"}, findRepeatedDnaSequences("AAAAAAAAAAA"))
+	assert.Equal([]string{}, findRepeatedDnaSequences("A"))
 }
