@@ -26,9 +26,8 @@ func largestNumber(nums []int) string {
 	})
 
 	res := strings.Join(strNums, "")
-	idx := 0
-	for idx < len(res)-1 && res[idx] == '0' {
-		idx++
+	if res[0] == '0' {
+		return "0"
 	}
-	return res[idx:]
+	return res
 }
