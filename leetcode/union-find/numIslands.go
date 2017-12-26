@@ -20,8 +20,40 @@ Answer: 3
 
 package leetcode
 
+func numIslands(grid [][]byte) int {
+	var dfs func(i, j int)
+	dfs = func(i, j int) {
+		grid[i][j] = '0'
+		if i > 0 && grid[i-1][j] == '1' {
+			dfs(i-1, j)
+		}
+		if j > 0 && grid[i][j-1] == '1' {
+			dfs(i, j-1)
+		}
+		if i < len(grid)-1 && grid[i+1][j] == '1' {
+			dfs(i+1, j)
+		}
+		if j < len(grid[0])-1 && grid[i][j+1] == '1' {
+			dfs(i, j+1)
+		}
+	}
+
+	res := 0
+	for i := range grid {
+		for j := range grid[0] {
+			if grid[i][j] == '1' {
+				dfs(i, j)
+				res++
+			}
+		}
+	}
+	return res
+}
+
+/*
 import "github.com/TTWShell/algorithms/union-find"
 
+// Union-find solution
 func numIslands(grid [][]byte) int {
 	uf := unionfind.New()
 
@@ -40,3 +72,4 @@ func numIslands(grid [][]byte) int {
 	}
 	return uf.Count()
 }
+*/
