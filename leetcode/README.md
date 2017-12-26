@@ -135,6 +135,7 @@
 | 169 | [Majority Element](array/majorityElement.go) | [Easy][] |
 | 171 | [Excel Sheet Column Number](math/titleToNumber.go) | [Easy][] |
 | 172 | [Factorial Trailing Zeroes](math/trailingZeroes.go) | [Easy][] |
+| 179 | [Largest Number](sort/largestNumber.go) | [Medium][] |
 | 188 | [Best Time to Buy and Sell Stock IV](dynamic-programming/maxProfit4.go) | [Hard][] |
 | 189 | [Rotate Array](array/rotate.go) | [Easy][] |
 | 198 | [House Robber](dynamic-programming/rob.go) | [Easy][] |
