@@ -38,5 +38,11 @@ func largestNumber(nums []int) string {
 	}
 
 	sort.Sort(largestNumberString(strNums))
-	return strings.Join(strNums, "")
+	res := strings.Join(strNums, "")
+
+	idx := 0
+	for idx < len(res)-1 && res[idx] == '0' {
+		idx++
+	}
+	return res[idx:]
 }
