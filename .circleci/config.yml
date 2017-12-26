@@ -33,26 +33,9 @@ jobs:
               go version
               go test -v -cover ./...
 
-  build-go1.7:
-    docker:
-      - image: circleci/golang:1.7
-    working_directory: /go/src/github.com/TTWShell/algorithms
-    steps:
-      - checkout
-      - run: go get github.com/TTWShell/algorithms/heap
-      - run: go get github.com/TTWShell/algorithms/stack
-      - run: go get github.com/TTWShell/algorithms/union-find
-      - run: go get github.com/stretchr/testify/assert
-      - run:
-          name: Run unit tests
-          command: |
-              go version
-              go test -v -cover ./...
-
 workflows:
   version: 2
   build:
     jobs:
       - build-go1.9
       - build-go1.8
-      - build-go1.7
