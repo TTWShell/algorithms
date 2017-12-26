@@ -140,6 +140,7 @@
 | 188 | [Best Time to Buy and Sell Stock IV](dynamic-programming/maxProfit4.go) | [Hard][] |
 | 189 | [Rotate Array](array/rotate.go) | [Easy][] |
 | 198 | [House Robber](dynamic-programming/rob.go) | [Easy][] |
+| 199 | [Binary Tree Right Side View](tree/rightSideView.go) | [Medium][] |
 | 202 | [Happy Number](math/isHappy.go) | [Easy][] |
 | 203 | [Remove Linked List Elements](linked-list/removeElements.go) | [Easy][] |
 | 204 | [Count Primes](math/countPrimes.go) | [Easy][] |
