@@ -77,7 +77,26 @@ func (this *Trie) Search(word string) bool {
 
 /** Returns if there is any word in the trie that starts with the given prefix. */
 func (this *Trie) StartsWith(prefix string) bool {
-	return false
+	if len(prefix) == 0 {
+		return false
+	}
+
+	var (
+		rword   = []rune(prefix)
+		rootR   = rword[0]
+		curNode *trieNode
+		ok      bool
+	)
+	if curNode, ok = this.data[rootR]; !ok {
+		return false
+	}
+	for i := 1; i < len(rword); i++ {
+		cur := rword[i]
+		if curNode, ok = curNode.Next[cur]; !ok {
+			return false
+		}
+	}
+	return true
 }
 
 /**

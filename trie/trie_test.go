@@ -57,5 +57,21 @@ func TestSearch(t *testing.T) {
 	assert.False(T.Search("and"))
 	assert.True(T.Search("android"))
 	assert.False(T.Search("androidfuck"))
+}
 
+func TestStartsWith(t *testing.T) {
+	assert := assert.New(t)
+
+	T := Constructor()
+	T.Insert("a")
+	T.Insert("b")
+	T.Insert("an")
+	T.Insert("android")
+
+	assert.False(T.StartsWith(""))
+	assert.False(T.StartsWith("z"))
+	assert.True(T.StartsWith("a"))
+	assert.True(T.StartsWith("an"))
+	assert.True(T.StartsWith("androi"))
+	assert.False(T.StartsWith("androidfuck"))
 }
