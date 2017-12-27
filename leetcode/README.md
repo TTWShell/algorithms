@@ -142,6 +142,7 @@
 | 198 | [House Robber](dynamic-programming/rob.go) | [Easy][] |
 | 199 | [Binary Tree Right Side View](tree/rightSideView.go) | [Medium][] |
 | 200 | [Number of Islands](union-find/numIslands.go) | [Medium][] |
+| 201 | [Bitwise AND of Numbers Range](bit-manipulation/rangeBitwiseAnd.go) | [Medium][] |
 | 202 | [Happy Number](math/isHappy.go) | [Easy][] |
 | 203 | [Remove Linked List Elements](linked-list/removeElements.go) | [Easy][] |
 | 204 | [Count Primes](math/countPrimes.go) | [Easy][] |
