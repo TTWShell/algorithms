@@ -29,6 +29,8 @@ Data structures and algorithms in go.
     - [x] [BST－二叉搜索树](tree/bst.go)
     - [x] [AVL－高度平衡树](tree/avl.go)
     - [ ] [Red–black tree－红黑树](tree/rbt.go)
+* [前缀树（Trie）](trie)
+    - [x] [实现](trie/trie.go)
 * [图（Graph）](graph)
     - [x] [实现](graph/graph.go)
     - [x] [BFS](graph/bfs.go)
