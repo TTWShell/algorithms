@@ -21,14 +21,16 @@ func Constructor() Trie {
 
 /** Inserts a word into the trie. */
 func (this *Trie) Insert(word string) {
-	rword := []rune(word)
-	if len(rword) == 0 {
+	if len(word) == 0 {
 		panic("Length of word must > 0.")
 	}
 
-	var tmp, curNode *trieNode
-	var ok bool
-	rootR := rword[0]
+	var (
+		rword        = []rune(word)
+		tmp, curNode *trieNode
+		ok           bool
+		rootR        = rword[0]
+	)
 	if curNode, ok = this.data[rootR]; !ok {
 		curNode = &trieNode{Val: rootR, Next: make(map[rune]*trieNode)}
 		this.data[rootR] = curNode
@@ -48,8 +50,29 @@ func (this *Trie) Insert(word string) {
 
 /** Returns if the word is in the trie. */
 func (this *Trie) Search(word string) bool {
-	return false
+	if len(word) == 0 {
+		return false
+	}
 
+	var (
+		rword   = []rune(word)
+		rootR   = rword[0]
+		curNode *trieNode
+		ok      bool
+	)
+	if curNode, ok = this.data[rootR]; !ok {
+		return false
+	}
+	for i := 1; i < len(rword); i++ {
+		cur := rword[i]
+		if curNode, ok = curNode.Next[cur]; !ok {
+			return false
+		}
+	}
+	if !curNode.IsEnd {
+		return false
+	}
+	return true
 }
 
 /** Returns if there is any word in the trie that starts with the given prefix. */

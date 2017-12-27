@@ -39,3 +39,23 @@ func TestInsert(t *testing.T) {
 	// test panic
 	T.Insert("")
 }
+
+func TestSearch(t *testing.T) {
+	assert := assert.New(t)
+
+	T := Constructor()
+	T.Insert("a")
+	T.Insert("b")
+	T.Insert("an")
+	T.Insert("android")
+
+	assert.False(T.Search(""))
+	assert.False(T.Search("z"))
+	assert.True(T.Search("a"))
+	assert.True(T.Search("b"))
+	assert.True(T.Search("an"))
+	assert.False(T.Search("and"))
+	assert.True(T.Search("android"))
+	assert.False(T.Search("androidfuck"))
+
+}
