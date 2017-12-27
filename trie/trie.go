@@ -11,12 +11,12 @@ type trieNode struct {
 }
 
 type Trie struct {
-	data map[rune]*trieNode
+	root *trieNode
 }
 
 /** Initialize your data structure here. */
 func Constructor() Trie {
-	return Trie{data: make(map[rune]*trieNode)}
+	return Trie{root: &trieNode{Next: make(map[rune]*trieNode)}}
 }
 
 /** Inserts a word into the trie. */
@@ -26,26 +26,20 @@ func (this *Trie) Insert(word string) {
 	}
 
 	var (
-		rword        = []rune(word)
-		tmp, curNode *trieNode
-		ok           bool
-		rootR        = rword[0]
+		rword   = []rune(word)
+		curNode = this.root
+		tmp     *trieNode
+		ok      bool
 	)
-	if curNode, ok = this.data[rootR]; !ok {
-		curNode = &trieNode{Val: rootR, Next: make(map[rune]*trieNode)}
-		this.data[rootR] = curNode
-	}
-	tmp = curNode
 
-	for i := 1; i < len(rword); i++ {
-		cur := rword[i]
-		if curNode, ok = tmp.Next[cur]; !ok {
-			curNode = &trieNode{Val: cur, Next: make(map[rune]*trieNode)}
-			tmp.Next[cur] = curNode
+	for _, letter := range rword {
+		if tmp, ok = curNode.Next[letter]; !ok {
+			tmp = &trieNode{Val: letter, Next: make(map[rune]*trieNode)}
+			curNode.Next[letter] = tmp
 		}
-		tmp = curNode
+		curNode = tmp
 	}
-	tmp.IsEnd = true
+	curNode.IsEnd = true
 }
 
 /** Returns if the word is in the trie. */
@@ -56,16 +50,12 @@ func (this *Trie) Search(word string) bool {
 
 	var (
 		rword   = []rune(word)
-		rootR   = rword[0]
-		curNode *trieNode
+		curNode = this.root
 		ok      bool
 	)
-	if curNode, ok = this.data[rootR]; !ok {
-		return false
-	}
-	for i := 1; i < len(rword); i++ {
-		cur := rword[i]
-		if curNode, ok = curNode.Next[cur]; !ok {
+
+	for _, letter := range rword {
+		if curNode, ok = curNode.Next[letter]; !ok {
 			return false
 		}
 	}
@@ -83,16 +73,12 @@ func (this *Trie) StartsWith(prefix string) bool {
 
 	var (
 		rword   = []rune(prefix)
-		rootR   = rword[0]
-		curNode *trieNode
+		curNode = this.root
 		ok      bool
 	)
-	if curNode, ok = this.data[rootR]; !ok {
-		return false
-	}
-	for i := 1; i < len(rword); i++ {
-		cur := rword[i]
-		if curNode, ok = curNode.Next[cur]; !ok {
+
+	for _, letter := range rword {
+		if curNode, ok = curNode.Next[letter]; !ok {
 			return false
 		}
 	}
