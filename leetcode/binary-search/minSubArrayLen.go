@@ -13,19 +13,16 @@ package leetcode
 // Two Pointers
 func minSubArrayLen(s int, nums []int) int {
 	sums := make([]int, len(nums)+1)
-	for i, num := range nums {
-		sums[i+1] = sums[i] + num
-	}
 
-	l, r, minLen := 0, 1, 0
+	l, r, minLen := 0, 0, 0
 	for r < len(sums) {
 		if sums[r]-sums[l] >= s {
 			if tmp := r - l; tmp < minLen || minLen == 0 {
 				minLen = tmp
 			}
 			l++
-		} else {
-			r++
+		} else if r++; r < len(sums) {
+			sums[r] = sums[r-1] + nums[r-1]
 		}
 	}
 	return minLen
