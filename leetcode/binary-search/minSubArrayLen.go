@@ -10,7 +10,43 @@ If you have figured out the O(n) solution, try coding another solution of which 
 
 package leetcode
 
-// Two Pointers
+// binary-search
+func minSubArrayLen(s int, nums []int) int {
+	length := len(nums)
+	sums := make([]int, length+1)
+	for i, num := range nums {
+		sums[i+1] = sums[i] + num
+	}
+
+	searchRight := func(cur int, target int) int {
+		left, right := cur, length
+		if sums[right] < target {
+			return cur
+		}
+		for right >= left {
+			mid := left + (right-left)>>1
+			if sums[mid] > target {
+				right = mid - 1
+			} else if sums[mid] == target {
+				return mid
+			} else {
+				left = mid + 1
+			}
+		}
+		return left
+	}
+
+	minLen := 0
+	for i := 0; i < length; i++ {
+		if tmp := searchRight(i, sums[i]+s) - i; tmp > 0 && (tmp < minLen || minLen == 0) {
+			minLen = tmp
+		}
+	}
+	return minLen
+}
+
+/*
+// Two Pointers 12ms
 func minSubArrayLen(s int, nums []int) int {
 	if len(nums) == 0 {
 		return 0
@@ -30,3 +66,4 @@ func minSubArrayLen(s int, nums []int) int {
 	}
 	return minLen
 }
+*/
