@@ -12,17 +12,20 @@ package leetcode
 
 // Two Pointers
 func minSubArrayLen(s int, nums []int) int {
-	sums := make([]int, len(nums)+1)
+	if len(nums) == 0 {
+		return 0
+	}
 
-	l, r, minLen := 0, 0, 0
-	for r < len(sums) {
-		if sums[r]-sums[l] >= s {
-			if tmp := r - l; tmp < minLen || minLen == 0 {
+	minLen, sum := 0, nums[0]
+	for l, r := 0, 0; r < len(nums); {
+		if sum >= s {
+			if tmp := r - l + 1; tmp < minLen || minLen == 0 {
 				minLen = tmp
 			}
+			sum -= nums[l]
 			l++
-		} else if r++; r < len(sums) {
-			sums[r] = sums[r-1] + nums[r-1]
+		} else if r++; r < len(nums) {
+			sum += nums[r]
 		}
 	}
 	return minLen
