@@ -21,6 +21,36 @@ Note:
 
 package leetcode
 
+// according to note, can use bucket
+func dominantIndex(nums []int) int {
+	length := len(nums)
+	if length == 1 {
+		return 0
+	}
+
+	bucket := make([]int, 100)
+	for i, num := range nums {
+		bucket[num] = i + 1
+	}
+
+	var largest, largestIndex int
+	for i := 99; i >= 0; i-- {
+		if bucket[i] == 0 {
+			continue
+		}
+		if largest == 0 {
+			largest, largestIndex = i, bucket[i]-1
+			continue
+		}
+		if largest >= 2*i {
+			return largestIndex
+		}
+		break
+	}
+	return -1
+}
+
+/*
 func dominantIndex(nums []int) int {
 	length := len(nums)
 	if length == 1 {
@@ -48,3 +78,4 @@ func dominantIndex(nums []int) int {
 	}
 	return -1
 }
+*/
