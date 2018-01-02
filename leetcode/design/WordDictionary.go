@@ -75,23 +75,22 @@ func (this *WordDictionary) search(curNode *wdNode, word string) bool {
 			if curNode, ok = curNode.Next[letter]; !ok {
 				return false
 			}
-		} else if i < len(rword)-1 {
+			continue
+		}
+		if i < len(rword)-1 {
 			for _, cur := range curNode.Next {
 				if this.search(cur, string(rword[i+1:])) == true {
 					return true
 				}
 			}
 			return false
-		} else if len(curNode.Next) == 0 {
-			return false
-		} else {
-			for _, cur := range curNode.Next {
-				if cur.IsEnd == true {
-					return true
-				}
-			}
-			return false
 		}
+		for _, cur := range curNode.Next {
+			if cur.IsEnd == true {
+				return true
+			}
+		}
+		return false
 	}
 	return curNode.IsEnd
 }
