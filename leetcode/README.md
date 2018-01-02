@@ -271,8 +271,9 @@
 | 733 | [Flood Fill](array/floodFill.go) | [Easy][] |
 | 734 | [Sentence Similarity](hash-table/areSentencesSimilar.go) | [Easy][] |
 | 737 | [Sentence Similarity II](union-find/areSentencesSimilarTwo.go) | [Medium][] |
-| 744 | [Find Smallest Letter Greater Than Target](binary-search/nextGreatestLetter.go) | [Easy][] |
-| 746 | [Min Cost Climbing Stairs](dynamic-programming/minCostClimbingStairs.go) | [Easy][] |
+| 745 | [Find Smallest Letter Greater Than Target](binary-search/nextGreatestLetter.go) | [Easy][] |
+| 747 | [Min Cost Climbing Stairs](dynamic-programming/minCostClimbingStairs.go) | [Easy][] |
+| 748 | [Largest Number At Least Twice of Others](array/dominantIndex.go) | [Easy][] |
 
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
