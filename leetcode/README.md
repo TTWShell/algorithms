@@ -151,6 +151,7 @@
 | 207 | [Course Schedule](graph/canFinish.go) | [Medium][] |
 | 208 | [Implement Trie (Prefix Tree)](/trie/trie.go) | [Medium][] |
 | 209 | [Minimum Size Subarray Sum](binary-search/minSubArrayLen.go) | [Medium][] |
+| 210 | [Course Schedule II](graph/findOrder.go) | [Medium][] |
 | 211 | [Add and Search Word - Data structure design](design/WordDictionary.go) | [Medium][] |
 | 217 | [Contains Duplicate](hash-table/containsDuplicate.go) | [Easy][] |
 | 219 | [Contains Duplicate II](hash-table/containsNearbyDuplicate.go) | [Easy][] |
