@@ -13,12 +13,8 @@ type Heap struct {
 	isMin bool
 }
 
-func MinHeapConstructor() *Heap {
-	return &Heap{heap: make([]Element, 0), isMin: true}
-}
-
-func MaxHeapConstructor() *Heap {
-	return &Heap{heap: make([]Element, 0), isMin: false}
+func New(isMin bool) *Heap {
+	return &Heap{heap: make([]Element, 0), isMin: isMin}
 }
 
 func (h *Heap) IsEmpty() bool {
@@ -99,7 +95,6 @@ func (h *Heap) precolateDown(index int) {
 func (h *Heap) less(a, b Element) bool {
 	if h.isMin {
 		return a.LessThan(b)
-	} else {
-		return b.LessThan(a)
 	}
+	return b.LessThan(a)
 }

@@ -9,19 +9,19 @@ func (i Int) LessThan(e Element) bool {
 }
 
 func Test_Init(t *testing.T) {
-	h := MinHeapConstructor()
+	h := New(true)
 	if h.len != 0 || h.Len() != 0 || len(h.heap) != 0 || h.isMin != true || !h.IsEmpty() {
 		t.Fatal(h, "init MinHeap failed.")
 	}
 
-	h = MaxHeapConstructor()
+	h = New(false)
 	if h.len != 0 || h.Len() != 0 || len(h.heap) != 0 || h.isMin != false || !h.IsEmpty() {
 		t.Fatal(h, "init MaxHeap failed.")
 	}
 }
 
 func Test_MinHeap(t *testing.T) {
-	h := MinHeapConstructor()
+	h := New(true)
 	for _, num := range []Int{100, 90, 80, 5, 3, 1, 10, 20, 30, 8, 70} {
 		h.Insert(num)
 	}
@@ -39,7 +39,7 @@ func Test_MinHeap(t *testing.T) {
 }
 
 func Test_MaxHeap(t *testing.T) {
-	h := MaxHeapConstructor()
+	h := New(false)
 	for _, num := range []Int{100, 90, 80, 5, 3, 1, 10, 20, 30, 8, 70} {
 		h.Insert(num)
 	}
@@ -57,7 +57,7 @@ func Test_MaxHeap(t *testing.T) {
 }
 
 func Test_ExtractPanic(t *testing.T) {
-	h := MinHeapConstructor()
+	h := New(true)
 	defer func() {
 		if r := recover(); r != "Empty heap, cannot Extract." {
 			t.Fatal("Expected panic but err is:", r)
@@ -67,7 +67,7 @@ func Test_ExtractPanic(t *testing.T) {
 }
 
 func Test_Peek(t *testing.T) {
-	h := MinHeapConstructor()
+	h := New(true)
 	h.Insert(Int(100))
 
 	if h.Peek().(Int) != Int(100) {
@@ -85,7 +85,7 @@ func Test_Peek(t *testing.T) {
 }
 
 func Test_precolate(t *testing.T) {
-	h := MinHeapConstructor()
+	h := New(true)
 	for i, num := range []Int{100, 90, 80, 5, 3, 1, 10, 20, 30, 8, 70} {
 		h.Insert(num)
 		h.precolateUp(i)
