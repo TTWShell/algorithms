@@ -10,6 +10,13 @@ d[i] = max(d[i-2]+nums[i], d[i-1])
 package leetcode
 
 func rob(nums []int) int {
+	max := func(a, b int) int {
+		if a > b {
+			return a
+		}
+		return b
+	}
+
 	a, b := 0, 0
 	for i := 0; i < len(nums); i++ {
 		if i%2 == 0 {
