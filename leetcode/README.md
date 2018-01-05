@@ -153,6 +153,7 @@
 | 209 | [Minimum Size Subarray Sum](binary-search/minSubArrayLen.go) | [Medium][] |
 | 210 | [Course Schedule II](graph/findOrder.go) | [Medium][] |
 | 211 | [Add and Search Word - Data structure design](design/WordDictionary.go) | [Medium][] |
+| 213 | [House Robber II](dynamic-programming/rob2.go) | [Medium][] |
 | 217 | [Contains Duplicate](hash-table/containsDuplicate.go) | [Easy][] |
 | 219 | [Contains Duplicate II](hash-table/containsNearbyDuplicate.go) | [Easy][] |
 | 225 | [Implement Stack using Queues](stack/MyStack.go) | [Easy][] |
