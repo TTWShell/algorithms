@@ -11,7 +11,7 @@ func (i Int) LessThan(e heap.Element) bool {
 }
 
 func HeapSort(arr []int) {
-	h := heap.MinHeapConstructor()
+	h := heap.New(true)
 	for i := 0; i < len(arr); i++ {
 		h.Insert(Int(arr[i]))
 	}
