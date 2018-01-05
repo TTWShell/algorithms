@@ -76,19 +76,15 @@ func (h *Heap) precolateUp(index int) {
 
 func (h *Heap) precolateDown(index int) {
 	// 下滤
-	needDown, child := index, index<<1+1
-	for needDown < h.len && child < h.len {
+	for needDown, child := index, index<<1+1; needDown < h.len && child < h.len; needDown, child = child, child<<1+1 {
 		// find min(leftChild, rightChild)
 		if child+1 < h.len && h.less(h.heap[child+1], h.heap[child]) {
 			child++
 		}
-
 		if h.less(h.heap[needDown], h.heap[child]) {
 			break
 		}
-
 		h.heap[needDown], h.heap[child] = h.heap[child], h.heap[needDown]
-		needDown, child = child, needDown<<1+1
 	}
 }
 
