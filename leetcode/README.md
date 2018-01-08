@@ -155,6 +155,7 @@
 | 211 | [Add and Search Word - Data structure design](design/WordDictionary.go) | [Medium][] |
 | 213 | [House Robber II](dynamic-programming/rob2.go) | [Medium][] |
 | 215 | [Kth Largest Element in an Array](heap/findKthLargest.go) | [Medium][] |
+| 216 | [Combination Sum III](backtracking/combinationSum3.go) | [Medium][] |
 | 217 | [Contains Duplicate](hash-table/containsDuplicate.go) | [Easy][] |
 | 219 | [Contains Duplicate II](hash-table/containsNearbyDuplicate.go) | [Easy][] |
 | 225 | [Implement Stack using Queues](stack/MyStack.go) | [Easy][] |
