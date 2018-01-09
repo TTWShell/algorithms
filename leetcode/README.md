@@ -158,6 +158,7 @@
 | 216 | [Combination Sum III](backtracking/combinationSum3.go) | [Medium][] |
 | 217 | [Contains Duplicate](hash-table/containsDuplicate.go) | [Easy][] |
 | 219 | [Contains Duplicate II](hash-table/containsNearbyDuplicate.go) | [Easy][] |
+| 220 | [Contains Duplicate III](binary-search-tree/containsNearbyAlmostDuplicate.go) | [Medium][] |
 | 225 | [Implement Stack using Queues](stack/MyStack.go) | [Easy][] |
 | 226 | [Invert Binary Tree](tree/invertTree.go) | [Easy][] |
 | 231 | [Power of Two](math/isPowerOfTwo.go) | [Easy][] |
