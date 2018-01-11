@@ -1,30 +1,35 @@
 package merge
 
-func MergeSort(arr1, arr2 []int) []int {
-	len1, len2, lenMerge := len(arr1), len(arr2), len(arr1)+len(arr2)
-	mergedArr := make([]int, lenMerge, lenMerge)
-	i, j, k := 0, 0, 0
+func merge(left, right []int) []int {
+	lenL, lenR := len(left), len(right)
+	res := make([]int, 0, lenL+lenR)
+	i, j := 0, 0
 
-	for ; i < len1 && j < len2; k++ {
-		if arr1[i] <= arr2[j] {
-			mergedArr[k] = arr1[i]
+	for i < lenL && j < lenR {
+		if left[i] <= right[j] {
+			res = append(res, left[i])
 			i++
 		} else {
-			mergedArr[k] = arr2[j]
+			res = append(res, right[j])
 			j++
 		}
 	}
 
 	// deal tail
-	for i < len1 {
-		mergedArr[k] = arr1[i]
-		k++
-		i++
+	if i < lenL {
+		res = append(res, left[i:]...)
 	}
-	for j < len2 {
-		mergedArr[k] = arr2[j]
-		k++
-		j++
+	if j < lenR {
+		res = append(res, right[j:]...)
 	}
-	return mergedArr
+	return res
+}
+
+// Sort : merge sort.
+func Sort(arr []int) []int {
+	if len(arr) <= 1 {
+		return arr
+	}
+	mid := len(arr) / 2
+	return merge(Sort(arr[:mid]), Sort(arr[mid:]))
 }

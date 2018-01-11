@@ -1,20 +1,20 @@
 package merge
 
 import (
-	"reflect"
+	"github.com/stretchr/testify/assert"
+	"sort"
 	"testing"
 )
 
 func Test_MergeSort(t *testing.T) {
-	arr1 := []int{1, 3, 5, 6, 8, 10, 12, 13}
-	arr2 := []int{2, 4, 5, 7, 9, 11, 14, 15, 16, 17, 18}
-	output := []int{1, 2, 3, 4, 5, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18}
+	assert := assert.New(t)
 
-	if r := MergeSort(arr1, arr2); !reflect.DeepEqual(r, output) {
-		t.Fatal(r)
-	}
+	arr := []int{3, 13, 13, 13, 0, 2, 7, 10, 10, 11, 14, 2, 2, 12, 6, 9}
+	sorted := make([]int, len(arr))
+	copy(sorted, arr)
+	sort.Ints(sorted)
 
-	if r := MergeSort(arr2, arr1); !reflect.DeepEqual(r, output) {
-		t.Fatal(r)
-	}
+	assert.Equal([]int{3, 13, 13, 13, 0, 2, 7, 10, 10, 11, 14, 2, 2, 12, 6, 9}, arr)
+	assert.Equal([]int{0, 2, 2, 2, 3, 6, 7, 9, 10, 10, 11, 12, 13, 13, 13, 14}, sorted)
+	assert.Equal(sorted, Sort(arr))
 }
