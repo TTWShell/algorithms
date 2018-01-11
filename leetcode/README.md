@@ -279,7 +279,7 @@
 | 745 | [Find Smallest Letter Greater Than Target](binary-search/nextGreatestLetter.go) | [Easy][] |
 | 747 | [Min Cost Climbing Stairs](dynamic-programming/minCostClimbingStairs.go) | [Easy][] |
 | 748 | [Largest Number At Least Twice of Others](array/dominantIndex.go) | [Easy][] |
-
+| 760 | [Find Anagram Mappings](hash-table/anagramMappings.go) | [Easy][] |
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
 [Medium]: https://leetcode.com/problemset/algorithms/?difficulty=Medium&status=Todo
