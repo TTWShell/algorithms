@@ -284,6 +284,7 @@
 | 760 | [Find Anagram Mappings](hash-table/anagramMappings.go) | [Easy][] |
 | 762 | [Prime Number of Set Bits in Binary Representation](bit-manipulation/countPrimeSetBits.go) | [Easy][] |
 | 766 | [Toeplitz Matrix](array/isToeplitzMatrix.go) | [Easy][] |
+| 783 | [Minimum Distance Between BST Nodes](tree/minDiffInBST.go) | [Easy][] |
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
 [Medium]: https://leetcode.com/problemset/algorithms/?difficulty=Medium&status=Todo
