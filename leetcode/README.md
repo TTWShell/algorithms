@@ -158,6 +158,7 @@
 | 216 | [Combination Sum III](backtracking/combinationSum3.go) | [Medium][] |
 | 217 | [Contains Duplicate](hash-table/containsDuplicate.go) | [Easy][] |
 | 219 | [Contains Duplicate II](hash-table/containsNearbyDuplicate.go) | [Easy][] |
+| 220 | [Contains Duplicate III](binary-search-tree/containsNearbyAlmostDuplicate.go) | [Medium][] |
 | 221 | [Maximal Square](dynamic-programming/maximalSquare.go) | [Medium][] |
 | 223 | [Rectangle Area](math/computeArea.go) | [Medium][] |
 | 225 | [Implement Stack using Queues](stack/MyStack.go) | [Easy][] |
