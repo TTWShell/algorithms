@@ -159,6 +159,8 @@
 | 217 | [Contains Duplicate](hash-table/containsDuplicate.go) | [Easy][] |
 | 219 | [Contains Duplicate II](hash-table/containsNearbyDuplicate.go) | [Easy][] |
 | 220 | [Contains Duplicate III](binary-search-tree/containsNearbyAlmostDuplicate.go) | [Medium][] |
+| 221 | [Maximal Square](dynamic-programming/maximalSquare.go) | [Medium][] |
+| 223 | [Rectangle Area](math/computeArea.go) | [Medium][] |
 | 225 | [Implement Stack using Queues](stack/MyStack.go) | [Easy][] |
 | 226 | [Invert Binary Tree](tree/invertTree.go) | [Easy][] |
 | 231 | [Power of Two](math/isPowerOfTwo.go) | [Easy][] |
@@ -280,7 +282,12 @@
 | 745 | [Find Smallest Letter Greater Than Target](binary-search/nextGreatestLetter.go) | [Easy][] |
 | 747 | [Min Cost Climbing Stairs](dynamic-programming/minCostClimbingStairs.go) | [Easy][] |
 | 748 | [Largest Number At Least Twice of Others](array/dominantIndex.go) | [Easy][] |
-
+| 760 | [Find Anagram Mappings](hash-table/anagramMappings.go) | [Easy][] |
+| 762 | [Prime Number of Set Bits in Binary Representation](bit-manipulation/countPrimeSetBits.go) | [Easy][] |
+| 766 | [Toeplitz Matrix](array/isToeplitzMatrix.go) | [Easy][] |
+| 771 | [Jewels and Stones](hash-table/numJewelsInStones.go) | [Easy][] |
+| 783 | [Minimum Distance Between BST Nodes](tree/minDiffInBST.go) | [Easy][] |
+| 784 | [Letter Case Permutation](string/letterCasePermutation.go) | [Easy][] |
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
 [Medium]: https://leetcode.com/problemset/algorithms/?difficulty=Medium&status=Todo
