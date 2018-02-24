@@ -5,6 +5,7 @@ import os
 import sqlite3
 from collections import namedtuple
 import json
+import time
 
 import requests
 from tqdm import tqdm
@@ -63,6 +64,15 @@ class LeetCode:
         # <input type='hidden' name='csrfmiddlewaretoken' value='B5yVhk7grKZU4rt3hNxGZ9NUB67lmIW0RuAg75Vx9f3WA8grGIV4qI2eFbmlK6Dq' />  # NOQA E501
         return resp.text.split('csrfmiddlewaretoken')[1].split("'")[2]
 
+    def _request(self, url):
+        for i in range(3):
+            resp = self.session.get(url)
+            if resp.status_code == 429:  # Too Many Requests
+                time.sleep(30)
+                print('>>> 429 Too Many Requests: {} retry...'.format(i))
+                continue
+            return resp
+
     def login(self):
         data = {
             'csrfmiddlewaretoken': self._get_csrfmiddlewaretoken(),
@@ -93,7 +103,7 @@ class LeetCode:
     def support_languages_by_tilte_slug(self, tilte_slug):
         desc_url = 'https://leetcode.com/problems/{}/description/'.format(
             tilte_slug)
-        resp = self.session.get(desc_url)
+        resp = self._request(desc_url)
         csrftoken = resp.cookies['csrftoken']
 
         url = 'https://leetcode.com/graphql'
