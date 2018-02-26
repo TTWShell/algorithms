@@ -147,14 +147,14 @@ class LeetCode:
         update_sql = 'UPDATE `{table_name}` SET go={go}, status="{status}" WHERE id={pk}'  # NOQA E501
 
         pairs = sorted(data['stat_status_pairs'],
-                       key=lambda x: x['stat']['question_id'])
+                       key=lambda x: x['stat']['frontend_question_id'])
         pairs = filter(lambda x: x['paid_only'] is False, pairs)
         if self.difficulty:
             pairs = filter(
                 lambda x: x['difficulty']['level'] == self.difficulty, pairs)
 
         for p in tqdm(pairs):
-            problem_id = p['stat']['question_id']
+            problem_id = p['stat']['frontend_question_id']  # question_id && frontend_question_id
             title_slug = p['stat']['question__title_slug']
             status = p['status']
 
