@@ -288,6 +288,7 @@
 | 771 | [Jewels and Stones](hash-table/numJewelsInStones.go) | [Easy][] |
 | 783 | [Minimum Distance Between BST Nodes](tree/minDiffInBST.go) | [Easy][] |
 | 784 | [Letter Case Permutation](string/letterCasePermutation.go) | [Easy][] |
+| 788 | [Rotated Digits](leetcode/others/rotatedDigits.go) | [Easy][] |
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
 [Medium]: https://leetcode.com/problemset/algorithms/?difficulty=Medium&status=Todo
