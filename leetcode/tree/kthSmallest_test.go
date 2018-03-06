@@ -20,4 +20,5 @@ func Test_kthSmallest(t *testing.T) {
 		assert.Equal(i, kthSmallest(root, i))
 	}
 
+	assert.Panicsf(func() { kthSmallest(root, 100) }, "error occurred")
 }
