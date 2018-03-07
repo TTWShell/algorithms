@@ -176,6 +176,7 @@
 | 242 | [Valid Anagram](hash-table/isAnagram.go) | [Easy][] |
 | 257 | [Binary Tree Paths](tree/binaryTreePaths.go) | [Easy][] |
 | 258 | [Add Digits](math/addDigits.go) | [Easy][] |
+| 260 | [Single Number III](bit-manipulation/singleNumber3.go) | [Medium][] |
 | 263 | [Ugly Number](math/isUgly.go) | [Easy][] |
 | 268 | [Missing Number](math/missingNumber.go) | [Easy][] |
 | 283 | [Move Zeroes](array/moveZeroes.go) | [Easy][] |
