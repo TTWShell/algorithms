@@ -172,6 +172,7 @@
 | 234 | [Palindrome Linked List](linked-list/isPalindrome.go) | [Easy][] |
 | 238 | [Product of Array Except Self](array/productExceptSelf.go) | [Medium][] |
 | 240 | [Search a 2D Matrix II](binary-search/searchMatrix2.go) | [Medium][] |
+| 241 | [Different Ways to Add Parentheses](divide-and-conquer/diffWaysToCompute.go) | [Medium][] |
 | 242 | [Valid Anagram](hash-table/isAnagram.go) | [Easy][] |
 | 257 | [Binary Tree Paths](tree/binaryTreePaths.go) | [Easy][] |
 | 258 | [Add Digits](math/addDigits.go) | [Easy][] |
