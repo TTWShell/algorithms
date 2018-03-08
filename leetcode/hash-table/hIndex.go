@@ -12,6 +12,7 @@ Note: If there are several possible values for h, the maximum one is taken as th
 
 package leetcode
 
+/*
 // 1. sort
 import "sort"
 
@@ -37,4 +38,23 @@ func hIndex(citations []int) int {
 		res = max(res, min(len(citations)-i, citation))
 	}
 	return res
+}
+*/
+
+func hIndex(citations []int) int {
+	count := make([]int, len(citations)+1)
+	for _, citation := range citations {
+		if citation >= len(citations) {
+			count[len(citations)]++ // 当引用数大于等于 n 时，我们均将其数量计入 count[n] 中
+		} else {
+			count[citation]++
+		}
+	}
+	for i := len(citations); i > 0; i-- {
+		if count[i] >= i {
+			return i
+		}
+		count[i-1] += count[i] // 引用数大于 i-1 的数量是i-1及之后的累加
+	}
+	return 0
 }
