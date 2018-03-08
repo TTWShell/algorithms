@@ -178,6 +178,7 @@
 | 258 | [Add Digits](math/addDigits.go) | [Easy][] |
 | 260 | [Single Number III](bit-manipulation/singleNumber3.go) | [Medium][] |
 | 263 | [Ugly Number](math/isUgly.go) | [Easy][] |
+| 264 | [Ugly Number II](math/nthUglyNumber.go) | [Medium][] |
 | 268 | [Missing Number](math/missingNumber.go) | [Easy][] |
 | 283 | [Move Zeroes](array/moveZeroes.go) | [Easy][] |
 | 290 | [Word Pattern](hash-table/wordPattern.go) | [Easy][] |
