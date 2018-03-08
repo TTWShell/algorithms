@@ -180,6 +180,7 @@
 | 263 | [Ugly Number](math/isUgly.go) | [Easy][] |
 | 264 | [Ugly Number II](math/nthUglyNumber.go) | [Medium][] |
 | 268 | [Missing Number](math/missingNumber.go) | [Easy][] |
+| 274 | [H-Index](hash-table/hIndex.go) | [Medium][] |
 | 283 | [Move Zeroes](array/moveZeroes.go) | [Easy][] |
 | 290 | [Word Pattern](hash-table/wordPattern.go) | [Easy][] |
 | 292 | [Nim Game](brainteaser/canWinNim.go) | [Easy][] |
