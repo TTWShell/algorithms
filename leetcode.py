@@ -109,7 +109,7 @@ class LeetCode:
         url = 'https://leetcode.com/graphql'
         headers = {
             'Accept': '*/*',
-            'Accept-Encoding': 'gzip, deflate, br',
+            'Accept-Encoding': 'gzip', # 'gzip, deflate, br',
             'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
             'Connection': 'keep-alive',
             'Referer': desc_url,
