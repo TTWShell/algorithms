@@ -6,6 +6,7 @@ For example, given n = 12, return 3 because 12 = 4 + 4 + 4; given n = 13, return
 
 package leetcode
 
+/*
 func numSquares(n int) int {
 	dp := make([]int, n+1)
 	for i := 1; i*i <= n; i++ {
@@ -20,4 +21,32 @@ func numSquares(n int) int {
 		}
 	}
 	return dp[n]
+}
+*/
+
+import "math"
+
+func numSquares(n int) int {
+	for n%4 == 0 {
+		n /= 4
+	}
+
+	if n%8 == 7 {
+		return 4
+	}
+
+	for i := 0; i*i <= n; i++ {
+		j := int(math.Sqrt(float64(n - i*i)))
+		if i*i+j*j == n {
+			res := 0
+			if i > 0 {
+				res++
+			}
+			if j > 0 {
+				res++
+			}
+			return res
+		}
+	}
+	return 3
 }
