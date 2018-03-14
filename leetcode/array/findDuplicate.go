@@ -13,6 +13,37 @@ Note:
 
 package leetcode
 
+func findDuplicate(nums []int) int {
+	left, right, count := 1, len(nums)-1, 0 // 1 <= input num <= n, n = len(nums)-1
+
+	for right > left {
+		mid := left + (right-left)>>1
+		count = mid - left + 1
+
+		for i := 0; i < len(nums); i++ {
+			if left <= nums[i] && nums[i] <= mid {
+				count--
+			}
+		}
+
+		if right-left == 1 {
+			break
+		}
+
+		if count < 0 { // in left -- mid
+			right = mid
+		} else {
+			left = mid
+		}
+	}
+
+	if count < 0 {
+		return left
+	}
+	return right
+}
+
+/*
 // O(n^2)
 func findDuplicate(nums []int) int {
 	for i := 0; i < len(nums); i++ {
@@ -24,3 +55,4 @@ func findDuplicate(nums []int) int {
 	}
 	panic("input error")
 }
+*/
