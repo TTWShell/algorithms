@@ -184,6 +184,7 @@
 | 275 | [H-Index II](binary-search/hIndex2.go) | [Medium][] |
 | 279 | [Perfect Squares](math/numSquares.go) | [Medium][] |
 | 283 | [Move Zeroes](array/moveZeroes.go) | [Easy][] |
+| 287 | [Find the Duplicate Number](array/findDuplicate.go) | [Medium][] |
 | 290 | [Word Pattern](hash-table/wordPattern.go) | [Easy][] |
 | 292 | [Nim Game](brainteaser/canWinNim.go) | [Easy][] |
 | 303 | [Range Sum Query - Immutable](dynamic-programming/NumArray.go) | [Easy][] |
