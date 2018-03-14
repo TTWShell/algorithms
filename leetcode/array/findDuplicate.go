@@ -13,6 +13,31 @@ Note:
 
 package leetcode
 
+// https://en.wikipedia.org/wiki/Cycle_detection#Tortoise_and_hare
+func findDuplicate(nums []int) int {
+	slow, fast := 0, 0
+	for {
+		slow = nums[slow]
+		fast = nums[nums[fast]]
+		if fast == slow {
+			break
+		}
+	}
+
+	finder := 0
+	for {
+		finder = nums[finder]
+		slow = nums[slow]
+		if finder == slow {
+			break
+		}
+	}
+
+	return slow
+}
+
+/*
+// Binary Search
 func findDuplicate(nums []int) int {
 	left, right, count := 1, len(nums)-1, 0 // 1 <= input num <= n, n = len(nums)-1
 
@@ -42,6 +67,7 @@ func findDuplicate(nums []int) int {
 	}
 	return right
 }
+*/
 
 /*
 // O(n^2)
