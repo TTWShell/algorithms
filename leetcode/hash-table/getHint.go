@@ -27,25 +27,19 @@ package leetcode
 import "fmt"
 
 func getHint(secret string, guess string) string {
-	cows, ignore, countA, countB := make([]int, 10), map[int]int{}, 0, 0
+	cows, countA, countB := make([]byte, 10), 0, 0
 	for idx, number := range []byte(secret) {
-		num := int(number - '0')
-		cows[num]++
+		cows[number-'0']++
 		if guess[idx] == number {
-			cows[num]--
 			countA++
-			ignore[idx] = 1
 		}
 	}
 
-	for idx, number := range guess {
-		if _, ok := ignore[idx]; !ok {
-			num := int(number - '0')
-			if cows[num] > 0 {
-				countB++
-				cows[num]--
-			}
+	for _, number := range guess {
+		if num := number - '0'; cows[num] > 0 {
+			countB++
+			cows[num]--
 		}
 	}
-	return fmt.Sprintf("%dA%dB", countA, countB)
+	return fmt.Sprintf("%dA%dB", countA, countB-countA)
 }
