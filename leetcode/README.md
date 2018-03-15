@@ -188,6 +188,7 @@
 | 289 | [Game of Life](array/gameOfLife.go) | [Medium][] |
 | 290 | [Word Pattern](hash-table/wordPattern.go) | [Easy][] |
 | 292 | [Nim Game](brainteaser/canWinNim.go) | [Easy][] |
+| 299 | [Bulls and Cows](hash-table/getHint.go) | [Medium][] |
 | 303 | [Range Sum Query - Immutable](dynamic-programming/NumArray.go) | [Easy][] |
 | 326 | [Power of Three](math/isPowerOfThree.go) | [Easy][] |
 | 332 | [Reconstruct Itinerary](graph/findItinerary.go) | [Medium][] |
