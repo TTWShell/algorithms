@@ -307,6 +307,7 @@
 | 804 | [Unique Morse Code Words](hash-table/uniqueMorseRepresentations.go) | [Easy][] |
 | 806 | [Number of Lines To Write String](string/numberOfLines.go) | [Easy][] |
 | 811 | [Subdomain Visit Count](hash-table/subdomainVisits.go) | [Easy][] |
+| 812 | [Largest Triangle Area](math/largestTriangleArea.go) | [Easy][] |
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
 [Medium]: https://leetcode.com/problemset/algorithms/?difficulty=Medium&status=Todo
