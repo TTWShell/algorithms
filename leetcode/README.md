@@ -306,6 +306,7 @@
 | 788 | [Rotated Digits](leetcode/others/rotatedDigits.go) | [Easy][] |
 | 804 | [Unique Morse Code Words](hash-table/uniqueMorseRepresentations.go) | [Easy][] |
 | 806 | [Number of Lines To Write String](string/numberOfLines.go) | [Easy][] |
+| 811 | [Subdomain Visit Count](hash-table/subdomainVisits.go) | [Easy][] |
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
 [Medium]: https://leetcode.com/problemset/algorithms/?difficulty=Medium&status=Todo
