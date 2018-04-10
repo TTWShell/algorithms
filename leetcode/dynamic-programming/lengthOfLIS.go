@@ -12,6 +12,24 @@ Follow up: Could you improve it to O(n log n) time complexity?
 
 package leetcode
 
+import (
+	"sort"
+)
+
+func lengthOfLIS(nums []int) int {
+	tail, res := make([]int, len(nums)), 0
+
+	for _, n := range nums {
+		i := sort.SearchInts(tail[:res], n)
+		tail[i] = n
+		if i == res {
+			res++
+		}
+	}
+	return res
+}
+
+/*
 func lengthOfLIS(nums []int) int {
 	max := func(a, b int) int {
 		if a > b {
@@ -32,3 +50,4 @@ func lengthOfLIS(nums []int) int {
 	}
 	return res
 }
+*/
