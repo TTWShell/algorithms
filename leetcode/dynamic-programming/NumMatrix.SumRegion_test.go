@@ -20,4 +20,8 @@ func Test_SumRegion(t *testing.T) {
 	assert.Equal(8, numMatrix.SumRegion(2, 1, 4, 3))
 	assert.Equal(11, numMatrix.SumRegion(1, 1, 2, 2))
 	assert.Equal(12, numMatrix.SumRegion(1, 2, 2, 4))
+
+	assert.Equal(3, numMatrix.SumRegion(0, 0, 0, 0))
+	assert.Equal(58, numMatrix.SumRegion(0, 0, 4, 4))
+	assert.Equal(4, numMatrix.SumRegion(0, 0, 0, 2))
 }

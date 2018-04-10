@@ -31,30 +31,24 @@ type NumMatrix struct {
 }
 
 func NumMatrixConstructor(matrix [][]int) NumMatrix {
-	row, col := len(matrix), len(matrix[0])
-	tmp := make([][]int, row)
-
-	// init idx==0 row
-	tmp[0] = make([]int, col, col)
-	tmp[0][0] = matrix[0][0]
-	for j := 1; j < col; j++ {
-		tmp[0][j] = tmp[0][j-1] + matrix[0][j]
+	row, col := len(matrix)+1, 1
+	if len(matrix) > 0 {
+		col = len(matrix[0]) + 1
 	}
 
-	// init 1 -- n rows
+	tmp := make([][]int, row, row)
+	tmp[0] = make([]int, col, col)
 	for i := 1; i < row; i++ {
 		tmp[i] = make([]int, col, col)
-		tmp[i][0] = tmp[i-1][0] + matrix[i][0]
 		for j := 1; j < col; j++ {
-			tmp[i][j] = matrix[i][j] + tmp[i][j-1] + tmp[i-1][j] - tmp[i-1][j-1]
+			tmp[i][j] = matrix[i-1][j-1] + tmp[i][j-1] + tmp[i-1][j] - tmp[i-1][j-1]
 		}
 	}
-
 	return NumMatrix{matrix: tmp}
 }
 
 func (this *NumMatrix) SumRegion(row1 int, col1 int, row2 int, col2 int) int {
-	return this.matrix[row2][col2] - this.matrix[row1-1][col2] - this.matrix[row2][col1-1] + this.matrix[row1-1][col1-1]
+	return this.matrix[row2+1][col2+1] - this.matrix[row1][col2+1] - this.matrix[row2+1][col1] + this.matrix[row1][col1]
 }
 
 /**
