@@ -34,7 +34,7 @@ Data structures and algorithms in go.
 * [图（Graph）](graph)
     - [x] [实现](graph/graph.go)
     - [x] [BFS](graph/bfs.go)
-    - [x] [BFS](graph/dfs.go)
+    - [x] [DFS](graph/dfs.go)
 * [堆（Heap）](heap)
     - [x] [实现](heap/heap.go)
 * [优先队列（Priority Queue）](priority-queue)
