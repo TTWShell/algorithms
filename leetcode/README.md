@@ -311,6 +311,7 @@
 | 811 | [Subdomain Visit Count](hash-table/subdomainVisits.go) | [Easy][] |
 | 812 | [Largest Triangle Area](math/largestTriangleArea.go) | [Easy][] |
 | 819 | [Most Common Word](string/mostCommonWord.go) | [Easy][] |
+| 821 | [Shortest Distance to a Character](string/shortestToChar.go) | [Easy][] |
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
 [Medium]: https://leetcode.com/problemset/algorithms/?difficulty=Medium&status=Todo
