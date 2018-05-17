@@ -314,6 +314,7 @@
 | 821 | [Shortest Distance to a Character](string/shortestToChar.go) | [Easy][] |
 | 824 | [Goat Latin](string/toGoatLatin.go) | [Easy][] |
 | 830 | [Positions of Large Groups](string/largeGroupPositions.go) | [Easy][] |
+| 832 | [Flipping an Image](array/flipAndInvertImage.go) | [Easy][] |
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
 [Medium]: https://leetcode.com/problemset/algorithms/?difficulty=Medium&status=Todo
