@@ -160,6 +160,7 @@
 | 219 | [Contains Duplicate II](hash-table/containsNearbyDuplicate.go) | [Easy][] |
 | 220 | [Contains Duplicate III](binary-search-tree/containsNearbyAlmostDuplicate.go) | [Medium][] |
 | 221 | [Maximal Square](dynamic-programming/maximalSquare.go) | [Medium][] |
+| 222 | [Count Complete Tree Nodes](tree/countNodes.go) | [Medium][] |
 | 223 | [Rectangle Area](math/computeArea.go) | [Medium][] |
 | 225 | [Implement Stack using Queues](stack/MyStack.go) | [Easy][] |
 | 226 | [Invert Binary Tree](tree/invertTree.go) | [Easy][] |
