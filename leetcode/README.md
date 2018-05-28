@@ -315,6 +315,8 @@
 | 824 | [Goat Latin](string/toGoatLatin.go) | [Easy][] |
 | 830 | [Positions of Large Groups](string/largeGroupPositions.go) | [Easy][] |
 | 832 | [Flipping an Image](array/flipAndInvertImage.go) | [Easy][] |
+| 836 | [Rectangle Overlap](math/isRectangleOverlap.go) | [Easy][] |
+
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
 [Medium]: https://leetcode.com/problemset/algorithms/?difficulty=Medium&status=Todo
