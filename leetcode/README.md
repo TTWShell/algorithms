@@ -316,6 +316,7 @@
 | 830 | [Positions of Large Groups](string/largeGroupPositions.go) | [Easy][] |
 | 832 | [Flipping an Image](array/flipAndInvertImage.go) | [Easy][] |
 | 836 | [Rectangle Overlap](math/isRectangleOverlap.go) | [Easy][] |
+| 840 | [Magic Squares In Grid](array/numMagicSquaresInside.go) | [Easy][] |
 
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
