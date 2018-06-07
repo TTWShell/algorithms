@@ -33,6 +33,7 @@ Can you solve it in O(N) time and O(1) space?
 
 package leetcode
 
+/*
 // Use stack.
 func backspaceCompare(S string, T string) bool {
 	helper := func(S string) (res []rune) {
@@ -56,4 +57,35 @@ func backspaceCompare(S string, T string) bool {
 		}
 	}
 	return true
+}
+*/
+
+// O(N) time and O(1) space. Two Pointers.
+func backspaceCompare(S string, T string) bool {
+	nextLast := func(S string, idx int) (nextIdx int) {
+		if idx == len(S)-1 && S[idx] != '#' {
+			return idx
+		}
+		for count := 0; idx >= 0; idx-- {
+			if S[idx] == '#' {
+				count++
+			} else if count > 0 {
+				count--
+			} else {
+				return idx
+			}
+		}
+		return -1
+	}
+
+	idxS, idxT := nextLast(S, len(S)-1), nextLast(T, len(T)-1)
+	for idxS >= 0 && idxT >= 0 {
+		if S[idxS] != T[idxT] {
+			return false
+		}
+		idxS--
+		idxT--
+		idxS, idxT = nextLast(S, idxS), nextLast(T, idxT)
+	}
+	return idxS == idxT
 }
