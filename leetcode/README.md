@@ -193,6 +193,7 @@
 | 300 | [Longest Increasing Subsequence](dynamic-programming/lengthOfLIS.go) | [Medium][] |
 | 303 | [Range Sum Query - Immutable](dynamic-programming/NumArray.go) | [Easy][] |
 | 304 | [Range Sum Query 2D - Immutable](dynamic-programming/NumMatrix.SumRegion.go) | [Medium][] |
+| 306 | [Additive Number](backtracking/isAdditiveNumber.go) | [Medium][] |
 | 326 | [Power of Three](math/isPowerOfThree.go) | [Easy][] |
 | 332 | [Reconstruct Itinerary](graph/findItinerary.go) | [Medium][] |
 | 342 | [Power of Four](bit-manipulation/isPowerOfFour.go) | [Easy][] |
