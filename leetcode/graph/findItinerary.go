@@ -18,7 +18,7 @@ Example 2:
     Another possible reconstruction is ["JFK","SFO","ATL","JFK","ATL","SFO"]. But it is larger in lexical order.
 */
 
-package leetcode
+package lgraph
 
 import "sort"
 

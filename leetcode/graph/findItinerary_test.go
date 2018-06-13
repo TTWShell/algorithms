@@ -1,4 +1,4 @@
-package leetcode
+package lgraph
 
 import (
 	"reflect"

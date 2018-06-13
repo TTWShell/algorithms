@@ -18,7 +18,7 @@ Note:
     You may assume that there are no duplicate edges in the input prerequisites.
 */
 
-package leetcode
+package lgraph
 
 func canFinish(numCourses int, prereqs [][]int) bool {
 	graph := make([][]int, numCourses)
