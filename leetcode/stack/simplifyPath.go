@@ -12,7 +12,7 @@ Corner Cases:
     In this case, you should ignore redundant slashes and return "/home/foo".
 */
 
-package leetcode
+package lstack
 
 import (
 	"github.com/TTWShell/algorithms/stack" // need copy stack.go when run in leetcode online

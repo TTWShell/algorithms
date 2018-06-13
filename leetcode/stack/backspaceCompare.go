@@ -31,7 +31,7 @@ Follow up:
 Can you solve it in O(N) time and O(1) space?
 */
 
-package leetcode
+package lstack
 
 /*
 // Use stack.

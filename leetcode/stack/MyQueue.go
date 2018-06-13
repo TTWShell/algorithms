@@ -13,7 +13,7 @@ Depending on your language, stack may not be supported natively. You may simulat
 You may assume that all operations are valid (for example, no pop or peek operations will be called on an empty queue).
 */
 
-package leetcode
+package lstack
 
 type MyQueue struct {
 	q []int

@@ -16,7 +16,7 @@ You may assume that all operations are valid (for example, no pop or top operati
 
 */
 
-package leetcode
+package lstack
 
 type MyStack struct {
 	q []int

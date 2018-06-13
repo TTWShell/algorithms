@@ -16,7 +16,7 @@ Example:
     minStack.getMin();   --> Returns -2.
 参考：https://discuss.leetcode.com/topic/11985/my-python-solution
 */
-package leetcode
+package lstack
 
 type MinStack struct {
 	all [][]int
