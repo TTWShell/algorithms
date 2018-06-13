@@ -20,7 +20,7 @@ Note:
     nums[i] will be an integer between 0 and 49,999.
 */
 
-package leetcode
+package larray
 
 func findShortestSubArray(nums []int) int {
 	type Info struct {

@@ -1,4 +1,4 @@
-package leetcode
+package larray
 
 func findLengthOfLCIS(nums []int) int {
 	res, tmp := 0, 1

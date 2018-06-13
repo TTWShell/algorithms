@@ -37,7 +37,7 @@ Try to come up as many solutions as you can, there are at least 3 different ways
 5 6 7 1 2 3 4
 */
 
-package leetcode
+package larray
 
 func rotate(nums []int, k int) {
 	n := len(nums)

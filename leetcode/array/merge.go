@@ -6,7 +6,7 @@ Note:
 关键的点在于题目已申明，nums1的空间是足够的，所以应该是nums1本身空间就是m+n。
 */
 
-package leetcode
+package larray
 
 func merge(nums1 []int, m int, nums2 []int, n int) {
 	k := m + n - 1

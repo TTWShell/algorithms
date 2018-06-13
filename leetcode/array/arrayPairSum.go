@@ -13,7 +13,7 @@ Note:
     All the integers in the array will be in the range of [-10000, 10000].
 */
 
-package leetcode
+package larray
 
 import "sort"
 

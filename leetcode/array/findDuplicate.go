@@ -11,7 +11,7 @@ Note:
 
 */
 
-package leetcode
+package larray
 
 // https://en.wikipedia.org/wiki/Cycle_detection#Tortoise_and_hare
 func findDuplicate(nums []int) int {

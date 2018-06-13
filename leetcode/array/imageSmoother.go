@@ -19,7 +19,7 @@ Note:
     The length and width of the given matrix are in the range of [1, 150].
 */
 
-package leetcode
+package larray
 
 func imageSmoother(M [][]int) [][]int {
 	colLen, rowLen := len(M), len(M[0])

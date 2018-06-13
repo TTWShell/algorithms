@@ -6,7 +6,7 @@ Find two lines, which together with x-axis forms a container, such that the cont
 Note: You may not slant the container and n is at least 2.
 */
 
-package leetcode
+package larray
 
 func maxArea(height []int) int {
 	// x轴上在1,2,...,n点上有许多垂直的线段，长度依次是a1, a2, ..., an

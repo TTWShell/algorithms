@@ -12,7 +12,7 @@ You should return the following matrix:
 ]
 */
 
-package leetcode
+package larray
 
 func generateMatrix(n int) [][]int {
 	matrix := make([][]int, n)

@@ -7,7 +7,7 @@ The digits are stored such that the most significant digit is at the head of the
 给定一个非负整数，表示为非空数组，然后执行+1运算。
 */
 
-package leetcode
+package larray
 
 func plusOne(digits []int) []int {
 	carry, length := 1, len(digits) // carry default = 1 for units + 1

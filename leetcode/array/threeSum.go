@@ -12,7 +12,7 @@ A solution set is:
 ]
 */
 
-package leetcode
+package larray
 
 import "sort"
 

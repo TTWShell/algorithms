@@ -12,7 +12,7 @@ Given the following matrix:
 You should return [1,2,3,6,9,8,7,4,5].
 */
 
-package leetcode
+package larray
 
 func spiralOrder(matrix [][]int) []int {
 	if len(matrix) == 0 {

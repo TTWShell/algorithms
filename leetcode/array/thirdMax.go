@@ -22,7 +22,7 @@ Both numbers with value 2 are both considered as second maximum.
 
 */
 
-package leetcode
+package larray
 
 const MaxUint = ^uint(0)
 const MaxInt = int(MaxUint >> 1)

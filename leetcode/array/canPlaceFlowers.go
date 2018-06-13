@@ -19,7 +19,7 @@ Note:
     n is a non-negative integer which won't exceed the input array size.
 */
 
-package leetcode
+package larray
 
 func canPlaceFlowers(flowerbed []int, n int) bool {
 	length, prev, next, count := len(flowerbed), 0, 0, 0

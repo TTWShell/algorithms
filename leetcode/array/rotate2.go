@@ -41,7 +41,7 @@ Example 2:
     ]
 */
 
-package leetcode
+package larray
 
 func rotate2(matrix [][]int) {
 	n := len(matrix)

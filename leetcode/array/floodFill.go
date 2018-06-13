@@ -25,7 +25,7 @@ Note:
     The value of each color in image[i][j] and newColor will be an integer in [0, 65535].
 */
 
-package leetcode
+package larray
 
 // https://zh.wikipedia.org/wiki/Flood_fill
 func floodFill(image [][]int, sr int, sc int, newColor int) [][]int {

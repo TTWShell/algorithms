@@ -12,7 +12,7 @@ Example 2:
 	Output: ["0","2->4","6","8->9"]
 */
 
-package leetcode
+package larray
 
 import "strconv"
 

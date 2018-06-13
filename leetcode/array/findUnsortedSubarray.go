@@ -14,7 +14,7 @@ Note:
     The input array may contain duplicates, so ascending order here means <=.
 */
 
-package leetcode
+package larray
 
 /*
 import "sort"

@@ -7,7 +7,7 @@ Given [0,1,0,2,1,0,1,3,2,1,2,1], return 6.
 http://www.leetcode.com/static/images/problemset/rainwatertrap.png
 */
 
-package leetcode
+package larray
 
 func trap(height []int) int {
 	// 2 pointers
