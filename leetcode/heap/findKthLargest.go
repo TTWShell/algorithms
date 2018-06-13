@@ -7,7 +7,7 @@ Note:
 You may assume k is always valid, 1 ≤ k ≤ array's length.
 */
 
-package leetcode
+package lheap
 
 // 快速选择算法
 func findKthLargest(nums []int, k int) int {
