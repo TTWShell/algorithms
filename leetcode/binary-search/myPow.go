@@ -2,7 +2,7 @@
 Implement pow(x, n).
 */
 
-package leetcode
+package lbs
 
 func myPow(x float64, n int) float64 {
 	if n < 0 {

@@ -8,7 +8,7 @@ You are given a target value to search. If found in the array return its index, 
 You may assume no duplicate exists in the array.
 */
 
-package leetcode
+package lbs
 
 func search(nums []int, target int) int {
 	left, right := 0, len(nums)

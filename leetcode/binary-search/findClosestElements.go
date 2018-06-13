@@ -16,7 +16,7 @@ Note:
 	3. Absolute value of elements in the array and x will not exceed 10^4
 */
 
-package leetcode
+package lbs
 
 func findClosestElements(arr []int, k int, x int) []int {
 	binarySearch := func(arr []int, target int) int {

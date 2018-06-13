@@ -10,7 +10,7 @@ Given [5, 7, 7, 8, 8, 10] and target value 8,
 return [3, 4].
 */
 
-package leetcode
+package lbs
 
 func searchRange(nums []int, target int) []int {
 	left, right := 0, len(nums)-1
