@@ -25,7 +25,7 @@ h                      s
      h            s
 */
 
-package leetcode
+package lll
 
 func isPalindrome(head *ListNode) bool {
 	slow, fast := head, head

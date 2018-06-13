@@ -8,7 +8,7 @@ Given 1->4->3->2->5->2 and x = 3,
 return 1->2->2->4->3->5.
 */
 
-package leetcode
+package lll
 
 func partition(head *ListNode, x int) *ListNode {
 	ltHead, gteHead := &ListNode{Val: 0}, &ListNode{Val: 0}

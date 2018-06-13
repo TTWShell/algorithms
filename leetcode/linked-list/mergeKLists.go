@@ -2,7 +2,7 @@
 Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
 */
 
-package leetcode
+package lll
 
 func mergeKLists(lists []*ListNode) *ListNode {
 	if len(lists) == 0 {
