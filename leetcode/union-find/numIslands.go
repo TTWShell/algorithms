@@ -18,7 +18,7 @@ Example 2:
 Answer: 3
 */
 
-package leetcode
+package lunionfind
 
 func numIslands(grid [][]byte) int {
 	var dfs func(i, j int)

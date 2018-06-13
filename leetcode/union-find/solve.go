@@ -16,7 +16,7 @@ X X X X
 X O X X
 */
 
-package leetcode
+package lunionfind
 
 import "github.com/TTWShell/algorithms/union-find"
 

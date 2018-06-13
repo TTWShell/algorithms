@@ -19,7 +19,7 @@ Note:
     The length of each words[i] and pairs[i][j] will be in the range [1, 20].
 */
 
-package leetcode
+package lunionfind
 
 import "github.com/TTWShell/algorithms/union-find"
 
