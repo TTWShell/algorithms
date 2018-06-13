@@ -4,7 +4,7 @@ Implement int sqrt(int x).
 Compute and return the square root of x.
 */
 
-package leetcode
+package lmath
 
 func mySqrt(x int) int {
 	if x <= 1 {

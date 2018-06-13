@@ -14,7 +14,7 @@ Note:
     Multiplication of any three numbers in the input won't exceed the range of 32-bit signed integer.
 */
 
-package leetcode
+package lmath
 
 import "sort"
 

@@ -18,7 +18,7 @@ Notes:
     Answers within 10^-6 of the true value will be accepted as correct.
 */
 
-package leetcode
+package lmath
 
 import "math"
 

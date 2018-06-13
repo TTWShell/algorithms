@@ -14,7 +14,7 @@ For example:
     AB -> 28
 */
 
-package leetcode
+package lmath
 
 func titleToNumber(s string) int {
 	r := 0

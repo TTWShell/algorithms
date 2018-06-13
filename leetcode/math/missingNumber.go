@@ -8,7 +8,7 @@ Note:
 Your algorithm should run in linear runtime complexity. Could you implement it using only constant extra space complexity?
 */
 
-package leetcode
+package lmath
 
 func missingNumber(nums []int) int {
 	// 注意题目中说的是find the one that is missing from the array 也就是只会缺一个数字

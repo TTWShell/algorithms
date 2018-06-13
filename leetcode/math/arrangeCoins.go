@@ -28,7 +28,7 @@ Example 2:
     Because the 4th row is incomplete, we return 3.
 */
 
-package leetcode
+package lmath
 
 func arrangeCoins(n int) int {
 	start, mid, end := 0, 0, n

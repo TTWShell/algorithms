@@ -9,7 +9,7 @@ Example:
 Note: The input number n will not exceed 100,000,000. (1e8)
 */
 
-package leetcode
+package lmath
 
 import "math"
 

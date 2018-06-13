@@ -11,7 +11,7 @@ Example 2:
     Output: False
 */
 
-package leetcode
+package lmath
 
 func judgeSquareSum(c int) bool {
 	// https://en.wikipedia.org/wiki/Fermat%27s_theorem_on_sums_of_two_squares

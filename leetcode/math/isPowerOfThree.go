@@ -5,7 +5,7 @@ Follow up:
 Could you do it without using any loop / recursion?
 */
 
-package leetcode
+package lmath
 
 func isPowerOfThree(n int) bool {
 	// 0-2^31: 3^19 = 1162261467

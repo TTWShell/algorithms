@@ -21,7 +21,7 @@ Notes:
     All coordinates in rectangles will be between -10^9 and 10^9.
 */
 
-package leetcode
+package lmath
 
 func isRectangleOverlap(rec1 []int, rec2 []int) bool {
 	if rec2[0] < rec1[0] {

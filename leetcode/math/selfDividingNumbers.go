@@ -16,7 +16,7 @@ Note:
     The boundaries of each input argument are 1 <= left <= right <= 10000.
 */
 
-package leetcode
+package lmath
 
 func selfDividingNumbers(left int, right int) []int {
 	res := []int{}

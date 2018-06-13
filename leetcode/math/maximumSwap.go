@@ -13,7 +13,7 @@ Note:
     The given number is in the range [0, 10^8]
 */
 
-package leetcode
+package lmath
 
 import (
 	"bytes"

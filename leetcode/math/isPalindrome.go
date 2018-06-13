@@ -3,7 +3,7 @@ Determine whether an integer is a palindrome. Do this without extra space.
 
 palindrome: like level、noon.
 */
-package leetcode
+package lmath
 
 func isPalindrome(x int) bool {
 	result, n := 0, x

@@ -13,7 +13,7 @@ Note: Your solution should be in logarithmic time complexity.
 	n!后缀0的个数 = n!质因子中5的个数
 */
 
-package leetcode
+package lmath
 
 func trailingZeroes(n int) int {
 	r := 0

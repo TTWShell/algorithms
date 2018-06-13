@@ -27,7 +27,7 @@ The 11th digit of the sequence 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ... is a 0, wh
 1000-9999	9000 * 4
 */
 
-package leetcode
+package lmath
 
 func findNthDigit(n int) int {
 	// 找出第n个digit所在的数
