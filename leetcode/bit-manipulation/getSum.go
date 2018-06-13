@@ -5,7 +5,7 @@ Example:
 Given a = 1 and b = 2, return 3.
 */
 
-package leetcode
+package lbm
 
 func getSum(a int, b int) int {
 	if a == 0 {

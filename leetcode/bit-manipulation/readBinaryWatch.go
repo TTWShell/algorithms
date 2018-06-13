@@ -19,7 +19,7 @@ Note:
     The minute must be consist of two digits and may contain a leading zero, for example "10:2" is not valid, it should be "10:02".
 */
 
-package leetcode
+package lbm
 
 import "fmt"
 

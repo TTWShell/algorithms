@@ -4,7 +4,7 @@ Given a range [m, n] where 0 <= m <= n <= 2147483647, return the bitwise AND of 
 For example, given the range [5, 7], you should return 4.
 */
 
-package leetcode
+package lbm
 
 func rangeBitwiseAnd(m int, n int) int {
 	for offset := uint(0); m&n != 0; offset++ {

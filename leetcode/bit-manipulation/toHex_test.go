@@ -1,4 +1,4 @@
-package leetcode
+package lbm
 
 import "testing"
 

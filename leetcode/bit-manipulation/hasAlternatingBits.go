@@ -22,7 +22,7 @@ Example 4:
     Explanation:
     The binary representation of 10 is: 1010.
 */
-package leetcode
+package lbm
 
 // others: https://discuss.leetcode.com/category/1550/binary-number-with-alternating-bits
 func hasAlternatingBits(n int) bool {
