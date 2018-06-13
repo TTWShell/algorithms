@@ -27,7 +27,7 @@ Return:
 ]
 */
 
-package leetcode
+package lothers
 
 import "strconv"
 

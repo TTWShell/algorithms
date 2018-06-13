@@ -22,7 +22,7 @@ UPDATE (2017/1/20):
     The wordList parameter had been changed to a list of strings (instead of a set of strings). Please reload the code definition to get the latest changes.
 */
 
-package leetcode
+package lothers
 
 func ladderLength(beginWord string, endWord string, wordList []string) int {
 	words := make(map[string]bool, len(wordList))

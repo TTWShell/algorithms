@@ -13,7 +13,7 @@ Note:
     All the scores of athletes are guaranteed to be unique.
 */
 
-package leetcode
+package lothers
 
 import (
 	"sort"
