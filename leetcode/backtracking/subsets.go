@@ -18,7 +18,7 @@ If nums = [1,2,3], a solution is:
 ]
 */
 
-package leetcode
+package lbacktracking
 
 func subsets(nums []int) [][]int {
 	var helper func(nums []int, k int) [][]int

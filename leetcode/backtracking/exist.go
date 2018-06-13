@@ -16,7 +16,7 @@ word = "SEE", -> returns true,
 word = "ABCB", -> returns false.
 */
 
-package leetcode
+package lbacktracking
 
 func exist(board [][]byte, word string) bool {
 	if len(board) == 0 || len(word) == 0 {

@@ -19,7 +19,7 @@ Follow up:
 How would you handle overflow for very large input integers?
 */
 
-package leetcode
+package lbacktracking
 
 import "bytes"
 

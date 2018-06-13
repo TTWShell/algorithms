@@ -15,7 +15,7 @@ Given n and k, return the kth permutation sequence.
 Note: Given n will be between 1 and 9 inclusive.
 */
 
-package leetcode
+package lbacktracking
 
 import (
 	"strconv"

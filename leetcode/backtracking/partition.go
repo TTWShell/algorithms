@@ -12,7 +12,7 @@ Return
 ]
 */
 
-package leetcode
+package lbacktracking
 
 func partition(s string) [][]string {
 	res := [][]string{}

@@ -1,4 +1,4 @@
-package leetcode
+package lbacktracking
 
 import (
 	"github.com/stretchr/testify/assert"

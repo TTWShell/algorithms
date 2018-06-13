@@ -14,7 +14,7 @@ If n = 4 and k = 2, a solution is:
 ]
 */
 
-package leetcode
+package lbacktracking
 
 func combine(n int, k int) [][]int {
 	if n < 1 || k < 1 || k > n {

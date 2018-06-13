@@ -10,7 +10,7 @@ For example,
     ]
 */
 
-package leetcode
+package lbacktracking
 
 import "sort"
 

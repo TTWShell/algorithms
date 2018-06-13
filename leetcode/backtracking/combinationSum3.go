@@ -12,7 +12,7 @@ Example 2:
 	[[1,2,6], [1,3,5], [2,3,4]]
 */
 
-package leetcode
+package lbacktracking
 
 func combinationSum3(k int, n int) [][]int {
 	var helper func(k, n, start int) [][]int
