@@ -1,4 +1,4 @@
-package leetcode
+package lbst
 
 import (
 	"github.com/stretchr/testify/assert"
