@@ -22,7 +22,7 @@ Note:
 You should be familiar with how a Trie works. If not, please work on this problem: Implement Trie (Prefix Tree) first.
 */
 
-package leetcode
+package ldesign
 
 type wdNode struct {
 	Val   byte

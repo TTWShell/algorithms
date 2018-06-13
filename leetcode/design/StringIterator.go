@@ -26,7 +26,7 @@ Example:
     iterator.next(); // return ' '
 */
 
-package leetcode
+package ldesign
 
 import "strconv"
 
