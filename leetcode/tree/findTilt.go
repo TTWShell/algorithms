@@ -21,7 +21,7 @@ Note:
     All the tilt values won't exceed the range of 32-bit integer.
 */
 
-package leetcode
+package ltree
 
 func findTilt(root *TreeNode) int {
 	sum := 0

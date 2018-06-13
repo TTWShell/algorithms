@@ -34,7 +34,7 @@ Example 2:
     Return false.
 */
 
-package leetcode
+package ltree
 
 func isSubtree(s *TreeNode, t *TreeNode) bool {
 	var isSameTree func(p *TreeNode, q *TreeNode) bool

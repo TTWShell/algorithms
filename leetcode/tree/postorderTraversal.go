@@ -13,7 +13,7 @@ return [3,2,1].
 Note: Recursive solution is trivial, could you do it iteratively?
 */
 
-package leetcode
+package ltree
 
 /*
 func postorderTraversal(root *TreeNode) []int {

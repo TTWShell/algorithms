@@ -13,7 +13,7 @@ return [1,3,2].
 Note: Recursive solution is trivial, could you do it iteratively?
 */
 
-package leetcode
+package ltree
 
 import "github.com/TTWShell/algorithms/stack" // need copy stack.go when run in leetcode online
 

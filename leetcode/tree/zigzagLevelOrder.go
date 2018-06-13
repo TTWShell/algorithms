@@ -16,7 +16,7 @@ For example:
     ]
 */
 
-package leetcode
+package ltree
 
 func zigzagLevelOrder(root *TreeNode) [][]int {
 	res := [][]int{}

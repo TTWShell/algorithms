@@ -26,7 +26,7 @@ Return 3. The paths that sum to 8 are:
 3. -3 -> 11
 */
 
-package leetcode
+package ltree
 
 func pathSum(root *TreeNode, sum int) int {
 	if root == nil {

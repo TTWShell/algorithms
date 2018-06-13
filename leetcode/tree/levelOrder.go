@@ -16,7 +16,7 @@ For example:
     ]
 */
 
-package leetcode
+package ltree
 
 func levelOrder(root *TreeNode) [][]int {
 	res := [][]int{}

@@ -11,7 +11,7 @@ Given the following binary tree,
 You should return [1, 3, 4].
 */
 
-package leetcode
+package ltree
 
 func rightSideView(root *TreeNode) []int {
 	if root == nil {

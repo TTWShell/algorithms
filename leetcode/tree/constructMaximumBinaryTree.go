@@ -21,7 +21,7 @@ Note:
     The size of the given array will be in the range [1,1000].
 */
 
-package leetcode
+package ltree
 
 func constructMaximumBinaryTree(nums []int) *TreeNode {
 	if len(nums) == 0 {

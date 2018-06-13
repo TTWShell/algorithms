@@ -20,7 +20,7 @@ Example:
 Note: There are at least two nodes in this BST.
 */
 
-package leetcode
+package ltree
 
 import "math"
 
