@@ -19,7 +19,7 @@ Note:
 	The length of each words[i] and pairs[i][j] will be in the range [1, 20].
 */
 
-package leetcode
+package lht
 
 func areSentencesSimilar(words1 []string, words2 []string, pairs [][]string) bool {
 	if len(words1) != len(words2) {

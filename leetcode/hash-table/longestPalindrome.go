@@ -17,7 +17,7 @@ Explanation:
     One longest palindrome that can be built is "dccaccd", whose length is 7.
 */
 
-package leetcode
+package lht
 
 func longestPalindrome(s string) int {
 	maps := make([]int, 26*2)

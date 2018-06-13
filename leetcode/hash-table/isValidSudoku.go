@@ -11,7 +11,7 @@ Note:
 A valid Sudoku board (partially filled) is not necessarily solvable. Only the filled cells need to be validated.
 */
 
-package leetcode
+package lht
 
 func isValidSudoku(board [][]byte) bool {
 	var rowMask, colMask, areaMask [9][9]bool

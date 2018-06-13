@@ -10,7 +10,7 @@ Since the researcher has 3 papers with at least 3 citations each and the remaini
 Note: If there are several possible values for h, the maximum one is taken as the h-index.
 */
 
-package leetcode
+package lht
 
 /*
 // 1. sort

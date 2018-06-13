@@ -22,7 +22,7 @@ Note:
     The length of words[i] will be in the range [1, 30].
 */
 
-package leetcode
+package lht
 
 import "sort"
 

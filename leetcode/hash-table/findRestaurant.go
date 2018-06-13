@@ -24,7 +24,7 @@ Note:
     No duplicates in both lists.
 */
 
-package leetcode
+package lht
 
 func findRestaurant(list1 []string, list2 []string) []string {
 	maps := make(map[string]int, len(list1))

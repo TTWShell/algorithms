@@ -12,7 +12,7 @@ Follow up:
 What if the inputs contain unicode characters? How would you adapt your solution to such case?
 */
 
-package leetcode
+package lht
 
 func isAnagram(s string, t string) bool {
 	if len(s) != len(t) {

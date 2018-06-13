@@ -22,7 +22,7 @@ Note:
 	The number in given array is in range [-100,000, 100,000].
 */
 
-package leetcode
+package lht
 
 func distributeCandies(candies []int) int {
 	min := func(a, b int) int {

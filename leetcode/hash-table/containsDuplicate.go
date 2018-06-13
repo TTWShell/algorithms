@@ -4,7 +4,7 @@ Your function should return true if any value appears at least twice in the arra
 and it should return false if every element is distinct.
 */
 
-package leetcode
+package lht
 
 func containsDuplicate(nums []int) bool {
 	m := make(map[int]int, len(nums))

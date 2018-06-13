@@ -6,7 +6,7 @@ and the absolute difference between i and j is at most k.
 给出一个整数数组，判断该数组内是否有两个元素值是相同的，且他们的索引值相差不大于k，是则返回true，否则返回false
 */
 
-package leetcode
+package lht
 
 func containsNearbyDuplicate(nums []int, k int) bool {
 	maps := make(map[int]int)

@@ -12,7 +12,7 @@ Return:
 Note: All inputs will be in lower-case.
 */
 
-package leetcode
+package lht
 
 import (
 	"bytes"
