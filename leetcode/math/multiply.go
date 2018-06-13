@@ -9,7 +9,7 @@ Note:
     4. You must not use any built-in BigInteger library or convert the inputs to integer directly.
 */
 
-package leetcode
+package lmath
 
 func multiply(num1 string, num2 string) string {
 	sum := make([]byte, len(num1)+len(num2))

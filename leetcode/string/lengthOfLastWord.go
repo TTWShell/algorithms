@@ -10,7 +10,7 @@ Given s = "Hello World",
 return 5.
 */
 
-package leetcode
+package lstring
 
 import "unicode"
 

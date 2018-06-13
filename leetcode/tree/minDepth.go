@@ -6,7 +6,7 @@ The minimum depth is the number of nodes along the shortest path from the root n
 最小深度是指从根节点出发到达最近的叶子节点所需要经过的节点个数。
 */
 
-package leetcode
+package ltree
 
 func min(a, b int) int {
 	if a > b {

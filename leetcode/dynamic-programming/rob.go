@@ -7,7 +7,7 @@ d[i] = max(d[i-2]+nums[i], d[i-1])
 第i次要么抢，要么不抢，收益总为：第i－2次＋本次 与 i－1 的最大值。
 */
 
-package leetcode
+package ldp
 
 func rob(nums []int) int {
 	max := func(a, b int) int {

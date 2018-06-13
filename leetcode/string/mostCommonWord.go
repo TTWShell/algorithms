@@ -27,7 +27,7 @@ Note:
     Words only consist of letters, never apostrophes or other punctuation symbols.
 */
 
-package leetcode
+package lstring
 
 import "bytes"
 

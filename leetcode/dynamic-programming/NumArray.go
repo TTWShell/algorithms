@@ -13,7 +13,7 @@ Note:
     There are many calls to sumRange function.
 */
 
-package leetcode
+package ldp
 
 type NumArray struct {
 	sums []int

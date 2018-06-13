@@ -12,7 +12,7 @@ Write a function to determine if a given target is in the array.
 The array may contain duplicates.
 */
 
-package leetcode
+package lbs
 
 func search2(nums []int, target int) bool {
 	if len(nums) == 0 {

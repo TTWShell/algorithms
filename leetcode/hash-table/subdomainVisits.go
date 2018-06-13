@@ -36,7 +36,7 @@ Notes:
 	The answer output can be returned in any order.
 */
 
-package leetcode
+package lht
 
 import (
 	"fmt"

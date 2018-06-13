@@ -18,7 +18,7 @@ Example:
     Output: 6
 */
 
-package leetcode
+package ltree
 
 /**
  * Definition for a binary tree node.

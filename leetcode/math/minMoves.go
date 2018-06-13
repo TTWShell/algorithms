@@ -15,7 +15,7 @@ Explanation:
     [1,2,3]  =>  [2,3,3]  =>  [3,4,3]  =>  [4,4,4]
 */
 
-package leetcode
+package lmath
 
 func minMoves(nums []int) int {
 	// 给n-1个数字加1，效果等同于给那个未被选中的数字减1 ----> 所有数字都减小到最小值

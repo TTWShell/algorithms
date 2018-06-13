@@ -12,7 +12,7 @@ Example 2:
     Input: "LL"
     Output: false
 */
-package leetcode
+package lstring
 
 func judgeCircle(moves string) bool {
 	directions := make([]int, 4, 4)

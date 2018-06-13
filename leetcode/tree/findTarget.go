@@ -25,7 +25,7 @@ Example 2:
     Output: False
 */
 
-package leetcode
+package ltree
 
 func findTarget(root *TreeNode, k int) bool {
 	return find2(root, root, k)

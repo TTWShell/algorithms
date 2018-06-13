@@ -5,7 +5,7 @@ Note:
 Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
 */
 
-package leetcode
+package lbm
 
 func singleNumber2(nums []int) int {
 	a, b := 0, 0

@@ -19,9 +19,9 @@ Note:
     The length of each words[i] and pairs[i][j] will be in the range [1, 20].
 */
 
-package leetcode
+package lunionfind
 
-import "github.com/TTWShell/algorithms/union-find"
+import "github.com/TTWShell/algorithms/data-structure/union-find"
 
 func areSentencesSimilarTwo(words1 []string, words2 []string, pairs [][]string) bool {
 	if len(words1) != len(words2) {

@@ -16,9 +16,9 @@ X X X X
 X O X X
 */
 
-package leetcode
+package lunionfind
 
-import "github.com/TTWShell/algorithms/union-find"
+import "github.com/TTWShell/algorithms/data-structure/union-find"
 
 func solve(board [][]byte) {
 	if len(board) == 0 {

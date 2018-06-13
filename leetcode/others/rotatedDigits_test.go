@@ -1,4 +1,4 @@
-package leetcode
+package lothers
 
 import (
 	"github.com/stretchr/testify/assert"

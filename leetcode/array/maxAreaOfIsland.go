@@ -19,7 +19,7 @@ Example 2:
 Note: The length of each dimension in the given grid does not exceed 50.
 */
 
-package leetcode
+package larray
 
 func maxAreaOfIsland(grid [][]int) int {
 	var dfs func(grid [][]int, row, col int) (sum int)

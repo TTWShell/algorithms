@@ -11,7 +11,7 @@ For example,
     ["AAAAACCCCC", "CCCCCAAAAA"].
 */
 
-package leetcode
+package lht
 
 func findRepeatedDnaSequences(s string) []string {
 	if len(s) <= 10 {

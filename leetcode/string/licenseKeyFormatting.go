@@ -27,7 +27,7 @@ Note:
     String S is non-empty.
 */
 
-package leetcode
+package lstring
 
 import "strings"
 

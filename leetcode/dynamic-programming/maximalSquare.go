@@ -10,7 +10,7 @@ For example, given the following matrix:
 Return 4.
 */
 
-package leetcode
+package ldp
 
 func maximalSquare(matrix [][]byte) int {
 	if len(matrix) == 0 || len(matrix[0]) == 0 {

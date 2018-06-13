@@ -18,7 +18,7 @@ Note:
     A and B will have length at most 100.
 */
 
-package leetcode
+package lstring
 
 func rotateString(A string, B string) bool {
 	if len(A) != len(B) {

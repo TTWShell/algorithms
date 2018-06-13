@@ -8,7 +8,7 @@ Note:
 Could you optimize your algorithm to use only O(k) extra space?
 */
 
-package leetcode
+package larray
 
 func getRow(rowIndex int) []int {
 	r := make([]int, rowIndex+1)

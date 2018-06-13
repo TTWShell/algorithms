@@ -13,7 +13,7 @@ Given the below binary tree and sum = 22,
 return true, as there exist a root-to-leaf path 5->4->11->2 which sum is 22.
 */
 
-package leetcode
+package ltree
 
 func hasPathSum(root *TreeNode, sum int) bool {
 	if root == nil {

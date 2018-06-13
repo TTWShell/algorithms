@@ -6,9 +6,9 @@ jobs:
     working_directory: /go/src/github.com/TTWShell/algorithms
     steps:
       - checkout
-      - run: go get github.com/TTWShell/algorithms/heap
-      - run: go get github.com/TTWShell/algorithms/stack
-      - run: go get github.com/TTWShell/algorithms/union-find
+      - run: go get github.com/TTWShell/algorithms/data-structure/heap
+      - run: go get github.com/TTWShell/algorithms/data-structure/stack
+      - run: go get github.com/TTWShell/algorithms/data-structure/union-find
       - run: go get github.com/stretchr/testify/assert
       - run:
           name: Run unit tests
@@ -23,9 +23,9 @@ jobs:
     working_directory: /go/src/github.com/TTWShell/algorithms
     steps:
       - checkout
-      - run: go get github.com/TTWShell/algorithms/heap
-      - run: go get github.com/TTWShell/algorithms/stack
-      - run: go get github.com/TTWShell/algorithms/union-find
+      - run: go get github.com/TTWShell/algorithms/data-structure/heap
+      - run: go get github.com/TTWShell/algorithms/data-structure/stack
+      - run: go get github.com/TTWShell/algorithms/data-structure/union-find
       - run: go get github.com/stretchr/testify/assert
       - run:
           name: Run unit tests

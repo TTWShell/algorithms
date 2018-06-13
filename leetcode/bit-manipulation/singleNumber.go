@@ -20,7 +20,7 @@ So..... if N is the single number
 	= N
 */
 
-package leetcode
+package lbm
 
 func singleNumber(nums []int) int {
 	/*	maps := make(map[int]int)

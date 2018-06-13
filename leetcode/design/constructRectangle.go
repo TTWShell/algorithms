@@ -20,7 +20,7 @@ Explanation:
     So the length L is 2, and the width W is 2.
 */
 
-package leetcode
+package ldesign
 
 import "math"
 

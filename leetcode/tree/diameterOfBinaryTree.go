@@ -15,7 +15,7 @@ Example:
 Note: The length of path between two nodes is represented by the number of edges between them.
 */
 
-package leetcode
+package ltree
 
 func diameterOfBinaryTree(root *TreeNode) int {
 	// 使用匿名函数在这里仅仅是为了方便隔离namespace

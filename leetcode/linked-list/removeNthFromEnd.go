@@ -12,7 +12,7 @@ Note:
     Try to do this in one pass.
 */
 
-package leetcode
+package lll
 
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	res := &ListNode{}

@@ -11,7 +11,7 @@ Note:
     You may assume the input string will only contain letters of alphabet.
 */
 
-package leetcode
+package lht
 
 func findWords(words []string) []string {
 	alphabets := map[rune]int{

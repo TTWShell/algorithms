@@ -16,7 +16,7 @@ If nums = [1,2,2], a solution is:
 ]
 */
 
-package leetcode
+package lbacktracking
 
 import "sort"
 

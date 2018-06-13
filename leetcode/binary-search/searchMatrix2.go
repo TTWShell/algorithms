@@ -21,7 +21,7 @@ Given target = 5, return true.
 Given target = 20, return false.
 */
 
-package leetcode
+package lbs
 
 // O(n+m)
 func searchMatrix2(matrix [][]int, target int) bool {

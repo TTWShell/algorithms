@@ -9,7 +9,7 @@ Input: numbers={2, 7, 11, 15}, target=9
 Output: index1=1, index2=2
 */
 
-package leetcode
+package larray
 
 func twoSum2(numbers []int, target int) []int {
 	start, end := 0, len(numbers)-1

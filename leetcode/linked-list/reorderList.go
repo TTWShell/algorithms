@@ -8,7 +8,7 @@ For example,
 Given {1,2,3,4}, reorder it to {1,4,2,3}.
 */
 
-package leetcode
+package lll
 
 func reorderList(head *ListNode) {
 	if head == nil {

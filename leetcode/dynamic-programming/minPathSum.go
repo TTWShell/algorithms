@@ -4,7 +4,7 @@ Given a m x n grid filled with non-negative numbers, find a path from top left t
 Note: You can only move either down or right at any point in time.
 */
 
-package leetcode
+package ldp
 
 func minPathSum(grid [][]int) int {
 	m, n := len(grid), len(grid[0])

@@ -20,7 +20,7 @@ Example: 19 is a happy number
 如果一直循环但不是1的话，就不是快乐数。
 */
 
-package leetcode
+package lmath
 
 // 数学解法：https://en.wikipedia.org/wiki/Happy_number
 func isHappy(n int) bool {

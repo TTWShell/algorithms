@@ -31,7 +31,7 @@ Note:
     3. words[i] will only consist of lowercase letters.
 */
 
-package leetcode
+package lht
 
 import "bytes"
 

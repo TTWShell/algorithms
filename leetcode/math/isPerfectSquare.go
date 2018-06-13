@@ -24,7 +24,7 @@ https://discuss.leetcode.com/topic/49339/o-1-time-c-solution-inspired-by-q_rsqrt
 https://en.wikipedia.org/wiki/Fast_inverse_square_root
 */
 
-package leetcode
+package lmath
 
 func isPerfectSquare(num int) bool {
 	i := 1

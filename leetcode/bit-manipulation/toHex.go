@@ -22,7 +22,7 @@ Example 2:
     "ffffffff"
 */
 
-package leetcode
+package lbm
 
 func toHex(num int) string {
 	if num == 0 {

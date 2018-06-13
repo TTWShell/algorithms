@@ -13,7 +13,7 @@ https://en.wikipedia.org/wiki/Digital_root
 d(n)= 1 + ((n-1) mod 9)
 */
 
-package leetcode
+package lmath
 
 func addDigits(num int) int {
 	return 1 + (num-1)%9

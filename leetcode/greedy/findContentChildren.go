@@ -30,7 +30,7 @@ Explanation:
     You need to output 2.
 */
 
-package leetcode
+package lgreedy
 
 import "sort"
 

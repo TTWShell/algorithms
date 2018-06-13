@@ -8,7 +8,7 @@ Follow up:
 What if the BST is modified (insert/delete operations) often and you need to find the kth smallest frequently? How would you optimize the kthSmallest routine?
 */
 
-package leetcode
+package ltree
 
 func kthSmallest(root *TreeNode, k int) int {
 	stack := []*TreeNode{}

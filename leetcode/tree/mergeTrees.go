@@ -22,7 +22,7 @@ Example 1:
 Note: The merging process must start from the root nodes of both trees.
 */
 
-package leetcode
+package ltree
 
 func mergeTrees(t1 *TreeNode, t2 *TreeNode) *TreeNode {
 	if t1 == nil && t2 == nil {

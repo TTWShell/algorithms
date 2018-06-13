@@ -52,7 +52,7 @@ Example 4:
 Note: Answer will in the range of 32-bit signed integer.
 */
 
-package leetcode
+package ltree
 
 func widthOfBinaryTree(root *TreeNode) int {
 	if root == nil {

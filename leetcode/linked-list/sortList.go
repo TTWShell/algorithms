@@ -2,7 +2,7 @@
 Sort a linked list in O(n log n) time using constant space complexity.
 */
 
-package leetcode
+package lll
 
 func sortList(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {

@@ -18,7 +18,7 @@ Note:
 Bonus points if you could solve it both recursively and iteratively.
 */
 
-package leetcode
+package ltree
 
 /**
  * Definition for a binary tree node.

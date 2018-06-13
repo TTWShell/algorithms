@@ -9,7 +9,7 @@ Example:
     Output: 5
 */
 
-package leetcode
+package lstring
 
 func countSegments(s string) int {
 	count, char := 0, 0

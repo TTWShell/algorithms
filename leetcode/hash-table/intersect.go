@@ -13,7 +13,7 @@ Follow up:
     What if elements of nums2 are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?
 */
 
-package leetcode
+package lht
 
 func intersect(nums1 []int, nums2 []int) []int {
 	m, n := len(nums1), len(nums2)

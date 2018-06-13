@@ -13,7 +13,7 @@ Return
 ]
 */
 
-package leetcode
+package larray
 
 func generate(numRows int) [][]int {
 	r := [][]int{}

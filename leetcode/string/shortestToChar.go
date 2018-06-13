@@ -13,7 +13,7 @@ Note:
     All letters in S and C are lowercase.
 */
 
-package leetcode
+package lstring
 
 func shortestToChar(S string, C byte) []int {
 	left, res := -1, make([]int, len(S))

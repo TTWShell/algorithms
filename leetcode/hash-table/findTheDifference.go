@@ -18,7 +18,7 @@ Example:
     'e' is the letter that was added.
 */
 
-package leetcode
+package lht
 
 func findTheDifference(s string, t string) byte {
 	ss, ts := make([]int, 26, 26), make([]int, 26, 26)

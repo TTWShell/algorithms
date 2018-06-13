@@ -6,7 +6,7 @@ Given 1->2->3->3->4->4->5, return 1->2->5.
 Given 1->1->1->2->3, return 2->3.
 */
 
-package leetcode
+package lll
 
 func deleteDuplicates2(head *ListNode) *ListNode {
 	fakeHead := &ListNode{0, head}

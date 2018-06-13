@@ -1,4 +1,4 @@
-package leetcode
+package lunionfind
 
 import (
 	"github.com/stretchr/testify/assert"

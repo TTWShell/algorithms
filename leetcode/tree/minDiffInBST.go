@@ -23,7 +23,7 @@ The size of the BST will be between 2 and 100.
 The BST is always valid, each node's value is an integer, and each node's value is different.
 */
 
-package leetcode
+package ltree
 
 func minDiffInBST(root *TreeNode) int {
 	pre, cur, res := root.Val, root.Val, 0

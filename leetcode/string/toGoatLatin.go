@@ -32,7 +32,7 @@ Notes:
     2. 1 <= S.length <= 150.
 */
 
-package leetcode
+package lstring
 
 import "bytes"
 

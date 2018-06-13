@@ -12,7 +12,7 @@ For example:
     28 -> AB
 */
 
-package leetcode
+package lmath
 
 func convertToTitle(n int) string {
 	r := ""

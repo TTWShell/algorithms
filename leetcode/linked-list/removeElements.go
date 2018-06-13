@@ -6,7 +6,7 @@ Given: 1 --> 2 --> 6 --> 3 --> 4 --> 5 --> 6, val = 6
 Return: 1 --> 2 --> 3 --> 4 --> 5
 */
 
-package leetcode
+package lll
 
 func removeElements(head *ListNode, val int) *ListNode {
 	var r, cur, temp *ListNode

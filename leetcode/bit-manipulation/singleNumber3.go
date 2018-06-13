@@ -10,7 +10,7 @@ Note:
     Your algorithm should run in linear runtime complexity. Could you implement it using only constant space complexity?
 */
 
-package leetcode
+package lbm
 
 func singleNumber3(nums []int) []int {
 	diff := 0

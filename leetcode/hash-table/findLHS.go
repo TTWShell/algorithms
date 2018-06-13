@@ -11,7 +11,7 @@ Example 1:
 Note: The length of the input array will not exceed 20,000.
 */
 
-package leetcode
+package lht
 
 func findLHS(nums []int) int {
 	maps := make(map[int]int, len(nums))

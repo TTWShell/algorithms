@@ -2,7 +2,7 @@
 Sort a linked list using insertion sort.
 */
 
-package leetcode
+package lll
 
 func insertionSortList(head *ListNode) *ListNode {
 	var res *ListNode

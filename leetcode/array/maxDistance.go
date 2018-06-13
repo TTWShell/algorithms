@@ -18,7 +18,7 @@ Note:
     The integers in the m arrays will be in the range of [-10000, 10000].
 */
 
-package leetcode
+package larray
 
 import "math"
 

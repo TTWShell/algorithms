@@ -16,7 +16,7 @@ Example:
         The two boomerangs are [[1,0],[0,0],[2,0]] and [[1,0],[2,0],[0,0]]
 */
 
-package leetcode
+package lht
 
 func numberOfBoomerangs(points [][]int) int {
 	count, n := 0, len(points)

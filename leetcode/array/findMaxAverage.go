@@ -10,7 +10,7 @@ Note:
     Elements of the given array will be in the range [-10,000, 10,000].
 */
 
-package leetcode
+package larray
 
 func findMaxAverage(nums []int, k int) float64 {
 	var max, curSum int

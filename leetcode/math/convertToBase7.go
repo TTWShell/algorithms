@@ -10,7 +10,7 @@ Example 2:
 Note: The input will be in range of [-1e7, 1e7].
 */
 
-package leetcode
+package lmath
 
 import (
 	"strconv"

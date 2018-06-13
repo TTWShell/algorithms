@@ -20,7 +20,7 @@ Example:
 换句话说，它就是将一个字符串变换成另外一个字符串所需要替换的字符个数。
 */
 
-package leetcode
+package lbm
 
 func hammingDistance(x int, y int) int {
 	res := x ^ y

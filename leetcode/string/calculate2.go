@@ -12,7 +12,7 @@ Some examples:
 Note: Do not use the eval built-in library function.
 */
 
-package leetcode
+package lstring
 
 func calculate2(s string) int {
 	numStack, operatorStack := []int{}, []byte{}

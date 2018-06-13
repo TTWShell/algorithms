@@ -15,7 +15,7 @@ Consider the following matrix:
 Given target = 3, return true.
 */
 
-package leetcode
+package lbs
 
 func searchMatrix(matrix [][]int, target int) bool {
 	m := len(matrix)

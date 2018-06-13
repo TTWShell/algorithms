@@ -12,7 +12,7 @@ Notes:
 You may assume pattern contains only lowercase letters, and str contains lowercase letters separated by a single space.
 */
 
-package leetcode
+package lht
 
 import "strings"
 

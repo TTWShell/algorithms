@@ -27,7 +27,7 @@ Explanation:
     The substring with start index = 2 is "ab", which is an anagram of "ab".
 */
 
-package leetcode
+package lht
 
 func findAnagrams(s string, p string) []int {
 	// https://discuss.leetcode.com/topic/64434/shortest-concise-java-o-n-sliding-window-solution

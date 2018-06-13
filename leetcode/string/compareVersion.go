@@ -11,7 +11,7 @@ Here is an example of version numbers ordering:
 0.1 < 1.1 < 1.2 < 13.37
 */
 
-package leetcode
+package lstring
 
 import (
 	"strconv"

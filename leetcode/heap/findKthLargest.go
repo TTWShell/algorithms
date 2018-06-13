@@ -7,7 +7,7 @@ Note:
 You may assume k is always valid, 1 ≤ k ≤ array's length.
 */
 
-package leetcode
+package lheap
 
 // 快速选择算法
 func findKthLargest(nums []int, k int) int {
@@ -35,7 +35,7 @@ func findKthLargest(nums []int, k int) int {
 
 /*
 // 基于堆的实现
-import "github.com/TTWShell/algorithms/heap"
+import "github.com/TTWShell/algorithms/data-structure/heap"
 
 type findKthLargestInt int
 

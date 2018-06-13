@@ -16,7 +16,7 @@ Note:
 You may assume both s and t have the same length.
 */
 
-package leetcode
+package lht
 
 func isIsomorphic(s string, t string) bool {
 	if len(s) != len(t) {

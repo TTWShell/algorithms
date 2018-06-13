@@ -15,7 +15,7 @@ Note:
     The answer with the calculation error less than 10-5 will be accepted.
 */
 
-package leetcode
+package larray
 
 import "math"
 

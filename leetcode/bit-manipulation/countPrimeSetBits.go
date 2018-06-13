@@ -31,7 +31,7 @@ Note:
     R - L will be at most 10000.
 */
 
-package leetcode
+package lbm
 
 func countPrimeSetBits(L int, R int) int {
 	primes := map[int]bool{2: true, 3: true, 5: true, 7: true, 11: true, 13: true, 17: true, 19: true, 23: true, 29: true}

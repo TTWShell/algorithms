@@ -9,7 +9,7 @@ Note:
 The solution is guaranteed to be unique.
 */
 
-package leetcode
+package lgreedy
 
 func canCompleteCircuit(gas []int, cost []int) int {
 	start, total, tank := 0, 0, 0

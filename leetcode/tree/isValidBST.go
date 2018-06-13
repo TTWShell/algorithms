@@ -18,7 +18,7 @@ Example 2:
 Binary tree [1,2,3], return false.
 */
 
-package leetcode
+package ltree
 
 import "math"
 

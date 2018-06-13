@@ -16,7 +16,7 @@ Note:
 The range of n is [1,8].
 */
 
-package leetcode
+package lothers
 
 import (
 	"math"

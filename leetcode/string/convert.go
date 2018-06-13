@@ -13,7 +13,7 @@ Write the code that will take a string and make this conversion given a number o
 convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
 */
 
-package leetcode
+package lstring
 
 func convert(s string, numRows int) string {
 	// 第一行和最后一行下标间隔都是interval = numRows*2-2 = 8

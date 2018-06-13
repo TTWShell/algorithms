@@ -10,7 +10,7 @@ Given s = "leetcode", return "leotcede".
 Note:
 The vowels does not include the letter "y".
 */
-package leetcode
+package lstring
 
 func isVowels(r rune) bool {
 	switch r {

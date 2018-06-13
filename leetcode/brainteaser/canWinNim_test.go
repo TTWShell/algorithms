@@ -1,4 +1,4 @@
-package leetcode
+package lbrainteaser
 
 import "testing"
 

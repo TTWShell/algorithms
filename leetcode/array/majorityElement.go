@@ -7,7 +7,7 @@ Credits:
 Special thanks to @ts for adding this problem and creating all test cases.
 */
 
-package leetcode
+package larray
 
 func majorityElement(nums []int) int {
 	/*maps := make(map[int]int)

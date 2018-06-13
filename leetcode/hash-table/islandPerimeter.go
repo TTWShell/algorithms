@@ -18,7 +18,7 @@ Example:
     https://leetcode.com/static/images/problemset/island.png
 */
 
-package leetcode
+package lht
 
 func islandPerimeter(grid [][]int) int {
 	r := 0

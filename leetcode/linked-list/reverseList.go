@@ -5,7 +5,7 @@ Hint:
 A linked list can be reversed either iteratively or recursively. Could you implement both?
 */
 
-package leetcode
+package lll
 
 func reverseList(head *ListNode) *ListNode {
 	var top *ListNode

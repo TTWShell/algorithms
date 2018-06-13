@@ -8,7 +8,7 @@ Another example is ")()())", where the longest valid parentheses substring is "(
 https://leetcode.com/articles/longest-valid-parentheses/
 */
 
-package leetcode
+package lstring
 
 func longestValidParentheses(s string) int {
 	if len(s) < 2 {

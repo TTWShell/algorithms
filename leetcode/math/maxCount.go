@@ -34,7 +34,7 @@ Note:
     The range of operations size won't exceed 10,000.
 */
 
-package leetcode
+package lmath
 
 func maxCount(m int, n int, ops [][]int) int {
 	for i := range ops {

@@ -10,7 +10,7 @@ Here are few examples.
 [1,3,5,6], 0 → 0
 */
 
-package leetcode
+package larray
 
 func searchInsert(nums []int, target int) int {
 	start, end, mid := 0, len(nums)-1, 0

@@ -14,7 +14,7 @@ http://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Sudoku-by-L2G-20050714_
 ..and its solution numbers marked in red.
 */
 
-package leetcode
+package lbacktracking
 
 type Board [][]byte
 

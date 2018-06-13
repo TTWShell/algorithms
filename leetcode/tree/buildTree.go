@@ -5,7 +5,7 @@ Note:
 You may assume that duplicates do not exist in the tree.
 */
 
-package leetcode
+package ltree
 
 func buildTree(preorder []int, inorder []int) *TreeNode {
 	if len(preorder) == 0 {

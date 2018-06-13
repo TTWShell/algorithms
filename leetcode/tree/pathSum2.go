@@ -16,7 +16,7 @@ For example:
        [5,8,4,5]
     ]
 */
-package leetcode
+package ltree
 
 func pathSum2(root *TreeNode, sum int) [][]int {
 	res := [][]int{}

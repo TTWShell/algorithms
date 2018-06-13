@@ -21,7 +21,7 @@ Note:
     bits[i] is always 0 or 1.
 */
 
-package leetcode
+package larray
 
 func isOneBitCharacter(bits []int) bool {
 	i := 0

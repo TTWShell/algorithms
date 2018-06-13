@@ -14,7 +14,7 @@ Example:
     [5,6]
 */
 
-package leetcode
+package larray
 
 func findDisappearedNumbers(nums []int) []int {
 	for i := 0; i < len(nums); i++ {

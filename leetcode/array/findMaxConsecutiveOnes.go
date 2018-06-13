@@ -13,7 +13,7 @@ Note:
     The length of input array is a positive integer and will not exceed 10,000
 */
 
-package leetcode
+package larray
 
 func findMaxConsecutiveOnes(nums []int) int {
 	max := func(a, b int) int {

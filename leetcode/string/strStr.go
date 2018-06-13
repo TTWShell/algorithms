@@ -5,7 +5,7 @@ Returns the index of the first occurrence of needle in haystack, or -1 if needle
 note: 判断一个字符串是否是另一个字符串的子串。
 */
 
-package leetcode
+package lstring
 
 func strStr(haystack string, needle string) int {
 	lenh, lenn := len(haystack), len(needle)

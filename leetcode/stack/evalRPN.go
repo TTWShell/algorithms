@@ -8,7 +8,7 @@ Some examples:
   ["4", "13", "5", "/", "+"] -> (4 + (13 / 5)) -> 6
 */
 
-package leetcode
+package lstack
 
 import "strconv"
 

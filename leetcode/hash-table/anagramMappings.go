@@ -21,7 +21,7 @@ Note:
     A[i], B[i] are integers in range [0, 10^5].
 */
 
-package leetcode
+package lht
 
 func anagramMappings(A []int, B []int) []int {
 	maps, res := make(map[int]int, len(A)), make([]int, len(A))

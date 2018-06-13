@@ -24,7 +24,7 @@ Note:
     The length of both nums1 and nums2 would not exceed 1000.
 */
 
-package leetcode
+package lothers
 
 func nextGreaterElement(findNums []int, nums []int) []int {
 	maps := make(map[int]int, len(nums))

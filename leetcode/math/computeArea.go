@@ -8,7 +8,7 @@ https://leetcode.com/static/images/problemset/rectangle_area.png
 Assume that the total area is never beyond the maximum possible value of int.
 */
 
-package leetcode
+package lmath
 
 func computeArea(A int, B int, C int, D int, E int, F int, G int, H int) int {
 	max := func(a, b int) int {

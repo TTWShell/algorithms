@@ -3,7 +3,7 @@ Given an array of integers, find out whether there are two distinct indices i an
 absolute difference between nums[i] and nums[j] is at most t and the absolute difference between i and j is at most k.
 */
 
-package leetcode
+package lbst
 
 func containsNearbyAlmostDuplicate(v []int, k int, t int) bool {
 	if k <= 0 || t < 0 {

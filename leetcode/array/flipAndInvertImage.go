@@ -25,7 +25,7 @@ Notes:
     0 <= A[i][j] <= 1
 */
 
-package leetcode
+package larray
 
 func flipAndInvertImage(A [][]int) [][]int {
 	invert := func(a int) int {

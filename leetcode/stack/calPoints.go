@@ -40,10 +40,10 @@ Note:
     Every integer represented in the list will be between -30000 and 30000.
 */
 
-package leetcode
+package lstack
 
 import (
-	"github.com/TTWShell/algorithms/stack" // need copy stack.go when run in leetcode online
+	"github.com/TTWShell/algorithms/data-structure/stack" // need copy stack.go when run in leetcode online
 	"strconv"
 )
 

@@ -16,7 +16,7 @@ return its bottom-up level order traversal as:
 ]
 */
 
-package leetcode
+package ltree
 
 /**
  * Definition for a binary tree node.

@@ -9,7 +9,7 @@ Each element in the result must be unique.
 The result can be in any order.
 */
 
-package leetcode
+package lht
 
 func intersection(nums1 []int, nums2 []int) []int {
 	m, n := len(nums1), len(nums2)

@@ -11,7 +11,7 @@ Example:
     Output: "bb"
 */
 
-package leetcode
+package lstring
 
 func longestPalindrome(s string) string {
 	rStartIndex, longLen := 0, 1

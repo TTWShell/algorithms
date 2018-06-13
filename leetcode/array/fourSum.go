@@ -13,7 +13,7 @@ Note: The solution set must not contain duplicate quadruplets.
     ]
 */
 
-package leetcode
+package larray
 
 import "sort"
 

@@ -13,7 +13,7 @@ For example,
     ]
 */
 
-package leetcode
+package lbacktracking
 
 func permute(nums []int) [][]int {
 	if len(nums) == 1 {

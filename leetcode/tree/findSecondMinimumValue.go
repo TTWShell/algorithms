@@ -25,7 +25,7 @@ Example 2:
     Explanation: The smallest value is 2, but there isn't any second smallest value.
 */
 
-package leetcode
+package ltree
 
 import "math"
 

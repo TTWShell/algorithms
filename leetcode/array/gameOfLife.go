@@ -20,7 +20,7 @@ Follow up:
     2. In this question, we represent the board using a 2D array. In principle, the board is infinite, which would cause problems when the active area encroaches the border of the array. How would you address these problems?
 */
 
-package leetcode
+package larray
 
 func gameOfLife(board [][]int) {
 	row := len(board)

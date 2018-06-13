@@ -1,7 +1,7 @@
 package heapsort
 
 import (
-	"github.com/TTWShell/algorithms/heap"
+	"github.com/TTWShell/algorithms/data-structure/heap"
 )
 
 type Int int

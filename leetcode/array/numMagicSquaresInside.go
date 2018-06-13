@@ -28,7 +28,7 @@ Note:
     0 <= grid[i][j] <= 15
 */
 
-package leetcode
+package larray
 
 func numMagicSquaresInside(grid [][]int) int {
 	isMagic := func(row, col int) bool {

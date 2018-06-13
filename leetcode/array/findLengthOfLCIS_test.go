@@ -1,4 +1,4 @@
-package leetcode
+package larray
 
 import (
 	"github.com/stretchr/testify/assert"

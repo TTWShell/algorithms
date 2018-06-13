@@ -18,7 +18,7 @@ Example 2:
 Answer: 3
 */
 
-package leetcode
+package lunionfind
 
 func numIslands(grid [][]byte) int {
 	var dfs func(i, j int)
@@ -51,7 +51,7 @@ func numIslands(grid [][]byte) int {
 }
 
 /*
-import "github.com/TTWShell/algorithms/union-find"
+import "github.com/TTWShell/algorithms/data-structure/union-find"
 
 // Union-find solution
 func numIslands(grid [][]byte) int {

@@ -22,7 +22,7 @@ Note:
     s will only consist of "0" or "1" characters.
 */
 
-package leetcode
+package lstring
 
 func countBinarySubstrings(s string) int {
 	prevLen, curLen, res := 0, 1, 0

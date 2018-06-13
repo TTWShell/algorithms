@@ -19,7 +19,7 @@ Note:
     1 <= sentence words length <= 1000
 */
 
-package leetcode
+package ltrie
 
 import "strings"
 

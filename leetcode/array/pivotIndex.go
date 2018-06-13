@@ -24,7 +24,7 @@ Note:
     Each element nums[i] will be an integer in the range [-1000, 1000].
 */
 
-package leetcode
+package larray
 
 func pivotIndex(nums []int) int {
 	length := len(nums)

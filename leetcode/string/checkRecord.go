@@ -18,7 +18,7 @@ Example 2:
     Output: False
 */
 
-package leetcode
+package lstring
 
 func checkRecord(s string) bool {
 	countA, countL := 0, 0

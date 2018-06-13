@@ -13,7 +13,7 @@ Note:
 Your solution should be in logarithmic complexity.
 */
 
-package leetcode
+package lbs
 
 func findPeakElement(nums []int) int {
 	start, end := 0, len(nums)-1

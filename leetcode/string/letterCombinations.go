@@ -12,7 +12,7 @@ Note:
     Although the above answer is in lexicographical order, your answer could be in any order you want.
 */
 
-package leetcode
+package lstring
 
 func letterCombinations(digits string) []string {
 	maps := []string{"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"}

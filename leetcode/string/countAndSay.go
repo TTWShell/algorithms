@@ -11,7 +11,7 @@ Note: The sequence of integers will be represented as a string.
 note: 也就是输入n，输出第n个数，可以使用递归
 */
 
-package leetcode
+package lstring
 
 import (
 	"bytes"

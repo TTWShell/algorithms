@@ -24,7 +24,7 @@ Note:
     All the integers in the given input belong to the range: [-1e7, 1e7].
 */
 
-package leetcode
+package larray
 
 import "sort"
 

@@ -26,7 +26,7 @@ Note:
     matrix[i][j] will be integers in range [0, 99].
 */
 
-package leetcode
+package larray
 
 func isToeplitzMatrix(matrix [][]int) bool {
 	for i := 1; i < len(matrix); i++ {

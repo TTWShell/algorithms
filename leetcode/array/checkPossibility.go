@@ -18,7 +18,7 @@ Example 2:
 Note: The n belongs to [1, 10,000].
 */
 
-package leetcode
+package larray
 
 func checkPossibility(nums []int) bool {
 	for i, count := 0, 0; i < len(nums)-1; i++ {

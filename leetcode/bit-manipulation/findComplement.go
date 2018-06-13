@@ -15,7 +15,7 @@ Example 2:
     Explanation: The binary representation of 1 is 1 (no leading zero bits), and its complement is 0. So you need to output 0.
 */
 
-package leetcode
+package lbm
 
 func findComplement(num int) int {
 	var mask int64 = 1

@@ -4,7 +4,7 @@ Divide two integers without using multiplication, division and mod operator.
 If it is overflow, return MAX_INT.
 */
 
-package leetcode
+package lmath
 
 func divide(dividend int, divisor int) int {
 	// 参考https://discuss.leetcode.com/category/37/divide-two-integers

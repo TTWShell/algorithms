@@ -14,7 +14,7 @@ Example:
               20     13
 */
 
-package leetcode
+package ltree
 
 func convertBST(root *TreeNode) *TreeNode {
 	sum := 0

@@ -15,7 +15,7 @@ Note:
     The given array's numbers won't have any order.
 */
 
-package leetcode
+package lht
 
 func findErrorNums(nums []int) []int {
 	maps := make([]int, len(nums), len(nums))

@@ -27,7 +27,7 @@ Hints:
     Topological sort could also be done via BFS.
 */
 
-package leetcode
+package lgraph
 
 func findOrder(numCourses int, prerequisites [][]int) []int {
 	graph := make([][]int, numCourses)

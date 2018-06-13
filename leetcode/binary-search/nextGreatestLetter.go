@@ -39,7 +39,7 @@ Note:
     3. target is a lowercase letter.
 */
 
-package leetcode
+package lbs
 
 func nextGreatestLetter(letters []byte, target byte) byte {
 	start, end := 0, len(letters)-1

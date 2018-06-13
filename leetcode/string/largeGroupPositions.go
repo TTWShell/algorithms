@@ -27,7 +27,7 @@ Example 3:
 Note:  1 <= S.length <= 1000
 */
 
-package leetcode
+package lstring
 
 func largeGroupPositions(S string) [][]int {
 	res := [][]int{}

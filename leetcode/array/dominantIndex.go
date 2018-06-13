@@ -19,7 +19,7 @@ Note:
     Every nums[i] will be an integer in the range [0, 99].
 */
 
-package leetcode
+package larray
 
 // according to note, can use bucket
 func dominantIndex(nums []int) int {

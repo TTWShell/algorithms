@@ -5,7 +5,7 @@ Input is guaranteed to be within the range from 1 to 3999.
 
 http://baike.baidu.com/item/罗马数字
 */
-package leetcode
+package lmath
 
 func romanToInt(s string) int {
 	roman := map[byte]int{

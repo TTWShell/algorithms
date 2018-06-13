@@ -8,7 +8,7 @@ Note:
 The length of A and B will be between 1 and 10000.
 */
 
-package leetcode
+package lstring
 
 import (
 	"bytes"

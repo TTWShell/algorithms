@@ -16,7 +16,7 @@ Note:
 	Every cost[i] will be an integer in the range [0, 999].
 */
 
-package leetcode
+package ldp
 
 func minCostClimbingStairs(cost []int) int {
 	length := len(cost)

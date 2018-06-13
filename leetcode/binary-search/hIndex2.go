@@ -2,7 +2,7 @@
 Follow up for H-Index: What if the citations array is sorted in ascending order? Could you optimize your algorithm?
 */
 
-package leetcode
+package lbs
 
 func hIndex(citations []int) int {
 	if len(citations) == 0 {

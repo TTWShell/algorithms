@@ -18,7 +18,7 @@ Note:
     N  will be in range [1, 10000].
 */
 
-package leetcode
+package lothers
 
 func rotatedDigits(N int) int {
 	check := func(num int) bool {

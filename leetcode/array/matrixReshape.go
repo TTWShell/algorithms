@@ -35,7 +35,7 @@ Note:
 	The given r and c are all positive.
 */
 
-package leetcode
+package larray
 
 func matrixReshape(nums [][]int, r int, c int) [][]int {
 	if len(nums) == 0 || len(nums)*len(nums[0]) != r*c {

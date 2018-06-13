@@ -8,7 +8,7 @@ Find the minimum element.
 You may assume no duplicate exists in the array.
 */
 
-package leetcode
+package lbs
 
 func findMin(nums []int) int {
 	start, end := 0, len(nums)-1

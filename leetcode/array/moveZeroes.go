@@ -8,7 +8,7 @@ Note:
     Minimize the total number of operations.
 */
 
-package leetcode
+package larray
 
 func moveZeroes(nums []int) {
 	cur, n := 0, len(nums)

@@ -19,7 +19,7 @@ Note:
     The characters in J are distinct.
 */
 
-package leetcode
+package lht
 
 func numJewelsInStones(J string, S string) int {
 	maps := map[byte]int{}

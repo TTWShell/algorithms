@@ -19,7 +19,7 @@ Implement regular expression matching with support for '.' and '*'.
     isMatch("aab", "c*a*b") → true
 */
 
-package leetcode
+package ldp
 
 func isMatch(s string, p string) bool {
 	/* 动态规划 https://discuss.leetcode.com/topic/40371/easy-dp-java-solution-with-detailed-explanation
