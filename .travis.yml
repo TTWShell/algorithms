@@ -4,8 +4,8 @@ go:
  - 1.9
 
 install:
- - go get -u github.com/TTWShell/algorithms/heap
- - go get -u github.com/TTWShell/algorithms/stack
+ - go get -u github.com/TTWShell/algorithms/data-structure/heap
+ - go get -u github.com/TTWShell/algorithms/data-structure/stack
  - go get github.com/stretchr/testify/assert
 
 script:
