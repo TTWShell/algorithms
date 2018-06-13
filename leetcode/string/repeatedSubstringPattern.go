@@ -19,7 +19,7 @@ Example 3:
     Explanation: It's the substring "abc" four times. (And the substring "abcabc" twice.)
 */
 
-package leetcode
+package lstring
 
 func repeatedSubstringPattern(s string) bool {
 	if len(s) < 2 {

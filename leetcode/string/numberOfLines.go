@@ -40,7 +40,7 @@ Note:
     widths[i] will be in the range of [2, 10].
 */
 
-package leetcode
+package lstring
 
 func numberOfLines(widths []int, S string) []int {
 	lines, units := 1, 0

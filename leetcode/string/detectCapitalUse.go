@@ -19,7 +19,7 @@ Example 2:
 Note: The input will be a non-empty word consisting of uppercase and lowercase latin letters.
 */
 
-package leetcode
+package lstring
 
 func detectCapitalUse(word string) bool {
 	capitalCount, lowercaseCount := 0, 0

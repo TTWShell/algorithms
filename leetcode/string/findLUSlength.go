@@ -19,7 +19,7 @@ Note:
     Only letters from a ~ z will appear in input strings.
 */
 
-package leetcode
+package lstring
 
 func findLUSlength(a string, b string) int {
 	// 两个字符串相等，一定没有非共同子序列

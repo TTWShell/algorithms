@@ -10,7 +10,7 @@ You should return the indices: [0,9].
 (order does not matter).
 */
 
-package leetcode
+package lstring
 
 func findSubstring(s string, words []string) []int {
 	res := []int{}

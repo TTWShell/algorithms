@@ -41,7 +41,7 @@ Note:
     1 <= len(chars) <= 1000.
 */
 
-package leetcode
+package lstring
 
 import "strconv"
 

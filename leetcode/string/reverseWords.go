@@ -8,7 +8,7 @@ Example 1:
 Note: In the string, each word is separated by single space and there will not be any extra space in the string.
 */
 
-package leetcode
+package lstring
 
 func reverseWords(s string) string {
 	sList := []byte(s)

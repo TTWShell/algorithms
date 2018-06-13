@@ -12,7 +12,7 @@ Examples:
 Note: You may assume the string contain only lowercase letters.
 */
 
-package leetcode
+package lstring
 
 func firstUniqChar(s string) int {
 	maps := make([]int, 26)

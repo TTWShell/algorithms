@@ -15,7 +15,7 @@ Note:
     The input string length won't exceed 1000.
 */
 
-package leetcode
+package lstring
 
 func countSubstrings(s string) int {
 	countMiddle := func(runes []rune, left, right int) int {

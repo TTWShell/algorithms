@@ -14,7 +14,7 @@ Note:
     The string will only contain lowercase characters a-z. The maximum length of the string is 50000.
 */
 
-package leetcode
+package lstring
 
 func validPalindrome(s string) bool {
 	var isPalindrome func(s string, start, end, count int) bool

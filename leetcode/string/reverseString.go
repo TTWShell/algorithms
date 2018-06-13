@@ -5,7 +5,7 @@ Example:
 Given s = "hello", return "olleh".
 */
 
-package leetcode
+package lstring
 
 func reverseString(s string) string {
 	r := []rune(s)

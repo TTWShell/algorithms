@@ -12,7 +12,7 @@ Restrictions:
     Length of the given string and k will in the range [1, 10000]
 */
 
-package leetcode
+package lstring
 
 func reverseStr(s string, k int) string {
 	reverse := func(sList []byte, start, end int) {

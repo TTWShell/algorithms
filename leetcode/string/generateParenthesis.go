@@ -12,7 +12,7 @@ For example, given n = 3, a solution set is:
 ]
 */
 
-package leetcode
+package lstring
 
 func generateParenthesis(n int) []string {
 	var backtrack func(res *[]string, runes []rune, open, close, max int)

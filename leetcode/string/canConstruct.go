@@ -13,7 +13,7 @@ Note:
     canConstruct("aa", "aab") -> true
 */
 
-package leetcode
+package lstring
 
 func canConstruct(ransomNote string, magazine string) bool {
 	maps := make([]int, 26)

@@ -18,7 +18,7 @@ Note:
     S will consist only of letters or digits.
 */
 
-package leetcode
+package lstring
 
 func letterCasePermutation(S string) []string {
 	length := len(S)
