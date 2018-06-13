@@ -1,4 +1,4 @@
-package leetcode
+package lgreedy
 
 import (
 	"github.com/stretchr/testify/assert"
