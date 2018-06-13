@@ -51,7 +51,7 @@ func numIslands(grid [][]byte) int {
 }
 
 /*
-import "github.com/TTWShell/algorithms/union-find"
+import "github.com/TTWShell/algorithms/data-structure/union-find"
 
 // Union-find solution
 func numIslands(grid [][]byte) int {

@@ -15,7 +15,7 @@ Note: Recursive solution is trivial, could you do it iteratively?
 
 package ltree
 
-import "github.com/TTWShell/algorithms/stack" // need copy stack.go when run in leetcode online
+import "github.com/TTWShell/algorithms/data-structure/stack" // need copy stack.go when run in leetcode online
 
 func inorderTraversal(root *TreeNode) []int {
 	res := []int{}

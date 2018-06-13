@@ -35,7 +35,7 @@ func findKthLargest(nums []int, k int) int {
 
 /*
 // 基于堆的实现
-import "github.com/TTWShell/algorithms/heap"
+import "github.com/TTWShell/algorithms/data-structure/heap"
 
 type findKthLargestInt int
 

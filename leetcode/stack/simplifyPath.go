@@ -15,7 +15,7 @@ Corner Cases:
 package lstack
 
 import (
-	"github.com/TTWShell/algorithms/stack" // need copy stack.go when run in leetcode online
+	"github.com/TTWShell/algorithms/data-structure/stack" // need copy stack.go when run in leetcode online
 	"strings"
 )
 
