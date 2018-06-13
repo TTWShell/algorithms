@@ -11,7 +11,7 @@ Given n = 3, your program should return all 5 unique BST's shown below.
    2     1         2                 3
 */
 
-package leetcode
+package ldp
 
 import "fmt"
 

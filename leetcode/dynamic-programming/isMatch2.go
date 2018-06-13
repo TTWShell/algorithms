@@ -19,7 +19,7 @@ Some examples:
     isMatch("aab", "c*a*b") → false
 */
 
-package leetcode
+package ldp
 
 func isMatch2(s string, p string) bool {
 	si, pi, match, stari := 0, 0, 0, -1

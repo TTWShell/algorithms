@@ -24,7 +24,7 @@ Note:
     3. You may assume that row1 ≤ row2 and col1 ≤ col2.
 */
 
-package leetcode
+package ldp
 
 type NumMatrix struct {
 	matrix [][]int

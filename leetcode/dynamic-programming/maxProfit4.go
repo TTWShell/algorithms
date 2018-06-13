@@ -9,7 +9,7 @@ You may not engage in multiple transactions at the same time (ie, you must sell 
 具体解法见系列3。
 */
 
-package leetcode
+package ldp
 
 func maxProfit4(k int, prices []int) int {
 	n := len(prices)

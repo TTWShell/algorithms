@@ -9,7 +9,7 @@ Design an algorithm to find the maximum profit. You may complete as many transac
     2、只要i-1的利润大于i的利润，我们就应该在i-1的时候卖掉，例如：1，3，2，5；
 */
 
-package leetcode
+package ldp
 
 func maxProfit2(prices []int) int {
 	if len(prices) == 0 {

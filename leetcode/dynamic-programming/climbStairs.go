@@ -9,7 +9,7 @@ Note: Given n will be a positive integer.
 dp[n] = dp[n-1] + dp[n-2] （上第n层只有两种解法）
 如果梯子有1层或者2层，dp[1] = 1, dp[2] = 2，如果梯子有0层，自然dp[0] = 0
 */
-package leetcode
+package ldp
 
 func climbStairs(n int) int {
 	if n <= 0 {

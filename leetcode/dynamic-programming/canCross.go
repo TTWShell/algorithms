@@ -33,7 +33,7 @@ Example 2:
         the gap between the 5th and 6th stone is too large.
 */
 
-package leetcode
+package ldp
 
 var canCrossMap map[int]int
 

@@ -21,7 +21,7 @@ In this case, no transaction is done, i.e. max profit = 0.
     3、max(局部最优)即为全局最优；
 */
 
-package leetcode
+package ldp
 
 func maxProfit(prices []int) int {
 	var min, r int
