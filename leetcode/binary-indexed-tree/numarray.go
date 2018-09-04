@@ -37,15 +37,16 @@ func Constructor(nums []int) NumArray {
 		}
 	}
 	return NumArray{c: c, length: length}
-
 }
 
 func (this *NumArray) Update(i int, val int) {
 	delta := val - (this.SumRange(i, i))
-	for j := i; j < this.length; j += lowbit(j) {
+	for j := i + 1; j < this.length; j += lowbit(j) {
 		this.c[j] += delta
+		if lowbit(j) == 0 {
+			break
+		}
 	}
-
 }
 
 func (this *NumArray) Sum(i int) int {
