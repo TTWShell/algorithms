@@ -25,8 +25,11 @@ func New(nums []int) *BIT {
 
 // Update nums[i], add delta.
 func (b *BIT) Update(i int, delta int) {
-	for j := i; j < b.len; j += lowbit(j) {
+	for j := i + 1; j < b.len; j += lowbit(j) {
 		b.c[j] += delta
+		if lowbit(j) == 0 {
+			break
+		}
 	}
 }
 

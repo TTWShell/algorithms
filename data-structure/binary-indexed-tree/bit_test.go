@@ -19,7 +19,7 @@ func TestUpdate(t *testing.T) {
 
 	nums := []int{1, 2, 3, 4, 5, 6, 7, 8}
 	b := New(nums)
-	b.Update(1, 9)
+	b.Update(0, 9)
 	assert.Equal(b.c, []int{0, 10, 12, 3, 19, 5, 11, 7, 45})
 }
 
