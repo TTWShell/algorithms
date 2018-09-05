@@ -194,6 +194,7 @@
 | 303 | [Range Sum Query - Immutable](dynamic-programming/NumArray.go) | [Easy][] |
 | 304 | [Range Sum Query 2D - Immutable](dynamic-programming/NumMatrix.SumRegion.go) | [Medium][] |
 | 306 | [Additive Number](backtracking/isAdditiveNumber.go) | [Medium][] |
+| 307 | [Range Sum Query - Mutable](binary-indexed-tree/numarray.go) | [Medium][] |
 | 326 | [Power of Three](math/isPowerOfThree.go) | [Easy][] |
 | 332 | [Reconstruct Itinerary](graph/findItinerary.go) | [Medium][] |
 | 342 | [Power of Four](bit-manipulation/isPowerOfFour.go) | [Easy][] |
@@ -224,6 +225,7 @@
 | 448 | [Find All Numbers Disappeared in an Array](array/findDisappearedNumbers.go) | [Easy][] |
 | 453 | [Minimum Moves to Equal Array Elements](math/minMoves.go) | [Easy][] |
 | 455 | [Assign Cookies](greedy/findContentChildren.go) | [Easy][] |
+| 458 | [Poor Pigs](others/poorPigs.go) | [Easy][] |
 | 459 | [Repeated Substring Pattern](string/repeatedSubstringPattern.go) | [Easy][] |
 | 461 | [Hamming Distance](bit-manipulation/hammingDistance.go) | [Easy][] |
 | 463 | [Island Perimeter](hash-table/islandPerimeter.go) | [Easy][] |
