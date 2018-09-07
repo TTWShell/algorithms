@@ -295,6 +295,7 @@
 | 697 | [Degree of an Array](array/findShortestSubArray.go) | [Easy][] |
 | 700 | [Search in a Binary Search Tree](binary-search-tree/searchBST.go) | [Easy][] |
 | 703 | [Kth Largest Element in a Stream](heap/KthLargest.go) | [Easy][] |
+| 704 | [Binary Search](../search/binary-search/BinarySearch.go) | [Easy][] |
 | 717 | [1-bit and 2-bit Characters](array/isOneBitCharacter.go) | [Easy][] |
 | 720 | [Longest Word in Dictionary](hash-table/longestWord.go) | [Easy][] |
 | 724 | [Find Pivot Index](array/pivotIndex.go) | [Easy][] |
