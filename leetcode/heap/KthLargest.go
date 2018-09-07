@@ -21,6 +21,62 @@ Note:
 
 package lheap
 
+type minHeap struct {
+	k    int
+	heap []int
+}
+
+func newMinHeap(k int, nums []int) *minHeap {
+	heap := &minHeap{k: k, heap: make([]int, 1, k+1)}
+
+	for _, num := range nums {
+		heap.add(num)
+	}
+	return heap
+}
+
+func (this *minHeap) add(val int) {
+	if len(this.heap) < this.k+1 {
+		this.heap = append(this.heap, val)
+		this.up(len(this.heap) - 1)
+	} else if this.heap[1] < val {
+		this.heap[1] = val
+		this.down(1)
+	}
+}
+
+func (this *minHeap) up(idx int) {
+	for cur, p := idx, idx>>1; cur > 0 && p > 0 && this.heap[cur] < this.heap[p]; cur, p = p, p>>1 {
+		this.heap[p], this.heap[cur] = this.heap[cur], this.heap[p]
+	}
+}
+
+func (this *minHeap) down(idx int) {
+	for cur, child := idx, idx<<1; cur < len(this.heap) && child < len(this.heap); cur, child = child, child<<1 {
+		if tmp := child + 1; tmp < len(this.heap) && this.heap[tmp] < this.heap[child] {
+			child = tmp
+		}
+		if this.heap[cur] < this.heap[child] {
+			break
+		}
+		this.heap[cur], this.heap[child] = this.heap[child], this.heap[cur]
+	}
+}
+
+type KthLargest struct {
+	heap *minHeap
+}
+
+func Constructor(k int, nums []int) KthLargest {
+	return KthLargest{heap: newMinHeap(k, nums)}
+}
+
+func (this *KthLargest) Add(val int) int {
+	this.heap.add(val)
+	return this.heap.heap[1]
+}
+
+/* 排序+二分插入排序
 import "sort"
 
 type KthLargest struct {
@@ -92,3 +148,4 @@ func (this *KthLargest) findIdx(val int) int {
 	}
 	return end + 1
 }
+*/
