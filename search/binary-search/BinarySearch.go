@@ -1,20 +1,20 @@
 package search
 
-func BinarySearch(sortedData []int, target int) (index int) {
-	start, end := 0, len(sortedData)-1
+func search(nums []int, target int) (index int) {
+	start, end := 0, len(nums)-1
 
-	if target < sortedData[start] || target > sortedData[end] {
+	if target < nums[start] || target > nums[end] {
 		return -1
 	}
 
 	for start <= end {
 		mid := start + (end-start)/2
 		switch {
-		case target < sortedData[mid]:
+		case target < nums[mid]:
 			end = mid - 1
-		case target > sortedData[mid]:
+		case target > nums[mid]:
 			start = mid + 1
-		case target == sortedData[mid]:
+		case target == nums[mid]:
 			return mid
 		}
 	}
