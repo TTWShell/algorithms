@@ -30,16 +30,28 @@ type KthLargest struct {
 
 func Constructor(k int, nums []int) KthLargest {
 	sort.Ints(nums)
+	if len(nums) > k {
+		nums = nums[len(nums)-k:] // only save last k
+	}
 	return KthLargest{k: k, nums: nums}
 }
+
 func (this *KthLargest) Add(val int) int {
 	idx := this.findIdx(val)
 	// idx := sort.Search(len(this.nums), func(i int) bool { return this.nums[i] > val })
-	this.nums = append(this.nums, 0)
-	copy(this.nums[idx+1:], this.nums[idx:])
-	this.nums[idx] = val
 
-	return this.nums[len(this.nums)-this.k]
+	if idx == 0 && len(this.nums) < this.k {
+		this.nums = append([]int{val}, this.nums...)
+	}
+
+	if idx > 0 {
+		this.nums = append(this.nums, 0)
+		copy(this.nums[idx+1:], this.nums[idx:])
+		this.nums[idx] = val
+		this.nums = this.nums[len(this.nums)-this.k:]
+	}
+
+	return this.nums[0]
 }
 
 func (this *KthLargest) findIdx(val int) int {
