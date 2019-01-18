@@ -35,21 +35,10 @@ BEGIN
     update `{table_name}` set updated_at=strftime(
     '%Y-%m-%d %H:%M:%S', 'now', 'localtime') where id=OLD.id;
 END""".format(table_name=table_name))
-Prombem = namedtuple('Problem', ['id', 'title', 'title_slug', 'difficulty', 'status', 'go', 'updated_at'])  # NOQA E501
+Prombem = namedtuple('Problem', ['id', 'title', 'title_slug', 'difficulty', 'status', 'go', 'updated_at'])
 
 
 class LeetCode:
-    LOGIN_URI = 'https://leetcode.com/accounts/login/'
-    HEADERS = {
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',  # NOQA E501
-        'Accept-Encoding': 'gzip, deflate, sdch',
-        'Accept-Language': 'en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4,zh-TW;q=0.2',
-        'Connection': 'keep-alive',
-        'Host': 'leetcode.com',
-        'Referer': 'https://leetcode.com/accounts/login/',
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:56.0) Gecko/20100101 Firefox/56.0', # NOQA E501
-        'Content-Type': 'application/x-www-form-urlencoded',
-    }
 
     def __init__(self, username, password, difficulty, index):
         self.username = username
@@ -60,9 +49,21 @@ class LeetCode:
         self.login()
 
     def _get_csrfmiddlewaretoken(self):
-        resp = self.session.get(self.LOGIN_URI, headers=self.HEADERS)
-        # <input type='hidden' name='csrfmiddlewaretoken' value='B5yVhk7grKZU4rt3hNxGZ9NUB67lmIW0RuAg75Vx9f3WA8grGIV4qI2eFbmlK6Dq' />  # NOQA E501
-        return resp.text.split('csrfmiddlewaretoken')[1].split("'")[2]
+        url = 'https://leetcode.com/graphql'
+        headers = {
+            'Referer': 'https://leetcode.com/playground/UpwhGDg6/shared',
+            'x-csrftoken': '39EmD1AhCNr2GcIffQQ5v5FF45l3tJ59IoBkNuXIFXKEqERelZnEx61xoGQo0zhR',
+        }
+        cookies = {
+            'csrftoken': '39EmD1AhCNr2GcIffQQ5v5FF45l3tJ59IoBkNuXIFXKEqERelZnEx61xoGQo0zhR',
+        }
+        payload = {
+            "operationName": "globalData",
+            "variables": {},
+            "query": "query globalData {\n userStatus {\nisSignedIn\nusername\n}\n}\n"}
+        resp = self.session.post(url, payload, headers=headers, cookies=cookies)
+        assert resp.status_code == 200, f'excepted status_code 200, {resp.status_code} occurred: {resp.text}'
+        return resp.cookies['csrftoken']
 
     def _request(self, url):
         for i in range(3):
@@ -74,16 +75,24 @@ class LeetCode:
             return resp
 
     def login(self):
+        url = 'https://leetcode.com/accounts/login/'
         data = {
             'csrfmiddlewaretoken': self._get_csrfmiddlewaretoken(),
             'login': self.username,
             'password': self.password,
         }
-        resp = self.session.post(
-            self.LOGIN_URI, data=data, headers=self.HEADERS)
-        if resp.status_code != 200:
-            print("Login failed.", resp.status_code)
-            os._exit(1)
+        headers = {
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            'Accept-Encoding': 'gzip, deflate, sdch',
+            'Accept-Language': 'en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4,zh-TW;q=0.2',
+            'Connection': 'keep-alive',
+            'Host': 'leetcode.com',
+            'Referer': 'https://leetcode.com/accounts/login/',
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:56.0) Gecko/20100101 Firefox/56.0',
+            'Content-Type': 'application/x-www-form-urlencoded',
+        }
+        resp = self.session.post(url, data=data, headers=headers)
+        assert resp.status_code == 200, f'login faield'
 
     def profile(self):
         """
@@ -109,7 +118,7 @@ class LeetCode:
         url = 'https://leetcode.com/graphql'
         headers = {
             'Accept': '*/*',
-            'Accept-Encoding': 'gzip', # 'gzip, deflate, br',
+            'Accept-Encoding': 'gzip',  # 'gzip, deflate, br',
             'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
             'Connection': 'keep-alive',
             'Referer': desc_url,
@@ -154,7 +163,8 @@ class LeetCode:
                 lambda x: x['difficulty']['level'] == self.difficulty, pairs)
 
         for p in tqdm(pairs):
-            problem_id = p['stat']['frontend_question_id']  # question_id && frontend_question_id
+            # question_id && frontend_question_id
+            problem_id = p['stat']['frontend_question_id']
             title_slug = p['stat']['question__title_slug']
             status = p['status']
 
