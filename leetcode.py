@@ -1,10 +1,8 @@
-#! /usr/local/bin/python
 import argparse
-import datetime
-import os
-import sqlite3
 from collections import namedtuple
+import datetime
 import json
+import sqlite3
 import time
 
 import requests
@@ -13,7 +11,7 @@ from tqdm import tqdm
 conn = sqlite3.connect("leetcode.db")
 cur = conn.cursor()
 table_name = 'problem'
-cur.execute("""
+cur.execute(f"""
 CREATE TABLE IF NOT EXISTS `{table_name}` (
     id integer(5) NOT NULL PRIMARY KEY,
     title varchar(128),
@@ -23,8 +21,8 @@ CREATE TABLE IF NOT EXISTS `{table_name}` (
     go tinyint(1),
     updated_at DATETIME DEFAULT (
         strftime('%Y-%m-%d %H:%M:%S', 'now', 'localtime'))
-    )""".format(table_name=table_name))
-cur.execute("""
+    )""")
+cur.execute(f"""
 CREATE TRIGGER IF NOT EXISTS [UpdateLastTime]
     AFTER
     UPDATE
@@ -34,7 +32,7 @@ CREATE TRIGGER IF NOT EXISTS [UpdateLastTime]
 BEGIN
     update `{table_name}` set updated_at=strftime(
     '%Y-%m-%d %H:%M:%S', 'now', 'localtime') where id=OLD.id;
-END""".format(table_name=table_name))
+END""")
 Prombem = namedtuple('Problem', ['id', 'title', 'title_slug', 'difficulty', 'status', 'go', 'updated_at'])
 
 
@@ -60,7 +58,8 @@ class LeetCode:
         payload = {
             "operationName": "globalData",
             "variables": {},
-            "query": "query globalData {\n userStatus {\nisSignedIn\nusername\n}\n}\n"}
+            "query": "query globalData {\n userStatus {\nisSignedIn\nusername\n}\n}\n"
+        }
         resp = self.session.post(url, payload, headers=headers, cookies=cookies)
         assert resp.status_code == 200, f'excepted status_code 200, {resp.status_code} occurred: {resp.text}'
         return resp.cookies['csrftoken']
@@ -76,11 +75,6 @@ class LeetCode:
 
     def login(self):
         url = 'https://leetcode.com/accounts/login/'
-        data = {
-            'csrfmiddlewaretoken': self._get_csrfmiddlewaretoken(),
-            'login': self.username,
-            'password': self.password,
-        }
         headers = {
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
             'Accept-Encoding': 'gzip, deflate, sdch',
@@ -91,18 +85,21 @@ class LeetCode:
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:56.0) Gecko/20100101 Firefox/56.0',
             'Content-Type': 'application/x-www-form-urlencoded',
         }
+        data = {
+            'csrfmiddlewaretoken': self._get_csrfmiddlewaretoken(),
+            'login': self.username,
+            'password': self.password,
+        }
         resp = self.session.post(url, data=data, headers=headers)
         assert resp.status_code == 200, f'login faield'
 
     def profile(self):
-        """
-        profile data
+        """profile data
         """
         url = 'https://leetcode.com/api/progress/all/'
         resp = self.session.get(url)
-        if resp.status_code != 200:
-            print("request profile failed:", resp.status_code)
-            os._exit(1)
+        assert resp.status_code == 200, f'request profile failed: {resp.status_code}'
+
         data = resp.json()
         print('{unsolved} Todo | {solvedTotal}/{questionTotal} Solved'
               ' | {attempted} Attempted'.format(**data))
@@ -141,8 +138,8 @@ class LeetCode:
             "operationName": "getQuestionDetail"
         }
         resp = self.session.post(url, json=payload, headers=headers)
-        if resp.status_code != 200:
-            print("query codeDefinition failed.", resp.status_code)
+        assert resp.status_code == 200, f'query codeDefinition failed: {resp.status_code}'
+
         code_definition = resp.json()['data']['question']['codeDefinition']
         return [code['text'] for code in json.loads(code_definition)]
 
@@ -152,27 +149,24 @@ class LeetCode:
         today = datetime.datetime.now()
 
         retrieve_sql = 'SELECT * FROM `{table_name}` WHERE id={pk}'
-        insert_sql = 'INSERT INTO `{table_name}` (id, title, title_slug, difficulty, status, go) VALUES ({id}, "{title}", "{title_slug}", {difficulty}, "{status}", {go})'  # NOQA E501
-        update_sql = 'UPDATE `{table_name}` SET go={go}, status="{status}" WHERE id={pk}'  # NOQA E501
+        insert_sql = 'INSERT INTO `{table_name}` (id, title, title_slug, difficulty, status, go) VALUES ' + \
+            '({id}, "{title}", "{title_slug}", {difficulty}, "{status}", {go})'
+        update_sql = 'UPDATE `{table_name}` SET go={go}, status="{status}" WHERE id={pk}'
 
-        pairs = sorted(data['stat_status_pairs'],
-                       key=lambda x: x['stat']['frontend_question_id'])
+        pairs = tqdm(sorted(data['stat_status_pairs'], key=lambda x: x['stat']['frontend_question_id']))
         pairs = filter(lambda x: x['paid_only'] is False, pairs)
         if self.difficulty:
-            pairs = filter(
-                lambda x: x['difficulty']['level'] == self.difficulty, pairs)
+            pairs = filter(lambda x: x['difficulty']['level'] == self.difficulty, pairs)
 
-        for p in tqdm(pairs):
+        for p in pairs:
             # question_id && frontend_question_id
             problem_id = p['stat']['frontend_question_id']
             title_slug = p['stat']['question__title_slug']
             status = p['status']
 
-            problem = cur.execute(retrieve_sql.format(
-                table_name=table_name, pk=problem_id)).fetchone()
+            problem = cur.execute(retrieve_sql.format(table_name=table_name, pk=problem_id)).fetchone()
             if problem is None:
-                go = 1 if 'Go' in self.support_languages_by_tilte_slug(
-                    title_slug) else 0
+                go = 1 if 'Go' in self.support_languages_by_tilte_slug(title_slug) else 0
                 values = {
                     'id': problem_id,
                     'title': p['stat']['question__title'],
@@ -188,21 +182,17 @@ class LeetCode:
             problem = Prombem(*problem)
             need_update = False
             if status is not None and problem.status != status:
-                print('Latest {} problem: {}. {}'.format(
-                    status, problem.id, problem.title))
+                print(f'Latest {status} problem: {problem.id}. {problem.title}')
                 need_update = True
 
             go = problem.go
-            if go != 1 and (today - datetime.datetime.strptime(
-                    problem.updated_at, '%Y-%m-%d %H:%M:%S')).days >= 7:
+            if go != 1 and (today - datetime.datetime.strptime(problem.updated_at, '%Y-%m-%d %H:%M:%S')).days >= 7:
                 need_update = True
                 if 'Go' in self.support_languages_by_tilte_slug(title_slug):
                     go = 1
 
             if need_update:
-                cur.execute(update_sql.format(
-                    table_name=table_name, go=go, pk=problem_id,
-                    status=status))
+                cur.execute(update_sql.format(table_name=table_name, go=go, pk=problem_id, status=status))
                 conn.commit()
 
     def get_unsolved_problem(self):
@@ -210,8 +200,7 @@ class LeetCode:
         Get a problem by difficulty filter.
         """
         self.sync_all_problems()
-        all_sql = 'SELECT * FROM `{table_name}` ORDER BY id'.format(
-            table_name=table_name)
+        all_sql = 'SELECT * FROM `{table_name}` ORDER BY id'.format(table_name=table_name)
         pairs = []
         for p in cur.execute(all_sql).fetchall():
             problem = Prombem(*p)
@@ -224,8 +213,7 @@ class LeetCode:
         if pairs:
             index = self.index % len(pairs)
             print(pairs[index])
-            print('https://leetcode.com/problems/{}/description/'.format(
-                  pairs[index]['title_slug']))
+            print(f'https://leetcode.com/problems/{pairs[index]["title_slug"]}/description/')
 
     def analysis(self, profile, query):
         if profile:
@@ -254,6 +242,5 @@ parser.add_argument('-query', '--query', action='store_true',
 
 if __name__ == '__main__':
     args = parser.parse_args()
-    leetcode = LeetCode(username=args.username, password=args.password,
-                        difficulty=args.difficulty, index=args.index)
+    leetcode = LeetCode(username=args.username, password=args.password, difficulty=args.difficulty, index=args.index)
     leetcode.analysis(profile=args.profile, query=args.query)
