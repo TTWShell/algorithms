@@ -56,6 +56,26 @@ package lll
  *     Next *ListNode
  * }
  */
+
+func getIntersectionNode(headA, headB *ListNode) *ListNode {
+	// len(headA + headB) == len(headB + headA)
+	a, b := headA, headB
+	for a != b {
+		if a == nil {
+			a = headB
+		} else {
+			a = a.Next
+		}
+		if b == nil {
+			b = headA
+		} else {
+			b = b.Next
+		}
+	}
+	return a
+}
+
+/*
 func getIntersectionNode(headA, headB *ListNode) *ListNode {
 	countA := 0
 	for a := headA; a != nil; a = a.Next {
@@ -82,3 +102,4 @@ func getIntersectionNode(headA, headB *ListNode) *ListNode {
 	}
 	return long
 }
+*/
