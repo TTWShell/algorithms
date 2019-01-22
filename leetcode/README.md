@@ -129,6 +129,7 @@
 | 152 | [Maximum Product Subarray](dynamic-programming/maxProduct.go) | [Medium][] |
 | 153 | [Find Minimum in Rotated Sorted Array](binary-search/findMin.go) | [Medium][] |
 | 155 | [Min Stack](stack/MinStack.go) | [Easy][] |
+| 160 | [Intersection of Two Linked Lists](linked-list/getIntersectionNode.go) | [Easy][] |
 | 162 | [Find Peak Element](binary-search/findPeakElement.go) | [Medium][] |
 | 165 | [Compare Version Numbers](string/compareVersion.go) | [Medium][] |
 | 166 | [Fraction to Recurring Decimal](math/fractionToDecimal.go) | [Medium][] |
