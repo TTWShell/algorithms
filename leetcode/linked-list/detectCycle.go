@@ -42,17 +42,21 @@ package lll
  * }
  */
 func detectCycle(head *ListNode) *ListNode {
-	for loop := head; loop != nil; loop = loop.Next {
-		slow, fast := loop, loop
-		for fast != nil && fast.Next != nil {
-			slow, fast = slow.Next, fast.Next.Next
-			if slow == loop || fast == loop {
-				return loop
-			}
-			if fast == nil || slow == fast {
-				break
-			}
+	slow, fast, meetNode := head, head, &ListNode{}
+	for fast != nil && fast.Next != nil {
+		slow, fast = slow.Next, fast.Next.Next
+		if slow == fast {
+			meetNode = slow
+			break
 		}
 	}
-	return nil
+
+	if meetNode.Next == nil {
+		return nil
+	}
+
+	for loop := head; meetNode != loop; {
+		loop, meetNode = loop.Next, meetNode.Next
+	}
+	return meetNode
 }
