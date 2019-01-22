@@ -1,35 +1,35 @@
-/* https://leetcode.com/problems/linked-list-cycle/description/
-Given a linked list, determine if it has a cycle in it.
-
+/* https://leetcode.com/problems/linked-list-cycle-ii/
+Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
 To represent a cycle in the given linked list,
 we use an integer pos which represents the position (0-indexed) in the linked list where tail connects to.
-If pos is -1, then there is no cycle in the linked list.
+ If pos is -1, then there is no cycle in the linked list.
+
+Note: Do not modify the linked list.
 
 Example 1:
 
 	Input: head = [3,2,0,-4], pos = 1
-	Output: true
+	Output: tail connects to node index 1
 	Explanation: There is a cycle in the linked list, where tail connects to the second node.
-
 	https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist.png
 
 Example 2:
 
 	Input: head = [1,2], pos = 0
-	Output: true
+	Output: tail connects to node index 0
 	Explanation: There is a cycle in the linked list, where tail connects to the first node.
 	https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test2.png
 
 Example 3:
 
 	Input: head = [1], pos = -1
-	Output: false
+	Output: no cycle
 	Explanation: There is no cycle in the linked list.
 	https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test3.png
 
-Follow up:
 
-	Can you solve it using O(1) (i.e. constant) memory?
+Follow up:
+	Can you solve it without using extra space?
 */
 
 package lll
@@ -41,13 +41,22 @@ package lll
  *     Next *ListNode
  * }
  */
-func hasCycle(head *ListNode) bool {
-	slow, fast := head, head
+func detectCycle(head *ListNode) *ListNode {
+	slow, fast, meetNode := head, head, &ListNode{}
 	for fast != nil && fast.Next != nil {
 		slow, fast = slow.Next, fast.Next.Next
 		if slow == fast {
-			return true
+			meetNode = slow
+			break
 		}
 	}
-	return false
+
+	if meetNode.Next == nil {
+		return nil
+	}
+
+	for loop := head; meetNode != loop; {
+		loop, meetNode = loop.Next, meetNode.Next
+	}
+	return meetNode
 }
