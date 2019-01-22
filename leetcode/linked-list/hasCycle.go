@@ -43,9 +43,9 @@ package lll
  */
 func hasCycle(head *ListNode) bool {
 	slow, fast := head, head
-	for fast != nil && slow.Next != nil && fast.Next != nil {
+	for fast != nil && fast.Next != nil {
 		slow, fast = slow.Next, fast.Next.Next
-		if slow != nil && slow == fast {
+		if slow == fast {
 			return true
 		}
 	}
