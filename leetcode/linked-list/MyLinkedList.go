@@ -36,42 +36,96 @@ Note:
 package lll
 
 type MyLinkedList struct {
-	nodes []int
+	size       int
+	head, tail *node
 }
 
+type node struct {
+	val  int
+	next *node
+}
+
+// Constructor Initialize your data structure here.
 func Constructor() MyLinkedList {
-	return MyLinkedList{nodes: make([]int, 0, 1000)}
+	return MyLinkedList{size: 0}
 }
 
 func (this *MyLinkedList) Get(index int) int {
-	if index >= len(this.nodes) || index < 0 {
+	if index < 0 || index >= this.size {
 		return -1
 	}
-	return this.nodes[index]
+
+	res := this.head
+	for ; index > 0; index-- {
+		res = res.next
+	}
+	return res.val
 }
 
 func (this *MyLinkedList) AddAtHead(val int) {
-	this.nodes = append([]int{val}, this.nodes...)
+	head := &node{val: val}
+	if this.size == 0 {
+		this.head, this.tail = head, head
+	} else {
+		head.next = this.head
+		this.head = head
+	}
+	this.size++
 }
 
 func (this *MyLinkedList) AddAtTail(val int) {
-	this.nodes = append(this.nodes, val)
+	if this.size == 0 {
+		this.AddAtHead(val)
+	} else {
+		tail := &node{val: val}
+		this.tail.next = tail
+		this.tail = tail
+		this.size++
+	}
 }
 
 func (this *MyLinkedList) AddAtIndex(index int, val int) {
-	if index == len(this.nodes) {
-		this.AddAtTail(val)
-	} else if index > len(this.nodes) {
+	if index < 0 || index > this.size {
 		return
-	} else {
-		tmp := append([]int{val}, this.nodes[index:]...)
-		this.nodes = append(this.nodes[:index], tmp...)
+	}
+
+	switch index {
+	case 0:
+		this.AddAtHead(val)
+	case this.size:
+		this.AddAtTail(val)
+	default:
+		cur := this.head
+		for ; index > 1; index-- { // find parent
+			cur = cur.next
+		}
+		cur.next = &node{val: val, next: cur.next}
+		this.size++
 	}
 }
 
 func (this *MyLinkedList) DeleteAtIndex(index int) {
-	if index < 0 || index >= len(this.nodes) {
+	if index < 0 || index >= this.size {
 		return
 	}
-	this.nodes = append(this.nodes[:index], this.nodes[index+1:]...)
+
+	if index == 0 {
+		if this.size == 1 {
+			this.head, this.tail = nil, nil
+		} else {
+			this.head = this.head.next
+		}
+	} else {
+		cur := this.head
+		for ; index > 1; index-- { // find parent
+			cur = cur.next
+		}
+		if cur.next == this.tail {
+			cur.next = nil
+			this.tail = cur
+		} else {
+			cur.next = cur.next.next
+		}
+	}
+	this.size--
 }
