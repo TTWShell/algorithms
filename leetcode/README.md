@@ -200,6 +200,7 @@
 | 306 | [Additive Number](backtracking/isAdditiveNumber.go) | [Medium][] |
 | 307 | [Range Sum Query - Mutable](binary-indexed-tree/numarray.go) | [Medium][] |
 | 326 | [Power of Three](math/isPowerOfThree.go) | [Easy][] |
+| 328 | [Odd Even Linked List](linked-list/oddEvenList.go) | [Easy][] |
 | 332 | [Reconstruct Itinerary](graph/findItinerary.go) | [Medium][] |
 | 342 | [Power of Four](bit-manipulation/isPowerOfFour.go) | [Easy][] |
 | 344 | [Reverse String](string/reverseString.go) | [Easy][] |
