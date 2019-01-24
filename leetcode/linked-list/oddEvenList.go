@@ -34,20 +34,12 @@ func oddEvenList(head *ListNode) *ListNode {
 		return head
 	}
 
-	parent, slow, slowTail, fast := head, head.Next, head.Next, head.Next.Next
-	for fast != nil && slowTail != fast {
-		if fast.Next == nil { // tail
-			parent.Next = fast
-			fast.Next = slow
-			slowTail.Next = nil
-			break
-		}
-		parent.Next = fast
-		slowTail.Next = fast.Next
-		fast.Next = slow
-		parent = fast
-		slowTail = slowTail.Next
-		fast = slowTail.Next
+	for odd, evenTail := head, head.Next; evenTail != nil && evenTail.Next != nil; odd, evenTail = odd.Next, evenTail.Next {
+		cur := evenTail.Next
+
+		evenTail.Next = cur.Next
+		cur.Next = odd.Next
+		odd.Next = cur
 	}
 	return head
 }
