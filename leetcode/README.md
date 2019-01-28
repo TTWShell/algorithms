@@ -307,6 +307,7 @@
 | 717 | [1-bit and 2-bit Characters](array/isOneBitCharacter.go) | [Easy][] |
 | 720 | [Longest Word in Dictionary](hash-table/longestWord.go) | [Easy][] |
 | 724 | [Find Pivot Index](array/pivotIndex.go) | [Easy][] |
+| 725 | [Split Linked List in Parts](linked-list/splitListToParts.go) | [Medium][] |
 | 728 | [Self Dividing Numbers](math/selfDividingNumbers.go) | [Easy][] |
 | 733 | [Flood Fill](array/floodFill.go) | [Easy][] |
 | 734 | [Sentence Similarity](hash-table/areSentencesSimilar.go) | [Easy][] |
