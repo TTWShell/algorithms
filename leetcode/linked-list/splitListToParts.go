@@ -52,21 +52,17 @@ func splitListToParts(root *ListNode, k int) []*ListNode {
 
 	div, mod := length/k, length%k
 	res := make([]*ListNode, k, k)
-	var pre, node *ListNode
-	for idx, c := 0, root; idx < k; idx++ {
-		lenSum := div
-		if idx < mod {
-			lenSum = div + 1
+	for i, c := 0, root; i < k; i++ {
+		res[i] = c
+		num := div
+		if i < mod {
+			num++
 		}
-		for i := 0; i < lenSum && c != nil; i++ {
-			node = &ListNode{Val: c.Val}
-			if i == 0 {
-				res[idx] = node
-			} else {
-				pre.Next = node
-			}
-			pre = node
+		for j := 0; j < num-1; j++ {
 			c = c.Next
+		}
+		if c != nil {
+			c, c.Next = c.Next, nil
 		}
 	}
 	return res
