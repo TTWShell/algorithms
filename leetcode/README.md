@@ -337,6 +337,7 @@
 | 836 | [Rectangle Overlap](math/isRectangleOverlap.go) | [Easy][] |
 | 840 | [Magic Squares In Grid](array/numMagicSquaresInside.go) | [Easy][] |
 | 844 | [Backspace String Compare](stack/backspaceCompare.go) | [Easy][] |
+| 867 | [Transpose Matrix](array/transpose.go) | [Easy][] |
 | 876 | [Middle of the Linked List](linked-list/middleNode.go) | [Easy][] |
 | 905 | [Sort Array By Parity](array/sortArrayByParity.go) | [Easy][] |
 | 922 | [Sort Array By Parity II](array/sortArrayByParityII.go) | [Easy][] |
