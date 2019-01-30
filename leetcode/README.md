@@ -142,6 +142,7 @@
 | 187 | [Repeated DNA Sequences](hash-table/findRepeatedDnaSequences.go) | [Medium][] |
 | 188 | [Best Time to Buy and Sell Stock IV](dynamic-programming/maxProfit4.go) | [Hard][] |
 | 189 | [Rotate Array](array/rotate.go) | [Easy][] |
+| 190 | [Reverse Bits](bit-manipulation/reverseBits.go) | [Easy][] |
 | 198 | [House Robber](dynamic-programming/rob.go) | [Easy][] |
 | 199 | [Binary Tree Right Side View](tree/rightSideView.go) | [Medium][] |
 | 200 | [Number of Islands](union-find/numIslands.go) | [Medium][] |
