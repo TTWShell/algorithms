@@ -248,6 +248,7 @@
 | 504 | [Base 7](math/convertToBase7.go) | [Easy][] |
 | 506 | [Relative Ranks](others/findRelativeRanks.go) | [Easy][] |
 | 507 | [Perfect Number](math/checkPerfectNumber.go) | [Easy][] |
+| 509 | [Fibonacci Number](array/fib.go) | [Easy][] |
 | 520 | [Detect Capital](string/detectCapitalUse.go) | [Easy][] |
 | 521 | [Longest Uncommon Subsequence I](string/findLUSlength.go) | [Easy][] |
 | 530 | [Minimum Absolute Difference in BST](tree/getMinimumDifference.go) | [Easy][] |
