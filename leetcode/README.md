@@ -337,6 +337,7 @@
 | 840 | [Magic Squares In Grid](array/numMagicSquaresInside.go) | [Easy][] |
 | 844 | [Backspace String Compare](stack/backspaceCompare.go) | [Easy][] |
 | 876 | [Middle of the Linked List](linked-list/middleNode.go) | [Easy][] |
+| 977 | [Squares of a Sorted Array](array/sortedSquares.go) | [Easy][] |
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
 [Medium]: https://leetcode.com/problemset/algorithms/?difficulty=Medium&status=Todo
