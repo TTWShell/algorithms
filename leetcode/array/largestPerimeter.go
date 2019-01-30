@@ -34,12 +34,10 @@ package larray
 import "sort"
 
 func largestPerimeter(A []int) int {
-	sorted := make([]int, len(A))
-	copy(sorted, A)
-	sort.Ints(sorted)
+	sort.Ints(A)
 
 	for i := len(A) - 1; i > 1; i-- {
-		a, b, c := sorted[i-2], sorted[i-1], sorted[i]
+		a, b, c := A[i-2], A[i-1], A[i]
 		if a+b <= c {
 			continue
 		}
