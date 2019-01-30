@@ -326,6 +326,7 @@
 | 806 | [Number of Lines To Write String](string/numberOfLines.go) | [Easy][] |
 | 811 | [Subdomain Visit Count](hash-table/subdomainVisits.go) | [Easy][] |
 | 812 | [Largest Triangle Area](math/largestTriangleArea.go) | [Easy][] |
+| 817 | [Linked List Components](linked-list/numComponents.go) | [Medium][] |
 | 819 | [Most Common Word](string/mostCommonWord.go) | [Easy][] |
 | 821 | [Shortest Distance to a Character](string/shortestToChar.go) | [Easy][] |
 | 824 | [Goat Latin](string/toGoatLatin.go) | [Easy][] |
