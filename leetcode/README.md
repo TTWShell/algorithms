@@ -341,6 +341,7 @@
 | 876 | [Middle of the Linked List](linked-list/middleNode.go) | [Easy][] |
 | 905 | [Sort Array By Parity](array/sortArrayByParity.go) | [Easy][] |
 | 922 | [Sort Array By Parity II](array/sortArrayByParityII.go) | [Easy][] |
+| 976 | [Largest Perimeter Triangle](array/largestPerimeter.go) | [Easy][] |
 | 977 | [Squares of a Sorted Array](array/sortedSquares.go) | [Easy][] |
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
