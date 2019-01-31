@@ -340,6 +340,7 @@
 | 849 | [Maximize Distance to Closest Person](array/maxDistToClosest.go) | [Easy][] |
 | 867 | [Transpose Matrix](array/transpose.go) | [Easy][] |
 | 876 | [Middle of the Linked List](linked-list/middleNode.go) | [Easy][] |
+| 884 | [Uncommon Words from Two Sentences](hash-table/uncommonFromSentences.go) | [Easy][] |
 | 888 | [Fair Candy Swap](array/fairCandySwap.go) | [Easy][] |
 | 896 | [Monotonic Array](array/isMonotonic.go) | [Easy][] |
 | 905 | [Sort Array By Parity](array/sortArrayByParity.go) | [Easy][] |
