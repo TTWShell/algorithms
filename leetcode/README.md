@@ -343,6 +343,7 @@
 | 888 | [Fair Candy Swap](array/fairCandySwap.go) | [Easy][] |
 | 896 | [Monotonic Array](array/isMonotonic.go) | [Easy][] |
 | 905 | [Sort Array By Parity](array/sortArrayByParity.go) | [Easy][] |
+| 914 | [X of a Kind in a Deck of Cards](array/hasGroupsSizeX.go) | [Easy][] |
 | 922 | [Sort Array By Parity II](array/sortArrayByParityII.go) | [Easy][] |
 | 941 | [Valid Mountain Array](array/validMountainArray.go) | [Easy][] |
 | 976 | [Largest Perimeter Triangle](array/largestPerimeter.go) | [Easy][] |
