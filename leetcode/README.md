@@ -347,6 +347,7 @@
 | 914 | [X of a Kind in a Deck of Cards](array/hasGroupsSizeX.go) | [Easy][] |
 | 922 | [Sort Array By Parity II](array/sortArrayByParityII.go) | [Easy][] |
 | 941 | [Valid Mountain Array](array/validMountainArray.go) | [Easy][] |
+| 953 | [Verifying an Alien Dictionary](hash-table/isAlienSorted.go) | [Easy][] |
 | 961 | [N-Repeated Element in Size 2N Array](hash-table/repeatedNTimes.go) | [Easy][] |
 | 976 | [Largest Perimeter Triangle](array/largestPerimeter.go) | [Easy][] |
 | 977 | [Squares of a Sorted Array](array/sortedSquares.go) | [Easy][] |
