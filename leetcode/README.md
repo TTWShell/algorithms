@@ -314,9 +314,10 @@
 | 733 | [Flood Fill](array/floodFill.go) | [Easy][] |
 | 734 | [Sentence Similarity](hash-table/areSentencesSimilar.go) | [Easy][] |
 | 737 | [Sentence Similarity II](union-find/areSentencesSimilarTwo.go) | [Medium][] |
-| 745 | [Find Smallest Letter Greater Than Target](binary-search/nextGreatestLetter.go) | [Easy][] |
-| 747 | [Min Cost Climbing Stairs](dynamic-programming/minCostClimbingStairs.go) | [Easy][] |
-| 748 | [Largest Number At Least Twice of Others](array/dominantIndex.go) | [Easy][] |
+| 744 | [Find Smallest Letter Greater Than Target](binary-search/nextGreatestLetter.go) | [Easy][] |
+| 746 | [Min Cost Climbing Stairs](dynamic-programming/minCostClimbingStairs.go) | [Easy][] |
+| 747 | [Largest Number At Least Twice of Others](array/dominantIndex.go) | [Easy][] |
+| 748 | [Shortest Completing Word](hash-table/shortestCompletingWord.go) | [Easy][] |
 | 760 | [Find Anagram Mappings](hash-table/anagramMappings.go) | [Easy][] |
 | 762 | [Prime Number of Set Bits in Binary Representation](bit-manipulation/countPrimeSetBits.go) | [Easy][] |
 | 766 | [Toeplitz Matrix](array/isToeplitzMatrix.go) | [Easy][] |
