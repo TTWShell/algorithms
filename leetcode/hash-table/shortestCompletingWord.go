@@ -32,35 +32,23 @@ Note:
 package lht
 
 func shortestCompletingWord(licensePlate string, words []string) string {
-	cache := map[byte]int{}
+	cache := make([]int, 26, 26)
 	for i := 0; i < len(licensePlate); i++ {
 		letter := licensePlate[i]
 		if 'A' <= letter && letter <= 'Z' {
 			letter += 32
 		}
 		if 'a' <= letter && letter <= 'z' {
-			if _, ok := cache[letter]; ok {
-				cache[letter]++
-			} else {
-				cache[letter] = 1
-			}
+			cache[letter-97]++
 		}
 	}
 
 	isCompleted := func(word string) bool {
-		if len(word) < len(cache) {
-			return false
-		}
-
-		tmp := map[byte]int{}
-		for k, v := range cache {
-			tmp[k] = v
-		}
+		tmp := make([]int, 26, 26)
+		copy(tmp, cache)
 
 		for i := 0; i < len(word); i++ {
-			if _, ok := tmp[word[i]]; ok {
-				tmp[word[i]]--
-			}
+			tmp[word[i]-97]--
 		}
 		for _, v := range tmp {
 			if v > 0 {
