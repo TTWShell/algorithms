@@ -50,11 +50,14 @@ func numUniqueEmails(emails []string) int {
 			if email[i] == '+' {
 				for i++; email[i] != '@'; i++ {
 				}
+				i--
+			} else {
+				tmp.WriteByte(email[i])
+			}
+			if email[i] == '@' {
 				for ; i < len(email); i++ {
 					tmp.WriteByte(email[i])
 				}
-			} else {
-				tmp.WriteByte(email[i])
 			}
 		}
 		cache[tmp.String()] = 1
