@@ -306,6 +306,7 @@
 | 704 | [Binary Search](../search/binary-search/BinarySearch.go) | [Easy][] |
 | 705 | [Design HashSet](hash-table/MyHashSet.go) | [Easy][] |
 | 707 | [Design Linked List](linked-list/MyLinkedList.go) | [Easy][] |
+| 709 | [To Lower Case](string/toLowerCase.go) | [Easy][] |
 | 717 | [1-bit and 2-bit Characters](array/isOneBitCharacter.go) | [Easy][] |
 | 720 | [Longest Word in Dictionary](hash-table/longestWord.go) | [Easy][] |
 | 724 | [Find Pivot Index](array/pivotIndex.go) | [Easy][] |
