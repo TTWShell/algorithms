@@ -28,32 +28,56 @@ Note:
 
 package lht
 
+const rangeOperation = 10000
+
+type mhmElement struct {
+	key, value int
+}
+
 type MyHashMap struct {
-	table [1000000]int
+	bucket [][]mhmElement
 }
 
 /** Initialize your data structure here. */
 func HashMapConstructor() MyHashMap {
-	table := [1000000]int{}
-	for i := range table {
-		table[i] = -1
-	}
-	return MyHashMap{table: table}
+	return MyHashMap{bucket: make([][]mhmElement, rangeOperation, rangeOperation)}
+}
+
+func (this *MyHashMap) index(key int) int {
+	return key % rangeOperation
 }
 
 /** value will always be non-negative. */
 func (this *MyHashMap) Put(key int, value int) {
-	this.table[key] = value
+	idx := this.index(key)
+	for i, e := range this.bucket[idx] {
+		if e.key == key {
+			this.bucket[idx][i].value = value
+			return
+		}
+	}
+	this.bucket[idx] = append(this.bucket[idx], mhmElement{key: key, value: value})
 }
 
 /** Returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key */
 func (this *MyHashMap) Get(key int) int {
-	return this.table[key]
+	idx := this.index(key)
+	for _, e := range this.bucket[idx] {
+		if e.key == key {
+			return e.value
+		}
+	}
+	return -1
 }
 
 /** Removes the mapping of the specified value key if this map contains a mapping for the key */
 func (this *MyHashMap) Remove(key int) {
-	this.table[key] = -1
+	idx := this.index(key)
+	for i, e := range this.bucket[idx] {
+		if e.key == key {
+			this.bucket[idx][i].value = -1
+		}
+	}
 }
 
 /**
