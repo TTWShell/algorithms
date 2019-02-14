@@ -344,6 +344,7 @@
 | 849 | [Maximize Distance to Closest Person](array/maxDistToClosest.go) | [Easy][] |
 | 852 | [Peak Index in a Mountain Array](binary-search/peakIndexInMountainArray.go) | [Easy][] |
 | 867 | [Transpose Matrix](array/transpose.go) | [Easy][] |
+| 872 | [Leaf-Similar Trees](tree/leafSimilar.go) | [Easy][] |
 | 876 | [Middle of the Linked List](linked-list/middleNode.go) | [Easy][] |
 | 884 | [Uncommon Words from Two Sentences](hash-table/uncommonFromSentences.go) | [Easy][] |
 | 888 | [Fair Candy Swap](array/fairCandySwap.go) | [Easy][] |
