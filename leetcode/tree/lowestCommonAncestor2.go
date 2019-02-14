@@ -32,36 +32,22 @@ package ltree
  * Definition for TreeNode.
  * type TreeNode struct {
  *     Val int
- *     Left *ListNode
- *     Right *ListNode
+ *     Left *TreeNode
+ *     Right *TreeNode
  * }
  */
 func lowestCommonAncestor2(root, p, q *TreeNode) *TreeNode {
-	var helper func(root *TreeNode, targetVal int, ancestors *[]*TreeNode) bool
-	helper = func(root *TreeNode, targetVal int, ancestors *[]*TreeNode) bool {
-		if root == nil {
-			return false
-		}
-		if root.Val == targetVal {
-			*ancestors = append(*ancestors, root)
-			return true
-		}
-		if (root.Left != nil && helper(root.Left, targetVal, ancestors)) || (root.Right != nil && helper(root.Right, targetVal, ancestors)) {
-			*ancestors = append(*ancestors, root)
-			return true
-		}
-		return false
+	if root == nil || root.Val == p.Val || root.Val == q.Val {
+		return root
 	}
 
-	ancestorsP, ancestorsQ := []*TreeNode{}, []*TreeNode{}
-	helper(root, p.Val, &ancestorsP)
-	helper(root, q.Val, &ancestorsQ)
+	left := lowestCommonAncestor2(root.Left, p, q)
+	right := lowestCommonAncestor2(root.Right, p, q)
 
-	var idx int
-	for idx = 0; idx < len(ancestorsP) && idx < len(ancestorsQ); idx++ {
-		if ancestorsP[len(ancestorsP)-1-idx] != ancestorsQ[len(ancestorsQ)-1-idx] {
-			break
-		}
+	if left == nil {
+		return right
+	} else if right == nil {
+		return left
 	}
-	return ancestorsP[len(ancestorsP)-idx] // if panic, input err
+	return root
 }

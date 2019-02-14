@@ -32,8 +32,8 @@ package ltree
  * Definition for TreeNode.
  * type TreeNode struct {
  *     Val int
- *     Left *ListNode
- *     Right *ListNode
+ *     Left *TreeNode
+ *     Right *TreeNode
  * }
  */
 func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
