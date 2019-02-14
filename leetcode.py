@@ -69,7 +69,7 @@ class LeetCode:
             resp = self.session.get(url)
             if resp.status_code == 429:  # Too Many Requests
                 time.sleep(30)
-                print('>>> 429 Too Many Requests: {} retry...'.format(i))
+                print(f'>>> 429 Too Many Requests: {i} retry...')
                 continue
             return resp
 
@@ -101,10 +101,19 @@ class LeetCode:
         assert resp.status_code == 200, f'request profile failed: {resp.status_code}'
 
         data = resp.json()
-        print('{unsolved} Todo | {solvedTotal}/{questionTotal} Solved'
-              ' | {attempted} Attempted'.format(**data))
-        print('Easy {Easy} Medium {Medium} Hard {Hard}'.format(
-            **data['solvedPerDifficulty']))
+        print('{unsolved} Todo | {solvedTotal}/{questionTotal} Solved | {attempted} Attempted'.format(**data))
+
+        def get_total(difficulty):
+            sql = f'SELECT go, count(*) FROM `{table_name}` WHERE difficulty={difficulty} GROUP BY go'
+            return '/'.join(str(count) for (go, count) in cur.execute(sql).fetchall())
+
+        easy_total = get_total(1)
+        medium_total = get_total(2)
+        hard_total = get_total(3)
+        msg = 'Easy: {Easy}/{easy_total}, Medium: {Medium}/{medium_total}, Hard: {Hard}/{hard_total}. ' + \
+            'finishedCount/notGoCount/OnlyGoTotalCount'
+        print(msg.format(easy_total=easy_total, medium_total=medium_total, hard_total=hard_total,
+                         **data['solvedPerDifficulty']))
 
     def support_languages_by_tilte_slug(self, tilte_slug):
         desc_url = 'https://leetcode.com/problems/{}/description/'.format(
@@ -119,7 +128,7 @@ class LeetCode:
             'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
             'Connection': 'keep-alive',
             'Referer': desc_url,
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:56.0) Gecko/20100101 Firefox/56.0', # NOQA E501
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:56.0) Gecko/20100101 Firefox/56.0',
             'Content-Type': 'application/json',
             'x-csrftoken': csrftoken
         }
@@ -200,26 +209,24 @@ class LeetCode:
         Get a problem by difficulty filter.
         """
         self.sync_all_problems()
-        all_sql = 'SELECT * FROM `{table_name}` ORDER BY id'.format(table_name=table_name)
         pairs = []
-        for p in cur.execute(all_sql).fetchall():
+        for p in cur.execute(f'SELECT * FROM `{table_name}` ORDER BY id').fetchall():
             problem = Prombem(*p)
             if problem.status != 'ac' and problem.go and (
-                    self.difficulty is None or
-                    problem.difficulty == self.difficulty):
+                    self.difficulty is None or problem.difficulty == self.difficulty):
                 pairs.append(problem._asdict())
 
         print('UnSolved:', len(pairs))
         if pairs:
             index = self.index % len(pairs)
             print(pairs[index])
-            print(f'https://leetcode.com/problems/{pairs[index]["title_slug"]}/description/')
+            print(f'https://leetcode.com/problems/{pairs[index]["title_slug"]}/description/\n')
 
     def analysis(self, profile, query):
-        if profile:
-            self.profile()
         if query:
             self.get_unsolved_problem()
+        if profile:
+            self.profile()
 
 
 parser = argparse.ArgumentParser(
