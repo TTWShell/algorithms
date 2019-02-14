@@ -37,17 +37,17 @@ package ltree
  * }
  */
 func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
-	target1, target2 := p.Val, q.Val
-	if target1 > target2 {
-		target1, target2 = target2, target1
+	small, large := p.Val, q.Val
+	if small > large {
+		small, large = large, small
 	}
 
 	var helper func(root *TreeNode) *TreeNode
 	helper = func(root *TreeNode) *TreeNode {
-		if target1 <= root.Val && root.Val <= target2 {
+		if small <= root.Val && root.Val <= large {
 			return root
 		}
-		if target2 < root.Val {
+		if large < root.Val {
 			return helper(root.Left)
 		}
 		return helper(root.Right)
