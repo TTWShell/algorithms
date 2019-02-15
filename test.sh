@@ -1,4 +1,5 @@
 #!/bin/bash
+# ./test.sh ./leetcode/array
 set -e
 
 FILE_PATH="/tmp/algorithms-coverage.out"

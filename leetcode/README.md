@@ -362,6 +362,7 @@
 | 965 | [Univalued Binary Tree](tree/isUnivalTree.go) | [Easy][] |
 | 976 | [Largest Perimeter Triangle](array/largestPerimeter.go) | [Easy][] |
 | 977 | [Squares of a Sorted Array](array/sortedSquares.go) | [Easy][] |
+| 989 | [Add to Array-Form of Integer](array/addToArrayForm.go) | [Easy][] |
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
 [Medium]: https://leetcode.com/problemset/algorithms/?difficulty=Medium&status=Todo
