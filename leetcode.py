@@ -216,11 +216,15 @@ class LeetCode:
                     self.difficulty is None or problem.difficulty == self.difficulty):
                 pairs.append(problem._asdict())
 
-        print('UnSolved:', len(pairs))
-        if pairs:
+        print(f'UnSolved: {len(pairs)}\n')
+        if self.index == -1:
+            for p in pairs:
+                print(f'{p["id"]}. {p["title_slug"]} | https://leetcode.com/problems/{p["title_slug"]}/description/')
+        elif pairs:
             index = self.index % len(pairs)
             print(pairs[index])
-            print(f'https://leetcode.com/problems/{pairs[index]["title_slug"]}/description/\n')
+            print(f'https://leetcode.com/problems/{pairs[index]["title_slug"]}/description/')
+        print('')
 
     def analysis(self, profile, query):
         if query:
@@ -229,22 +233,15 @@ class LeetCode:
             self.profile()
 
 
-parser = argparse.ArgumentParser(
-    description='Analysis leetcode problems progress.')
-parser.add_argument('-u', '--username', type=str, required=True,
-                    help='Username for login.')
-parser.add_argument('-p', '--password', type=str, required=True,
-                    help='Password to use when connecting to leetcode.')
-parser.add_argument('-d', '--difficulty', type=int,
-                    choices=(1, 2, 3),
-                    help='Difficulty of problems. 1-3: easy --> hard')
-parser.add_argument('-i', '--index', type=int, default=0,
-                    help='Choose an unsolved problem, default is first.')
+parser = argparse.ArgumentParser(description='Leetcode刷题助手。')
+parser.add_argument('-u', '--username', type=str, required=True, help='用户名。')
+parser.add_argument('-p', '--password', type=str, required=True, help='密码。')
 
-parser.add_argument('-P', '--profile', action='store_true',
-                    help='Show profile, all statistical information.')
-parser.add_argument('-query', '--query', action='store_true',
-                    help='Query one unsolved problem order by id.')
+parser.add_argument('-P', '--profile', action='store_true', help='Show profile, all statistical information.')
+
+parser.add_argument('-q', '--query', action='store_true', help='从Leetcode同步所有题目。')
+parser.add_argument('-d', '--difficulty', type=int, choices=(1, 2, 3), help='Difficulty. 1-3: Easy Medium Hard.')
+parser.add_argument('-i', '--index', type=int, default=0, help='题目索引，id正序排列，默认第一个，-1展示所有。')
 
 
 if __name__ == '__main__':
