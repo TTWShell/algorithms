@@ -37,72 +37,45 @@ grid[i][j] is only 0, 1, or 2.
 package larray
 
 func orangesRotting(grid [][]int) int {
-	cur, tmp := make([][]int, len(grid)), make([][]int, len(grid))
-	countFresh, countRotten := 0, 0
+	queue := [][2]int{}
+	visited := map[[2]int]bool{}
+
 	for i := 0; i < len(grid); i++ {
-		cur[i] = make([]int, len(grid[i]))
-		tmp[i] = make([]int, len(grid[i]))
 		for j := 0; j < len(grid[i]); j++ {
-			cur[i][j] = grid[i][j]
-			tmp[i][j] = grid[i][j]
-			if grid[i][j] == 1 {
-				countFresh++
-			} else if grid[i][j] == 2 {
-				countRotten++
+			if grid[i][j] == 2 {
+				queue = append(queue, [2]int{i, j})
+				visited[[2]int{i, j}] = true
 			}
 		}
 	}
 
-	if countRotten == 0 && countFresh > 0 {
-		return -1
-	}
-	if countFresh == 0 {
-		return 0
-	}
-
-	for count := 0; ; count++ {
-		countFresh, countRotten = 0, 0
-		changed := false
-		for i := 0; i < len(grid); i++ {
-			for j := 0; j < len(grid[i]); j++ {
-				switch cur[i][j] {
-				case 1:
-					countFresh++
-					allEmpty := true
-					if (i > 0 && tmp[i-1][j] != 0) || (i < len(grid)-1 && tmp[i+1][j] != 0) || (j > 0 && tmp[i][j-1] != 0) || (j < len(grid[i])-1 && tmp[i][j+1] != 0) {
-						allEmpty = false
-					}
-					if allEmpty {
-						return -1
-					}
-				case 2:
-					countRotten++
-					if i > 0 && tmp[i-1][j] == 1 {
-						changed = true
-						tmp[i-1][j] = 2
-					}
-					if i < len(grid)-1 && tmp[i+1][j] == 1 {
-						changed = true
-						tmp[i+1][j] = 2
-					}
-					if j > 0 && tmp[i][j-1] == 1 {
-						changed = true
-						tmp[i][j-1] = 2
-					}
-					if j < len(grid[i])-1 && tmp[i][j+1] == 1 {
-						changed = true
-						tmp[i][j+1] = 2
-					}
+	deepth := 0
+	for len(queue) != 0 {
+		tmp := [][2]int{}
+		for _, node := range queue {
+			for _, cur := range [][2]int{{node[0] - 1, node[1]}, {node[0] + 1, node[1]}, {node[0], node[1] - 1}, {node[0], node[1] + 1}} {
+				i, j := cur[0], cur[1]
+				if _, ok := visited[[2]int{i, j}]; !ok && 0 <= i && i < len(grid) && 0 <= j && j < len(grid[0]) && grid[i][j] == 1 {
+					tmp = append(tmp, [2]int{i, j})
+					visited[[2]int{i, j}] = true
 				}
 			}
 		}
-		if changed == false {
-			if countFresh > 0 {
-				return -1
-			}
-			count--
-			return count
-		}
-		cur, tmp = tmp, cur
+		queue = tmp
+		deepth++
 	}
+
+	for i := 0; i < len(grid); i++ {
+		for j := 0; j < len(grid[i]); j++ {
+			if grid[i][j] == 1 {
+				if _, ok := visited[[2]int{i, j}]; !ok {
+					return -1
+				}
+			}
+		}
+	}
+	if deepth > 0 {
+		deepth--
+	}
+	return deepth
 }
