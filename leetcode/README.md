@@ -365,6 +365,7 @@
 | 984 | [String Without AAA or BBB](greedy/strWithout3a3b.go) | [Easy][] |
 | 985 | [Sum of Even Numbers After Queries](array/sumEvenAfterQueries.go) | [Easy][] |
 | 989 | [Add to Array-Form of Integer](array/addToArrayForm.go) | [Easy][] |
+| 993 | [Cousins in Binary Tree](tree/isCousins.go) | [Easy][] |
 | 994 | [Rotting Oranges](array/orangesRotting.go) | [Easy][] |
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
