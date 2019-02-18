@@ -360,6 +360,7 @@
 | 953 | [Verifying an Alien Dictionary](hash-table/isAlienSorted.go) | [Easy][] |
 | 961 | [N-Repeated Element in Size 2N Array](hash-table/repeatedNTimes.go) | [Easy][] |
 | 965 | [Univalued Binary Tree](tree/isUnivalTree.go) | [Easy][] |
+| 973 | [K Closest Points to Origin](sort/kClosest.go) | [Easy][] |
 | 976 | [Largest Perimeter Triangle](array/largestPerimeter.go) | [Easy][] |
 | 977 | [Squares of a Sorted Array](array/sortedSquares.go) | [Easy][] |
 | 984 | [String Without AAA or BBB](greedy/strWithout3a3b.go) | [Easy][] |
