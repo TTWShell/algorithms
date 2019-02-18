@@ -362,6 +362,7 @@
 | 965 | [Univalued Binary Tree](tree/isUnivalTree.go) | [Easy][] |
 | 976 | [Largest Perimeter Triangle](array/largestPerimeter.go) | [Easy][] |
 | 977 | [Squares of a Sorted Array](array/sortedSquares.go) | [Easy][] |
+| 984 | [String Without AAA or BBB](greedy/strWithout3a3b.go) | [Easy][] |
 | 985 | [Sum of Even Numbers After Queries](array/sumEvenAfterQueries.go) | [Easy][] |
 | 989 | [Add to Array-Form of Integer](array/addToArrayForm.go) | [Easy][] |
 
