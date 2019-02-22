@@ -357,6 +357,7 @@
 | 922 | [Sort Array By Parity II](array/sortArrayByParityII.go) | [Easy][] |
 | 929 | [Unique Email Addresses](string/numUniqueEmails.go) | [Easy][] |
 | 941 | [Valid Mountain Array](array/validMountainArray.go) | [Easy][] |
+| 942 | [DI String Match](math/diStringMatch.go) | [Easy][] |
 | 944 | [Delete Columns to Make Sorted](greedy/minDeletionSize.go) | [Easy][] |
 | 949 | [Largest Time for Given Digits](math/largestTimeFromDigits.go) | [Easy][] |
 | 953 | [Verifying an Alien Dictionary](hash-table/isAlienSorted.go) | [Easy][] |
