@@ -353,6 +353,7 @@
 | 896 | [Monotonic Array](array/isMonotonic.go) | [Easy][] |
 | 897 | [Increasing Order Search Tree](tree/increasingBST.go) | [Easy][] |
 | 905 | [Sort Array By Parity](array/sortArrayByParity.go) | [Easy][] |
+| 908 | [Smallest Range I](math/smallestRangeI.go) | [Easy][] |
 | 914 | [X of a Kind in a Deck of Cards](array/hasGroupsSizeX.go) | [Easy][] |
 | 917 | [Reverse Only Letters](string/reverseOnlyLetters.go) | [Easy][] |
 | 922 | [Sort Array By Parity II](array/sortArrayByParityII.go) | [Easy][] |
