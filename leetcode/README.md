@@ -355,6 +355,7 @@
 | 905 | [Sort Array By Parity](array/sortArrayByParity.go) | [Easy][] |
 | 914 | [X of a Kind in a Deck of Cards](array/hasGroupsSizeX.go) | [Easy][] |
 | 922 | [Sort Array By Parity II](array/sortArrayByParityII.go) | [Easy][] |
+| 925 | [Long Pressed Name](string/isLongPressedName.go) | [Easy][] |
 | 929 | [Unique Email Addresses](string/numUniqueEmails.go) | [Easy][] |
 | 937 | [Reorder Log Files](string/reorderLogFiles.go) | [Easy][] |
 | 941 | [Valid Mountain Array](array/validMountainArray.go) | [Easy][] |
