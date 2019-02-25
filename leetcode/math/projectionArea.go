@@ -49,25 +49,22 @@ package lmath
 
 func projectionArea(grid [][]int) int {
 	I, J := len(grid), len(grid[0])
-	xx, xz, xyL := 0, 0, make([]int, J, J)
+	xx, xz, xy := 0, 0, 0
 	for i := 0; i < I; i++ {
-		tmp := 0
+		tmpXZ, tmpXY := 0, 0
 		for j := 0; j < J; j++ {
 			if grid[i][j] != 0 {
 				xx++
 			}
-			if grid[i][j] > tmp {
-				tmp = grid[i][j]
+			if grid[i][j] > tmpXZ {
+				tmpXZ = grid[i][j]
 			}
-			if grid[i][j] > xyL[j] {
-				xyL[j] = grid[i][j]
+			if grid[j][i] > tmpXY {
+				tmpXY = grid[j][i]
 			}
 		}
-		xz += tmp
+		xz += tmpXZ
+		xy += tmpXY
 	}
-	res := xx + xz
-	for _, value := range xyL {
-		res += value
-	}
-	return res
+	return xx + xz + xy
 }

@@ -351,6 +351,7 @@
 | 883 | [Projection Area of 3D Shapes](math/projectionArea.go) | [Easy][] |
 | 884 | [Uncommon Words from Two Sentences](hash-table/uncommonFromSentences.go) | [Easy][] |
 | 888 | [Fair Candy Swap](array/fairCandySwap.go) | [Easy][] |
+| 892 | [Surface Area of 3D Shapes](math/surfaceArea.go) | [Easy][] |
 | 893 | [Groups of Special-Equivalent Strings](string/numSpecialEquivGroups.go) | [Easy][] |
 | 896 | [Monotonic Array](array/isMonotonic.go) | [Easy][] |
 | 897 | [Increasing Order Search Tree](tree/increasingBST.go) | [Easy][] |

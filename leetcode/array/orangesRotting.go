@@ -49,7 +49,7 @@ func orangesRotting(grid [][]int) int {
 		}
 	}
 
-	deepth := 0
+	depth := 0
 	for len(queue) != 0 {
 		tmp := [][2]int{}
 		for _, node := range queue {
@@ -62,7 +62,7 @@ func orangesRotting(grid [][]int) int {
 			}
 		}
 		queue = tmp
-		deepth++
+		depth++
 	}
 
 	for i := 0; i < len(grid); i++ {
@@ -74,8 +74,8 @@ func orangesRotting(grid [][]int) int {
 			}
 		}
 	}
-	if deepth > 0 {
-		deepth--
+	if depth > 0 {
+		depth--
 	}
-	return deepth
+	return depth
 }
