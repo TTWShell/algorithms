@@ -379,6 +379,7 @@
 | 989 | [Add to Array-Form of Integer](array/addToArrayForm.go) | [Easy][] |
 | 993 | [Cousins in Binary Tree](tree/isCousins.go) | [Easy][] |
 | 994 | [Rotting Oranges](array/orangesRotting.go) | [Easy][] |
+| 999 | [Available Captures for Rook](array/numRookCaptures.go) | [Easy][] |
 | 1002 | [Find Common Characters](hash-table/commonChars.go) | [Easy][] |
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
