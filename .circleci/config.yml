@@ -6,15 +6,13 @@ jobs:
     working_directory: /go/src/github.com/TTWShell/algorithms
     steps:
       - checkout
-      - run: go get github.com/TTWShell/algorithms/data-structure/heap
-      - run: go get github.com/TTWShell/algorithms/data-structure/stack
-      - run: go get github.com/TTWShell/algorithms/data-structure/union-find
-      - run: go get github.com/stretchr/testify/assert
+      - run: go get -t -v ./...
       - run:
           name: Run unit tests
           command: |
               go version
-              go test -v -cover ./...
+              go test -race -coverprofile=coverage.txt -covermode=atomic ./...
+              bash <(curl -s https://codecov.io/bash)
 
 
   build-go1.8:
@@ -23,10 +21,7 @@ jobs:
     working_directory: /go/src/github.com/TTWShell/algorithms
     steps:
       - checkout
-      - run: go get github.com/TTWShell/algorithms/data-structure/heap
-      - run: go get github.com/TTWShell/algorithms/data-structure/stack
-      - run: go get github.com/TTWShell/algorithms/data-structure/union-find
-      - run: go get github.com/stretchr/testify/assert
+      - run: go get -t -v ./...
       - run:
           name: Run unit tests
           command: |

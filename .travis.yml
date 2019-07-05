@@ -3,13 +3,14 @@ go:
  - 1.8
  - 1.9
 
-install:
- - go get -u github.com/TTWShell/algorithms/data-structure/heap
- - go get -u github.com/TTWShell/algorithms/data-structure/stack
- - go get github.com/stretchr/testify/assert
+before_install:
+ - go get -t -v ./...
 
 script:
- - go test -v -cover ./...
+ - go test -race -coverprofile=coverage.txt -covermode=atomic ./...
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
 
 branches:
   only:
