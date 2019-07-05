@@ -1,6 +1,7 @@
 # Data structures & Algorithms
 
-![https://travis-ci.org/TTWShell/algorithms.svg?branch=master](https://travis-ci.org/TTWShell/algorithms.svg?branch=master)[![CircleCI](https://circleci.com/gh/TTWShell/algorithms.svg?style=svg)](https://circleci.com/gh/TTWShell/algorithms)
+[![CircleCI](https://circleci.com/gh/TTWShell/algorithms.svg?style=svg)](https://circleci.com/gh/TTWShell/algorithms)
+[![codecov](https://codecov.io/gh/TTWShell/algorithms/branch/master/graph/badge.svg)](https://codecov.io/gh/TTWShell/algorithms)
 
 ![kill the dragon: http://img08.deviantart.net/98ef/i/2012/197/8/a/kill_the_dragon_by_ragnz-d57gxnl.jpg](dragon_killing_st_george_by_chrisrallis_d47pzmu-fullview.jpg)
 

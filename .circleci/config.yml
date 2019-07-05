@@ -1,41 +1,21 @@
 version: 2
 jobs:
-  build-go1.9:
+  build-go1.12:
     docker:
-      - image: circleci/golang:1.9
+      - image: circleci/golang:1.12
     working_directory: /go/src/github.com/TTWShell/algorithms
     steps:
       - checkout
-      - run: go get github.com/TTWShell/algorithms/data-structure/heap
-      - run: go get github.com/TTWShell/algorithms/data-structure/stack
-      - run: go get github.com/TTWShell/algorithms/data-structure/union-find
-      - run: go get github.com/stretchr/testify/assert
+      - run: go get -t -v ./...
       - run:
           name: Run unit tests
           command: |
               go version
-              go test -v -cover ./...
-
-
-  build-go1.8:
-    docker:
-      - image: circleci/golang:1.8
-    working_directory: /go/src/github.com/TTWShell/algorithms
-    steps:
-      - checkout
-      - run: go get github.com/TTWShell/algorithms/data-structure/heap
-      - run: go get github.com/TTWShell/algorithms/data-structure/stack
-      - run: go get github.com/TTWShell/algorithms/data-structure/union-find
-      - run: go get github.com/stretchr/testify/assert
-      - run:
-          name: Run unit tests
-          command: |
-              go version
-              go test -v -cover ./...
+              go test -race -coverprofile=coverage.txt -covermode=atomic ./...
+              bash <(curl -s https://codecov.io/bash)
 
 workflows:
   version: 2
   build:
     jobs:
-      - build-go1.9
-      - build-go1.8
+      - build-go1.12
