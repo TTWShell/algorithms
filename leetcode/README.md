@@ -216,6 +216,7 @@
 | 383 | [Ransom Note](string/canConstruct.go) | [Easy][] |
 | 387 | [First Unique Character in a String](string/firstUniqChar.go) | [Easy][] |
 | 389 | [Find the Difference](hash-table/findTheDifference.go) | [Easy][] |
+| 395 | [Longest Substring with At Least K Repeating Characters](string/longestSubstring.go) | [Medium][] |
 | 400 | [Nth Digit](math/findNthDigit.go) | [Easy][] |
 | 401 | [Binary Watch](bit-manipulation/readBinaryWatch.go) | [Easy][] |
 | 403 | [Frog Jump](dynamic-programming/canCross.go) | [Hard][] |
