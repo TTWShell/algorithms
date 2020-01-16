@@ -213,6 +213,7 @@
 | 350 | [Intersection of Two Arrays II](hash-table/intersect.go) | [Easy][] |
 | 367 | [Valid Perfect Square](math/isPerfectSquare.go) | [Easy][] |
 | 371 | [Sum of Two Integers](bit-manipulation/getSum.go) | [Easy][] |
+| 380 | [Insert Delete GetRandom O(1)](design/RandomizedSet.go) | [Medium][] |
 | 383 | [Ransom Note](string/canConstruct.go) | [Easy][] |
 | 384 | [Shuffle an Array](array/384.go) | [Medium][] |
 | 387 | [First Unique Character in a String](string/firstUniqChar.go) | [Easy][] |
