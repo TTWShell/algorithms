@@ -214,6 +214,7 @@
 | 367 | [Valid Perfect Square](math/isPerfectSquare.go) | [Easy][] |
 | 371 | [Sum of Two Integers](bit-manipulation/getSum.go) | [Easy][] |
 | 383 | [Ransom Note](string/canConstruct.go) | [Easy][] |
+| 384 | [Shuffle an Array](array/384.go) | [Medium][] |
 | 387 | [First Unique Character in a String](string/firstUniqChar.go) | [Easy][] |
 | 389 | [Find the Difference](hash-table/findTheDifference.go) | [Easy][] |
 | 395 | [Longest Substring with At Least K Repeating Characters](string/longestSubstring.go) | [Medium][] |
