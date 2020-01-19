@@ -71,19 +71,6 @@ func (pq *PQ) Peek() (el Element) {
 	return pq.heap[0]
 }
 
-// func (pq *PQ) ChangePriority(index, priority int) {
-// 	pq.Lock()
-// 	defer pq.Unlock()
-
-// 	oldEl := pq.heap[index]
-// 	pq.heap[index].Priority = priority
-// 	if pq.less(Element{Priority: priority}, oldEl) {
-// 		pq.precolateUp(index)
-// 	} else {
-// 		pq.precolateDown(index)
-// 	}
-// }
-
 func (pq *PQ) precolateUp(index int) {
 	// 上滤，新元素在堆中上滤直到找出正确位置
 	needUp, parent := index, (index-1)>>1
