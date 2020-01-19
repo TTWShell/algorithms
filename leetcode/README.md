@@ -206,6 +206,7 @@
 | 326 | [Power of Three](math/isPowerOfThree.go) | [Easy][] |
 | 328 | [Odd Even Linked List](linked-list/oddEvenList.go) | [Medium][] |
 | 332 | [Reconstruct Itinerary](graph/findItinerary.go) | [Medium][] |
+| 334 | [Increasing Triplet Subsequence](array/increasingTriplet.go) | [Medium][] |
 | 342 | [Power of Four](bit-manipulation/isPowerOfFour.go) | [Easy][] |
 | 344 | [Reverse String](string/reverseString.go) | [Easy][] |
 | 345 | [Reverse Vowels of a String](string/reverseVowels.go) | [Easy][] |
