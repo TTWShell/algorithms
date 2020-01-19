@@ -209,6 +209,7 @@
 | 342 | [Power of Four](bit-manipulation/isPowerOfFour.go) | [Easy][] |
 | 344 | [Reverse String](string/reverseString.go) | [Easy][] |
 | 345 | [Reverse Vowels of a String](string/reverseVowels.go) | [Easy][] |
+| 347 | [Top K Frequent Elements](array/topKFrequent.go) | [Medium][] |
 | 349 | [Intersection of Two Arrays](hash-table/intersection.go) | [Easy][] |
 | 350 | [Intersection of Two Arrays II](hash-table/intersect.go) | [Easy][] |
 | 367 | [Valid Perfect Square](math/isPerfectSquare.go) | [Easy][] |
