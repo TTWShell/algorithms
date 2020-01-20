@@ -123,6 +123,7 @@
 | 143 | [Reorder List](linked-list/reorderList.go) | [Medium][] |
 | 144 | [Binary Tree Preorder Traversal](tree/preorderTraversal.go) | [Medium][] |
 | 145 | [Binary Tree Postorder Traversal](tree/postorderTraversal.go) | [Hard][] |
+| 146 | [LRU Cache](design/LRUCache.go) | [Medium][] |
 | 147 | [Insertion Sort List](linked-list/insertionSortList.go) | [Medium][] |
 | 148 | [Sort List](linked-list/sortList.go) | [Medium][] |
 | 150 | [Evaluate Reverse Polish Notation](stack/evalRPN.go) | [Medium][] |
