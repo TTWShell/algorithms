@@ -203,6 +203,7 @@
 | 304 | [Range Sum Query 2D - Immutable](dynamic-programming/NumMatrix.SumRegion.go) | [Medium][] |
 | 306 | [Additive Number](backtracking/isAdditiveNumber.go) | [Medium][] |
 | 307 | [Range Sum Query - Mutable](binary-indexed-tree/numarray.go) | [Medium][] |
+| 324 | [Wiggle Sort II](sort/wiggleSort.go) | [Medium][] |
 | 326 | [Power of Three](math/isPowerOfThree.go) | [Easy][] |
 | 328 | [Odd Even Linked List](linked-list/oddEvenList.go) | [Medium][] |
 | 332 | [Reconstruct Itinerary](graph/findItinerary.go) | [Medium][] |
