@@ -78,6 +78,7 @@
 | 81 | [Search in Rotated Sorted Array II](binary-search/search2.go) | [Medium][] |
 | 82 | [Remove Duplicates from Sorted List II](linked-list/deleteDuplicates2.go) | [Medium][] |
 | 83 | [Remove Duplicates from Sorted List](linked-list/deleteDuplicates.go) | [Easy][] |
+| 84 | [Largest Rectangle in Histogram](array/largestRectangleArea.go) | [Hard][] |
 | 86 | [Partition List](linked-list/partition.go) | [Medium][] |
 | 88 | [Merge Sorted Array](array/merge.go) | [Easy][] |
 | 89 | [Gray Code](backtracking/grayCode.go) | [Medium][] |
