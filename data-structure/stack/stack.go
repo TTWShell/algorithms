@@ -34,7 +34,8 @@ func (s *Stack) Pop() (element interface{}) {
 	s.Lock()
 	defer s.Unlock()
 
-	element, s.stack = s.stack[0], s.stack[1:]
+	element = s.stack[s.len-1]
+	s.stack = s.stack[:s.len-1]
 	s.len--
 	return
 }
@@ -43,8 +44,7 @@ func (s *Stack) Push(element interface{}) {
 	s.Lock()
 	defer s.Unlock()
 
-	prepend := []interface{}{element}
-	s.stack = append(prepend, s.stack...)
+	s.stack = append(s.stack, element)
 	s.len++
 }
 
@@ -52,5 +52,5 @@ func (s *Stack) Top() interface{} {
 	s.RLock()
 	defer s.RUnlock()
 
-	return s.stack[0]
+	return s.stack[s.len-1]
 }
