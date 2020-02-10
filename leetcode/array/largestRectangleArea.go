@@ -18,14 +18,9 @@ Example:
 
 package larray
 
-func largestRectangleArea(heights []int) int {
-	min := func(a, b int) int {
-		if a < b {
-			return a
-		}
-		return b
-	}
+import "github.com/TTWShell/algorithms/data-structure/stack" // need copy stack.go when run in leetcode online
 
+func largestRectangleArea(heights []int) int {
 	max := func(a, b int) int {
 		if a > b {
 			return a
@@ -33,18 +28,58 @@ func largestRectangleArea(heights []int) int {
 		return b
 	}
 
-	length := len(heights)
-	res := 0
-	for i := 0; i < length; i++ {
-		if i+1 < length && heights[i] <= heights[i+1] {
-			continue
+	length, res := len(heights), 0
+	st := stack.Constructor()
+
+	for i := 0; i <= length; i++ {
+		var curHeight int
+		if i == length {
+			curHeight = 0
+		} else {
+			curHeight = heights[i]
 		}
-		minH := heights[i]
-		for j := i; j >= 0; j-- {
-			minH = min(minH, heights[j])
-			area := minH * (i - j + 1)
+		for !st.IsEmpty() && heights[st.Top().(int)] >= curHeight {
+			cur := st.Pop().(int)
+			var area int
+			if st.IsEmpty() {
+				area = heights[cur] * i
+			} else {
+				area = heights[cur] * (i - st.Top().(int) - 1)
+			}
 			res = max(res, area)
 		}
+		st.Push(i)
 	}
 	return res
 }
+
+// func largestRectangleArea(heights []int) int {
+// 	min := func(a, b int) int {
+// 		if a < b {
+// 			return a
+// 		}
+// 		return b
+// 	}
+
+// 	max := func(a, b int) int {
+// 		if a > b {
+// 			return a
+// 		}
+// 		return b
+// 	}
+
+// 	length := len(heights)
+// 	res := 0
+// 	for i := 0; i < length; i++ {
+// 		if i+1 < length && heights[i] <= heights[i+1] {
+// 			continue
+// 		}
+// 		minH := heights[i]
+// 		for j := i; j >= 0; j-- {
+// 			minH = min(minH, heights[j])
+// 			area := minH * (i - j + 1)
+// 			res = max(res, area)
+// 		}
+// 	}
+// 	return res
+// }
