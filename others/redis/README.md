@@ -6,4 +6,11 @@
 - [] [整数集合(Intset)](intset.md)
 - [] [压缩表(ziplist)](ziplist.md)
 - [] [快速列表(quicklist)](quicklistmd)
-- [] [跳跃表(skiplist)](skiplist.md)
+- [x] [跳跃表(skiplist)](skiplist.md)
+
+参考文章：
+
+1. https://github.com/antirez/redis
+2. https://redis.io/commands
+3. http://redisbook.com/
+4. http://czrzchao.com/redisSourceSkiplist#skiplist
