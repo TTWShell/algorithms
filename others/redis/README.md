@@ -4,7 +4,7 @@
 - [x] [双向链表(A generic doubly linked list)](adlist.md)
 - [x] [字典(Hash Tables)](dict.md)
 - [x] [整数集合(Intset)](intset.md)
-- [] [压缩表(ziplist)](ziplist.md)
+- [x] [压缩表(ziplist)](ziplist.md)
 - [] [快速列表(quicklist)](quicklistmd)
 - [x] [跳跃表(skiplist)](skiplist.md)
 
