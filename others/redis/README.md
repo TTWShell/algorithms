@@ -5,7 +5,7 @@
 - [x] [字典(Hash Tables)](dict.md)
 - [x] [整数集合(Intset)](intset.md)
 - [x] [压缩表(ziplist)](ziplist.md)
-- [] [快速列表(quicklist)](quicklist.md)
+- [ ] [快速列表(quicklist)](quicklist.md)
 - [x] [跳跃表(skiplist)](skiplist.md)
 
 参考文章：
