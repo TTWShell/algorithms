@@ -13,7 +13,7 @@ func Test_Stack(t *testing.T) {
 	stack.Push(0)
 	stack.Push(-3)
 
-	if stack.stack[0] != -3 || stack.stack[1] != 0 || stack.stack[2] != -2 {
+	if stack.stack[0] != -2 || stack.stack[1] != 0 || stack.stack[2] != -3 {
 		t.Fatal(stack.stack)
 	}
 
