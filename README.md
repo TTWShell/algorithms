@@ -47,6 +47,10 @@ Data structures and algorithms in go.
 * [并查集（Union-Find）](data-structure/union-find)
     - [x] [实现](data-structure/union-find/uf.go)
 
+## Others
+
+* [redis](others/redis/README.md)
+
 
 ## Algorithms
 
