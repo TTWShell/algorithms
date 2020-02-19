@@ -70,6 +70,7 @@
 | 73 | [Set Matrix Zeroes](array/setZeroes.go) | [Medium][] |
 | 74 | [Search a 2D Matrix](binary-search/searchMatrix.go) | [Medium][] |
 | 75 | [Sort Colors](array/sortColors.go) | [Medium][] |
+| 76 | [Minimum Window Substring](hash-table/minWindow.go) | [Hard][] |
 | 77 | [Combinations](backtracking/combine.go) | [Medium][] |
 | 78 | [Subsets](backtracking/subsets.go) | [Medium][] |
 | 79 | [Word Search](backtracking/exist.go) | [Medium][] |
@@ -77,6 +78,7 @@
 | 81 | [Search in Rotated Sorted Array II](binary-search/search2.go) | [Medium][] |
 | 82 | [Remove Duplicates from Sorted List II](linked-list/deleteDuplicates2.go) | [Medium][] |
 | 83 | [Remove Duplicates from Sorted List](linked-list/deleteDuplicates.go) | [Easy][] |
+| 84 | [Largest Rectangle in Histogram](array/largestRectangleArea.go) | [Hard][] |
 | 86 | [Partition List](linked-list/partition.go) | [Medium][] |
 | 88 | [Merge Sorted Array](array/merge.go) | [Easy][] |
 | 89 | [Gray Code](backtracking/grayCode.go) | [Medium][] |
@@ -123,6 +125,7 @@
 | 143 | [Reorder List](linked-list/reorderList.go) | [Medium][] |
 | 144 | [Binary Tree Preorder Traversal](tree/preorderTraversal.go) | [Medium][] |
 | 145 | [Binary Tree Postorder Traversal](tree/postorderTraversal.go) | [Hard][] |
+| 146 | [LRU Cache](design/LRUCache.go) | [Medium][] |
 | 147 | [Insertion Sort List](linked-list/insertionSortList.go) | [Medium][] |
 | 148 | [Sort List](linked-list/sortList.go) | [Medium][] |
 | 150 | [Evaluate Reverse Polish Notation](stack/evalRPN.go) | [Medium][] |
@@ -203,19 +206,27 @@
 | 304 | [Range Sum Query 2D - Immutable](dynamic-programming/NumMatrix.SumRegion.go) | [Medium][] |
 | 306 | [Additive Number](backtracking/isAdditiveNumber.go) | [Medium][] |
 | 307 | [Range Sum Query - Mutable](binary-indexed-tree/numarray.go) | [Medium][] |
+| 322 | [Coin Change](dynamic-programming/coinChange.go) | [Medium][] |
+| 324 | [Wiggle Sort II](sort/wiggleSort.go) | [Medium][] |
 | 326 | [Power of Three](math/isPowerOfThree.go) | [Easy][] |
 | 328 | [Odd Even Linked List](linked-list/oddEvenList.go) | [Medium][] |
 | 332 | [Reconstruct Itinerary](graph/findItinerary.go) | [Medium][] |
+| 334 | [Increasing Triplet Subsequence](array/increasingTriplet.go) | [Medium][] |
 | 342 | [Power of Four](bit-manipulation/isPowerOfFour.go) | [Easy][] |
 | 344 | [Reverse String](string/reverseString.go) | [Easy][] |
 | 345 | [Reverse Vowels of a String](string/reverseVowels.go) | [Easy][] |
+| 347 | [Top K Frequent Elements](array/topKFrequent.go) | [Medium][] |
 | 349 | [Intersection of Two Arrays](hash-table/intersection.go) | [Easy][] |
 | 350 | [Intersection of Two Arrays II](hash-table/intersect.go) | [Easy][] |
 | 367 | [Valid Perfect Square](math/isPerfectSquare.go) | [Easy][] |
 | 371 | [Sum of Two Integers](bit-manipulation/getSum.go) | [Easy][] |
+| 378 | [Kth Smallest Element in a Sorted Matrix](binary-search/kthSmallest.go) | [Medium][] |
+| 380 | [Insert Delete GetRandom O(1)](design/RandomizedSet.go) | [Medium][] |
 | 383 | [Ransom Note](string/canConstruct.go) | [Easy][] |
+| 384 | [Shuffle an Array](array/384.go) | [Medium][] |
 | 387 | [First Unique Character in a String](string/firstUniqChar.go) | [Easy][] |
 | 389 | [Find the Difference](hash-table/findTheDifference.go) | [Easy][] |
+| 395 | [Longest Substring with At Least K Repeating Characters](string/longestSubstring.go) | [Medium][] |
 | 400 | [Nth Digit](math/findNthDigit.go) | [Easy][] |
 | 401 | [Binary Watch](bit-manipulation/readBinaryWatch.go) | [Easy][] |
 | 403 | [Frog Jump](dynamic-programming/canCross.go) | [Hard][] |
@@ -234,6 +245,7 @@
 | 447 | [Number of Boomerangs](hash-table/numberOfBoomerangs.go) | [Easy][] |
 | 448 | [Find All Numbers Disappeared in an Array](array/findDisappearedNumbers.go) | [Easy][] |
 | 453 | [Minimum Moves to Equal Array Elements](math/minMoves.go) | [Easy][] |
+| 454 | [4Sum II](array/fourSum.go) | [Medium][] |
 | 455 | [Assign Cookies](greedy/findContentChildren.go) | [Easy][] |
 | 458 | [Poor Pigs](others/poorPigs.go) | [Easy][] |
 | 459 | [Repeated Substring Pattern](string/repeatedSubstringPattern.go) | [Easy][] |
