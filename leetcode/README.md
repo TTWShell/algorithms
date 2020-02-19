@@ -226,6 +226,7 @@
 | 384 | [Shuffle an Array](array/384.go) | [Medium][] |
 | 387 | [First Unique Character in a String](string/firstUniqChar.go) | [Easy][] |
 | 389 | [Find the Difference](hash-table/findTheDifference.go) | [Easy][] |
+| 392 | [Is Subsequence](dynamic-programming/isSubsequence.go) | [Easy][] |
 | 395 | [Longest Substring with At Least K Repeating Characters](string/longestSubstring.go) | [Medium][] |
 | 400 | [Nth Digit](math/findNthDigit.go) | [Easy][] |
 | 401 | [Binary Watch](bit-manipulation/readBinaryWatch.go) | [Easy][] |
@@ -394,6 +395,7 @@
 | 997 | [Find the Town Judge](graph/findJudge.go) | [Easy][] |
 | 999 | [Available Captures for Rook](array/numRookCaptures.go) | [Easy][] |
 | 1002 | [Find Common Characters](hash-table/commonChars.go) | [Easy][] |
+| 1025 | [Divisor Game](dynamic-programming/divisorGame.go) | [Easy][] |
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
 [Medium]: https://leetcode.com/problemset/algorithms/?difficulty=Medium&status=Todo
