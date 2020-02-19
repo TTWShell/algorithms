@@ -20,7 +20,7 @@ Note:
 package larray
 
 import (
-	pq "../../data-structure/priority-queue"
+	pq "github.com/TTWShell/algorithms/data-structure/priority-queue"
 )
 
 func topKFrequent(nums []int, k int) []int {
