@@ -394,6 +394,7 @@
 | 997 | [Find the Town Judge](graph/findJudge.go) | [Easy][] |
 | 999 | [Available Captures for Rook](array/numRookCaptures.go) | [Easy][] |
 | 1002 | [Find Common Characters](hash-table/commonChars.go) | [Easy][] |
+| 1025 | [Divisor Game](dynamic-programming/divisorGame.go) | [Easy][] |
 
 [Easy]: https://leetcode.com/problemset/algorithms/?difficulty=Easy&status=Todo
 [Medium]: https://leetcode.com/problemset/algorithms/?difficulty=Medium&status=Todo
