@@ -67,6 +67,7 @@
 | 69 | [Sqrt(x)](math/mySqrt.go) | [Easy][] |
 | 70 | [Climbing Stairs](dynamic-programming/climbStairs.go) | [Easy][] |
 | 71 | [Simplify Path](stack/simplifyPath.go) | [Medium][] |
+| 72 | [Edit Distance](dynamic-programming/minDistance.go) | [Hard][] |
 | 73 | [Set Matrix Zeroes](array/setZeroes.go) | [Medium][] |
 | 74 | [Search a 2D Matrix](binary-search/searchMatrix.go) | [Medium][] |
 | 75 | [Sort Colors](array/sortColors.go) | [Medium][] |
