@@ -67,6 +67,7 @@
 | 69 | [Sqrt(x)](math/mySqrt.go) | [Easy][] |
 | 70 | [Climbing Stairs](dynamic-programming/climbStairs.go) | [Easy][] |
 | 71 | [Simplify Path](stack/simplifyPath.go) | [Medium][] |
+| 72 | [Edit Distance](dynamic-programming/minDistance.go) | [Hard][] |
 | 73 | [Set Matrix Zeroes](array/setZeroes.go) | [Medium][] |
 | 74 | [Search a 2D Matrix](binary-search/searchMatrix.go) | [Medium][] |
 | 75 | [Sort Colors](array/sortColors.go) | [Medium][] |
@@ -79,7 +80,9 @@
 | 82 | [Remove Duplicates from Sorted List II](linked-list/deleteDuplicates2.go) | [Medium][] |
 | 83 | [Remove Duplicates from Sorted List](linked-list/deleteDuplicates.go) | [Easy][] |
 | 84 | [Largest Rectangle in Histogram](array/largestRectangleArea.go) | [Hard][] |
+| 85 | [Maximal Rectangle](dynamic-programming/maximalRectangle.go) | [Hard][] |
 | 86 | [Partition List](linked-list/partition.go) | [Medium][] |
+| 87 | [Scramble String](dynamic-programming/isScramble.go) | [Hard][] |
 | 88 | [Merge Sorted Array](array/merge.go) | [Easy][] |
 | 89 | [Gray Code](backtracking/grayCode.go) | [Medium][] |
 | 90 | [Subsets II](backtracking/subsetsWithDup.go) | [Medium][] |
@@ -89,6 +92,7 @@
 | 94 | [Binary Tree Inorder Traversal](tree/inorderTraversal.go) | [Medium][] |
 | 95 | [Unique Binary Search Trees II](dynamic-programming/generateTrees.go) | [Medium][] |
 | 96 | [Unique Binary Search Trees](dynamic-programming/numTrees.go) | [Medium][] |
+| 97 | [Interleaving String](dynamic-programming/isInterleave.go) | [Hard][] |
 | 98 | [Validate Binary Search Tree](tree/isValidBST.go) | [Medium][] |
 | 100 | [Same Tree](tree/isSameTree.go) | [Easy][] |
 | 101 | [Symmetric Tree](tree/isSymmetric.go) | [Easy][] |
