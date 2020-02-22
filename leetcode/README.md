@@ -46,6 +46,7 @@
 | 42 | [Trapping Rain Water](array/trap.go) | [Hard][] |
 | 43 | [Multiply Strings](math/multiply.go) | [Medium][] |
 | 44 | [Wildcard Matching](dynamic-programming/isMatch2.go) | [Hard][] |
+| 45 | [Jump Game II](array/jump.go) | [Hard][] |
 | 46 | [Permutations](backtracking/permute.go) | [Medium][] |
 | 47 | [Permutations II](backtracking/permuteUnique.go) | [Medium][] |
 | 48 | [Rotate Image](array/rotate2.go) | [Medium][] |
