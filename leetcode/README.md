@@ -82,6 +82,7 @@
 | 84 | [Largest Rectangle in Histogram](array/largestRectangleArea.go) | [Hard][] |
 | 85 | [Maximal Rectangle](dynamic-programming/maximalRectangle.go) | [Hard][] |
 | 86 | [Partition List](linked-list/partition.go) | [Medium][] |
+| 87 | [Scramble String](dynamic-programming/isScramble.go) | [Hard][] |
 | 88 | [Merge Sorted Array](array/merge.go) | [Easy][] |
 | 89 | [Gray Code](backtracking/grayCode.go) | [Medium][] |
 | 90 | [Subsets II](backtracking/subsetsWithDup.go) | [Medium][] |
