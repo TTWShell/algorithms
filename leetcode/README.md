@@ -53,6 +53,7 @@
 | 49 | [Group Anagrams](hash-table/groupAnagrams.go) | [Medium][] |
 | 50 | [Pow(x, n)](binary-search/myPow.go) | [Medium][] |
 | 51 | [N-Queens](backtracking/solveNQueens.go) | [Hard][] |
+| 52 | [N-Queens II](backtracking/totalNQueens.go) | [Hard][] |
 | 53 | [Maximum Subarray](array/maxSubArray.go) | [Easy][] |
 | 54 | [Spiral Matrix](array/spiralOrder.go) | [Medium][] |
 | 55 | [Jump Game](greedy/canJump.go) | [Medium][] |
