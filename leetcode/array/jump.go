@@ -21,21 +21,45 @@ package larray
 
 func jump(nums []int) int {
 	length := len(nums)
-	steps := make([]int, length, length)
-
-	for i, num := range nums {
-		for idx := 1; idx <= num; idx++ {
-			next := i + idx
-			if next >= length {
-				break
-			}
-			if steps[next] == 0 || steps[next] > steps[i]+1 {
-				steps[next] = steps[i] + 1
-			}
-		}
-		if steps[length-1] != 0 {
-			break
-		}
+	if length < 2 {
+		return 0
 	}
-	return steps[length-1]
+
+	steps := 0
+	for i := 0; i < length; {
+		if nums[i]+i+1 >= length {
+			return steps + 1
+		}
+
+		steps++
+		next := i + 1
+		for j := i + 1; j <= i+nums[i]; j++ {
+			if nums[next]-nums[j] < j-next { // 找到下一跳可以跳最远的, greedy
+				next = j
+			}
+		}
+		i = next
+	}
+	return 0
 }
+
+// func jump(nums []int) int {
+// 	length := len(nums)
+// 	steps := make([]int, length, length)
+
+// 	for i, num := range nums {
+// 		for idx := 1; idx <= num; idx++ {
+// 			next := i + idx
+// 			if next >= length {
+// 				break
+// 			}
+// 			if steps[next] == 0 || steps[next] > steps[i]+1 {
+// 				steps[next] = steps[i] + 1
+// 			}
+// 		}
+// 		if steps[length-1] != 0 {
+// 			break
+// 		}
+// 	}
+// 	return steps[length-1]
+// }
