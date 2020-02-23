@@ -66,6 +66,7 @@
 | 62 | [Unique Paths](dynamic-programming/uniquePaths.go) | [Medium][] |
 | 63 | [Unique Paths II](dynamic-programming/uniquePathsWithObstacles.go) | [Medium][] |
 | 64 | [Minimum Path Sum](dynamic-programming/minPathSum.go) | [Medium][] |
+| 65 | [Valid Number](string/isNumber.go) | [Hard][] |
 | 66 | [Plus One](array/plusOne.go) | [Easy][] |
 | 67 | [Add Binary](string/addBinary.go) | [Easy][] |
 | 69 | [Sqrt(x)](math/mySqrt.go) | [Easy][] |
