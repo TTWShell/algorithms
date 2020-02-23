@@ -69,6 +69,7 @@
 | 65 | [Valid Number](string/isNumber.go) | [Hard][] |
 | 66 | [Plus One](array/plusOne.go) | [Easy][] |
 | 67 | [Add Binary](string/addBinary.go) | [Easy][] |
+| 68 | [Text Justification](string/fullJustify.go) | [Hard][] |
 | 69 | [Sqrt(x)](math/mySqrt.go) | [Easy][] |
 | 70 | [Climbing Stairs](dynamic-programming/climbStairs.go) | [Easy][] |
 | 71 | [Simplify Path](stack/simplifyPath.go) | [Medium][] |
