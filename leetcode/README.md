@@ -58,6 +58,7 @@
 | 54 | [Spiral Matrix](array/spiralOrder.go) | [Medium][] |
 | 55 | [Jump Game](greedy/canJump.go) | [Medium][] |
 | 56 | [Merge Intervals](array/merge2.go) | [Medium][] |
+| 57 | [Insert Interval](array/insert.go) | [Hard][] |
 | 58 | [Length of Last Word](string/lengthOfLastWord.go) | [Easy][] |
 | 59 | [Spiral Matrix II](array/generateMatrix.go) | [Medium][] |
 | 60 | [Permutation Sequence](backtracking/getPermutation.go) | [Medium][] |
