@@ -43,6 +43,7 @@ func jump(nums []int) int {
 	return 0
 }
 
+// 上面代码跳不到最后一步时会出错。下面我的代码可以保证不会错，见测试代码
 // func jump(nums []int) int {
 // 	length := len(nums)
 // 	steps := make([]int, length, length)
