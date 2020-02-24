@@ -46,15 +46,19 @@
 | 42 | [Trapping Rain Water](array/trap.go) | [Hard][] |
 | 43 | [Multiply Strings](math/multiply.go) | [Medium][] |
 | 44 | [Wildcard Matching](dynamic-programming/isMatch2.go) | [Hard][] |
+| 45 | [Jump Game II](array/jump.go) | [Hard][] |
 | 46 | [Permutations](backtracking/permute.go) | [Medium][] |
 | 47 | [Permutations II](backtracking/permuteUnique.go) | [Medium][] |
 | 48 | [Rotate Image](array/rotate2.go) | [Medium][] |
 | 49 | [Group Anagrams](hash-table/groupAnagrams.go) | [Medium][] |
 | 50 | [Pow(x, n)](binary-search/myPow.go) | [Medium][] |
+| 51 | [N-Queens](backtracking/solveNQueens.go) | [Hard][] |
+| 52 | [N-Queens II](backtracking/totalNQueens.go) | [Hard][] |
 | 53 | [Maximum Subarray](array/maxSubArray.go) | [Easy][] |
 | 54 | [Spiral Matrix](array/spiralOrder.go) | [Medium][] |
 | 55 | [Jump Game](greedy/canJump.go) | [Medium][] |
 | 56 | [Merge Intervals](array/merge2.go) | [Medium][] |
+| 57 | [Insert Interval](array/insert.go) | [Hard][] |
 | 58 | [Length of Last Word](string/lengthOfLastWord.go) | [Easy][] |
 | 59 | [Spiral Matrix II](array/generateMatrix.go) | [Medium][] |
 | 60 | [Permutation Sequence](backtracking/getPermutation.go) | [Medium][] |
@@ -62,8 +66,10 @@
 | 62 | [Unique Paths](dynamic-programming/uniquePaths.go) | [Medium][] |
 | 63 | [Unique Paths II](dynamic-programming/uniquePathsWithObstacles.go) | [Medium][] |
 | 64 | [Minimum Path Sum](dynamic-programming/minPathSum.go) | [Medium][] |
+| 65 | [Valid Number](string/isNumber.go) | [Hard][] |
 | 66 | [Plus One](array/plusOne.go) | [Easy][] |
 | 67 | [Add Binary](string/addBinary.go) | [Easy][] |
+| 68 | [Text Justification](string/fullJustify.go) | [Hard][] |
 | 69 | [Sqrt(x)](math/mySqrt.go) | [Easy][] |
 | 70 | [Climbing Stairs](dynamic-programming/climbStairs.go) | [Easy][] |
 | 71 | [Simplify Path](stack/simplifyPath.go) | [Medium][] |
@@ -94,6 +100,7 @@
 | 96 | [Unique Binary Search Trees](dynamic-programming/numTrees.go) | [Medium][] |
 | 97 | [Interleaving String](dynamic-programming/isInterleave.go) | [Hard][] |
 | 98 | [Validate Binary Search Tree](tree/isValidBST.go) | [Medium][] |
+| 99 | [Recover Binary Search Tree](tree/recoverTree.go) | [Hard][] |
 | 100 | [Same Tree](tree/isSameTree.go) | [Easy][] |
 | 101 | [Symmetric Tree](tree/isSymmetric.go) | [Easy][] |
 | 102 | [Binary Tree Level Order Traversal](tree/levelOrder.go) | [Medium][] |
