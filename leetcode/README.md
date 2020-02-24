@@ -100,6 +100,7 @@
 | 96 | [Unique Binary Search Trees](dynamic-programming/numTrees.go) | [Medium][] |
 | 97 | [Interleaving String](dynamic-programming/isInterleave.go) | [Hard][] |
 | 98 | [Validate Binary Search Tree](tree/isValidBST.go) | [Medium][] |
+| 99 | [Recover Binary Search Tree](tree/recoverTree.go) | [Hard][] |
 | 100 | [Same Tree](tree/isSameTree.go) | [Easy][] |
 | 101 | [Symmetric Tree](tree/isSymmetric.go) | [Easy][] |
 | 102 | [Binary Tree Level Order Traversal](tree/levelOrder.go) | [Medium][] |
