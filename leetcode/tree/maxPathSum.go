@@ -31,10 +31,6 @@ Output: 42
 
 package ltree
 
-import (
-	"math"
-)
-
 /**
  * Definition for a binary tree node.
  * type TreeNode struct {
@@ -43,9 +39,9 @@ import (
  *     Right *TreeNode
  * }
  */
+
 func maxPathSum(root *TreeNode) int {
 	maxSum := root.Val
-	cache := map[*TreeNode]int{}
 
 	max := func(a, b int) int {
 		if a > b {
@@ -54,35 +50,63 @@ func maxPathSum(root *TreeNode) int {
 		return b
 	}
 
-	var helper func(root *TreeNode)
-	helper = func(root *TreeNode) {
-		if root.Left == nil && root.Right == nil {
-			cache[root] = root.Val
-			return
+	var helper func(root *TreeNode) int
+	helper = func(root *TreeNode) int {
+		if root == nil {
+			return 0
 		}
 
-		if root.Left != nil {
-			helper(root.Left)
-		}
-		if root.Right != nil {
-			helper(root.Right)
-		}
+		left := max(0, helper(root.Left))
+		right := max(0, helper(root.Right))
 
-		maxChild, sumPath := math.MinInt64, root.Val
-		if left, ok := cache[root.Left]; ok {
-			maxChild = left
-			sumPath += left
-		}
-		if right, ok := cache[root.Right]; ok {
-			maxChild = max(maxChild, right)
-			sumPath += right
-		}
-
-		tmp := max(root.Val, root.Val+maxChild)
-		cache[root] = tmp
-		maxSum = max(maxSum, max(tmp, max(maxChild, sumPath)))
+		maxSum = max(maxSum, root.Val+left+right)
+		return max(root.Val+left, root.Val+right)
 	}
 
 	helper(root)
 	return maxSum
 }
+
+// func maxPathSum(root *TreeNode) int {
+// 	maxSum := root.Val
+// 	cache := map[*TreeNode]int{}
+
+// 	max := func(a, b int) int {
+// 		if a > b {
+// 			return a
+// 		}
+// 		return b
+// 	}
+
+// 	var helper func(root *TreeNode)
+// 	helper = func(root *TreeNode) {
+// 		if root.Left == nil && root.Right == nil {
+// 			cache[root] = root.Val
+// 			return
+// 		}
+
+// 		if root.Left != nil {
+// 			helper(root.Left)
+// 		}
+// 		if root.Right != nil {
+// 			helper(root.Right)
+// 		}
+
+// 		maxChild, sumPath := math.MinInt64, root.Val
+// 		if left, ok := cache[root.Left]; ok {
+// 			maxChild = left
+// 			sumPath += left
+// 		}
+// 		if right, ok := cache[root.Right]; ok {
+// 			maxChild = max(maxChild, right)
+// 			sumPath += right
+// 		}
+
+// 		tmp := max(root.Val, root.Val+maxChild)
+// 		cache[root] = tmp
+// 		maxSum = max(maxSum, max(tmp, max(maxChild, sumPath)))
+// 	}
+
+// 	helper(root)
+// 	return maxSum
+// }

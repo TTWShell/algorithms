@@ -29,4 +29,5 @@ func Test_maxPathSum(t *testing.T) {
 
 	assert.Equal(-3, maxPathSum(&TreeNode{Val: -3}))
 	assert.Equal(-1, maxPathSum(&TreeNode{Val: -1, Left: &TreeNode{Val: -2}}))
+	assert.Equal(1, maxPathSum(&TreeNode{Val: -2, Left: &TreeNode{Val: 1}}))
 }
