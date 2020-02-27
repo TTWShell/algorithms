@@ -123,6 +123,7 @@
 | 121 | [Best Time to Buy and Sell Stock](dynamic-programming/maxProfit.go) | [Easy][] |
 | 122 | [Best Time to Buy and Sell Stock II](dynamic-programming/maxProfit2.go) | [Easy][] |
 | 123 | [Best Time to Buy and Sell Stock III](dynamic-programming/maxProfit3.go) | [Hard][] |
+| 124 | [Binary Tree Maximum Path Sum](tree/maxPathSum.go) | [Hard][] |
 | 125 | [Valid Palindrome](string/isPalindrome.go) | [Easy][] |
 | 127 | [Word Ladder](others/ladderLength.go) | [Medium][] |
 | 129 | [Sum Root to Leaf Numbers](tree/sumNumbers.go) | [Medium][] |
