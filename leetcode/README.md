@@ -116,6 +116,7 @@
 | 112 | [Path Sum](tree/hasPathSum.go) | [Easy][] |
 | 113 | [Path Sum II](tree/pathSum2.go) | [Medium][] |
 | 114 | [Flatten Binary Tree to Linked List](tree/flatten.go) | [Medium][] |
+| 115 | [Distinct Subsequences](dynamic-programming/numDistinct.go) | [Hard][] |
 | 118 | [Pascal's Triangle](array/generate.go) | [Easy][] |
 | 119 | [Pascal's Triangle II](array/getRow.go) | [Easy][] |
 | 120 | [Triangle](dynamic-programming/minimumTotal.go) | [Medium][] |
