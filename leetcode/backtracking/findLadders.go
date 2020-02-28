@@ -54,27 +54,32 @@ func findLadders(beginWord string, endWord string, wordList []string) [][]string
 		return cnt == 1
 	}
 
-	relations := map[string]map[string]bool{beginWord: {}} // 缓存每个单词的候选词
-	endWordExist := false
-	for _, word := range wordList {
-		relations[word] = map[string]bool{}
+	// 处理beginWord，endWord不在队列的情况
+	beginWordIdx, endWordEIdx := -1, -1
+	for i, word := range wordList {
 		if word == endWord {
-			endWordExist = true
+			endWordEIdx = i
+		} else if word == beginWord {
+			beginWordIdx = i
 		}
 	}
-	// The endWord is not in wordList, therefore no possible transformation
-	if endWordExist == false {
+	if endWordEIdx == -1 {
 		return [][]string{}
 	}
+	if beginWordIdx == -1 {
+		beginWordIdx = len(wordList)
+		wordList = append(wordList, beginWord)
+	}
 
+	// 缓存每个单词的候选词
+	relations := make(map[int]map[int]bool, len(wordList))
+	for i := 0; i < len(wordList); i++ {
+		relations[i] = map[int]bool{}
+	}
 	for i, word := range wordList {
-		if canTrans(word, beginWord) {
-			relations[beginWord][word] = true
-		}
 		for j := i + 1; j < len(wordList); j++ {
-			if wordList[j] != beginWord && canTrans(word, wordList[j]) {
-				relations[word][wordList[j]] = true
-				relations[wordList[j]][word] = true
+			if canTrans(word, wordList[j]) {
+				relations[i][j], relations[j][i] = true, true
 			}
 		}
 	}
@@ -85,18 +90,21 @@ func findLadders(beginWord string, endWord string, wordList []string) [][]string
 		preNodes map[*Node]bool
 	}
 
-	allNodes := make(map[string]*Node, len(wordList)+2)
-	for _, word := range wordList {
-		allNodes[word] = &Node{value: word, height: len(wordList), preNodes: map[*Node]bool{}}
+	allNodes := make(map[int]*Node, len(wordList)+1)
+	for i, word := range wordList {
+		allNodes[i] = &Node{value: word, height: len(wordList), preNodes: map[*Node]bool{}}
 	}
-	allNodes[beginWord] = &Node{value: beginWord, height: 0, preNodes: map[*Node]bool{}}
+	allNodes[beginWordIdx].height = 0
 
-	// need bfs 层序处理关系
-	worked, curWords := map[*Node]bool{}, []string{beginWord}
+	// bfs层序处理关系
+	worked, curWords := map[*Node]bool{}, []int{beginWordIdx}
 	for len(curWords) != 0 {
-		nextWords := []string{}
+		nextWords := []int{}
 		for _, curWord := range curWords {
 			curNode := allNodes[curWord]
+			if curNode.value == endWord {
+				break
+			}
 			worked[curNode] = true
 			for nextWord := range relations[curWord] {
 				nextNode := allNodes[nextWord]
@@ -108,7 +116,6 @@ func findLadders(beginWord string, endWord string, wordList []string) [][]string
 					nextNode.height = tmp
 					nextNode.preNodes[curNode] = true
 				}
-
 			}
 		}
 		curWords = nextWords
@@ -116,8 +123,7 @@ func findLadders(beginWord string, endWord string, wordList []string) [][]string
 
 	var dfs func(node *Node) [][]string
 	dfs = func(node *Node) [][]string {
-		// fmt.Println(node.value, node.height, node.preNodes, node.nextNodes)
-		if node == allNodes[beginWord] {
+		if node == allNodes[beginWordIdx] {
 			return [][]string{{beginWord}}
 		}
 
@@ -134,7 +140,7 @@ func findLadders(beginWord string, endWord string, wordList []string) [][]string
 		return res
 	}
 
-	res := dfs(allNodes[endWord])
+	res := dfs(allNodes[endWordEIdx])
 	for i := range res {
 		for j := 0; j < len(res[i])/2; j++ {
 			res[i][j], res[i][len(res[i])-1-j] = res[i][len(res[i])-1-j], res[i][j]
