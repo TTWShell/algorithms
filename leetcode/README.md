@@ -125,6 +125,7 @@
 | 123 | [Best Time to Buy and Sell Stock III](dynamic-programming/maxProfit3.go) | [Hard][] |
 | 124 | [Binary Tree Maximum Path Sum](tree/maxPathSum.go) | [Hard][] |
 | 125 | [Valid Palindrome](string/isPalindrome.go) | [Easy][] |
+| 126 | [Word Ladder II](backtracking/findLadders.go) | [Hard][] |
 | 127 | [Word Ladder](others/ladderLength.go) | [Medium][] |
 | 129 | [Sum Root to Leaf Numbers](tree/sumNumbers.go) | [Medium][] |
 | 130 | [Surrounded Regions](union-find/solve.go) | [Medium][] |
