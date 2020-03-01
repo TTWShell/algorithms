@@ -14,37 +14,78 @@ Example:
 
 package larray
 
-import (
-	unionfind  "github.com/TTWShell/algorithms/data-structure/union-find"
-)
-
 func longestConsecutive(nums []int) int {
-	if len(nums) == 0 {
-		return 0
+	length := len(nums)
+	if length < 2 {
+		return length
 	}
 
-	uf := unionfind.New()
-
-	sets := make(map[int]bool, len(nums))
+	cache := make(map[int]bool, length)
 	for _, num := range nums {
-		sets[num] = true
-		uf.Union(num, num)
+		cache[num] = false
 	}
 
+	max := 1
 	for _, num := range nums {
-		if _, ok := sets[num-1]; ok {
-			uf.Union(num-1, num)
+		if used := cache[num]; used {
+			continue
 		}
-		if _, ok := sets[num+1]; ok {
-			uf.Union(num+1, num)
+		cache[num] = true
+		left, right := num, num
+		for left = num - 1; ; left-- {
+			if used, ok := cache[left]; ok && !used {
+				cache[left] = true
+			} else {
+				left++
+				break
+			}
+		}
+		for right = num + 1; ; right++ {
+			if used, ok := cache[right]; ok && !used {
+				cache[right] = true
+			} else {
+				right--
+				break
+			}
+		}
+		if tmp := right - left + 1; tmp > max {
+			max = tmp
 		}
 	}
-
-	res := 0
-	for _, count := range uf.SetCount() {
-		if count > res {
-			res = count
-		}
-	}
-	return res
+	return max
 }
+
+// import (
+// 	unionfind  "github.com/TTWShell/algorithms/data-structure/union-find"
+// )
+
+// func longestConsecutive(nums []int) int {
+// 	if len(nums) == 0 {
+// 		return 0
+// 	}
+
+// 	uf := unionfind.New()
+
+// 	sets := make(map[int]bool, len(nums))
+// 	for _, num := range nums {
+// 		sets[num] = true
+// 		uf.Union(num, num)
+// 	}
+
+// 	for _, num := range nums {
+// 		if _, ok := sets[num-1]; ok {
+// 			uf.Union(num-1, num)
+// 		}
+// 		if _, ok := sets[num+1]; ok {
+// 			uf.Union(num+1, num)
+// 		}
+// 	}
+
+// 	res := 0
+// 	for _, count := range uf.SetCount() {
+// 		if count > res {
+// 			res = count
+// 		}
+// 	}
+// 	return res
+// }
