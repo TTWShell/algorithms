@@ -127,6 +127,7 @@
 | 125 | [Valid Palindrome](string/isPalindrome.go) | [Easy][] |
 | 126 | [Word Ladder II](backtracking/findLadders.go) | [Hard][] |
 | 127 | [Word Ladder](others/ladderLength.go) | [Medium][] |
+| 128 | [Longest Consecutive Sequence](array/longestConsecutive.go) | [Hard][] |
 | 129 | [Sum Root to Leaf Numbers](tree/sumNumbers.go) | [Medium][] |
 | 130 | [Surrounded Regions](union-find/solve.go) | [Medium][] |
 | 131 | [Palindrome Partitioning](backtracking/partition.go) | [Medium][] |

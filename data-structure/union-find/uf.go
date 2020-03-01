@@ -1,34 +1,30 @@
 package unionfind
 
-import "sync"
-
 type ufNode struct {
 	value            interface{}
 	ancestor, parent *ufNode
-	childs           []*ufNode
+	children         []*ufNode
 }
 
 // UF : Union-Find.
 type UF struct {
-	sync.RWMutex
 	// map all value to node and, for find method
 	nodes map[interface{}]*ufNode
-	// save trees, for count method, int value is count of node in set
+	// save trees, for count method, int value is count of nodes in set
 	ufSets map[*ufNode]int
 }
 
 // New : create a empty Union-Find.
 func New() *UF {
-	return &UF{nodes: make(map[interface{}]*ufNode, 0), ufSets: make(map[*ufNode]int, 0)}
+	return &UF{
+		nodes:  map[interface{}]*ufNode{},
+		ufSets: map[*ufNode]int{},
+	}
 }
 
 // Find : return ancestor's value.
 func (uf *UF) Find(value interface{}) interface{} {
-	uf.RLock()
-	defer uf.RUnlock()
-
-	ufN, ok := uf.nodes[value]
-	if ok {
+	if ufN, ok := uf.nodes[value]; ok {
 		return ufN.ancestor.value
 	}
 	return nil
@@ -36,9 +32,6 @@ func (uf *UF) Find(value interface{}) interface{} {
 
 // Connected : return true if p ∈ setA && q ∈ setA else false.
 func (uf *UF) Connected(p, q interface{}) bool {
-	uf.RLock()
-	defer uf.RUnlock()
-
 	pAnc, qAnc := uf.Find(p), uf.Find(q)
 	if pAnc != nil && qAnc != nil && pAnc == qAnc {
 		return true
@@ -48,10 +41,16 @@ func (uf *UF) Connected(p, q interface{}) bool {
 
 // Count : count of disjoint sets.
 func (uf *UF) Count() int {
-	uf.RLock()
-	defer uf.RUnlock()
-
 	return len(uf.ufSets)
+}
+
+// SetCount : value
+func (uf *UF) SetCount() map[interface{}]int {
+	res := make(map[interface{}]int, uf.Count())
+	for node, count := range uf.ufSets {
+		res[node.value] = count
+	}
+	return res
 }
 
 // transposition: node --> root & set ancestor.
@@ -63,21 +62,23 @@ func (uf *UF) transposition(node, newAnc *ufNode) {
 		nextQueue := []*ufNode{}
 		for _, p := range queue {
 			p.ancestor = newAnc
-			nextQueue = append(nextQueue, p.childs...)
+			nextQueue = append(nextQueue, p.children...)
 		}
 		queue = nextQueue
 	}
 
 	for cur != anc {
 		cIdx, parent := -1, cur.parent
-		for i, n := range parent.childs {
+		for i, n := range parent.children {
 			if n == cur {
 				cIdx = i
 				break
 			}
 		}
-		parent.childs = append(append([]*ufNode{}, parent.childs[0:cIdx]...), parent.childs[cIdx+1:]...)
-		cur.childs = append(cur.childs, parent)
+		parent.children = append(
+			append([]*ufNode{}, parent.children[0:cIdx]...),
+			parent.children[cIdx+1:]...)
+		cur.children = append(cur.children, parent)
 		ago, cur.parent, cur = cur, ago, parent
 	}
 
@@ -93,15 +94,15 @@ func (uf *UF) union(pNode, qNode *ufNode) {
 	// transposition qNode tree.
 	uf.transposition(qNode, pAnc)
 
-	// conenct pNode and qNode.
-	pNode.childs = append(pNode.childs, qNode)
+	// connect pNode and qNode.
+	pNode.children = append(pNode.children, qNode)
 	qNode.parent = pNode
 }
 
 func (uf *UF) getOrCreateNode(value interface{}) *ufNode {
 	node, ok := uf.nodes[value]
 	if !ok {
-		node = &ufNode{value: value, childs: make([]*ufNode, 0)}
+		node = &ufNode{value: value, children: []*ufNode{}}
 		node.ancestor = node
 		node.parent = node
 		uf.nodes[value] = node
@@ -115,9 +116,6 @@ func (uf *UF) Union(p, q interface{}) {
 	if uf.Connected(p, q) {
 		return
 	}
-
-	uf.Lock()
-	defer uf.Unlock()
 
 	if p == q {
 		uf.getOrCreateNode(p)
