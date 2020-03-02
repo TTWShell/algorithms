@@ -131,6 +131,7 @@
 | 129 | [Sum Root to Leaf Numbers](tree/sumNumbers.go) | [Medium][] |
 | 130 | [Surrounded Regions](union-find/solve.go) | [Medium][] |
 | 131 | [Palindrome Partitioning](backtracking/partition.go) | [Medium][] |
+| 132 | [Palindrome Partitioning II](dynamic-programming/minCut.go) | [Hard][] |
 | 134 | [Gas Station](greedy/canCompleteCircuit.go) | [Medium][] |
 | 136 | [Single Number](bit-manipulation/singleNumber.go) | [Easy][] |
 | 137 | [Single Number II](bit-manipulation/singleNumber2.go) | [Medium][] |
