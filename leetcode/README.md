@@ -133,6 +133,7 @@
 | 131 | [Palindrome Partitioning](backtracking/partition.go) | [Medium][] |
 | 132 | [Palindrome Partitioning II](dynamic-programming/minCut.go) | [Hard][] |
 | 134 | [Gas Station](greedy/canCompleteCircuit.go) | [Medium][] |
+| 135 | [Candy](greedy/candy.go) | [Hard][] |
 | 136 | [Single Number](bit-manipulation/singleNumber.go) | [Easy][] |
 | 137 | [Single Number II](bit-manipulation/singleNumber2.go) | [Medium][] |
 | 139 | [Word Break](dynamic-programming/wordBreak.go) | [Medium][] |
