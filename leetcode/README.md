@@ -137,6 +137,7 @@
 | 136 | [Single Number](bit-manipulation/singleNumber.go) | [Easy][] |
 | 137 | [Single Number II](bit-manipulation/singleNumber2.go) | [Medium][] |
 | 139 | [Word Break](dynamic-programming/wordBreak.go) | [Medium][] |
+| 140 | [Word Break II](backtracking/wordBreak.go) | [Hard][] |
 | 141 | [Linked List Cycle](linked-list/hasCycle.go) | [Easy][] |
 | 142 | [Linked List Cycle II](linked-list/detectCycle.go) | [Medium][] |
 | 143 | [Reorder List](linked-list/reorderList.go) | [Medium][] |
