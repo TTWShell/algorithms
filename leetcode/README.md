@@ -146,6 +146,7 @@
 | 146 | [LRU Cache](design/LRUCache.go) | [Medium][] |
 | 147 | [Insertion Sort List](linked-list/insertionSortList.go) | [Medium][] |
 | 148 | [Sort List](linked-list/sortList.go) | [Medium][] |
+| 149 | [Max Points on a Line](math/maxPoints.go) | [Hard][] |
 | 150 | [Evaluate Reverse Polish Notation](stack/evalRPN.go) | [Medium][] |
 | 151 | [Reverse Words in a String](string/reverseWords2.go) | [Medium][] |
 | 152 | [Maximum Product Subarray](dynamic-programming/maxProduct.go) | [Medium][] |
