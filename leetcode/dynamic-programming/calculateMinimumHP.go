@@ -61,25 +61,18 @@ func calculateMinimumHP(dungeon [][]int) int {
 	}
 
 	m, n := len(dungeon), len(dungeon[0])
-	dp := make([][]int, m+1, m+1) // 进入房间必须的最小hp
-	for i := range dp {
-		dp[i] = make([]int, n+1, n+1)
-	}
+	dp := make([]int, n+1, n+1) // 进入房间必须的最小hp，优化：不需要缓存之前的行
 	// 初始化边界
-	for i := 0; i < m; i++ {
-		dp[i][n] = math.MaxInt64
-	}
-	for j := 0; j < n; j++ {
-		dp[m][j] = math.MaxInt64
+	for i := 0; i <= n; i++ {
+		dp[i] = math.MaxInt64
 	}
 
-	dp[m][n-1], dp[m-1][n] = 1, 1
+	dp[n-1] = 1
 	for i := m - 1; i >= 0; i-- {
 		for j := n - 1; j >= 0; j-- {
-			// 当前房间取决于之后进入的房间所需最小值
-			dp[i][j] = max(1, min(dp[i+1][j], dp[i][j+1])-dungeon[i][j])
+			// 当前房间取决于之后进入的房间所需最小值, dp[j]保存的为上一行的结果
+			dp[j] = max(1, min(dp[j], dp[j+1])-dungeon[i][j])
 		}
 	}
-
-	return dp[0][0]
+	return dp[0]
 }
