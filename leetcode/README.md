@@ -151,6 +151,7 @@
 | 151 | [Reverse Words in a String](string/reverseWords2.go) | [Medium][] |
 | 152 | [Maximum Product Subarray](dynamic-programming/maxProduct.go) | [Medium][] |
 | 153 | [Find Minimum in Rotated Sorted Array](binary-search/findMin.go) | [Medium][] |
+| 154 | [Find Minimum in Rotated Sorted Array II](binary-search/findMin2.go) | [Hard][] |
 | 155 | [Min Stack](stack/MinStack.go) | [Easy][] |
 | 160 | [Intersection of Two Linked Lists](linked-list/getIntersectionNode.go) | [Easy][] |
 | 162 | [Find Peak Element](binary-search/findPeakElement.go) | [Medium][] |
