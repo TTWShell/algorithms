@@ -164,6 +164,7 @@
 | 171 | [Excel Sheet Column Number](math/titleToNumber.go) | [Easy][] |
 | 172 | [Factorial Trailing Zeroes](math/trailingZeroes.go) | [Easy][] |
 | 173 | [Binary Search Tree Iterator](design/BSTIterator.go) | [Medium][] |
+| 174 | [Dungeon Game](dynamic-programming/calculateMinimumHP.go) | [Hard][] |
 | 179 | [Largest Number](sort/largestNumber.go) | [Medium][] |
 | 187 | [Repeated DNA Sequences](hash-table/findRepeatedDnaSequences.go) | [Medium][] |
 | 188 | [Best Time to Buy and Sell Stock IV](dynamic-programming/maxProfit4.go) | [Hard][] |
