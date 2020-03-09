@@ -155,6 +155,7 @@
 | 155 | [Min Stack](stack/MinStack.go) | [Easy][] |
 | 160 | [Intersection of Two Linked Lists](linked-list/getIntersectionNode.go) | [Easy][] |
 | 162 | [Find Peak Element](binary-search/findPeakElement.go) | [Medium][] |
+| 164 | [Maximum Gap](sort/maximumGap.go) | [Hard][] |
 | 165 | [Compare Version Numbers](string/compareVersion.go) | [Medium][] |
 | 166 | [Fraction to Recurring Decimal](math/fractionToDecimal.go) | [Medium][] |
 | 167 | [Two Sum II - Input array is sorted](array/twoSum2.go) | [Easy][] |
