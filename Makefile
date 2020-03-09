@@ -10,7 +10,7 @@ test-all:
 
 # test one or multi, example: make test "FILES=leetcode/array/trap*.go"
 test:
-	go test -v -cover ${FILES}
+	go test -count=1 -v -cover ${FILES}
 
 # show cover in browser, example: make cover "FILES=leetcode/array/trap*.go"
 cover:

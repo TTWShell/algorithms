@@ -1,8 +1,9 @@
 package unionfind
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestNew(t *testing.T) {
@@ -30,20 +31,20 @@ func TestUnion(t *testing.T) {
 	assert.Contains(uf.ufSets, node1)
 	assert.Equal(node1.value, 1)
 	assert.Equal(node1.ancestor, node1)
-	assert.Contains(node1.childs, node2)
+	assert.Contains(node1.children, node2)
 	assert.NotContains(uf.ufSets, node2)
 	assert.Equal(node2.value, 2)
 	assert.Equal(node2.ancestor, node1)
-	assert.Empty(node2.childs)
+	assert.Empty(node2.children)
 
 	uf.Union(1, 3)
 	node3 := uf.nodes[interface{}(3)]
-	assert.Len(node1.childs, 2)
-	assert.Empty(node2.childs)
+	assert.Len(node1.children, 2)
+	assert.Empty(node2.children)
 	assert.Len(uf.nodes, 3)
 	assert.Len(uf.ufSets, 1)
 	assert.Equal(node3.ancestor, node1)
-	assert.Contains(node1.childs, node3)
+	assert.Contains(node1.children, node3)
 
 	// set B
 	//    10
@@ -58,11 +59,11 @@ func TestUnion(t *testing.T) {
 	assert.Len(uf.nodes, 3+4)
 	node10, node11, node12, node13 := uf.nodes[interface{}(10)], uf.nodes[interface{}(11)], uf.nodes[interface{}(12)], uf.nodes[interface{}(13)]
 	assert.Contains(uf.ufSets, node10)
-	assert.Contains(node10.childs, node11)
-	assert.Contains(node10.childs, node12)
-	assert.Empty(node11.childs)
-	assert.Contains(node12.childs, node13)
-	assert.Empty(node13.childs)
+	assert.Contains(node10.children, node11)
+	assert.Contains(node10.children, node12)
+	assert.Empty(node11.children)
+	assert.Contains(node12.children, node13)
+	assert.Empty(node13.children)
 	assert.Len(uf.ufSets, 2)
 	assert.Equal(uf.ufSets[node10], 4)
 
@@ -82,15 +83,15 @@ func TestUnion(t *testing.T) {
 	assert.Len(uf.nodes, 3+4+5)
 	node20, node21, node22, node23, node24 := uf.nodes[interface{}(20)], uf.nodes[interface{}(21)], uf.nodes[interface{}(22)], uf.nodes[interface{}(23)], uf.nodes[interface{}(24)]
 	assert.Contains(uf.ufSets, node20)
-	assert.Contains(node20.childs, node21)
-	assert.Len(node20.childs, 1)
-	assert.Contains(node21.childs, node22)
-	assert.Contains(node21.childs, node23)
-	assert.Len(node21.childs, 2)
-	assert.Contains(node22.childs, node24)
-	assert.Len(node22.childs, 1)
-	assert.Empty(node23.childs)
-	assert.Empty(node24.childs)
+	assert.Contains(node20.children, node21)
+	assert.Len(node20.children, 1)
+	assert.Contains(node21.children, node22)
+	assert.Contains(node21.children, node23)
+	assert.Len(node21.children, 2)
+	assert.Contains(node22.children, node24)
+	assert.Len(node22.children, 1)
+	assert.Empty(node23.children)
+	assert.Empty(node24.children)
 	assert.Len(uf.ufSets, 3)
 	assert.Equal(uf.ufSets[node20], 5)
 
@@ -99,12 +100,12 @@ func TestUnion(t *testing.T) {
 	assert.Len(uf.nodes, 3+4+5)
 	assert.Len(uf.ufSets, 2)
 	assert.Equal(uf.ufSets[node20], 4+5)
-	assert.Len(node21.childs, 3)
-	assert.Contains(node21.childs, node12)
-	assert.Len(node12.childs, 2)
-	assert.Contains(node12.childs, node10)
-	assert.Len(node10.childs, 1)
-	assert.NotContains(node10.childs, node12)
+	assert.Len(node21.children, 3)
+	assert.Contains(node21.children, node12)
+	assert.Len(node12.children, 2)
+	assert.Contains(node12.children, node10)
+	assert.Len(node10.children, 1)
+	assert.NotContains(node10.children, node12)
 }
 
 func TestUnion2(t *testing.T) {
@@ -153,52 +154,52 @@ func TestUnion2(t *testing.T) {
 	assert.Len(uf.nodes, 5+5)
 	assert.Len(uf.ufSets, 1)
 
-	assert.Len(node10.childs, 2)
+	assert.Len(node10.children, 2)
 	assert.Equal(node10.ancestor, node10)
 	assert.Equal(node10.parent, node10)
-	assert.Contains(node10.childs, node11)
-	assert.Contains(node10.childs, node12)
+	assert.Contains(node10.children, node11)
+	assert.Contains(node10.children, node12)
 
-	assert.Empty(node11.childs)
+	assert.Empty(node11.children)
 	assert.Equal(node11.ancestor, node10)
 	assert.Equal(node11.parent, node10)
 
-	assert.Len(node12.childs, 2)
+	assert.Len(node12.children, 2)
 	assert.Equal(node12.ancestor, node10)
 	assert.Equal(node12.parent, node10)
-	assert.Contains(node12.childs, node13)
-	assert.Contains(node12.childs, node22)
+	assert.Contains(node12.children, node13)
+	assert.Contains(node12.children, node22)
 
-	assert.Len(node13.childs, 1)
+	assert.Len(node13.children, 1)
 	assert.Equal(node13.ancestor, node10)
 	assert.Equal(node13.parent, node12)
-	assert.Contains(node13.childs, node14)
+	assert.Contains(node13.children, node14)
 
-	assert.Empty(node14.childs)
+	assert.Empty(node14.children)
 	assert.Equal(node14.ancestor, node10)
 	assert.Equal(node14.parent, node13)
 
-	assert.Len(node22.childs, 2)
+	assert.Len(node22.children, 2)
 	assert.Equal(node22.ancestor, node10)
 	assert.Equal(node22.parent, node12)
-	assert.Contains(node22.childs, node24)
-	assert.Contains(node22.childs, node21)
+	assert.Contains(node22.children, node24)
+	assert.Contains(node22.children, node21)
 
-	assert.Empty(node24.childs)
+	assert.Empty(node24.children)
 	assert.Equal(node24.ancestor, node10)
 	assert.Equal(node24.parent, node22)
 
-	assert.Len(node21.childs, 2)
+	assert.Len(node21.children, 2)
 	assert.Equal(node21.ancestor, node10)
 	assert.Equal(node21.parent, node22)
-	assert.Contains(node21.childs, node20)
-	assert.Contains(node21.childs, node23)
+	assert.Contains(node21.children, node20)
+	assert.Contains(node21.children, node23)
 
-	assert.Empty(node20.childs)
+	assert.Empty(node20.children)
 	assert.Equal(node20.ancestor, node10)
 	assert.Equal(node20.parent, node21)
 
-	assert.Empty(node23.childs)
+	assert.Empty(node23.children)
 	assert.Equal(node23.ancestor, node10)
 	assert.Equal(node23.parent, node21)
 }

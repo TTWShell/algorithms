@@ -116,21 +116,28 @@
 | 112 | [Path Sum](tree/hasPathSum.go) | [Easy][] |
 | 113 | [Path Sum II](tree/pathSum2.go) | [Medium][] |
 | 114 | [Flatten Binary Tree to Linked List](tree/flatten.go) | [Medium][] |
+| 115 | [Distinct Subsequences](dynamic-programming/numDistinct.go) | [Hard][] |
 | 118 | [Pascal's Triangle](array/generate.go) | [Easy][] |
 | 119 | [Pascal's Triangle II](array/getRow.go) | [Easy][] |
 | 120 | [Triangle](dynamic-programming/minimumTotal.go) | [Medium][] |
 | 121 | [Best Time to Buy and Sell Stock](dynamic-programming/maxProfit.go) | [Easy][] |
 | 122 | [Best Time to Buy and Sell Stock II](dynamic-programming/maxProfit2.go) | [Easy][] |
 | 123 | [Best Time to Buy and Sell Stock III](dynamic-programming/maxProfit3.go) | [Hard][] |
+| 124 | [Binary Tree Maximum Path Sum](tree/maxPathSum.go) | [Hard][] |
 | 125 | [Valid Palindrome](string/isPalindrome.go) | [Easy][] |
+| 126 | [Word Ladder II](backtracking/findLadders.go) | [Hard][] |
 | 127 | [Word Ladder](others/ladderLength.go) | [Medium][] |
+| 128 | [Longest Consecutive Sequence](array/longestConsecutive.go) | [Hard][] |
 | 129 | [Sum Root to Leaf Numbers](tree/sumNumbers.go) | [Medium][] |
 | 130 | [Surrounded Regions](union-find/solve.go) | [Medium][] |
 | 131 | [Palindrome Partitioning](backtracking/partition.go) | [Medium][] |
+| 132 | [Palindrome Partitioning II](dynamic-programming/minCut.go) | [Hard][] |
 | 134 | [Gas Station](greedy/canCompleteCircuit.go) | [Medium][] |
+| 135 | [Candy](greedy/candy.go) | [Hard][] |
 | 136 | [Single Number](bit-manipulation/singleNumber.go) | [Easy][] |
 | 137 | [Single Number II](bit-manipulation/singleNumber2.go) | [Medium][] |
 | 139 | [Word Break](dynamic-programming/wordBreak.go) | [Medium][] |
+| 140 | [Word Break II](backtracking/wordBreak.go) | [Hard][] |
 | 141 | [Linked List Cycle](linked-list/hasCycle.go) | [Easy][] |
 | 142 | [Linked List Cycle II](linked-list/detectCycle.go) | [Medium][] |
 | 143 | [Reorder List](linked-list/reorderList.go) | [Medium][] |
@@ -139,13 +146,16 @@
 | 146 | [LRU Cache](design/LRUCache.go) | [Medium][] |
 | 147 | [Insertion Sort List](linked-list/insertionSortList.go) | [Medium][] |
 | 148 | [Sort List](linked-list/sortList.go) | [Medium][] |
+| 149 | [Max Points on a Line](math/maxPoints.go) | [Hard][] |
 | 150 | [Evaluate Reverse Polish Notation](stack/evalRPN.go) | [Medium][] |
 | 151 | [Reverse Words in a String](string/reverseWords2.go) | [Medium][] |
 | 152 | [Maximum Product Subarray](dynamic-programming/maxProduct.go) | [Medium][] |
 | 153 | [Find Minimum in Rotated Sorted Array](binary-search/findMin.go) | [Medium][] |
+| 154 | [Find Minimum in Rotated Sorted Array II](binary-search/findMin2.go) | [Hard][] |
 | 155 | [Min Stack](stack/MinStack.go) | [Easy][] |
 | 160 | [Intersection of Two Linked Lists](linked-list/getIntersectionNode.go) | [Easy][] |
 | 162 | [Find Peak Element](binary-search/findPeakElement.go) | [Medium][] |
+| 164 | [Maximum Gap](sort/maximumGap.go) | [Hard][] |
 | 165 | [Compare Version Numbers](string/compareVersion.go) | [Medium][] |
 | 166 | [Fraction to Recurring Decimal](math/fractionToDecimal.go) | [Medium][] |
 | 167 | [Two Sum II - Input array is sorted](array/twoSum2.go) | [Easy][] |
@@ -154,6 +164,7 @@
 | 171 | [Excel Sheet Column Number](math/titleToNumber.go) | [Easy][] |
 | 172 | [Factorial Trailing Zeroes](math/trailingZeroes.go) | [Easy][] |
 | 173 | [Binary Search Tree Iterator](design/BSTIterator.go) | [Medium][] |
+| 174 | [Dungeon Game](dynamic-programming/calculateMinimumHP.go) | [Hard][] |
 | 179 | [Largest Number](sort/largestNumber.go) | [Medium][] |
 | 187 | [Repeated DNA Sequences](hash-table/findRepeatedDnaSequences.go) | [Medium][] |
 | 188 | [Best Time to Buy and Sell Stock IV](dynamic-programming/maxProfit4.go) | [Hard][] |
