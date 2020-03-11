@@ -187,6 +187,7 @@
 | 211 | [Add and Search Word - Data structure design](design/WordDictionary.go) | [Medium][] |
 | 212 | [Word Search II](trie/findWords.go) | [Hard][] |
 | 213 | [House Robber II](dynamic-programming/rob2.go) | [Medium][] |
+| 214 | [Shortest Palindrome](string/shortestPalindrome.go) | [Hard][] |
 | 215 | [Kth Largest Element in an Array](heap/findKthLargest.go) | [Medium][] |
 | 216 | [Combination Sum III](backtracking/combinationSum3.go) | [Medium][] |
 | 217 | [Contains Duplicate](hash-table/containsDuplicate.go) | [Easy][] |
