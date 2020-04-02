@@ -191,6 +191,7 @@
 | 215 | [Kth Largest Element in an Array](heap/findKthLargest.go) | [Medium][] |
 | 216 | [Combination Sum III](backtracking/combinationSum3.go) | [Medium][] |
 | 217 | [Contains Duplicate](hash-table/containsDuplicate.go) | [Easy][] |
+| 218 | [The Skyline Problem](divide-and-conquer/getSkyline.go) | [Hard][] |
 | 219 | [Contains Duplicate II](hash-table/containsNearbyDuplicate.go) | [Easy][] |
 | 220 | [Contains Duplicate III](binary-search-tree/containsNearbyAlmostDuplicate.go) | [Medium][] |
 | 221 | [Maximal Square](dynamic-programming/maximalSquare.go) | [Medium][] |
