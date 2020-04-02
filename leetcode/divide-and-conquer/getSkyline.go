@@ -54,7 +54,7 @@ func getSkyline(buildings [][]int) [][]int {
 
 	tmp := map[int]int{}
 	for _, build := range buildings {
-		if h, ok := tmp[build[0]]; !ok || build[2] > h {
+		if _, ok := tmp[build[0]]; !ok {
 			tmp[build[0]] = build[2]
 		}
 		if _, ok := tmp[build[1]]; !ok {
@@ -70,23 +70,12 @@ func getSkyline(buildings [][]int) [][]int {
 		return points[i][0] < points[j][0]
 	})
 
-	search := func(target int) int {
-		start, end := 0, len(points)-1
-		for start < end {
-			mid := start + (end-start)/2
-			if points[mid][0] < target {
-				start = mid + 1
-			} else if points[mid][0] > target {
-				end = mid - 1
-			} else {
-				return mid
-			}
-		}
-		return start
-	}
-
+	left := 0
 	for _, build := range buildings {
-		for idx := search(build[0]); points[idx][0] < build[1]; idx++ {
+		for points[left][0] < build[0] {
+			left++
+		}
+		for idx := left; points[idx][0] < build[1]; idx++ {
 			if points[idx][1] < build[2] {
 				points[idx][1] = build[2]
 			}
