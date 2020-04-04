@@ -206,6 +206,7 @@
 | 230 | [Kth Smallest Element in a BST](tree/kthSmallest.go) | [Medium][] |
 | 231 | [Power of Two](math/isPowerOfTwo.go) | [Easy][] |
 | 232 | [Implement Queue using Stacks](stack/MyQueue.go) | [Easy][] |
+| 233 | [Number of Digit One](math/countDigitOne.go) | [Hard][] |
 | 234 | [Palindrome Linked List](linked-list/isPalindrome.go) | [Easy][] |
 | 235 | [Lowest Common Ancestor of a Binary Search Tree](tree/lowestCommonAncestor.go) | [Easy][] |
 | 236 | [Lowest Common Ancestor of a Binary Tree](tree/lowestCommonAncestor2.go) | [Medium][] |
