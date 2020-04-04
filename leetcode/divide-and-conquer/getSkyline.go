@@ -43,50 +43,116 @@ Notes:
 
 package ldc
 
-import (
-	"sort"
-)
-
 func getSkyline(buildings [][]int) [][]int {
-	if len(buildings) == 0 {
-		return [][]int{}
+	max := func(a, b int) int {
+		if a > b {
+			return a
+		}
+		return b
 	}
 
-	tmp := map[int]int{}
-	for _, build := range buildings {
-		if _, ok := tmp[build[0]]; !ok {
-			tmp[build[0]] = build[2]
+	var merge func(buildings [][]int, start int, end int) [][]int
+	merge = func(buildings [][]int, start int, end int) [][]int {
+		//return when array is empty
+		if start > end {
+			return [][]int{}
 		}
-		if _, ok := tmp[build[1]]; !ok {
-			tmp[build[1]] = 0
-		}
-	}
 
-	points := make([][]int, 0, len(tmp))
-	for x, h := range tmp {
-		points = append(points, []int{x, h})
-	}
-	sort.Slice(points, func(i, j int) bool {
-		return points[i][0] < points[j][0]
-	})
-
-	left := 0
-	for _, build := range buildings {
-		for points[left][0] < build[0] {
-			left++
-		}
-		for idx := left; points[idx][0] < build[1]; idx++ {
-			if points[idx][1] < build[2] {
-				points[idx][1] = build[2]
+		if start == end {
+			return [][]int{
+				[]int{buildings[start][0], buildings[start][2]},
+				[]int{buildings[start][1], 0},
 			}
 		}
+
+		mid := start + (end-start)/2
+		left, right := merge(buildings, start, mid), merge(buildings, mid+1, end)
+
+		//left height and right height for the case when two skylines overlap
+		leftH, rightH, res := 0, 0, [][]int{}
+		for len(left) > 0 && len(right) > 0 {
+			x, x1, x2 := 0, left[0][0], right[0][0]
+			if x1 < x2 { // when left edge is before the right edge
+				x, leftH = left[0][0], left[0][1]
+				left = left[1:]
+			} else if x1 > x2 { // when left edge is ahead of right edge
+				x, rightH = right[0][0], right[0][1]
+				right = right[1:]
+			} else { // when two vertical edges overlap
+				x, leftH, rightH = left[0][0], left[0][1], right[0][1]
+				// both array needs to pop, as we don't want the same kep point appears twice
+				left, right = left[1:], right[1:]
+			}
+			h := max(leftH, rightH)
+
+			//only add new key point when the new key point has a different height, this handles the edge case where two squares starts on the same edge, only the higher one will be added once.
+			if len(res) == 0 || h != res[len(res)-1][1] {
+				res = append(res, []int{x, h})
+			}
+		}
+
+		// keep appending the left or right when the other array runs out.
+		for i := 0; i < len(left); i++ {
+			if len(res) == 0 || left[i][1] != res[len(res)-1][1] {
+				res = append(res, []int{left[i][0], left[i][1]})
+			}
+		}
+		for j := 0; j < len(right); j++ {
+			if len(res) == 0 || right[j][1] != res[len(res)-1][1] {
+				res = append(res, []int{right[j][0], right[j][1]})
+			}
+		}
+		return res
 	}
 
-	res := [][]int{points[0]}
-	for i := 1; i < len(points); i++ {
-		if points[i][1] != res[len(res)-1][1] {
-			res = append(res, points[i])
-		}
-	}
-	return res
+	return merge(buildings, 0, len(buildings)-1)
 }
+
+// import (
+// 	"sort"
+// )
+//
+// 100ms
+// func getSkyline(buildings [][]int) [][]int {
+// 	if len(buildings) == 0 {
+// 		return [][]int{}
+// 	}
+
+// 	tmp := map[int]int{}
+// 	for _, build := range buildings {
+// 		if _, ok := tmp[build[0]]; !ok {
+// 			tmp[build[0]] = build[2]
+// 		}
+// 		if _, ok := tmp[build[1]]; !ok {
+// 			tmp[build[1]] = 0
+// 		}
+// 	}
+
+// 	points := make([][]int, 0, len(tmp))
+// 	for x, h := range tmp {
+// 		points = append(points, []int{x, h})
+// 	}
+// 	sort.Slice(points, func(i, j int) bool {
+// 		return points[i][0] < points[j][0]
+// 	})
+
+// 	left := 0
+// 	for _, build := range buildings {
+// 		for points[left][0] < build[0] {
+// 			left++
+// 		}
+// 		for idx := left; points[idx][0] < build[1]; idx++ {
+// 			if points[idx][1] < build[2] {
+// 				points[idx][1] = build[2]
+// 			}
+// 		}
+// 	}
+
+// 	res := [][]int{points[0]}
+// 	for i := 1; i < len(points); i++ {
+// 		if points[i][1] != res[len(res)-1][1] {
+// 			res = append(res, points[i])
+// 		}
+// 	}
+// 	return res
+// }
