@@ -197,6 +197,7 @@
 | 221 | [Maximal Square](dynamic-programming/maximalSquare.go) | [Medium][] |
 | 222 | [Count Complete Tree Nodes](tree/countNodes.go) | [Medium][] |
 | 223 | [Rectangle Area](math/computeArea.go) | [Medium][] |
+| 224 | [Basic Calculator](stack/calculate.go) | [Hard][] |
 | 225 | [Implement Stack using Queues](stack/MyStack.go) | [Easy][] |
 | 226 | [Invert Binary Tree](tree/invertTree.go) | [Easy][] |
 | 227 | [Basic Calculator II](string/calculate2.go) | [Medium][] |
