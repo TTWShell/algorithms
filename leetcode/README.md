@@ -212,6 +212,7 @@
 | 236 | [Lowest Common Ancestor of a Binary Tree](tree/lowestCommonAncestor2.go) | [Medium][] |
 | 237 | [Delete Node in a Linked List](linked-list/deleteNode.go) | [Easy][] |
 | 238 | [Product of Array Except Self](array/productExceptSelf.go) | [Medium][] |
+| 239 | [Sliding Window Maximum](others/maxSlidingWindow.go) | [Hard][] |
 | 240 | [Search a 2D Matrix II](binary-search/searchMatrix2.go) | [Medium][] |
 | 241 | [Different Ways to Add Parentheses](divide-and-conquer/diffWaysToCompute.go) | [Medium][] |
 | 242 | [Valid Anagram](hash-table/isAnagram.go) | [Easy][] |
