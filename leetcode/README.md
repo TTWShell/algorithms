@@ -226,6 +226,7 @@
 | 274 | [H-Index](hash-table/hIndex.go) | [Medium][] |
 | 275 | [H-Index II](binary-search/hIndex2.go) | [Medium][] |
 | 279 | [Perfect Squares](math/numSquares.go) | [Medium][] |
+| 282 | [Expression Add Operators](divide-and-conquer/addOperators.go) | [Hard][] |
 | 283 | [Move Zeroes](array/moveZeroes.go) | [Easy][] |
 | 287 | [Find the Duplicate Number](array/findDuplicate.go) | [Medium][] |
 | 289 | [Game of Life](array/gameOfLife.go) | [Medium][] |
