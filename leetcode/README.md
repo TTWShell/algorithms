@@ -232,6 +232,7 @@
 | 289 | [Game of Life](array/gameOfLife.go) | [Medium][] |
 | 290 | [Word Pattern](hash-table/wordPattern.go) | [Easy][] |
 | 292 | [Nim Game](brainteaser/canWinNim.go) | [Easy][] |
+| 295 | [Find Median from Data Stream](design/MedianFinder.go) | [Hard][] |
 | 299 | [Bulls and Cows](hash-table/getHint.go) | [Medium][] |
 | 300 | [Longest Increasing Subsequence](dynamic-programming/lengthOfLIS.go) | [Medium][] |
 | 303 | [Range Sum Query - Immutable](dynamic-programming/NumArray.go) | [Easy][] |
