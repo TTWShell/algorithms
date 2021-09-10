@@ -17,7 +17,7 @@ package lmath
 func convertToTitle(n int) string {
 	r := ""
 	for n > 0 {
-		r = string((n-1)%26+'A') + r
+		r = string(rune((n-1)%26+'A')) + r
 		n = (n - 1) / 26
 	}
 	return r

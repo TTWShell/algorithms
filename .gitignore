@@ -1,3 +1,5 @@
 result
 leetcode.db
 .vscode/
+
+vendor/*

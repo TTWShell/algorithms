@@ -45,7 +45,7 @@ func commonChars(A []string) []string {
 	res := []string{}
 	for k, count := range cache {
 		for i := 0; i < count; i++ {
-			res = append(res, string(k+97))
+			res = append(res, string(rune(k+97)))
 		}
 	}
 	return res
