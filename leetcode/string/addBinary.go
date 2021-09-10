@@ -8,6 +8,10 @@ Return "100".
 */
 package lstring
 
+import (
+	"strconv"
+)
+
 func addBinary(a string, b string) string {
 	m, n := len(a), len(b)
 	if m < n {
@@ -20,12 +24,12 @@ func addBinary(a string, b string) string {
 
 	plus, r := 0, ""
 	for i := m - 1; i != -1; i-- {
-		ans := int(a[i]) + int(b[i]) + plus
-		if ans >= 98 {
-			r = string(ans-'2') + r
+		ans := int(a[i]) + int(b[i]) + plus - 48*2
+		if ans >= 2 {
+			r = strconv.Itoa(ans-2) + r
 			plus = 1
 		} else {
-			r = string(ans-'0') + r
+			r = strconv.Itoa(ans-0) + r
 			plus = 0
 		}
 	}

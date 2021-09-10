@@ -2,9 +2,10 @@ package hashtable
 
 import (
 	"fmt"
-	"github.com/stretchr/testify/assert"
 	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestNewHT(t *testing.T) {
@@ -61,8 +62,8 @@ func TestPut(t *testing.T) {
 	assert.Equal(ht.size, MinSize*2)
 
 	for i := 0; i < 11; i++ {
-		ht.Put(string(i), i*10)
-		value, _ := ht.Get(string(i))
+		ht.Put(string(rune(i)), i*10)
+		value, _ := ht.Get(string(rune(i)))
 		assert.Equal(value, i*10)
 	}
 	assert.Equal(ht.size, MinSize*4)
