@@ -67,10 +67,10 @@ func (h *Heap) Peek() (e Element) {
 
 func (h *Heap) precolateUp(index int) {
 	// 上滤，新元素在堆中上滤直到找出正确位置
-	needUp, parent := index, index>>1
+	needUp, parent := index, (index-1)>>1
 	for needUp > 0 && h.less(h.heap[needUp], h.heap[parent]) {
 		h.heap[parent], h.heap[needUp] = h.heap[needUp], h.heap[parent]
-		needUp, parent = parent, parent>>1
+		needUp, parent = parent, (parent-1)>>1
 	}
 }
 
