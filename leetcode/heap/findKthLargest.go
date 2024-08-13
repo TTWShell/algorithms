@@ -9,6 +9,7 @@ You may assume k is always valid, 1 ≤ k ≤ array's length.
 
 package lheap
 
+/*
 // 快速选择算法
 func findKthLargest(nums []int, k int) int {
 	if len(nums) == 1 {
@@ -32,8 +33,8 @@ func findKthLargest(nums []int, k int) int {
 	}
 	return findKthLargest(nums[idx+1:], k-idx-1)
 }
+*/
 
-/*
 // 基于堆的实现
 import "github.com/TTWShell/algorithms/data-structure/heap"
 
@@ -59,4 +60,3 @@ func findKthLargest(nums []int, k int) int {
 	}
 	return int(heap.Peek().(findKthLargestInt))
 }
-*/
