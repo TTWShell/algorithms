@@ -20,26 +20,26 @@ Example 2:
 
 package larray
 
+import "math"
+
 func increasingTriplet(nums []int) bool {
-	left, right := -1, 0
+	if len(nums) < 3 {
+		return false
+	}
+
+	min := nums[0]
+	minMid := math.MaxInt32
 	for i := 1; i < len(nums); i++ {
-		if nums[i-1] >= nums[i] {
-			continue
-		}
-
-		if left < 0 {
-			left, right = i-1, i
-			continue
-		}
-
-		if nums[i-1] < nums[right] && nums[left] < nums[i-1] { // update right only
-			right = i - 1
-		}
-		if nums[i] < nums[right] { // need update all
-			left, right = i-1, i
-		}
-		if left >= 0 && nums[left] < nums[right] && nums[right] < nums[i] {
+		if nums[i] > minMid {
 			return true
+		}
+		if min > nums[i-1] {
+			min = nums[i-1]
+		}
+		if nums[i] > min {
+			if nums[i] < minMid {
+				minMid = nums[i]
+			}
 		}
 	}
 	return false

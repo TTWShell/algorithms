@@ -17,4 +17,6 @@ func Test_increasingTriplet(t *testing.T) {
 	assert.False(increasingTriplet([]int{2, 1, 5, 0, 3}))
 	assert.True(increasingTriplet([]int{2, 1, 5, 0, 4, 6}))
 	assert.True(increasingTriplet([]int{1, 2, -10, -8, -7}))
+	assert.True(increasingTriplet([]int{0, 4, 1, -1, 2}))
+	assert.True(increasingTriplet([]int{20, 100, 10, 12, 5, 13}))
 }
