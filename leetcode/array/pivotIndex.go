@@ -27,22 +27,19 @@ Note:
 package larray
 
 func pivotIndex(nums []int) int {
-	length := len(nums)
-	if length == 0 {
-		return -1
+	leftSum := 0
+	rightSum := 0
+
+	for i := 0; i < len(nums); i++ {
+		rightSum += nums[i]
 	}
 
-	preOrder, postOrder := make([]int, length), make([]int, length)
-	preOrder[0], postOrder[length-1] = nums[0], nums[length-1]
-	for i := 1; i < length; i++ {
-		preOrder[i] = preOrder[i-1] + nums[i]
-		postOrder[length-1-i] = postOrder[length-i] + nums[length-1-i]
-	}
-
-	for i := 0; i < length; i++ {
-		if preOrder[i] == postOrder[i] {
+	for i := 0; i < len(nums); i++ {
+		rightSum -= nums[i]
+		if rightSum == leftSum {
 			return i
 		}
+		leftSum = leftSum + nums[i]
 	}
 	return -1
 }
