@@ -27,18 +27,35 @@ type Node struct {
 }
 
 func postorder(root *Node) []int {
-	var helper func(root *Node, ans *[]int)
-	helper = func(root *Node, ans *[]int) {
-		if root == nil {
-			return
-		}
-		for _, child := range root.Children {
-			helper(child, ans)
-		}
-		*ans = append(*ans, root.Val)
-	}
+	// var helper func(root *Node, ans *[]int)
+	// helper = func(root *Node, ans *[]int) {
+	// 	if root == nil {
+	// 		return
+	// 	}
+	// 	for _, child := range root.Children {
+	// 		helper(child, ans)
+	// 	}
+	// 	*ans = append(*ans, root.Val)
+	// }
+
+	// ans := []int{}
+	// helper(root, &ans)
+	// return ans
 
 	ans := []int{}
-	helper(root, &ans)
+	stack := []*Node{root}
+	for len(stack) != 0 {
+		cur := stack[len(stack)-1]
+		ans = append(ans, cur.Val)
+		stack = stack[:len(stack)-1]
+		for _, child := range cur.Children {
+			stack = append(stack, child)
+		}
+	}
+
+	for i, j := 0, len(ans)-1; i < j; i, j = i+1, j-1 {
+		ans[i], ans[j] = ans[j], ans[i]
+	}
+
 	return ans
 }
