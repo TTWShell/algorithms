@@ -306,6 +306,7 @@
 | 572 | [Subtree of Another Tree](tree/isSubtree.go) | [Easy][] |
 | 575 | [Distribute Candies](hash-table/distributeCandies.go) | [Easy][] |
 | 581 | [Shortest Unsorted Continuous Subarray](array/findUnsortedSubarray.go) | [Easy][] |
+| 590 | [N-ary Tree Postorder Traversal](tree/postorder.go) | [Easy][] |
 | 594 | [Longest Harmonious Subsequence](hash-table/findLHS.go) | [Easy][] |
 | 598 | [Range Addition II](math/maxCount.go) | [Easy][] |
 | 599 | [Minimum Index Sum of Two Lists](hash-table/findRestaurant.go) | [Easy][] |
