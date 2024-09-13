@@ -16,7 +16,8 @@ You may assume that all operations are valid (for example, no pop or peek operat
 package lstack
 
 type MyQueue struct {
-	q []int
+	stack1 []int
+	stack2 []int
 }
 
 /** Initialize your data structure here. */
@@ -25,24 +26,32 @@ func MyQueueConstructor() MyQueue {
 }
 
 /** Push element x to the back of queue. */
-func (this *MyQueue) Push(x int) {
-	// 可以考虑两个 []int 提高push性能，代价是pop／peek 性能降低
-	this.q = append([]int{x}, this.q...)
+func (m *MyQueue) Push(x int) {
+	m.stack1 = append(m.stack1, x)
 }
 
 /** Removes the element from in front of queue and returns that element. */
-func (this *MyQueue) Pop() int {
-	r := this.q[len(this.q)-1]
-	this.q = this.q[:len(this.q)-1]
-	return r
+func (m *MyQueue) Pop() int {
+	m.Peek()
+	top := len(m.stack2) - 1
+	value := m.stack2[len(m.stack2)-1]
+	m.stack2 = m.stack2[:top]
+	return value
 }
 
 /** Get the front element. */
-func (this *MyQueue) Peek() int {
-	return this.q[len(this.q)-1]
+func (m *MyQueue) Peek() int {
+	if len(m.stack2) == 0 {
+		for len(m.stack1) > 0 {
+			top := len(m.stack1) - 1
+			m.stack2 = append(m.stack2, m.stack1[top])
+			m.stack1 = m.stack1[:top]
+		}
+	}
+	return m.stack2[len(m.stack2)-1]
 }
 
 /** Returns whether the queue is empty. */
-func (this *MyQueue) Empty() bool {
-	return len(this.q) == 0
+func (m *MyQueue) Empty() bool {
+	return len(m.stack1) == 0 && len(m.stack2) == 0
 }
