@@ -24,24 +24,31 @@ type MyStack struct {
 
 /** Initialize your data structure here. */
 func MyStackConstructor() MyStack {
-	return MyStack{}
+	return MyStack{
+		q: []int{},
+	}
 }
 
 /** Push element x onto stack. */
 func (this *MyStack) Push(x int) {
 	this.q = append(this.q, x)
+	// 将前面所有元素轮转到队列尾部
+	for i := 0; i < len(this.q)-1; i++ {
+		this.q = append(this.q, this.q[0])
+		this.q = this.q[1:]
+	}
 }
 
 /** Removes the element on top of the stack and returns that element. */
 func (this *MyStack) Pop() int {
-	r := this.q[len(this.q)-1]
-	this.q = this.q[:len(this.q)-1]
-	return r
+	top := this.q[0]
+	this.q = this.q[1:]
+	return top
 }
 
 /** Get the top element. */
 func (this *MyStack) Top() int {
-	return this.q[len(this.q)-1]
+	return this.q[0]
 }
 
 /** Returns whether the stack is empty. */
