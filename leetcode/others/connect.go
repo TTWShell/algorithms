@@ -12,23 +12,23 @@ func connect(root *Node) *Node {
 		return nil
 	}
 
-	queue := []*Node{root}
-	for len(queue) > 0 {
-		levelSize := len(queue)
-		for i := 0; i < levelSize; i++ {
-			node := queue[i]
-			if i < levelSize-1 {
-				node.Next = queue[i+1]
-			}
+	current := root
+	for current != nil {
+		dummy := &Node{}
+		tail := dummy
 
+		for node := current; node != nil; node = node.Next {
 			if node.Left != nil {
-				queue = append(queue, node.Left)
+				tail.Next = node.Left
+				tail = tail.Next
 			}
 			if node.Right != nil {
-				queue = append(queue, node.Right)
+				tail.Next = node.Right
+				tail = tail.Next
 			}
 		}
-		queue = queue[levelSize:]
+		current = dummy.Next
 	}
+
 	return root
 }
