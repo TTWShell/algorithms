@@ -3,3 +3,4 @@ leetcode.db
 .vscode/
 
 vendor/*
+.DS_Store
